@@ -1,4 +1,4 @@
-Malacpersely specifikáció
+﻿Malacpersely specifikáció
 Alap ötlet: Családi költségvetés követése.
 Jelenlegi helyzet: 
 Egy családban nehézkes követni a pénzügyi kiadások és bevételek sokaságát, ezt szeretnénk egyszerűsíteni egy webalkalmazás segítségével.
