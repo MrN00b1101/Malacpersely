@@ -41,7 +41,7 @@ Malacpersely specifikáció
 **User:**  
 	Id (Primary key)  
 	Nev  
-	Mail  .
+	Mail
 	Jelszó  
 
 **Outgoings:**  
