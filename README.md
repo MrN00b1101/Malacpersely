@@ -70,7 +70,7 @@ Malacpersely specifikáció
 
 ## Látványterv:
 
-	![főoldal](https://raw.github.com/MrN00b1101/Malacpersely/blob/master/home.png)
+	![főoldal](https://raw.githubusercontent.com/MrN00b1101/Malacpersely/master/home.png?token=AIEJIYBCGK7WQZTKPDWND4C5ZZKD4)
 	![belépés gomb](https://github.com/MrN00b1101/Malacpersely/blob/master/homeLogBtn.png)
 	![belépés](https://github.com/MrN00b1101/Malacpersely/blob/master/login.png)
 	![belépve](https://github.com/MrN00b1101/Malacpersely/blob/master/loggedIn.png)
