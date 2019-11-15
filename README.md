@@ -38,35 +38,35 @@ Malacpersely specifikáció
 * Ádám: Bootstrap, javascript, fronted logikai része
 
 ## Adatbázisterv:
-**User:**
-	Id (Primary key)
-	Nev
-	Mail
-	Jelszó
+**User:**  
+	Id (Primary key)  
+	Nev  
+	Mail  
+	Jelszó  
 
-**Outgoings:**
-	Id (Foreign key)
-	Kiadás kategória
-	Összeg
-	Dátum
+**Outgoings:**  
+	Id (Foreign key)  
+	Kiadás kategória  
+	Összeg  
+	Dátum  
 
-**Incomes:**
-	Id (Foreign key)
-	Bevétel kategória
-	Összeg
-	Dátum
+**Incomes:**  
+	Id (Foreign key)  
+	Bevétel kategória  
+	Összeg  
+	Dátum  
 
-**Categorys:**
-	Id (Primary key)
-	Nev
+**Categorys:**  
+	Id (Primary key)  
+	Nev  
 
-**Family:**
-	Id (Primary key)
-	Nev
+**Family:**  
+	Id (Primary key)  
+	Nev  
 
-**Family_members:**
-	UserId (Foregin key)
-	CsaladId (Forgein key)	
+**Family_members:**  
+	UserId (Foregin key)  
+	CsaladId (Forgein key)  	
 
 ## Látványterv:
 
