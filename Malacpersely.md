@@ -48,3 +48,10 @@ Bevétel:
 	Bevétel kategória
 	Összeg
 	Dátum	
+
+Látványterv:
+	![főoldal](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+	![belépés gomb](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+	![belépés](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+	![belépve](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+
