@@ -22,6 +22,7 @@ Malacpersely specifikáció
 		1-es szintű jogosultsággal rendelkező felhasználó meg tudja a költségvetést tekinteni, költséget/bevételt hozzáadni, törölni, módosítani  
 		2-es szintű jogosultsággal rendelkező felhasználó meg tudja a költségvetést tekinteni.
 	2. Jelszó megváltoztatása, és elfelejtett jelszó esetén jelszó emlékeztető, és e-mail címre átmeneti jelszó küldése.  
+	
 	Bejelentkezés után a bevétel és költségek havi nézete. Itt lehet bevételt, költséget hozzáadni, és alapértelmezetten a felhasználó havi nézete jelenik meg. A havi nézetről tud váltani napi, heti, és éves összesítőre, továbbá az egyéni költségről lehet váltani a családi költség mutatására számokkal és diagramokkal illusztrálva. Az éppen aktuálisan megjelenő nézetet Excel fájlba ki lehet exportálni.
 	Megtakarítás kalkulátor, ahol meg lehet határozni egy elérni kívánt célt, és az oldal kikalkulálja az összeg, és a havi rászánt megtakarított összeg alapján, hogy mikorra lehet összegyűjteni a hozzá szükséges pénzt, és az oldal havi szinten nyomon követi a megtakarítás sikerességét.
 	Családtag hozzáadása, eltávolítása menüpont.
