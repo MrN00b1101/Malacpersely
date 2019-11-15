@@ -69,6 +69,7 @@ Malacpersely specifikáció
 	CsaladId (Forgein key)	
 
 ## Látványterv:
+
 	![főoldal](https://raw.github.com/MrN00b1101/Malacpersely/blob/master/home.png)
 	![belépés gomb](https://github.com/MrN00b1101/Malacpersely/blob/master/homeLogBtn.png)
 	![belépés](https://github.com/MrN00b1101/Malacpersely/blob/master/login.png)
