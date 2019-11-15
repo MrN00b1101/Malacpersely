@@ -50,8 +50,8 @@ Bevétel:
 	Dátum	
 
 Látványterv:
-	![főoldal](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
-	![belépés gomb](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
-	![belépés](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
-	![belépve](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+	![főoldal](https://github.com/MrN00b1101/Malacpersely/blob/master/home.png)
+	![belépés gomb](https://github.com/MrN00b1101/Malacpersely/blob/master/homeLogBtn.png)
+	![belépés](https://github.com/MrN00b1101/Malacpersely/blob/master/login.png)
+	![belépve](https://github.com/MrN00b1101/Malacpersely/blob/master/loggedIn.png)
 
