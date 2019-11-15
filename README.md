@@ -43,28 +43,33 @@ Malacpersely specifikáció
 	Nev
 	Mail
 	Jelszó
+
 **Outgoings:**
 	Id (Foreign key)
 	Kiadás kategória
 	Összeg
-	Dátum	
+	Dátum
+
 **Incomes:**
 	Id (Foreign key)
 	Bevétel kategória
 	Összeg
 	Dátum
+
 **Categorys:**
 	Id (Primary key)
 	Nev
+
 **Family:**
 	Id (Primary key)
 	Nev
+
 **Family_members:**
 	UserId (Foregin key)
 	CsaladId (Forgein key)	
 
 ## Látványterv:
-	![főoldal](https://github.com/MrN00b1101/Malacpersely/blob/master/home.png)
+	![főoldal](https://raw.github.com/MrN00b1101/Malacpersely/blob/master/home.png)
 	![belépés gomb](https://github.com/MrN00b1101/Malacpersely/blob/master/homeLogBtn.png)
 	![belépés](https://github.com/MrN00b1101/Malacpersely/blob/master/login.png)
 	![belépve](https://github.com/MrN00b1101/Malacpersely/blob/master/loggedIn.png)
