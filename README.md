@@ -70,8 +70,8 @@ Malacpersely specifikáció
 
 ## Látványterv:
 
-	![főoldal](https://i.imgur.com/Z1FixcB.png)
-	![belépés gomb](https://i.imgur.com/xHCT0xl.png)
-	![belépés](https://i.imgur.com/N4n2w6K.png)
-	![belépve](https://i.imgur.com/Tfh4cYq.png)
+![főoldal](https://i.imgur.com/Z1FixcB.png)
+![belépés gomb](https://i.imgur.com/xHCT0xl.png)
+![belépés](https://i.imgur.com/N4n2w6K.png)
+![belépve](https://i.imgur.com/Tfh4cYq.png)
 
