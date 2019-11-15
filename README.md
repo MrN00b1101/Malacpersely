@@ -48,3 +48,10 @@ Bevétel:
 	Bevétel kategória
 	Összeg
 	Dátum	
+
+Látványterv:
+	![főoldal](https://github.com/MrN00b1101/Malacpersely/blob/master/home.png)
+	![belépés gomb](https://github.com/MrN00b1101/Malacpersely/blob/master/homeLogBtn.png)
+	![belépés](https://github.com/MrN00b1101/Malacpersely/blob/master/login.png)
+	![belépve](https://github.com/MrN00b1101/Malacpersely/blob/master/loggedIn.png)
+
