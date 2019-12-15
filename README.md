@@ -39,18 +39,23 @@ Családtag hozzáadása, eltávolítása menüpont.
 ## Adatbázisterv:
 **User:**
 
-|Mezőnév:|Típus:|Megkötés:|Leírás:|	
-|:-|:-|:-|:-|
-|Id|Number|Not Null|A felhasználó egyedi azonosítója|
-|Name|Varchar2(30)|Not Null|A felhasználó neve|
-|Mail|Varcghar2(50)|Not Null|A felhasználó e-mail címe|
-|Password|Varchar2(32)|Not Null|A felhasználó jelszavának a hash-e|
+A felhasználók adatainak tárolására használjuk.
+|Mezőnév:|Típus:|Megkötés:|Kulcs-e:|Leírás:	
+|:-|:-|:-|:-|:-|
+|Id|Number|Not Null|Elsődleges Kulcs|A felhasználó egyedi azonosítója|
+|Name|Varchar2(30)|Not Null||A felhasználó neve|
+|Mail|Varcghar2(50)|Not Null||A felhasználó e-mail címe|
+|Password|Varchar2(32)|Not Null||A felhasználó jelszavának a hash-e|
 
-**Outgoings:**  
-	Id (Foreign key)  
-	Kiadás kategória  
-	Összeg  
-	Dátum  
+**Transactions:**  
+
+A pénzügyi tranzakciókat tároljuk ebben a táblában.
+|Mezőnév:|Típus:|Megkötés:|Kulcs-e:|Leírás:	
+|:-|:-|:-|:-|:-|
+|UserId|Number|Not Null|Idegen kulcs (User tábla Id mezőjéhez kapcsolva)|A tranzakciót végrehajtó felhasználó azonosítója|
+|TranCatId|Number|Not Null|Idegen kulcs (Categorys tábla Id mezőjéhez kapcsolva)|A tranzakció típusa|
+|Value|Number|Not Null||A tranzakció összege, ha minusz akkor kiadás ha plussz akkor bevétel|
+|Date|TimeStamp|Not Null||A tranzakció ideje|
 
 **Incomes:**  
 	Id (Foreign key)  
