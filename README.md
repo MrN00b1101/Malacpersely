@@ -38,13 +38,12 @@ Családtag hozzáadása, eltávolítása menüpont.
 
 ## Adatbázisterv:
 	##User:
-	
-	|**User:**||||
-	|---------|-|-|-:|
-	|Id|Number|Not Null|Primary key|
-	|Name|Varchar2(30)|Not Null||  
-	|Mail|Varcghar2(50)|Not Null||
-	|Password|Varchar2(32)|Not Null||  
+|Mezőnév:|Típus:|Megkötés:|Leírás:|	
+|---------|-|-|-:|
+|Id|Number|Not Null|A felhasználó egyedi azonosítója|
+|Name|Varchar2(30)|Not Null|A felhasználó neve|
+|Mail|Varcghar2(50)|Not Null|A felhasználó e-mail címe|
+|Password|Varchar2(32)|Not Null|A felhasználó jelszavának a hash-e|
 
 **Outgoings:**  
 	Id (Foreign key)  
