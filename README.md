@@ -40,6 +40,7 @@ Családtag hozzáadása, eltávolítása menüpont.
 **User:**
 
 A felhasználók adatainak tárolására használjuk.
+
 |Mezőnév:|Típus:|Megkötés:|Kulcs-e:|Leírás:|
 |:-------|:-----|:--------|:-------|:------|
 |Id|Number|Not Null|Elsődleges Kulcs|A felhasználó egyedi azonosítója|
