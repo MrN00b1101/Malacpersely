@@ -38,7 +38,7 @@ Családtag hozzáadása, eltávolítása menüpont.
 
 ## Adatbázisterv:
 |**User:**||||
-
+|---------|-|-|-:|
 |Id|Number|Not Null|Primary key|
 
 |Name|Varchar2(30)|Not Null||  
