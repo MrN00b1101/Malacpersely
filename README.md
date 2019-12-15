@@ -40,7 +40,6 @@ Családtag hozzáadása, eltávolítása menüpont.
 |**User:**||||
 |---------|-|-|-:|
 |Id|Number|Not Null|Primary key|
-
 |Name|Varchar2(30)|Not Null||  
 |Mail|Varcghar2(50)|Not Null||
 |Password|Varchar2(32)|Not Null||  
