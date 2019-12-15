@@ -40,7 +40,7 @@ Családtag hozzáadása, eltávolítása menüpont.
 **User:**
 
 |Mezőnév:|Típus:|Megkötés:|Leírás:|	
-|---------|-|-|:-|
+|:-|:-|:-|:-|
 |Id|Number|Not Null|A felhasználó egyedi azonosítója|
 |Name|Varchar2(30)|Not Null|A felhasználó neve|
 |Mail|Varcghar2(50)|Not Null|A felhasználó e-mail címe|
