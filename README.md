@@ -51,30 +51,42 @@ A felhasználók adatainak tárolására használjuk.
 **Transactions:**  
 
 A pénzügyi tranzakciókat tároljuk ebben a táblában.
+
 |Mezőnév:|Típus:|Megkötés:|Kulcs-e:|Leírás:|
-|:-|:-|:-|:-|:-|
+|:-------|:-----|:--------|:-------|:------|
 |UserId|Number|Not Null|Idegen kulcs (User tábla Id mezőjéhez kapcsolva)|A tranzakciót végrehajtó felhasználó azonosítója|
 |TranCatId|Number|Not Null|Idegen kulcs (Categorys tábla Id mezőjéhez kapcsolva)|A tranzakció típusa|
 |Value|Number|Not Null||A tranzakció összege, ha minusz akkor kiadás ha plussz akkor bevétel|
+|Personal|Bit|Not Null||Ha az értéke 1 akkor a kiadás személyes, ha 0 akkor a kiadás családi|
 |Date|TimeStamp|Not Null||A tranzakció ideje|
 
-**Incomes:**  
-	Id (Foreign key)  
-	Bevétel kategória  
-	Összeg  
-	Dátum  
-
 **Categorys:**  
-	Id (Primary key)  
-	Nev  
+
+A tranzakciók kategóriáit tároljuk itt.
+
+|Mezőnév:|Típus:|Megkötés:|Kulcs-e:|Leírás:|
+|:-------|:-----|:--------|:-------|:------|
+|Id|Number|Not Null|Elsődleges kulcs|A kategória egyedi azonosítója|
+|Name|Varchar2(10)|Not Null||A kategória megnevezése|
 
 **Family:**  
-	Id (Primary key)  
-	Nev  
+
+A családokat tároljuk ebben a táblában.
+
+|Mezőnév:|Típus:|Megkötés:|Kulcs-e:|Leírás:|
+|:-------|:-----|:--------|:-------|:------|
+|Id|Number|Not Null|Elsődleges kulcs|A család egyedi azonosítója|
+|Name|Varchar2(10)|Not Null||A család megnevezése|
 
 **Family_members:**  
-	UserId (Foregin key)  
-	CsaladId (Forgein key)  	
+
+Kapcsoló tábla amiben a felhasználókat rendeljük a családokhoz.
+
+|Mezőnév:|Típus:|Megkötés:|Kulcs-e:|Leírás:|
+|:-------|:-----|:--------|:-------|:------|
+|UserId|Number|Idegen kulcs a User tábla Id mezőjéhez kötve|A felhasználó azonosítója|
+|FamilyId|Number|Idegen kulcs a Family tábla Id mezőjéhez kötve|A család azonosítója|
+	
 
 ## Látványterv:
 
