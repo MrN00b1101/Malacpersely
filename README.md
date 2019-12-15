@@ -38,6 +38,7 @@ Családtag hozzáadása, eltávolítása menüpont.
 
 ## Adatbázisterv:
 **User:**
+
 |Mezőnév:|Típus:|Megkötés:|Leírás:|	
 |---------|-|-|-:|
 |Id|Number|Not Null|A felhasználó egyedi azonosítója|
