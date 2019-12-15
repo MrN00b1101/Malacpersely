@@ -84,8 +84,8 @@ Kapcsoló tábla amiben a felhasználókat rendeljük a családokhoz.
 
 |Mezőnév:|Típus:|Megkötés:|Kulcs-e:|Leírás:|
 |:-------|:-----|:--------|:-------|:------|
-|UserId|Number|Idegen kulcs a User tábla Id mezőjéhez kötve|A felhasználó azonosítója|
-|FamilyId|Number|Idegen kulcs a Family tábla Id mezőjéhez kötve|A család azonosítója|
+|UserId|Number|Not Null|Idegen kulcs a User tábla Id mezőjéhez kötve|A felhasználó azonosítója|
+|FamilyId|Number|Not Null|Idegen kulcs a Family tábla Id mezőjéhez kötve|A család azonosítója|
 	
 
 ## Látványterv:
