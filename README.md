@@ -37,8 +37,10 @@ Családtag hozzáadása, eltávolítása menüpont.
 * Ádám: Bootstrap, javascript, fronted logikai része
 
 ## Adatbázisterv:
-**User:**  
-	Id (Primary key)  
+|**User:**|
+|--------:|
+|	Id (Primary key)|
+|----------------------:|
 	Nev  
 	Mail
 	Jelszó  
