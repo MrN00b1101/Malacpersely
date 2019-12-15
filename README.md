@@ -40,7 +40,7 @@ Családtag hozzáadása, eltávolítása menüpont.
 **User:**
 
 A felhasználók adatainak tárolására használjuk.
-|Mezőnév:|Típus:|Megkötés:|Kulcs-e:|Leírás:	
+|Mezőnév:|Típus:|Megkötés:|Kulcs-e:|Leírás:|
 |:-|:-|:-|:-|:-|
 |Id|Number|Not Null|Elsődleges Kulcs|A felhasználó egyedi azonosítója|
 |Name|Varchar2(30)|Not Null||A felhasználó neve|
@@ -50,7 +50,7 @@ A felhasználók adatainak tárolására használjuk.
 **Transactions:**  
 
 A pénzügyi tranzakciókat tároljuk ebben a táblában.
-|Mezőnév:|Típus:|Megkötés:|Kulcs-e:|Leírás:	
+|Mezőnév:|Típus:|Megkötés:|Kulcs-e:|Leírás:|
 |:-|:-|:-|:-|:-|
 |UserId|Number|Not Null|Idegen kulcs (User tábla Id mezőjéhez kapcsolva)|A tranzakciót végrehajtó felhasználó azonosítója|
 |TranCatId|Number|Not Null|Idegen kulcs (Categorys tábla Id mezőjéhez kapcsolva)|A tranzakció típusa|
