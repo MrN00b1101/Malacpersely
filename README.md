@@ -37,7 +37,7 @@ Családtag hozzáadása, eltávolítása menüpont.
 * Ádám: Bootstrap, javascript, fronted logikai része
 
 ## Adatbázisterv:
-	**User:**
+  **User:**
 |Mezőnév:|Típus:|Megkötés:|Leírás:|	
 |---------|-|-|-:|
 |Id|Number|Not Null|A felhasználó egyedi azonosítója|
