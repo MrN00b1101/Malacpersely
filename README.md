@@ -41,7 +41,7 @@ Családtag hozzáadása, eltávolítása menüpont.
 
 A felhasználók adatainak tárolására használjuk.
 |Mezőnév:|Típus:|Megkötés:|Kulcs-e:|Leírás:|
-|:-|:-|:-|:-|:-|
+|:-------|:-----|:--------|:-------|:------|
 |Id|Number|Not Null|Elsődleges Kulcs|A felhasználó egyedi azonosítója|
 |Name|Varchar2(30)|Not Null||A felhasználó neve|
 |Mail|Varcghar2(50)|Not Null||A felhasználó e-mail címe|
