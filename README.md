@@ -47,6 +47,7 @@ A felhasználók adatainak tárolására használjuk.
 |Name|Varchar2(30)|Not Null||A felhasználó neve|
 |Mail|Varcghar2(50)|Not Null||A felhasználó e-mail címe|
 |Password|Varchar2(32)|Not Null||A felhasználó jelszavának a hash-e|
+|FamilyId|Number|Not Null|Idegen kulcs (Family tábla Id mezőjéhez kapcsolva)|A felhasználó családjának azonosítója|
 
 **Transactions:**  
 
