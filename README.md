@@ -77,16 +77,9 @@ A családokat tároljuk ebben a táblában.
 |:-------|:-----|:--------|:-------|:------|
 |Id|Number|Not Null|Elsődleges kulcs|A család egyedi azonosítója|
 |Name|Varchar2(10)|Not Null||A család megnevezése|
+|FatherId|Id|Not Null|Idegen kulcs a User tábla Id mezőjéhez kötve|A családfő azonosítója (ő hozza létre a családod, és ő tud tagokat hozzá adni!)|
 
-**Family_members:**  
 
-Kapcsoló tábla amiben a felhasználókat rendeljük a családokhoz.
-
-|Mezőnév:|Típus:|Megkötés:|Kulcs-e:|Leírás:|
-|:-------|:-----|:--------|:-------|:------|
-|UserId|Number|Not Null|Idegen kulcs a User tábla Id mezőjéhez kötve|A felhasználó azonosítója|
-|FamilyId|Number|Not Null|Idegen kulcs a Family tábla Id mezőjéhez kötve|A család azonosítója|
-	
 
 ## Látványterv:
 
