@@ -20,6 +20,12 @@ switch($request_method) {
    break;
  case 'POST':
     //$data = json_decode(file_get_contents('php://input'), true);
+    $response=array(
+        'status' => 0,
+        'status_message' =>'User Addition Failed.'
+        );
+      header('Content-Type: application/json');
+      echo json_encode($response);
     switch ($_POST['com']){
         case 'user':
             insertUser($data);
