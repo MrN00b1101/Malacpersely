@@ -80,7 +80,25 @@ A családokat tároljuk ebben a táblában.
 |Name|Varchar2(10)|Not Null||A család megnevezése|
 |FatherId|Id|Not Null|Idegen kulcs a User tábla Id mezőjéhez kötve|A családfő azonosítója (ő hozza létre a családod, és ő tud tagokat hozzá adni!)|
 
-
+## Api használat:
+    Az api Json obijektumban várja az adatokat!
+**Modulok:**
+    Regisztráció: Post request 
+    szükséges adatok: 
+    {
+    com:'user',
+    name:'felhasználó neve',
+    mail:'email cím',
+    password:'jelszó hash'
+    }
+    Kategória felvitele: Post request, 
+    szükséges adatok:
+    {
+    com:'cat',
+    name:'kategória név',
+    creaId:'létrehozó felhasználó azonosítója',
+    global:'láthatóság (0-global,1-personal,2-család)'
+    }
 
 ## Látványterv:
 
