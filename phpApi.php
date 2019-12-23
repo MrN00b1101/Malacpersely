@@ -12,21 +12,23 @@
 -Csoportos megjelenítés (select)
 -Megtakarítási célok kezelése (select. insert)
 */
-include("../connection.php");
+include("connection.php");
 $db = new dbObj(); $connection =  $db->getConnstring();
 $request_method=$_SERVER["REQUEST_METHOD"]; //melyik metódussal hívták az API-t?
 switch($request_method) {
   case 'GET':
-   break;
- case 'POST':
-    //$data = json_decode(file_get_contents('php://input'), true);
-    $response=array(
+        $response=array(
         'status' => 0,
         'status_message' =>'User Addition Failed.'
         );
       header('Content-Type: application/json');
       echo json_encode($response);
-    switch ($_POST['com']){
+   break;
+ case 'POST':
+    $data = json_decode(file_get_contents('php://input'), true);
+    //echo file_get_contents('php://input');
+    
+    switch ($data['com']){
         case 'user':
             insertUser($data);
         break;
@@ -85,10 +87,11 @@ default:
 }
 function insertUser($data){
     global $connection;
-    $Name=$data["name"];
-    $Mail=$data["mail"];
-    $Pass =$data["password"];
-    /*echo $query="INSERT INTO User VALUES ('".$Name."', '".$Mail."', '".$Pass."')";
+    $Name = $data['name'];
+    $Mail = $data['mail'];
+    $Pass = $data['password'];
+    echo $query="INSERT INTO User SET   Name ='".$Name."', Mail='".$Mail."', Password='".$Pass."'";
+    //echo $query="INSERT INTO 'User' VALUES ('dd', 'ff', 'gg')";
     if(mysqli_query($connection, $query))   {
          $response=array(
                'status' => 1,
@@ -100,17 +103,34 @@ function insertUser($data){
                'status' => 0,
                'status_message' =>'User Addition Failed.'
                );
-      }   */
-      $response=array(
-        'status' => 0,
-        'status_message' =>'User Addition Failed.'
-        );
+      }   
       header('Content-Type: application/json');
       echo json_encode($response); //response with header 
 }
-function insertCategory(){}
-function insertTransaction(){}
-function insertFamMemeber(){}
+function insertCategory($data){
+    global $connection;
+    $Name = $data['name'];
+    $creaId = $data['creaId'];
+    $global = $data['global'];
+    echo $query="INSERT INTO Categorys SET   Name ='".$Name."', CreatorId=".$creaId.", Global=".$global."";
+    //echo $query="INSERT INTO 'User' VALUES ('dd', 'ff', 'gg')";
+    if(mysqli_query($connection, $query))   {
+         $response=array(
+               'status' => 1,
+               'status_message' =>'Category Added Successfully.'
+                );
+      }
+      else     {
+         $response=array(
+               'status' => 0,
+               'status_message' =>'Category Addition Failed.'
+               );
+      }   
+      header('Content-Type: application/json');
+      echo json_encode($response); //response with header 
+}
+function insertTransaction($data){}
+function insertFamMemeber($data){}
 
 function updateUser(){}
 function updateCategory(){}
