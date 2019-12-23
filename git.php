@@ -1,4 +1,4 @@
 <?php
-shell_exec('git pull');
+shell_exec('sudo git pull');
 
 ?>
