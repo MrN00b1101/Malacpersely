@@ -83,22 +83,34 @@ A családokat tároljuk ebben a táblában.
 ## Api használat:
     Az api Json obijektumban várja az adatokat!
 **Modulok:**
+
     Regisztráció: Post request 
+    
     szükséges adatok: 
+    
     {
     com:'user',
     name:'felhasználó neve',
     mail:'email cím',
     password:'jelszó hash'
     }
+    
     Kategória felvitele: Post request, 
+    
     szükséges adatok:
+    
     {
+    
     com:'cat',
+    
     name:'kategória név',
+    
     creaId:'létrehozó felhasználó azonosítója',
+    
     global:'láthatóság (0-global,1-personal,2-család)'
+    
     }
+    
 
 ## Látványterv:
 
