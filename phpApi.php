@@ -13,22 +13,11 @@
 -Megtakarítási célok kezelése (select. insert)
 */
 include("../connection.php");
-
-
 $db = new dbObj(); $connection =  $db->getConnstring();
-
-
 $request_method=$_SERVER["REQUEST_METHOD"]; //melyik metódussal hívták az API-t?
-
-
 switch($request_method) {
-
-
   case 'GET':
-
    break;
-
-
  case 'POST':
     $data = json_decode(file_get_contents('php://input'), true);
     switch ($data['com']){
@@ -45,10 +34,7 @@ switch($request_method) {
             insertFamMember($data);
         break;
     }
-
-
   break;
-
 case 'PUT':
     $data = json_decode(file_get_contents('php://input'), true);
     switch ($data['com']){
@@ -96,7 +82,7 @@ function insertUser($data){
     $Name=$data["name"];
     $Mail=$data["mail"];
     $Pass =$data["password"];
-    echo $query="INSERT INTO User VALUES ('".$Name."', '".$Mail."', '".$Pass."')";
+    /*echo $query="INSERT INTO User VALUES ('".$Name."', '".$Mail."', '".$Pass."')";
     if(mysqli_query($connection, $query))   {
          $response=array(
                'status' => 1,
@@ -108,7 +94,11 @@ function insertUser($data){
                'status' => 0,
                'status_message' =>'User Addition Failed.'
                );
-      }   
+      }   */
+      $response=array(
+        'status' => 0,
+        'status_message' =>'User Addition Failed.'
+        );
       header('Content-Type: application/json');
       echo json_encode($response); //response with header 
 }
