@@ -99,16 +99,11 @@ A családokat tároljuk ebben a táblában.
     
     szükséges adatok:
     
-    {
-    
+    {    
     com:'cat',
-    
     name:'kategória név',
-    
-    creaId:'létrehozó felhasználó azonosítója',
-    
-    global:'láthatóság (0-global,1-personal,2-család)'
-    
+    creaId:'létrehozó felhasználó azonosítója',  
+    global:'láthatóság (0-global,1-personal,2-család)'   
     }
     
 
