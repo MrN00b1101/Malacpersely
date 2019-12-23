@@ -19,8 +19,8 @@ switch($request_method) {
   case 'GET':
    break;
  case 'POST':
-    $data = json_decode(file_get_contents('php://input'), true);
-    switch ($data['com']){
+    //$data = json_decode(file_get_contents('php://input'), true);
+    switch ($_POST['com']){
         case 'user':
             insertUser($data);
         break;
