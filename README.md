@@ -87,7 +87,6 @@ A családokat tároljuk ebben a táblában.
     Regisztráció: Post request 
     
     szükséges adatok: 
-    
     {
     com:'user',
     name:'felhasználó neve',
@@ -97,8 +96,7 @@ A családokat tároljuk ebben a táblában.
     
     Kategória felvitele: Post request, 
     
-    szükséges adatok:
-    
+    szükséges adatok:    
     {    
     com:'cat',
     name:'kategória név',
@@ -106,6 +104,25 @@ A családokat tároljuk ebben a táblában.
     global:'láthatóság (0-global,1-personal,2-család)'   
     }
     
+    Tranzakció felvitele: Post request, 
+    
+    szükséges adatok:    
+    {    
+    com:'tran',
+    uId:'felhasználó azonosító',
+    catId:'kategória azonosító',  
+    value:'érték',
+    persona: '0/1 személyes vagy családi'   
+    }
+    
+    Család felvitele: Post request, 
+    
+    szükséges adatok:    
+    {    
+    com:'family',
+    name:'család név',
+    fId:'Családfő azonosítója'   
+    }
 
 ## Látványterv:
 

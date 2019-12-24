@@ -41,6 +41,9 @@ switch($request_method) {
         case 'fammember':
             insertFamMember($data);
         break;
+	case 'family':
+	    insertFamily($data);
+	break;
     }
   break;
 case 'PUT':
@@ -129,8 +132,51 @@ function insertCategory($data){
       header('Content-Type: application/json');
       echo json_encode($response); //response with header 
 }
-function insertTransaction($data){}
-function insertFamMemeber($data){}
+function insertTransaction($data){
+    global $connection;
+    $userId = $data['uId'];
+    $catId = $data['catId'];
+    $value = $data['value'];
+    $personal = $data['personal'];
+    echo $query="INSERT INTO Transactions SET   UserId =".$userId.", TranCatId=".$catId.", Value=".$value.", Personal=".$personal;
+    
+    if(mysqli_query($connection, $query))   {
+         $response=array(
+               'status' => 1,
+               'status_message' =>'Transaction Added Successfully.'
+                );
+      }
+      else     {
+         $response=array(
+               'status' => 0,
+               'status_message' =>'Transaction Addition Failed.'
+               );
+      }   
+      header('Content-Type: application/json');
+      echo json_encode($response); //response with header 
+}
+
+function insertFamily($data){
+    global $connection;
+    $name = $data['name'];
+    $fId = $data['fId'];
+    echo $query="INSERT INTO Family SET   Name ='".$name."', FatherId=".$fId;
+    
+    if(mysqli_query($connection, $query))   {
+         $response=array(
+               'status' => 1,
+               'status_message' =>'Family Added Successfully.'
+                );
+      }
+      else     {
+         $response=array(
+               'status' => 0,
+               'status_message' =>'Family Addition Failed.'
+               );
+      }   
+      header('Content-Type: application/json');
+      echo json_encode($response); //response with header 
+}
 
 function updateUser(){}
 function updateCategory(){}
