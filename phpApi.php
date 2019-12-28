@@ -38,9 +38,9 @@ switch($request_method) {
         case 'tran':
             insertTransaction($data);
         break;
-	case 'family':
-	    insertFamily($data);
-	break;
+        case 'family':
+            insertFamily($data);
+        break;
     }
   break;
 case 'PUT':
@@ -172,7 +172,7 @@ function delete($data)
     global $connection;
     $table = $data['table'];
     $id = $data['Id'];
-    echo $query="DELETE FROM User WHERE Id=".$id;
+    echo $query="DELETE FROM ".$table." WHERE Id=".$id;
     if(mysqli_query($connection, $query))   {
         $response=array(
               'status' => 1,
