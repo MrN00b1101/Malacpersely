@@ -1,0 +1,66 @@
+AJÁNLATKÉRÉS
+
+
+
+Ajánlatkérõ bemutatása:
+
+OVB  Kft.
+
+1138 Budapest
+Váci út 140.
+Telefon: +36 1 231 0670
+Telefax: +36 1 231 0679
+Mail: ovb@office.ovb.hu
+
+
+
+Bemutatkozás:
+
+Az OVB már több évtizede nyújt vagyoni tanácsadást, jelenleg 15 országban 
+elérhetõ Európában, amik közé tartozik Magyarország is 1992-óta. 
+Tanácsadásaink az ügyfeleink pénzügyi helyzetésenk gondos elemzésén alapulnak,
+egyénre szabottan, mindig az élethelyzetükhöz igazítva segítjük döntéseiket. 
+Szeretnénk még több segítséget és lehetõséget nyújtani a mindennapok pénzügyeinek 
+kezelésében is, nyitva az online felület adta lehetõségek felé egy webapplikációval 
+és késõbb, a fogadtatása alapján esetleg egy mobil applikációval is. Névnek 
+a Malacperselyt választottunk, utalva a pénz gyûjtésének kedves, gyerekkori és 
+egyben egyszerû voltára.
+
+
+
+Követelmény specifikáció:
+
+Leírás:
+
+Egy pénzügyeket átláhatóbbá tevõ és egyszerûen használható internetes alkalmazást 
+kell megvalósítani. A Malacpersely névhez ragaszkodunk és szeretnénk, 
+ha ez a téma valahogyan tükrözõdne az applikáció designjában és/vagy használatában. 
+Egészében letisztult felületet és barátságos, vidám színek alkalmazását szeretnénk.
+
+A következõ funkciókkal rendelkezzen:
+
+Egyéni fiók létrehozása.
+Vagyon összegének megadása.
+Állandó idõközönként ráiratandó/levonandó összeg megadásának lehetõsége.
+Egyéni pénzügyi célok beállításának lehetõsége.
+Beállítható, a pénzmozgást mutató ábrák.
+Családi közös kassza beállításának lehetõsége, amihez több egyén hozzáadható.
+A családtagok között kezdeményezhetõ pénz átvezetés. (Például zsebpénz, amit a 
+gyerekek a saját egyéni részükön láthatnak a alkalmazásban.)
+Általunk biztosított pénzügyi tanácsadóval való kapcsolatfelvétel lehetõsége, 
+közvetlenül a weboldalról.
+
+
+
+Az ajánlatadóval szembeni elvárások:
+
+Legyen minimum 2 éve bejegyzett vállalkozás.
+Valósítsa meg a projektet 60 nap alatt.
+
+
+
+Pénzügyek:
+
+A munkadíj ne kerüljön többe mint 60.000 Ft.
+A kifizetés megbeszélés alapján történhet 2 részletben, vagy egyszerre a projekt 
+átadásának napján.
