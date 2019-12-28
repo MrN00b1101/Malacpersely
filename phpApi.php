@@ -1,11 +1,11 @@
 <?php
 
 /*
--Regisztráció (insert)
+-Regisztráció (insert) kész
 -Login (Select +Session) 
--Tranzakció felvitele (insert)
--Kategória felvitele (insert)
--Család menedzselése (select, insert)
+-Tranzakció felvitele (insert) kész
+-Kategória felvitele (insert) kész
+-Család menedzselése (select, insert) 
 -Állandó tranzakciók beállítása (??)
 -Költségvetés tételes megjelenítése (select)
 -Grafikus megjelenítés (select)
@@ -38,9 +38,6 @@ switch($request_method) {
         case 'tran':
             insertTransaction($data);
         break;
-        case 'fammember':
-            insertFamMember($data);
-        break;
 	case 'family':
 	    insertFamily($data);
 	break;
@@ -67,21 +64,7 @@ case 'PUT':
 
  case 'DELETE':
     $data = json_decode(file_get_contents('php://input'), true);
-    switch ($data['com']){
-        case 'user':
-            delUser($data);
-        break;
-        case 'cat':
-            delCategory($data);
-        break;
-        case 'tran':
-            delTransaction($data);
-        break;
-        case 'fammember':
-            delFamMember($data);
-        break;
-    }
-
+    delete($data);
     break;
 
 default:
@@ -108,7 +91,7 @@ function insertUser($data){
                );
       }   
       header('Content-Type: application/json');
-      echo json_encode($response); //response with header 
+      echo json_encode($response); 
 }
 function insertCategory($data){
     global $connection;
@@ -130,7 +113,7 @@ function insertCategory($data){
                );
       }   
       header('Content-Type: application/json');
-      echo json_encode($response); //response with header 
+      echo json_encode($response); 
 }
 function insertTransaction($data){
     global $connection;
@@ -153,7 +136,7 @@ function insertTransaction($data){
                );
       }   
       header('Content-Type: application/json');
-      echo json_encode($response); //response with header 
+      echo json_encode($response);
 }
 
 function insertFamily($data){
@@ -175,17 +158,39 @@ function insertFamily($data){
                );
       }   
       header('Content-Type: application/json');
-      echo json_encode($response); //response with header 
+      echo json_encode($response); 
 }
 
-function updateUser(){}
-function updateCategory(){}
-function updateTransaction(){}
-function updateFamMember(){}
 
-function delUser(){}
-function delCategory(){}
-function delTransaction(){}
-function delFamMember(){}
+function updateUser($data){}
+function updateCategory($data){}
+function updateTransaction($data){}
+function updateFamMember($data){}
+
+function delete($data)
+{
+    global $connection;
+    $table = $data['table'];
+    $id = $data['Id'];
+    echo $query="DELETE FROM ".$table." WHERE Id = ".$id;
+    if(mysqli_query($connection, $query))   {
+        $response=array(
+              'status' => 1,
+              'status_message' =>'Deleted Successfully.'
+               );
+     }
+     else     {
+        $response=array(
+              'status' => 0,
+              'status_message' =>'Deleted Failed.'
+              );
+     }   
+     header('Content-Type: application/json');
+     echo json_encode($response);
+
+}
+function delCategory($data){}
+function delTransaction($data){}
+function delFamMember($data){}
 
 ?>
