@@ -88,42 +88,49 @@ A családokat tároljuk ebben a táblában.
     
     szükséges adatok: 
     {
-    com:'user',
-    name:'felhasználó neve',
-    mail:'email cím',
-    password:'jelszó hash'
+    "com":"user",
+    "name":"felhasználó neve",
+    "mail":"email cím",
+    "password":"jelszó hash"
     }
     
     Kategória felvitele: Post request, 
     
     szükséges adatok:    
     {    
-    com:'cat',
-    name:'kategória név',
-    creaId:'létrehozó felhasználó azonosítója',  
-    global:'láthatóság (0-global,1-personal,2-család)'   
+    "com":"cat",
+    "name":"kategória név",
+    "creaId":létrehozó felhasználó azonosítója,  
+    "global":láthatóság (0-global,1-personal,2-család)   
     }
     
     Tranzakció felvitele: Post request, 
     
     szükséges adatok:    
     {    
-    com:'tran',
-    uId:'felhasználó azonosító',
-    catId:'kategória azonosító',  
-    value:'érték',
-    persona: '0/1 személyes vagy családi'   
+    "com": "tran",
+    "uId":felhasználó azonosító,
+    "catId":kategória azonosító,  
+    "value":érték,
+    "personal": 0/1 személyes vagy családi'  
     }
     
     Család felvitele: Post request, 
     
     szükséges adatok:    
     {    
-    com:'family',
-    name:'család név',
-    fId:'Családfő azonosítója'   
+    "com":"family",
+    "name":"család név",
+    "fId":Családfő azonosítója   
     }
 
+    User, Család, Kategória törlése: DELETE request,
+    
+    szükséges adatok:
+    {
+    "table": "tábla neve ahonnan törölni akarunk",
+    "Id":a rekord azonosítója amit törölni akarunk
+    }
 ## Látványterv:
 
 ![főoldal](https://github.com/MrN00b1101/Malacpersely/blob/master/home.png)
