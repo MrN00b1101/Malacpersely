@@ -158,7 +158,8 @@ function insertFamily($data){
     global $connection;
     $name = $data['name'];
     $fId = $data['fId'];
-    $query="INSERT INTO Family SET   Name ='".$name."', FatherId=".$fId;
+    //echo $query="INSERT INTO Categorys SET Name ='".$Name."', CreatorId=".$creaId.", Global=".$global;
+    echo $query="INSERT INTO Family SET Name ='".$name."', FatherId=".$fId;
     
     if(mysqli_query($connection, $query))   {    
     //    $queryFamId = "SELECT Id FROM Family WHERE FatherId=".$fId." LIMIT 1";
