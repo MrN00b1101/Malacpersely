@@ -1,38 +1,161 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="css.css">
-    <title>MALACPERSELY</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>MALACPERSELY</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/812fb0504e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
-<body>
 
-        <ul class="nav">
-                <li class="nav-item">
-                  <a class="nav-item" href="index.html">MALACPERSELY</a>
-                </li>
-                <li class="nav-link">
-                  <a class="nav-link" href="#">Főoldal</a>
-                </li>
-                <li class="nav-link">
-                  <a class="nav-link" href="#">Információ</a>
-                </li>
-                <li class="nav-link">
-                  <a class="nav-link" href="#">Kapcsolat</a>
-                </li>
-                <li><button type="button" class="loginBtn btn-lg">BELÉPÉS</button></li>  
+<body style="background-image: url('hatter_malacka.png');">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="h2 font-weight-bold" style="font-family: Sniglet; color: pink !important;" href="index.html">MALACPERSELY</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Főoldal
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Információ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Kapcsolat</a>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn-outline-light btn-primary btn-lg  font-weight-bold offset-10" 
+            data-toggle="modal" data-target="#myModal">BELÉPÉS</button>
+          </li>
         </ul>
-      
-        <p>Szeretnéd egyszerűen kezelni a pénzügyeidet<br> egyéni, vagy akár családi szinten is?</p>
-        <p>Válaszd a Malacperselyt!</p>
-        <p>Egy ingyenes alkalmazás, amivel a bevételek,<br> kiadások, és az elérni kívánt pénzügyi célok<br> áttekintése gyerekjáték!</p>
-        <button type="button" class="registBtn btn-lg">REGISZTRÁCIÓ</button>
+      </div>
+    </div>
+  </nav>
 
-</body>
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 ">
+        <h2 class="mt-5 text-white">Szeretnéd egyszerűen kezelni a pénzügyeidet<br> egyéni, vagy akár családi szinten is?</h2>
+        <h2 class="mt-5 text-white">Válaszd a Malacperselyt!</h2>
+        <h2 class="mt-5 text-white">Egy ingyenes alkalmazás, amivel a bevételek,<br> kiadások, és az elérni kívánt pénzügyi célok<br> áttekintése gyerekjáték!</h2>
+        <button type="button" class="btn-outline-light btn-primary btn-lg mt-5 font-weight-bold offset-3"
+        data-toggle="modal" data-target="#myModal2">REGISZTRÁCIÓ</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="myModal">
+    <div class="row">
+      <div class="col-sm-7 col-md-5 col-lg-4 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h5 class="card-title text-center">Bejelentkezés</h5>
+            <form class="form-signin">
+              <div class="form-label-group">
+                <label for="inputEmail font-weight-bold">E-mail cím</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="E-mail cím" required autofocus>
+              </div>
+            </br>
+              <div class="form-label-group">
+                <label for="inputPassword font-weight-bold">Jelszó</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Jelszó" required>
+              </div>
+            </br>
+              <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Jelszó megjegyzése</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Bejelentkezés</button>
+              <hr class="my-4">
+              <button class="btn btn-lg btn-social btn-facebook btn-block" type="submit"><i class="fab fa-facebook-f mr-2" style="font-size:40px;color:blue"></i>Bejelentkezés Facebook fiókkal</button>
+              <button class="btn btn-lg btn-social btn-google btn-block" type="submit"><i class="fab fa-google mr-2" style="font-size:40px;color:rgb(226, 25, 25)"></i>Bejelentkezés Google fiókkal</button>
+              <div class="container modal-footer" style="background-color:#f1f1f1">
+                
+                <span class="psw btn-block offset-5"><a href="#">Elfelejtett jelszó?</a></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="myModal2">
+    <div class="row">
+      <div class="col-sm-7 col-md-5 col-lg-4 mx-auto">
+        <div class="card card-signin flex-row my-5">
+          <div class="card-img-left d-none d-md-flex">
+          </div>
+          <div class="card-body">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h5 class="card-title text-center">Regisztráció</h5>
+            <form class="form-signin">
+              <div class="form-label-group">
+                <label for="inputUserame">Felhasználónév</label>
+                <input type="text" id="inputUserName" class="form-control" placeholder="Felhasználónév" required autofocus>
+              </div>
+            </br>
+              <div class="form-label-group">
+                <label for="inputEmail">Email -cím</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email-cím" required>
+              </div>
+            </br>
+              <div class="form-label-group">
+                <label for="inputUserame">Teljes név</label>
+                <input type="text" id="inputName" class="form-control" placeholder="Teljes név" required autofocus>
+              </div>
+            </br>
+            <div class="form-label-group">
+              <label for="inputBirthDate">Születési dátum</label>
+              <input type="date" id="inputBirthDate" class="form-control" placeholder="Felhasználónév" required autofocus>
+            </div>
+          </br>
+              <hr>
+              <div class="form-label-group">
+                <label for="inputPassword">Jelszó</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Jelszó" required>
+              </div>
+            </br>
+              <div class="form-label-group">
+                <label for="inputConfirmPassword">Jelszó megerősítése</label>
+                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Jelszó megerősítése" required>
+              </div>
+            </br>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Regisztráció</button>
+              <a class="d-block text-center mt-2 small" href="#" data-dismiss="modal" data-toggle="modal" data-target="#myModal">Bejelentkezés</a>
+              <hr class="my-4">
+              <button class="btn btn-lg btn-social btn-facebook btn-block" type="submit"><i class="fab fa-facebook-f mr-2" style="font-size:40px;color:blue"></i>Regisztráció Facebook fiókkal</button>
+              <button class="btn btn-lg btn-social btn-google btn-block" type="submit"><i class="fab fa-google mr-2" style="font-size:40px;color:rgb(226, 25, 25)"></i>Regisztráció Google fiókkal</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.slim.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
+
+</body style="background-image: url('hatter_malacka.png');">
+
 </html>
-
