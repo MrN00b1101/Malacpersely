@@ -105,7 +105,7 @@ function insertCategory($data){
     $Name = $data['name'];
     $creaId = $data['creaId'];
     $global = $data['global'];
-    echo $query="INSERT INTO Categorys SET Id=4, Name='".$Name."', CreatorId=".$creaId.", Global=".$global;
+    echo $query="INSERT INTO Categorys SET Name ='".$Name."', CreatorId='".$creaId."', Global='".$global."'";
     //echo $query="INSERT INTO 'User' VALUES ('dd', 'ff', 'gg')";
     if(mysqli_query($connection, $query))   {
          $response=array(
