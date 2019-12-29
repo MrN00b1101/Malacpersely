@@ -18,12 +18,7 @@ $db = new dbObj(); $connection =  $db->getConnstring();
 $request_method=$_SERVER["REQUEST_METHOD"]; //melyik metódussal hívták az API-t?
 switch($request_method) {
   case 'GET':
-        $response=array(
-        'status' => 0,
-        'status_message' =>'User Addition Failed.'
-        );
-      header('Content-Type: application/json');
-      echo json_encode($response);
+      
    break;
  case 'POST':
     $data = json_decode(file_get_contents('php://input'), true);
@@ -150,6 +145,7 @@ function insertTransaction($data){
       echo json_encode($response);
 }
 
+/*
 function insertFamily($data){
     global $connection;
     $name = $data['name'];
@@ -173,7 +169,7 @@ function insertFamily($data){
       header('Content-Type: application/json');
       echo json_encode($response); 
 }
-
+*/
 function addFamMember($data)
 {
     global $connection;
