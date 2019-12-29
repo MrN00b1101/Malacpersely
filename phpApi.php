@@ -147,7 +147,7 @@ function insertTransaction($data){
       echo json_encode($response);
 }
 
-/*
+
 function insertFamily($data){
     global $connection;
     $name = $data['name'];
@@ -181,13 +181,13 @@ function addFamMember($data)
     if(mysqli_query($connection, $query))   {
         $response=array(
               'status' => 1,
-              'status_message' =>'Deleted Successfully.'
+              'status_message' =>'Family Member Addition Successfully.'
                );
      }
      else     {
         $response=array(
               'status' => 0,
-              'status_message' =>'Deleted Failed.'
+              'status_message' =>'Family Member Addition Failed.'
               );
      }   
      header('Content-Type: application/json');
