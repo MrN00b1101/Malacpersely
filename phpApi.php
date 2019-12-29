@@ -28,7 +28,7 @@ switch($request_method) {
  case 'POST':
     $data = json_decode(file_get_contents('php://input'), true);
     //echo file_get_contents('php://input');
-    /*
+    
     switch ($data['com']){
         case 'user':
             insertUser($data);
@@ -42,13 +42,8 @@ switch($request_method) {
         case 'family':
             insertFamily($data);
         break;
-    }*/
-    $response=array(
-        'status' => 1,
-        'status_message' =>'Transaction Added Successfully.'
-         );
-         header('Content-Type: application/json');
-      echo json_encode($response); 
+    }
+    
   break;
 case 'PUT':
     $data = json_decode(file_get_contents('php://input'), true);
