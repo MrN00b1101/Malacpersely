@@ -99,6 +99,7 @@ function insertUser($data){
       header('Content-Type: application/json');
       echo json_encode($response); 
 }
+/*
 function insertCategory($data){
     global $connection;
     $Name = $data['name'];
@@ -169,7 +170,7 @@ function insertFamily($data){
       header('Content-Type: application/json');
       echo json_encode($response); 
 }
-*/
+
 function addFamMember($data)
 {
     global $connection;
