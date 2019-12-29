@@ -99,7 +99,7 @@ function insertUser($data){
       header('Content-Type: application/json');
       echo json_encode($response); 
 }
-/*
+
 function insertCategory($data){
     global $connection;
     $Name = $data['name'];
