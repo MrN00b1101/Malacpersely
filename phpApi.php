@@ -47,6 +47,8 @@ switch($request_method) {
         'status' => 1,
         'status_message' =>'Transaction Added Successfully.'
          );
+         header('Content-Type: application/json');
+      echo json_encode($response); 
   break;
 case 'PUT':
     $data = json_decode(file_get_contents('php://input'), true);
