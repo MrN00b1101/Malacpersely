@@ -267,7 +267,7 @@ function updateUser($data){}
 function updateCategory($data){}
 function updateTransaction($data){}
 //alapértelmezetten fél évre tudják lekérni a felhasználók az adatokat, hogy a hálózati forgalom ne nőljön túl nagyra! 
-function getPersonTranList($data){
+/*function getPersonTranList($data){
 //userId (kötelező)
 //kategória (több is lehet)
 //value (intervallum)
@@ -291,7 +291,7 @@ if($personal == 0)
     SELECT * FROM Transactions WHERE"+
     "" 
 ";
-*/
-}
+
+}*/
 function getFamilyMemberList($data){}
 ?>
