@@ -146,7 +146,13 @@ function insertTransaction($data){
       header('Content-Type: application/json');
       echo json_encode($response);
 }
-
+function getFamilyId($fatherId){
+    global $connection;
+    $query ="SELECT Id FROM Family WHERE FatherId=".$fatherId." LIMIT 1";
+    $result = mysqli_query($connection, $query);
+    while($row = mysqli_fetch_array($result)){return $row[0];}
+    return null;
+}
 
 function insertFamily($data){
     global $connection;
@@ -156,6 +162,15 @@ function insertFamily($data){
     
     if(mysqli_query($connection, $query))   {    
     //    $queryFamId = "SELECT Id FROM Family WHERE FatherId=".$fId." LIMIT 1";
+        echo $query = "UPDATE User SET FamilyId=".getFamilyId($fId)." WHERE Id=".$fId;
+        if(mysqli_query($connection, $query))   {}
+        else     {
+            $response=array(
+                'status' => 0,
+                'status_message' =>'Family Addition Failed.'
+                );
+        }
+
         $response=array(
            'status' => 1,
            'status_message' =>'Family Added Successfully.'
