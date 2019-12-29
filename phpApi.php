@@ -148,32 +148,6 @@ function insertTransaction($data){
       header('Content-Type: application/json');
       echo json_encode($response);
 }
-function get_employeesid($id=0) {
-
-    global $connection;
-  
-    $query="SELECT * FROM employee";
-  
-    if($id != 0)   {
-  
-      $query.=" WHERE id=".$id." LIMIT 1"; //get employee with a given id
-  
-    }
-  
-    $response=array();
-  
-    $result=mysqli_query($connection, $query);
-  
-    while($row=mysqli_fetch_array($result))  {
-  
-      $response[]=$row;
-  
-    }
-  
-    header('Content-Type: application/json'); //header
-  
-    echo json_encode($response); //in JSON format }
-
 
 function insertFamily($data){
     global $connection;

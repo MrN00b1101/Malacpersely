@@ -5,7 +5,7 @@ include("connection.php");
 $db = new dbObj(); $connection =  $db->getConnstring();
 global $connection;
     
-    echo $query="SELECT * FROM User";
+    $query="SELECT * FROM User";
     //echo $query="INSERT INTO 'User' VALUES ('dd', 'ff', 'gg')";
     if(mysqli_query($connection, $query))   {
          $response=array(
