@@ -167,7 +167,7 @@ function insertFamily($data){
         else     {
             $response=array(
                 'status' => 0,
-                'status_message' =>'Family Addition Failed.'
+                'status_message' =>'Family (update-nál) Addition Failed.'
                 );
         }
 
