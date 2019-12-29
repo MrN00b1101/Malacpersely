@@ -27,7 +27,7 @@ switch($request_method) {
    break;
  case 'POST':
     $data = json_decode(file_get_contents('php://input'), true);
-    //echo file_get_contents('php://input');
+    echo file_get_contents('php://input');
     
     switch ($data['com']){
         case 'user':
