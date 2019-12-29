@@ -180,13 +180,15 @@ function insertFamily($data){
     $name = $data['name'];
     $fId = $data['fId'];
     $query="INSERT INTO Family SET   Name ='".$name."', FatherId=".$fId;
-    $queryFamId = "SELECT Id FROM Family WHERE FatherId=".$fId." LIMIT 1";
+    
     
     if(mysqli_query($connection, $query))   {
+        echo "Eddig eljut";
+        $queryFamId = "SELECT Id FROM Family WHERE FatherId=".$fId." LIMIT 1";
         $result=mysqli_query($connection, $queryFamId);
         while($row=mysqli_fetch_array($result))  {
   
-            $querySetFatFam = "UPDATE User set FamilyId = ".$row."WHERE Id=".$fId;
+          echo $querySetFatFam = "UPDATE User set FamilyId = ".$row."WHERE Id=".$fId;
         
           }
           if(mysqli_query($connection, $querySetFatFam))   {
