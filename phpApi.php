@@ -274,7 +274,7 @@ function getPersonTranList($data){
 //idő (intervallum)    
 //rendezés 
 global $connection;
-$personal = $data['personal']
+$personal = $data['personal'];
 $userId = $data['user'];
 $catId = $data['cat'];
 $maxVal = $data['maxVal'];
@@ -287,11 +287,11 @@ if($personal == 0)
 {
 
 }
-echo $query = "
+/*echo $query = "
     SELECT * FROM Transactions WHERE"+
     "" 
 ";
-
+*/
 }
 function getFamilyMemberList($data){}
 ?>
