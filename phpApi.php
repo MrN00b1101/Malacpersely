@@ -188,10 +188,10 @@ function insertFamily($data){
       echo json_encode($response); 
 }
 
-function addFamMember($data)
+function updateFamMember($data)
 {
     global $connection;
-    $uId = $data['uid'];
+    $uId = $data['uId'];
     $famId = $data['famId'];
     echo $query = "UPDATE User SET FamilyId=".$famId." WHERE Id=".$uId;
     if(mysqli_query($connection, $query))   {
