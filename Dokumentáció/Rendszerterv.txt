@@ -1,0 +1,136 @@
+RENDSZERTERV
+
+
+A projektet két nagyobb részre lehet elkülöníteni, amik az adatbázis és 
+az internetes alkalmazás. 
+
+ADATBÁZISTERV
+
+
+User:
+
+A felhasználók adatainak tárolására használjuk.
+
+	Mezõk:
+
+	Id - Number, Not Null, Elsõdleges Kulcs
+	A felhasználó egyedi azonosítója
+
+	Name - Varchar2(30), Not Null
+	A felhasználó neve
+
+	Mail - Varchar2(50), Not Null
+	A felhasználó e-mail címe
+
+	Password - Varchar2(32), Not Null
+	A felhasználó jelszavának a hash-e
+
+	FamilyId - Number, Not Null, Idegen kulcs (a Family tábla Id mezõjéhez kapcsolva)
+	A felhasználó családjának azonosítója
+
+
+Transactions:
+
+A pénzügyi tranzakciókat tároljuk ebben a táblában.
+
+	Mezõk:
+
+	UserId - Number, Not Null, Idegen kulcs (User tábla Id mezõjéhez kapcsolva)
+	A tranzakciót végrehajtó felhasználó azonosítója
+
+	TranCatId - Number, Not Null, Idegen kulcs(Categorys tábla Id mezõjéhez kapcsolva)
+	A tranzakció típusa
+
+	Value - Number, Not Null
+	A tranzakció összege, ha minusz, akkor kiadás, ha plusz, akkor bevétel
+
+	Personal - Bit, Not Null
+	Ha az értéke 1, akkor a kiadás személyes, ha 0, akkor a kiadás családi
+
+	Date - TimeStamp, Not Null
+	A tranzakció ideje
+
+Categorys:
+
+A tranzakciók kategóriáit tároljuk itt.
+
+	Mezõk:
+
+	Id - Number, Not Null, Elsõdleges kulcs
+	A kategória egyedi azonosítója
+	
+	Name - Varchar2(10), Not Null
+	A kategória megnevezése
+
+Family:
+
+A családokat tároljuk ebben a táblában.
+
+	Mezõk:
+
+	Id - Number, Not Null, ELsõdleges kulcs
+	A család egyedi azonosítója
+
+	Name - Varchar2(10), Not Null
+	A család megnevezése
+
+	FatherId - Id, Not Null, Idegen kulcs (a User tábla Id mezõjéhez kötve)
+	A családfõ azonosítója (õ hozza létre a családot, õ tud tagokat hozzá adni)
+
+
+
+
+
+
+API HASZNÁLAT TERVE
+
+Az api Json obijektumban várja az adatokat!
+
+
+MODULOK:
+
+Regisztráció: Post request 
+
+szükséges adatok: 
+{
+com:'user',
+name:'felhasználó neve',
+mail:'email cím',
+password:'jelszó hash'
+}
+
+
+Kategória felvitele: Post request, 
+
+szükséges adatok:    
+{    
+com:'cat',
+name:'kategória név',
+creaId:'létrehozó felhasználó azonosítója',  
+global:'láthatóság (0-global,1-personal,2-család)'   
+}
+
+
+Tranzakció felvitele: Post request, 
+
+szükséges adatok:    
+{    
+com:'tran',
+uId:'felhasználó azonosító',
+catId:'kategória azonosító',  
+value:'érték',
+persona: '0/1 személyes vagy családi'   
+}
+
+
+Család felvitele: Post request, 
+
+szükséges adatok:    
+{    
+com:'family',
+name:'család név',
+fId:'Családfõ azonosítója'   
+}
+
+
+
