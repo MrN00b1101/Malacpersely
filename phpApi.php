@@ -193,6 +193,7 @@ function updateFamMember($data)
     global $connection;
     $uId = $data['uId'];
     $famId = $data['famId'];
+    if($famId == 0){$famId = null;}
     echo $query = "UPDATE User SET FamilyId=".$famId." WHERE Id=".$uId;
     if(mysqli_query($connection, $query))   {
         $response=array(
