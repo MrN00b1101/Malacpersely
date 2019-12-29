@@ -184,12 +184,12 @@ function insertFamily($data){
     if(mysqli_query($connection, $query))   {
         
         $queryFamId = "SELECT Id FROM Family WHERE FatherId=".$fId." LIMIT 1";
-        $result=mysqli_query($connection, $queryFamId);
-        while($row=mysqli_fetch_array($result))  {
+        //$result=mysqli_query($connection, $queryFamId);
+        //while($row=mysqli_fetch_array($result))  {
   
          // echo $querySetFatFam = "UPDATE User set FamilyId = ".$row."WHERE Id=".$fId;
         
-          }
+          //}
          // if(mysqli_query($connection, $querySetFatFam))   {
                 $response=array(
                 'status' => 1,
