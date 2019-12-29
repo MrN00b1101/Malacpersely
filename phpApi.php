@@ -180,7 +180,6 @@ function insertFamily($data){
     $name = $data['name'];
     $fId = $data['fId'];
     $query="INSERT INTO Family SET   Name ='".$name."', FatherId=".$fId;
-    echo "Eddig eljut";
     
     if(mysqli_query($connection, $query))   {
         
@@ -188,20 +187,20 @@ function insertFamily($data){
         $result=mysqli_query($connection, $queryFamId);
         while($row=mysqli_fetch_array($result))  {
   
-          echo $querySetFatFam = "UPDATE User set FamilyId = ".$row."WHERE Id=".$fId;
+         // echo $querySetFatFam = "UPDATE User set FamilyId = ".$row."WHERE Id=".$fId;
         
           }
-          if(mysqli_query($connection, $querySetFatFam))   {
+         // if(mysqli_query($connection, $querySetFatFam))   {
                 $response=array(
                 'status' => 1,
                 'status_message' =>'Family Added Successfully.'
                 );
-            }else     {
-                $response=array(
-                      'status' => 0,
-                      'status_message' =>'Family Addition Failed.'
-                      );
-             }
+           // }else     {
+           //     $response=array(
+           //           'status' => 0,
+           //           'status_message' =>'Family Addition Failed.'
+           //           );
+           //  }
       }
       else     {
          $response=array(
