@@ -11,6 +11,7 @@
 -Grafikus megjelenítés (select)
 -Csoportos megjelenítés (select)
 -Megtakarítási célok kezelése (select. insert)
+-tranzakció törlése (delete, userId, TimeStamp)
 */
 include("connection.php");
 $db = new dbObj(); $connection =  $db->getConnstring();
@@ -64,7 +65,16 @@ case 'PUT':
 
  case 'DELETE':
     $data = json_decode(file_get_contents('php://input'), true);
-    delete($data);
+    switch($data['com']){
+        case 'tran':
+            delTransaction($data);
+        break;
+        default:
+            delete($data);
+        break;
+    }
+    
+
     break;
 
 default:
@@ -161,11 +171,27 @@ function insertFamily($data){
       echo json_encode($response); 
 }
 
-
-function updateUser($data){}
-function updateCategory($data){}
-function updateTransaction($data){}
-function updateFamMember($data){}
+function addFamMember($data)
+{
+    global $connection;
+    $uId = $data['uid'];
+    $famId = $data['famId'];
+    echo $query = "UPDATE User SET FamilyId=".$famId." WHERE Id=".$uId;
+    if(mysqli_query($connection, $query))   {
+        $response=array(
+              'status' => 1,
+              'status_message' =>'Deleted Successfully.'
+               );
+     }
+     else     {
+        $response=array(
+              'status' => 0,
+              'status_message' =>'Deleted Failed.'
+              );
+     }   
+     header('Content-Type: application/json');
+     echo json_encode($response);
+}
 
 function delete($data)
 {
@@ -189,8 +215,56 @@ function delete($data)
      echo json_encode($response);
 
 }
-function delCategory($data){}
-function delTransaction($data){}
-function delFamMember($data){}
-
+function delTransaction($data){
+    global $connection;
+    $uid = $data['uId'];
+    $time = $data['time'];
+    echo $query="DELETE FROM Transactions WHERE UserId=".$uid." AND TranDate=".$time;
+    if(mysqli_query($connection, $query))   {
+        $response=array(
+              'status' => 1,
+              'status_message' =>'Deleted Successfully.'
+               );
+     }
+     else     {
+        $response=array(
+              'status' => 0,
+              'status_message' =>'Deleted Failed.'
+              );
+     }   
+     header('Content-Type: application/json');
+     echo json_encode($response);
+}
+function delFamMember($data){
+    global $connection;
+    $uId = $data['uid'];
+    
+    echo $query = "UPDATE User SET FamilyId=NULL WHERE Id=".$uId;
+    if(mysqli_query($connection, $query))   {
+        $response=array(
+              'status' => 1,
+              'status_message' =>'Deleted Successfully.'
+               );
+     }
+     else     {
+        $response=array(
+              'status' => 0,
+              'status_message' =>'Deleted Failed.'
+              );
+     }   
+     header('Content-Type: application/json');
+     echo json_encode($response);
+}
+function updateUser($data){}
+function updateCategory($data){}
+function updateTransaction($data){}
+//alapértelmezetten fél évre tudják lekérni a felhasználók az adatokat, hogy a hálózati forgalom ne nőljön túl nagyra! 
+function getPersonTranList($data){
+//userId (kötelező)
+//kategória (több is lehet)
+//value (intervallum)
+//idő (intervallum)    
+//rendezés 
+}
+function getFamilyMemberList($data){}
 ?>
