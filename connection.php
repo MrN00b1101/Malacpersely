@@ -1,6 +1,7 @@
 <?php
 Class dbObj{
-var $servername = "localhost"; 
+//var $servername = "mrnoobrft.ddns.net"; 
+var $servername = "localhosst";
 var $username = "neuman";
 var $password = "qwertz"; 
 var $dbname = "malacpersely"; 

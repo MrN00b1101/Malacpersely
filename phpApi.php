@@ -148,18 +148,58 @@ function insertTransaction($data){
       header('Content-Type: application/json');
       echo json_encode($response);
 }
+function get_employeesid($id=0) {
+
+    global $connection;
+  
+    $query="SELECT * FROM employee";
+  
+    if($id != 0)   {
+  
+      $query.=" WHERE id=".$id." LIMIT 1"; //get employee with a given id
+  
+    }
+  
+    $response=array();
+  
+    $result=mysqli_query($connection, $query);
+  
+    while($row=mysqli_fetch_array($result))  {
+  
+      $response[]=$row;
+  
+    }
+  
+    header('Content-Type: application/json'); //header
+  
+    echo json_encode($response); //in JSON format }
+
 
 function insertFamily($data){
     global $connection;
     $name = $data['name'];
     $fId = $data['fId'];
-    echo $query="INSERT INTO Family SET   Name ='".$name."', FatherId=".$fId;
+    $query="INSERT INTO Family SET   Name ='".$name."', FatherId=".$fId;
+    $queryFamId = "SELECT Id FROM Family WHERE FatherId=".$fId." LIMIT 1";
     
     if(mysqli_query($connection, $query))   {
-         $response=array(
-               'status' => 1,
-               'status_message' =>'Family Added Successfully.'
+        $result=mysqli_query($connection, $queryFamId);
+        while($row=mysqli_fetch_array($result))  {
+  
+            $querySetFatFam = "UPDATE User set FamilyId = ".$row."WHERE Id=".$fId;
+        
+          }
+          if(mysqli_query($connection, $querySetFatFam))   {
+                $response=array(
+                'status' => 1,
+                'status_message' =>'Family Added Successfully.'
                 );
+            }else     {
+                $response=array(
+                      'status' => 0,
+                      'status_message' =>'Family Addition Failed.'
+                      );
+             }
       }
       else     {
          $response=array(
@@ -265,6 +305,25 @@ function getPersonTranList($data){
 //value (intervallum)
 //idő (intervallum)    
 //rendezés 
+global $connection;
+$personal = $data['personal']
+$userId = $data['user'];
+$catId = $data['cat'];
+$maxVal = $data['maxVal'];
+$minVal = $data['minVal'];
+$minDat = $data['minDat'];
+$maxDat = $data['maxDat'];
+$rendezIrany = $data['ir'];
+$rendezSzemp = $data['szemp'];
+if($personal == 0)
+{
+
+}
+echo $query = "
+    SELECT * FROM Transactions WHERE"+
+    "" 
+";
+
 }
 function getFamilyMemberList($data){}
 ?>
