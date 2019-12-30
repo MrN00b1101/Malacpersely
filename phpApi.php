@@ -344,7 +344,7 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
 }
 function getFamilyMemberList($famId, $http)
 {
-    $query ="SELECT Id, Name FROM User WHERE FamilyId=".$famId;
+    $query ="SELECT * FROM User WHERE FamilyId=".$famId;
     $response=array();
     $result=mysqli_query($connection, $query);
     //$result=mysqli_query($connection, $query);
