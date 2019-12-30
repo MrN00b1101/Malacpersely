@@ -292,7 +292,29 @@ function delFamMember($data){
      header('Content-Type: application/json');
      echo json_encode($response);
 }
-function updateUser($data){}
+function updateUser($data){
+    global $connection;
+    $set = "SET";
+    if($data['Name'] != "null"){$set = $set." Name=".$data[Name]; }
+    if($data['Mail'] != "null"){$set = $set." Mail=".$data[Mail]; }
+    if($data['Pass'] != "null"){$set = $set." Password=".$data[Pass]; }
+    $query = "UPDATE User ".$set." WHERE Id=".$data['userId'];
+    
+    if(mysqli_query($connection, $query))   {
+        $response=array(
+              'status' => 1,
+              'status_message' =>'Family Member Addition Successfully.'
+               );
+     }
+     else     {
+        $response=array(
+              'status' => 0,
+              'status_message' =>'Family Member Addition Failed.'
+              );
+     }   
+     header('Content-Type: application/json');
+     echo json_encode($query);
+}
 function updateCategory($data){}
 function updateTransaction($data){}
 
