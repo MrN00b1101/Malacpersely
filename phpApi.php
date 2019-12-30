@@ -95,8 +95,8 @@ function insertUser($data){
     $Name = $data['name'];
     $Mail = $data['mail'];
     $Pass = $data['password'];
-    echo $query="INSERT INTO User SET Name ='".$Name."', Mail='".$Mail."', Password='".$Pass."'";
-    //echo $query="INSERT INTO 'User' VALUES ('dd', 'ff', 'gg')";
+    $query="INSERT INTO User SET Name ='".$Name."', Mail='".$Mail."', Password='".$Pass."'";
+    //$query="INSERT INTO 'User' VALUES ('dd', 'ff', 'gg')";
     if(mysqli_query($connection, $query))   {
          $response=array(
                'status' => 1,
@@ -118,8 +118,8 @@ function insertCategory($data){
     $Name = $data['name'];
     $creaId = $data['creaId'];
     $global = $data['global'];
-    echo $query="INSERT INTO Categorys SET Name ='".$Name."', CreatorId=".$creaId.", Global=".$global;
-    //echo $query="INSERT INTO Categorys SET Name ='".$Name."', CreatorId=".$creaId.",Global=".$global;
+    $query="INSERT INTO Categorys SET Name ='".$Name."', CreatorId=".$creaId.", Global=".$global;
+    //$query="INSERT INTO Categorys SET Name ='".$Name."', CreatorId=".$creaId.",Global=".$global;
     
     if(mysqli_query($connection, $query))   {
          $response=array(
@@ -142,7 +142,7 @@ function insertTransaction($data){
     $catId = $data['catId'];
     $value = $data['value'];
     $personal = $data['personal'];
-    echo $query="INSERT INTO Transactions SET   UserId =".$userId.", TranCatId=".$catId.", Value=".$value.", Personal=".$personal;
+    $query="INSERT INTO Transactions SET   UserId =".$userId.", TranCatId=".$catId.", Value=".$value.", Personal=".$personal;
     
     if(mysqli_query($connection, $query))   {
          $response=array(
@@ -171,12 +171,12 @@ function insertFamily($data){
     global $connection;
     $name = $data['name'];
     $fId = $data['fId'];
-    //echo $query="INSERT INTO Categorys SET Name ='".$Name."', CreatorId=".$creaId.", Global=".$global;
-    echo $query="INSERT INTO Family SET Name ='".$name."', FatherId=".$fId;
+    //$query="INSERT INTO Categorys SET Name ='".$Name."', CreatorId=".$creaId.", Global=".$global;
+    $query="INSERT INTO Family SET Name ='".$name."', FatherId=".$fId;
     
     if(mysqli_query($connection, $query))   {    
     //    $queryFamId = "SELECT Id FROM Family WHERE FatherId=".$fId." LIMIT 1";
-        echo $query = "UPDATE User SET FamilyId=".getFamilyId($fId)." WHERE Id=".$fId;
+        $query = "UPDATE User SET FamilyId=".getFamilyId($fId)." WHERE Id=".$fId;
         if(mysqli_query($connection, $query))   {}
         else     {
             $response=array(
@@ -208,9 +208,9 @@ function updateFamMember($data)
     $famId = $data['famId'];
     if($famId == 0)
     {
-        echo $query = "UPDATE User SET FamilyId=NULL WHERE Id=".$uId;
+        $query = "UPDATE User SET FamilyId=NULL WHERE Id=".$uId;
     }else{
-        echo $query = "UPDATE User SET FamilyId=".$famId." WHERE Id=".$uId;
+        $query = "UPDATE User SET FamilyId=".$famId." WHERE Id=".$uId;
     }
     if(mysqli_query($connection, $query))   {
         $response=array(
@@ -233,7 +233,7 @@ function delete($data)
     global $connection;
     $table = $data['table'];
     $id = $data['Id'];
-    echo $query="DELETE FROM ".$table." WHERE Id=".$id;
+    $query="DELETE FROM ".$table." WHERE Id=".$id;
     if(mysqli_query($connection, $query))   {
         $response=array(
               'status' => 1,
@@ -254,7 +254,7 @@ function delTransaction($data){
     global $connection;
     $uid = $data['uId'];
     $time = $data['time'];
-    echo $query="DELETE FROM Transactions WHERE UserId=".$uid." AND TranDate=".$time;
+    $query="DELETE FROM Transactions WHERE UserId=".$uid." AND TranDate=".$time;
     if(mysqli_query($connection, $query))   {
         $response=array(
               'status' => 1,
@@ -274,7 +274,7 @@ function delFamMember($data){
     global $connection;
     $uId = $data['uid'];
     
-    echo $query = "UPDATE User SET FamilyId=NULL WHERE Id=".$uId;
+    $query = "UPDATE User SET FamilyId=NULL WHERE Id=".$uId;
     if(mysqli_query($connection, $query))   {
         $response=array(
               'status' => 1,
