@@ -296,14 +296,14 @@ function updateUser($data){
     global $connection;
     $set = "SET";
     if($data['Name'] != "null"){
-        $set = $set." Name=".$data[Name]; 
+        $set = $set." Name=".$data['Name']; 
         if(( $data['Mail'] != "null") || ($data['Pass'] != "null")){$set = $set.",";}
     }
     if($data['Mail'] != "null"){
-        $set = $set." Mail=".$data[Mail];
+        $set = $set." Mail=".$data['Mail'];
         if($data['Pass'] != "null"){$set = $set.",";}
     }
-    if($data['Pass'] != "null"){$set = $set." Password=".$data[Pass]; }
+    if($data['Pass'] != "null"){$set = $set." Password=".$data['Pass']; }
     $query = "UPDATE User ".$set." WHERE Id=".$data['userId'];
     
     if(mysqli_query($connection, $query))   {
@@ -319,10 +319,35 @@ function updateUser($data){
               );
      }   
      header('Content-Type: application/json');
-     //echo json_encode($response);
-     echo json_encode($query);
+     echo json_encode($response);
 }
-function updateCategory($data){}
+function updateCategory($data){
+    global $connection;
+    $set = "SET";
+    if($data['Name'] != "null"){
+        $set = $set." Name=".$data['Name']; 
+        if($data['global'] != "null"){$set = $set.",";}
+    }
+    if($data['global'] != "null"){
+        $set = $set." Global=".$data['global'];
+    }
+    $query = "UPDATE Categorys ".$set." WHERE Id=".$data['catId'];
+    
+    if(mysqli_query($connection, $query))   {
+        $response=array(
+              'status' => 1,
+              'status_message' =>'Category Modification Successfully.'
+               );
+     }
+     else     {
+        $response=array(
+              'status' => 0,
+              'status_message' =>'Category Modification Failed.'
+              );
+     }   
+     header('Content-Type: application/json');
+     echo json_encode($response);
+}
 function updateTransaction($data){}
 
 function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, $personal){
