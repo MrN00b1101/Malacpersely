@@ -281,31 +281,42 @@ function updateUser($data){}
 function updateCategory($data){}
 function updateTransaction($data){}
 //alapértelmezetten fél évre tudják lekérni a felhasználók az adatokat, hogy a hálózati forgalom ne nőljön túl nagyra! 
-/*function getPersonTranList($data){
+function getPersonTranList($data){
 //userId (kötelező)
 //kategória (több is lehet)
 //value (intervallum)
 //idő (intervallum)    
 //rendezés 
-global $connection;
-$personal = $data['personal'];
-$userId = $data['user'];
-$catId = $data['cat'];
-$maxVal = $data['maxVal'];
-$minVal = $data['minVal'];
-$minDat = $data['minDat'];
-$maxDat = $data['maxDat'];
-$rendezIrany = $data['ir'];
-$rendezSzemp = $data['szemp'];
-if($personal == 0)
-{
+    global $connection;
+    //$personal = $data['personal'];
+    $userId = $data['user'];
+    $catId = $data['cat'];
+    $maxVal = $data['maxVal'];
+    $minVal = $data['minVal'];
+    $minDat = $data['minDat'];
+    $maxDat = $data['maxDat'];
+    $rendezIrany = $data['ir'];
+    $rendezSzemp = $data['szemp'];
+    //UserId,TranCatId,Value,Personal,TranDate
+    $query = "SELECT * FROM Transactions WHERE UserId=".$userId;
+    $cat = array();
+    $cat = $catId.explode(";",$catId);
+    if(count($cat)>0){$szuro = "AND";}
+    for($i = 0; $i <= count($cat)-1; $i++){
+        if($i!=count($cat)-2){$szuro = $szuro." TranCatId=".$categ." OR ";}else{$szuro = $szuro." TranCatId=".$categ;}
+    }
+    if($minVal != "null"){$szuro = $szuro." AND Value >".$minVal;}
+    if($maxVal != "null"){$szuro = $szuro." AND Value <".$maxVal;}
+    
+    $response=array();
+    $result=mysqli_query($connection, $query.$szuro);
+    while($row=mysqli_fetch_array($result))  {
+        $response[]=$row;
+    }
+    header('Content-Type: application/json'); //header
+    echo json_encode($response); //in JSON format }
+    
 
 }
-/*echo $query = "
-    SELECT * FROM Transactions WHERE"+
-    "" 
-";
-
-}*/
 function getFamilyMemberList($data){}
 ?>
