@@ -315,7 +315,8 @@ header('Content-Type: application/json'); //header
     if($maxVal != "null"){$szuro = $szuro." AND Value <".$maxVal;}
     
     $response=array();
-    $result=mysqli_query($connection, $query.$szuro);
+    //$result=mysqli_query($connection, $query.$szuro);
+    $result=mysqli_query($connection, $query);
     while($row=mysqli_fetch_array($result))  {
         $response[]=$row;
     }
