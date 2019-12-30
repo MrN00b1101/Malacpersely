@@ -22,6 +22,7 @@ switch($request_method) {
             getPersonTranList($_GET['user'],$_GET['cat'],$_GET['minVal'],$_GET['maxVal'],$_GET['minDat'],$_GET['maxDat'],$_GET['personal']);
         break;
         case 'cat':
+            getCategoryList($_GET['user'],$_GET['fam']);
         break;
         case 'user':
         break;
@@ -363,7 +364,7 @@ function getCategoryList($uid, $fam){
     //kellenek a globalok és vagy a personalok, vagy a családiak!
     global $connection;
     
-    if($fam){
+    if($fam == '0'){
         $familyMembers = getFamilyMemberList(getFamilyId($userId),false);
         $uId = array_column($familyMembers,'Id');
         $query = "SELECT * FROM Categorys WHERE Global=0 OR (Global = 2  AND CreatorId=".uId[0];
