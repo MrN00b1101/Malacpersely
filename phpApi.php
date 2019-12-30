@@ -312,7 +312,7 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
         for($i = 0; $i <= count($uId)-1; $i++){
             if($i<count($uId)-1){$szuro = $szuro." UserId=".$uId[$i]." OR ";}else{$szuro = $szuro." UserId=".$uId[$i].")";}
         }
-        if($cat != "null"){
+        if($catId != "null"){
             $cat = explode('|',$catId);
             if(count($cat)>0){$szuro = $szuro." AND (";}
             for($i = 0; $i <= count($cat)-1; $i++){
