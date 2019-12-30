@@ -304,7 +304,7 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
     //UserId,TranCatId,Value,Personal,TranDate
     
     if($personal == "1"){
-        $query = "SELECT * FROM Transactions WHERE UserId=".$userId." AND personal = true";
+        $query = "SELECT * FROM Transactions WHERE UserId=".$userId." AND personal = 1";
         $cat = explode('|',$catId);
         if(count($cat)>1){$szuro = " AND (";}
         for($i = 0; $i <= count($cat)-1; $i++){
@@ -337,9 +337,9 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
     }
     
     header('Content-Type: application/json'); //header
-    //echo json_encode($response); //in JSON format }
+    echo json_encode($response); //in JSON format }
     //echo json_encode($cat);
-    echo json_encode($query); //in JSON format }
+   // echo json_encode($query); //in JSON format }
     
 }
 function getFamilyMemberList($famId, $http)
