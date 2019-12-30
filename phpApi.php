@@ -306,15 +306,17 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat){
     $query = "SELECT * FROM Transactions WHERE UserId=".$userId;
     
     $cat = explode('|',$catId);
-    if(count($cat)>1){$szuro = " AND";}
+    if(count($cat)>1){$szuro = " AND (";}
     for($i = 0; $i <= count($cat)-1; $i++){
-        if($i<count($cat)-1){$szuro = $szuro." TranCatId=".$cat[$i]." OR ";}else{$szuro = $szuro." TranCatId=".$cat[$i];}
+        if($i<count($cat)-1){$szuro = $szuro." TranCatId=".$cat[$i]." OR ";}else{$szuro = $szuro." TranCatId=".$cat[$i].")";}
     }
-    if($minVal != "null"){$szuro = $szuro." AND Value >".$minVal;}
-    if($maxVal != "null"){$szuro = $szuro." AND Value <".$maxVal;}
+    $szuro = $szuro." AND (";
+    if($minVal != "null"){$szuro = $szuro."Value >".$minVal;}
+    if($maxVal != "null"){$szuro = $szuro." AND Value <".$maxVal." AND";}
+    $szuro = $szuro." ) AND";
     
-    if($minDat != "null"){$szuro = $szuro." AND TranDate >".$minDat;}
-    if($maxDat != "null"){$szuro = $szuro." AND TranDate <".$maxDat;}
+    if($minDat != "null"){$szuro = $szuro." TranDate >".$minDat." AND";}
+    if($maxDat != "null"){$szuro = $szuro."AND TranDate <".$maxDat;}
     
     $response=array();
     $query = $query.$szuro;
