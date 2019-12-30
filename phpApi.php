@@ -300,7 +300,7 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
     global $connection;
     //UserId,TranCatId,Value,Personal,TranDate
     
-    if($personal == '1'){
+    if($personal == "1"){
         $query = "SELECT * FROM Transactions WHERE UserId=".$userId;
         $cat = explode('|',$catId);
         if(count($cat)>1){$szuro = " AND (";}
