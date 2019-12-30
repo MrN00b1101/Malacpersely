@@ -306,7 +306,7 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
     $query = "SELECT * FROM Transactions WHERE UserId=".$userId;
     $cat = array();
     $cat = $catId.explode(";",$catId);
-    if(count($cat)>0){$szuro = "AND";}
+    //if(count($cat)>0){$szuro = "AND";}
     for($i = 0; $i <= count($cat)-1; $i++){
     //    if($i!=count($cat)-2){$szuro = $szuro." TranCatId=".$categ." OR ";}else{$szuro = $szuro." TranCatId=".$categ;}
     }
