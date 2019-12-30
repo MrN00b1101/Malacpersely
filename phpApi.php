@@ -369,7 +369,7 @@ function getCategoryList($userid, $fam){
         $uId = array_column($familyMembers,'Id');
         $query = "SELECT * FROM Categorys WHERE Global=0 OR (Global = 2  AND CreatorId=".$uId[0];
 
-        for ($i=1; $i<=count($query)-1; $i++){
+        for ($i=1; $i<=count($query); $i++){
             $query = $query." OR CreatorId=".$uId[$i];
         }
         $query =  $query.")";
