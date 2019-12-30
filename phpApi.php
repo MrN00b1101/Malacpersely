@@ -326,10 +326,10 @@ function updateCategory($data){
     $set = "SET";
     if($data['Name'] != "null"){
         $set = $set." Name=".$data['Name']; 
-        if($data['global'] != "null"){$set = $set.",";}
+        if($data['Global'] != "null"){$set = $set.",";}
     }
     if($data['global'] != "null"){
-        $set = $set." Global=".$data['global'];
+        $set = $set." Global=".$data['Global'];
     }
     $query = "UPDATE Categorys ".$set." WHERE Id=".$data['catId'];
     
