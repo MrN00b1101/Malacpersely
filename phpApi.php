@@ -295,8 +295,14 @@ function delFamMember($data){
 function updateUser($data){
     global $connection;
     $set = "SET";
-    if($data['Name'] != "null"){$set = $set." Name=".$data[Name]; }
-    if($data['Mail'] != "null"){$set = $set." Mail=".$data[Mail]; }
+    if($data['Name'] != "null"){
+        $set = $set." Name=".$data[Name]; 
+        if(( $data['Mail'] != "null") || ($data['Pass'] != "null")){$set = $set.",";}
+    }
+    if($data['Mail'] != "null"){
+        $set = $set." Mail=".$data[Mail];
+        if($data['Pass'] != "null"){$set = $set.",";}
+    }
     if($data['Pass'] != "null"){$set = $set." Password=".$data[Pass]; }
     $query = "UPDATE User ".$set." WHERE Id=".$data['userId'];
     
