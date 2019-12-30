@@ -360,7 +360,7 @@ function getFamilyMemberList($famId, $http)
         //echo json_encode($query); //in JSON format }
     } 
 }
-function getCategoryList($uid, $fam){
+function getCategoryList($userid, $fam){
     //kellenek a globalok és vagy a personalok, vagy a családiak!
     global $connection;
     
