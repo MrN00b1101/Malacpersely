@@ -304,7 +304,7 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
     //UserId,TranCatId,Value,Personal,TranDate
     
     if($personal == "1"){
-        $query = "SELECT * FROM Transactions WHERE UserId=".$userId;
+        $query = "SELECT * FROM Transactions WHERE UserId=".$userId." AND personal = true";
         $cat = explode('|',$catId);
         if(count($cat)>1){$szuro = " AND (";}
         for($i = 0; $i <= count($cat)-1; $i++){
@@ -325,7 +325,7 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
         }
     }else{
         //A uId alapján le kell kérdezni a család ID-t ami alapján le lehet kérdezni a család tagjait!
-
+        //$familyId = getFamilyId($userId);
     }
     
     $response=array();
@@ -345,18 +345,17 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
 function getFamilyMemberList($famId, $http)
 {
     global $connection;
-    $query ="SELECT * FROM User WHERE FamilyId=".$famId;
+    $query ="SELECT Id, Name FROM User WHERE FamilyId=".$famId;
     $response=array();
     $result=mysqli_query($connection, $query);
     //$result=mysqli_query($connection, $query);
     while($row=mysqli_fetch_array($result))  {
         $response[]=$row;
     }
-    //if(!$http){return $response;}else{
+    if(!$http){return $response;}else{
         header('Content-Type: application/json'); //header
         echo json_encode($response); //in JSON format }
         //echo json_encode($query); //in JSON format }
-
-    // } 
+    } 
 }
 ?>
