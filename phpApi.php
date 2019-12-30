@@ -299,8 +299,9 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
 //idő (intervallum)    
     global $connection;
     //UserId,TranCatId,Value,Personal,TranDate
-    $query = "SELECT * FROM Transactions WHERE UserId=".$userId;
+    
     if($personal == 0){
+        $query = "SELECT * FROM Transactions WHERE UserId=".$userId;
         $cat = explode('|',$catId);
         if(count($cat)>1){$szuro = " AND (";}
         for($i = 0; $i <= count($cat)-1; $i++){
