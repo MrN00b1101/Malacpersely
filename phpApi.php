@@ -296,10 +296,7 @@ function updateCategory($data){}
 function updateTransaction($data){}
 //alapértelmezetten fél évre tudják lekérni a felhasználók az adatokat, hogy a hálózati forgalom ne nőljön túl nagyra! 
 function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, $personal){
-//userId (kötelező)
-//kategória (több is lehet)
-//value (intervallum)
-//idő (intervallum)    
+   
     global $connection;
     //UserId,TranCatId,Value,Personal,TranDate
     if($personal == "1"){
@@ -342,8 +339,8 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
         }
     
     header('Content-Type: application/json'); //header
-   // echo json_encode($query); //in JSON format }
-    echo json_encode($response); //in JSON format }
+    echo json_encode($query); //in JSON format }
+    //echo json_encode($response); //in JSON format }
     
 }
 function getFamilyMemberList($famId, $http)
