@@ -333,11 +333,8 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
     }else{
         //A uId alapján le kell kérdezni a család ID-t ami alapján le lehet kérdezni a család tagjait!
         $familyMembers = getFamilyMemberList(getFamilyId($userId),false);
-        $response = $familyMembers;
+        $response = $familyMembers['Name'];
     }
-    
-    
-    
     header('Content-Type: application/json'); //header
    // echo json_encode($query); //in JSON format }
     echo json_encode($response); //in JSON format }
