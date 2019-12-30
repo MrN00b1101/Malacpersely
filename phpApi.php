@@ -376,5 +376,14 @@ function getCategoryList($uid, $fam){
     }else{
         $query = "SELECT * FROM Categorys WHERE Global=0 OR CreatorId=".$uid;
     }
+    $response=array();
+    $result=mysqli_query($connection, $query);
+    //$result=mysqli_query($connection, $query);
+    while($row=mysqli_fetch_array($result))  {
+        $response[]=$row;
+    }
+    header('Content-Type: application/json'); //header
+        //echo json_encode($response); //in JSON format }
+        echo json_encode($query); //in JSON format }
 }
 ?>
