@@ -310,7 +310,7 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat){
     for($i = 0; $i <= count($cat)-1; $i++){
         if($i<count($cat)-1){$szuro = $szuro." TranCatId=".$cat[$i]." OR ";}else{$szuro = $szuro." TranCatId=".$cat[$i].")";}
     }
-    if($minVal != "null" && $maxVal != "null"){
+    if($minVal != "null" || $maxVal != "null"){
         $szuro = $szuro." AND (";
         if($minVal != "null"){$szuro = $szuro."Value >".$minVal;}
         if($maxVal != "null"){$szuro = $szuro." AND Value <".$maxVal;}
