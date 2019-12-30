@@ -25,8 +25,10 @@ switch($request_method) {
             getCategoryList($_GET['user'],$_GET['fam']);
         break;
         case 'user':
+            getUserList();
         break;
         case 'family':
+            getFamilyList();
         break;
         case 'famMem':
             getFamilyMemberList($_GET['famId'],true);
@@ -293,7 +295,7 @@ function delFamMember($data){
 function updateUser($data){}
 function updateCategory($data){}
 function updateTransaction($data){}
-//alapértelmezetten fél évre tudják lekérni a felhasználók az adatokat, hogy a hálózati forgalom ne nőljön túl nagyra! 
+
 function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, $personal){
    
     global $connection;
@@ -385,5 +387,31 @@ function getCategoryList($userid, $fam){
     header('Content-Type: application/json'); //header
         echo json_encode($response); //in JSON format }
         //echo json_encode($query); //in JSON format }
+}
+function getUserList(){
+    global $connection;
+    $query = "SELECT Id, Name, Mail, FamilyId FROM User";
+    $response=array();
+    $result=mysqli_query($connection, $query);
+    //$result=mysqli_query($connection, $query);
+    while($row=mysqli_fetch_array($result))  {
+        $response[]=$row;
+    }
+    header('Content-Type: application/json'); //header
+    echo json_encode($response); //in JSON format }
+        //echo json_encode($query); //in JSON format }
+}
+function getFamilyList(){
+    global $connection;
+    $query = "SELECT * FROM Family";
+    $response=array();
+    $result=mysqli_query($connection, $query);
+    //$result=mysqli_query($connection, $query);
+    while($row=mysqli_fetch_array($result))  {
+        $response[]=$row;
+    }
+    header('Content-Type: application/json'); //header
+    echo json_encode($response); //in JSON format }
+        //echo json_encode($query); //in 
 }
 ?>
