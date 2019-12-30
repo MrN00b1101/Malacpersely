@@ -7,11 +7,9 @@
 -Kategória felvitele (insert) kész
 -Család menedzselése (select, insert) 
 -Állandó tranzakciók beállítása (??)
--Költségvetés tételes megjelenítése (select)
--Grafikus megjelenítés (select)
--Csoportos megjelenítés (select)
+-Költségvetés tételes megjelenítése (select) kész
 -Megtakarítási célok kezelése (select. insert)
--tranzakció törlése (delete, userId, TimeStamp)
+-tranzakció törlése (delete, userId, TimeStamp)kész
 */
 include("connection.php");
 $db = new dbObj(); $connection =  $db->getConnstring();
@@ -360,5 +358,22 @@ function getFamilyMemberList($famId, $http)
         echo json_encode($response); //in JSON format }
         //echo json_encode($query); //in JSON format }
     } 
+}
+function getCategoryList($uid, $fam){
+    //kellenek a globalok és vagy a personalok, vagy a családiak!
+    global $connection;
+    
+    if($fam){
+        $familyMembers = getFamilyMemberList(getFamilyId($userId),false);
+        $uId = array_column($familyMembers,'Id');
+        $query = "SELECT * FROM Categorys WHERE Global=0 OR (Global = 2  AND CreatorId=".uId[0];
+
+        for ($i=1; $i>=count($query)-1; $i++){
+            $query = $query." OR CreatorId=".$uId[$i];
+        }
+        $query =  $query.")";
+    }else{
+        $query = "SELECT * FROM Categorys WHERE Global=0 OR CreatorId=".$uid;
+    }
 }
 ?>
