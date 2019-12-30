@@ -353,7 +353,9 @@ function getFamilyMemberList($famId, $http)
     }
     //if(!$http){return $response;}else{
         header('Content-Type: application/json'); //header
-        echo json_encode($response); //in JSON format }
-   // } 
+//        echo json_encode($response); //in JSON format }
+        echo json_encode($query); //in JSON format }
+
+    // } 
 }
 ?>
