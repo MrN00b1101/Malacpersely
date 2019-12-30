@@ -302,11 +302,21 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
 //idő (intervallum)    
     global $connection;
     //UserId,TranCatId,Value,Personal,TranDate
-    
     if($personal == "1"){
-        $query = "SELECT * FROM Transactions WHERE UserId=".$userId." AND personal = 1";
+        $uId[0] = $userId;
+        $per = 1;
+    }else{
+        $familyMembers = getFamilyMemberList(getFamilyId($userId),false);
+        $uId = array_column($familyMembers,'Id');
+        $per = 0;
+    }
+        if(count($uId)>0){$szuro = " AND (";}
+        for($i = 0; $i <= count($uId)-1; $i++){
+            if($i<count($uId)-1){$szuro = $szuro." UserId=".$uId[$i]." OR ";}else{$szuro = $szuro." TranCatId=".$uId[$i].")";}
+        }
+          $query = "SELECT * FROM Transactions WHERE personal = ".$per;
         $cat = explode('|',$catId);
-        if(count($cat)>1){$szuro = " AND (";}
+        if(count($cat)>0){$szuro = $szuro." AND (";}
         for($i = 0; $i <= count($cat)-1; $i++){
             if($i<count($cat)-1){$szuro = $szuro." TranCatId=".$cat[$i]." OR ";}else{$szuro = $szuro." TranCatId=".$cat[$i].")";}
         }
@@ -330,11 +340,7 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
         while($row=mysqli_fetch_array($result))  {
             $response[]=$row;
         }
-    }else{
-        //A uId alapján le kell kérdezni a család ID-t ami alapján le lehet kérdezni a család tagjait!
-        $familyMembers = getFamilyMemberList(getFamilyId($userId),false);
-        $response = array_column($familyMembers,'Name');
-    }
+    
     header('Content-Type: application/json'); //header
    // echo json_encode($query); //in JSON format }
     echo json_encode($response); //in JSON format }
