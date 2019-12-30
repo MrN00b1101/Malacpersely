@@ -351,9 +351,9 @@ function getFamilyMemberList($famId, $http)
     while($row=mysqli_fetch_array($result))  {
         $response[]=$row;
     }
-    if(!$http){return $response;}else{
+    //if(!$http){return $response;}else{
         header('Content-Type: application/json'); //header
         echo json_encode($response); //in JSON format }
-    } 
+   // } 
 }
 ?>
