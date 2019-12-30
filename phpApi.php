@@ -21,7 +21,7 @@ switch($request_method) {
     //if(!empty($_GET["id"]))
     switch ($_GET['com']){
         case 'tran':
-            getPersonTranList($_GET['user'],$_GET['cat'],$_GET['minVal'],$_GET['maxVal'],$_GET['minDat'],$_GET['maxDat'],$_GET['ir'],$_GET['szemp']);
+            getPersonTranList($_GET['user'],$_GET['cat'],$_GET['minVal'],$_GET['maxVal'],$_GET['minDat'],$_GET['maxDat']);
         break;
         case 'cat':
         break;
@@ -292,7 +292,7 @@ function updateUser($data){}
 function updateCategory($data){}
 function updateTransaction($data){}
 //alapértelmezetten fél évre tudják lekérni a felhasználók az adatokat, hogy a hálózati forgalom ne nőljön túl nagyra! 
-function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, $rendezIrany, $rendezSzemp){
+function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat){
 //userId (kötelező)
 //kategória (több is lehet)
 //value (intervallum)
