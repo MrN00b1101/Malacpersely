@@ -364,7 +364,7 @@ function getCategoryList($uid, $fam){
     //kellenek a globalok és vagy a personalok, vagy a családiak!
     global $connection;
     
-    if($fam == '0'){
+    if($fam == "0"){
         $familyMembers = getFamilyMemberList(getFamilyId($userId),false);
         $uId = array_column($familyMembers,'Id');
         $query = "SELECT * FROM Categorys WHERE Global=0 OR (Global = 2  AND CreatorId=".uId[0];
