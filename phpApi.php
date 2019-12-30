@@ -303,17 +303,17 @@ function updateUser($data){
     if(mysqli_query($connection, $query))   {
         $response=array(
               'status' => 1,
-              'status_message' =>'Family Member Addition Successfully.'
+              'status_message' =>'User Modification Successfully.'
                );
      }
      else     {
         $response=array(
               'status' => 0,
-              'status_message' =>'Family Member Addition Failed.'
+              'status_message' =>'User Modification Failed.'
               );
      }   
      header('Content-Type: application/json');
-     echo json_encode($response);
+     echo json_encode($query);
 }
 function updateCategory($data){}
 function updateTransaction($data){}
