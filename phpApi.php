@@ -298,8 +298,7 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
 //value (intervallum)
 //idő (intervallum)    
 //rendezés 
-header('Content-Type: application/json'); //header
-    echo json_encode("asdf"); //in JSON format }
+
     global $connection;
     //$personal = $data['personal'];
     
