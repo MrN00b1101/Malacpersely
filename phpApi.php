@@ -314,14 +314,14 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat){
         $szuro = $szuro." AND (";
         if($minVal != "null"){$szuro = $szuro."Value >".$minVal;}
         if($maxVal != "null"){$szuro = $szuro." AND Value <".$maxVal;}
-        $szuro = $szuro." ) AND";
+        $szuro = $szuro." )";
     }
 
     if($minDat != "null" || $maxDat != "null"){
         $szuro = $szuro." AND (";
         if($minDat != "null"){$szuro = $szuro." TranDate >".$minDat;}
         if($maxDat != "null"){$szuro = $szuro."AND TranDate <".$maxDat;}
-        $szuro = $szuro." ) AND";
+        $szuro = $szuro." )";
     }
     
     
