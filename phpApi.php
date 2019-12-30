@@ -313,7 +313,7 @@ function updateUser($data){
               );
      }   
      header('Content-Type: application/json');
-     echo json_encode($query);
+     echo json_encode($response);
 }
 function updateCategory($data){}
 function updateTransaction($data){}
