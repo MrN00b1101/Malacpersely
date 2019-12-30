@@ -323,23 +323,24 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
             if($maxDat != "null"){$szuro = $szuro."AND TranDate <".$maxDat;}
             $szuro = $szuro." )";
         }
+        $response=array();
+        $query = $query.$szuro;
+        $result=mysqli_query($connection, $query);
+        //$result=mysqli_query($connection, $query);
+        while($row=mysqli_fetch_array($result))  {
+            $response[]=$row;
+        }
     }else{
         //A uId alapján le kell kérdezni a család ID-t ami alapján le lehet kérdezni a család tagjait!
-        //$familyId = getFamilyId($userId);
+        $familyMembers = getFamilyMemberList(getFamilyId($userId),false);
+        $response = $familyMembers;
     }
     
-    $response=array();
-    $query = $query.$szuro;
-    $result=mysqli_query($connection, $query);
-    //$result=mysqli_query($connection, $query);
-    while($row=mysqli_fetch_array($result))  {
-        $response[]=$row;
-    }
+    
     
     header('Content-Type: application/json'); //header
-    echo json_encode($response); //in JSON format }
-    //echo json_encode($cat);
    // echo json_encode($query); //in JSON format }
+    echo json_encode($response); //in JSON format }
     
 }
 function getFamilyMemberList($famId, $http)
