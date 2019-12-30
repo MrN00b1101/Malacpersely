@@ -313,8 +313,8 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat){
     if($minVal != "null"){$szuro = $szuro." AND Value >".$minVal;}
     if($maxVal != "null"){$szuro = $szuro." AND Value <".$maxVal;}
     
-    if($minDat != "null"){$szuro = $szuro." AND Value >".$minDat;}
-    if($maxDat != "null"){$szuro = $szuro." AND Value <".$maxDat;}
+    if($minDat != "null"){$szuro = $szuro." AND TranDate >".$minDat;}
+    if($maxDat != "null"){$szuro = $szuro." AND TranDate <".$maxDat;}
     
     $response=array();
     $query = $query.$szuro;
