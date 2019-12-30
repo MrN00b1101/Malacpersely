@@ -21,7 +21,7 @@ switch($request_method) {
     //if(!empty($_GET["id"]))
     switch ($_GET['com']){
         case 'tran':
-            getPersonTranList($_GET['user'],$_GET['cat'],$_GET['minVal'],$_GET['maxVal'],$_GET['minDat'],$_GET['maxDat']);
+            getPersonTranList($_GET['user'],$_GET['cat'],$_GET['minVal'],$_GET['maxVal'],$_GET['minDat'],$_GET['maxDat'],$_GET['personal']);
         break;
         case 'cat':
         break;
@@ -292,7 +292,7 @@ function updateUser($data){}
 function updateCategory($data){}
 function updateTransaction($data){}
 //alapértelmezetten fél évre tudják lekérni a felhasználók az adatokat, hogy a hálózati forgalom ne nőljön túl nagyra! 
-function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat){
+function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, $personal){
 //userId (kötelező)
 //kategória (több is lehet)
 //value (intervallum)
@@ -304,26 +304,28 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat){
     
     //UserId,TranCatId,Value,Personal,TranDate
     $query = "SELECT * FROM Transactions WHERE UserId=".$userId;
-    
-    $cat = explode('|',$catId);
-    if(count($cat)>1){$szuro = " AND (";}
-    for($i = 0; $i <= count($cat)-1; $i++){
-        if($i<count($cat)-1){$szuro = $szuro." TranCatId=".$cat[$i]." OR ";}else{$szuro = $szuro." TranCatId=".$cat[$i].")";}
-    }
-    if($minVal != "null" || $maxVal != "null"){
-        $szuro = $szuro." AND (";
-        if($minVal != "null"){$szuro = $szuro."Value >".$minVal;}
-        if($maxVal != "null"){$szuro = $szuro." AND Value <".$maxVal;}
-        $szuro = $szuro." )";
-    }
+    if($personal == 1){
+        $cat = explode('|',$catId);
+        if(count($cat)>1){$szuro = " AND (";}
+        for($i = 0; $i <= count($cat)-1; $i++){
+            if($i<count($cat)-1){$szuro = $szuro." TranCatId=".$cat[$i]." OR ";}else{$szuro = $szuro." TranCatId=".$cat[$i].")";}
+        }
+        if($minVal != "null" || $maxVal != "null"){
+            $szuro = $szuro." AND (";
+            if($minVal != "null"){$szuro = $szuro."Value >".$minVal;}
+            if($maxVal != "null"){$szuro = $szuro." AND Value <".$maxVal;}
+            $szuro = $szuro." )";
+        }
 
-    if($minDat != "null" || $maxDat != "null"){
-        $szuro = $szuro." AND (";
-        if($minDat != "null"){$szuro = $szuro." TranDate >".$minDat;}
-        if($maxDat != "null"){$szuro = $szuro."AND TranDate <".$maxDat;}
-        $szuro = $szuro." )";
+        if($minDat != "null" || $maxDat != "null"){
+            $szuro = $szuro." AND (";
+            if($minDat != "null"){$szuro = $szuro." TranDate >".$minDat;}
+            if($maxDat != "null"){$szuro = $szuro."AND TranDate <".$maxDat;}
+            $szuro = $szuro." )";
+        }
+    }else{
+        
     }
-    
     
     $response=array();
     $query = $query.$szuro;
