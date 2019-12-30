@@ -297,7 +297,7 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat){
 //kategória (több is lehet)
 //value (intervallum)
 //idő (intervallum)    
-//rendezés 
+
 
     global $connection;
     //$personal = $data['personal'];
@@ -312,6 +312,9 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat){
     }
     if($minVal != "null"){$szuro = $szuro." AND Value >".$minVal;}
     if($maxVal != "null"){$szuro = $szuro." AND Value <".$maxVal;}
+    
+    if($minDat != "null"){$szuro = $szuro." AND Value >".$minDat;}
+    if($maxDat != "null"){$szuro = $szuro." AND Value <".$maxDat;}
     
     $response=array();
     $query = $query.$szuro;
