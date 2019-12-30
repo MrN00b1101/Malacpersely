@@ -297,14 +297,10 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
 //kategória (több is lehet)
 //value (intervallum)
 //idő (intervallum)    
-
-
     global $connection;
-    //$personal = $data['personal'];
-    
     //UserId,TranCatId,Value,Personal,TranDate
     $query = "SELECT * FROM Transactions WHERE UserId=".$userId;
-    if($personal == 1){
+    if($personal == 0){
         $cat = explode('|',$catId);
         if(count($cat)>1){$szuro = " AND (";}
         for($i = 0; $i <= count($cat)-1; $i++){
@@ -324,7 +320,8 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
             $szuro = $szuro." )";
         }
     }else{
-        
+        header('Content-Type: application/json'); //header
+        echo json_encode($personal);
     }
     
     $response=array();
