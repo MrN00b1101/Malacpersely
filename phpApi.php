@@ -307,15 +307,17 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
         $uId = array_column($familyMembers,'Id');
         $per = 0;
     }
+        $query = "SELECT * FROM Transactions WHERE personal = ".$per;
         if(count($uId)>0){$szuro = " AND (";}
         for($i = 0; $i <= count($uId)-1; $i++){
             if($i<count($uId)-1){$szuro = $szuro." UserId=".$uId[$i]." OR ";}else{$szuro = $szuro." UserId=".$uId[$i].")";}
         }
-          $query = "SELECT * FROM Transactions WHERE personal = ".$per;
-        $cat = explode('|',$catId);
-        if(count($cat)>0){$szuro = $szuro." AND (";}
-        for($i = 0; $i <= count($cat)-1; $i++){
-            if($i<count($cat)-1){$szuro = $szuro." TranCatId=".$cat[$i]." OR ";}else{$szuro = $szuro." TranCatId=".$cat[$i].")";}
+        if($cat != "null"){
+            $cat = explode('|',$catId);
+            if(count($cat)>0){$szuro = $szuro." AND (";}
+            for($i = 0; $i <= count($cat)-1; $i++){
+                if($i<count($cat)-1){$szuro = $szuro." TranCatId=".$cat[$i]." OR ";}else{$szuro = $szuro." TranCatId=".$cat[$i].")";}
+            }
         }
         if($minVal != "null" || $maxVal != "null"){
             $szuro = $szuro." AND (";
