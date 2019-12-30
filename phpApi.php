@@ -346,7 +346,7 @@ function updateCategory($data){
               );
      }   
      header('Content-Type: application/json');
-     echo json_encode($query);
+     echo json_encode($response);
 }
 function updateTransaction($data){}
 
