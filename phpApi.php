@@ -18,7 +18,18 @@ $db = new dbObj(); $connection =  $db->getConnstring();
 $request_method=$_SERVER["REQUEST_METHOD"]; //melyik metódussal hívták az API-t?
 switch($request_method) {
   case 'GET':
-      
+    //if(!empty($_GET["id"]))
+    switch ($_GET['com']){
+        case 'tran':
+            getPersonTranList($_GET['user'],$_GET['cat'],$_GET['minVal'],$_GET['maxVal'],$_GET['minDat'],$_GET['maxDat'],$_GET['ir'],$_GET['szemp']);
+        break;
+        case 'cat':
+        break;
+        case 'user':
+        break;
+        case 'family':
+        break;
+    } 
    break;
  case 'POST':
     $data = json_decode(file_get_contents('php://input'), true);
@@ -281,7 +292,7 @@ function updateUser($data){}
 function updateCategory($data){}
 function updateTransaction($data){}
 //alapértelmezetten fél évre tudják lekérni a felhasználók az adatokat, hogy a hálózati forgalom ne nőljön túl nagyra! 
-function getPersonTranList($data){
+function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, $rendezIrany, $rendezSzemp){
 //userId (kötelező)
 //kategória (több is lehet)
 //value (intervallum)
@@ -289,14 +300,7 @@ function getPersonTranList($data){
 //rendezés 
     global $connection;
     //$personal = $data['personal'];
-    $userId = $data['user'];
-    $catId = $data['cat'];
-    $maxVal = $data['maxVal'];
-    $minVal = $data['minVal'];
-    $minDat = $data['minDat'];
-    $maxDat = $data['maxDat'];
-    $rendezIrany = $data['ir'];
-    $rendezSzemp = $data['szemp'];
+    
     //UserId,TranCatId,Value,Personal,TranDate
     $query = "SELECT * FROM Transactions WHERE UserId=".$userId;
     $cat = array();
