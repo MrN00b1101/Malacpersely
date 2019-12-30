@@ -299,13 +299,13 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
    
     global $connection;
     //UserId,TranCatId,Value,Personal,TranDate
-    if($personal == "0"){
+    if($personal == "1"){
         $uId[0] = $userId;
-        $per = 0;
+        $per = 1;
     }else{
         $familyMembers = getFamilyMemberList(getFamilyId($userId),false);
         $uId = array_column($familyMembers,'Id');
-        $per = 1;
+        $per = 0;
     }
         $query = "SELECT * FROM Transactions WHERE personal = ".$per;
         if(count($uId)>0){$szuro = " AND (";}
