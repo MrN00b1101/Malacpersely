@@ -29,6 +29,9 @@ switch($request_method) {
         break;
         case 'family':
         break;
+        case 'famMem':
+            getFamilyMemberList($_GET['famId'],true);
+        break;
     } 
    break;
  case 'POST':
@@ -321,8 +324,8 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
             $szuro = $szuro." )";
         }
     }else{
-        header('Content-Type: application/json'); //header
-        echo json_encode($personal);
+        //A uId alapján le kell kérdezni a család ID-t ami alapján le lehet kérdezni a család tagjait!
+
     }
     
     $response=array();
@@ -333,11 +336,24 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
         $response[]=$row;
     }
     
-    //header('Content-Type: application/json'); //header
-    //echo json_encode($response); //in JSON format }
+    header('Content-Type: application/json'); //header
+    echo json_encode($response); //in JSON format }
     //echo json_encode($cat);
     //echo json_encode($query); //in JSON format }
     
 }
-function getFamilyMemberList($data){}
+function getFamilyMemberList($famId, $http)
+{
+    $query ="SELECT Id, Name FROM User WHERE FamilyId=".$famId;
+    $response=array();
+    $result=mysqli_query($connection, $query);
+    //$result=mysqli_query($connection, $query);
+    while($row=mysqli_fetch_array($result))  {
+        $response[]=$row;
+    }
+    if(!$http){return $response;}else{
+        header('Content-Type: application/json'); //header
+        echo json_encode($response); //in JSON format }
+    } 
+}
 ?>
