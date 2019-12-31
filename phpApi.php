@@ -10,6 +10,9 @@
 -Költségvetés tételes megjelenítése (select) kész
 -Megtakarítási célok kezelése (select. insert)
 -tranzakció törlése (delete, userId, TimeStamp)kész
+-savings létrehozása!
+-savings lekérdezése!
+-
 */
 include("connection.php");
 $db = new dbObj(); $connection =  $db->getConnstring();
@@ -51,6 +54,9 @@ switch($request_method) {
         break;
         case 'family':
             insertFamily($data);
+        break;
+        case 'saving':
+            insertSaving($data);
         break;
     }
     
@@ -348,19 +354,91 @@ function updateCategory($data){
      header('Content-Type: application/json');
      echo json_encode($response);
 }
-function updateTransaction($data){}
+function updateTransaction($data){
+    global $connection;
+    $set = "SET";
+    if($data['Value'] != "null"){
+        $set = $set." Value=".$data['Value']; 
+        if(( $data['TranCatId'] != "null") || ($data['Personal'] != "null")){$set = $set.",";}
+    }
+    if($data['TranCatId'] != "null"){
+        $set = $set." TranCatId=".$data['TranCatId'];
+        if($data['Personal'] != "null"){$set = $set.",";}
+    }
+    if($data['Personal'] != "null"){$set = $set." Personal=".$data['Personal']; }
+    $query = "UPDATE Transaction ".$set." WHERE UserId=".$data['uid']." AND TranDate=".$data['time'];
+    
+    if(mysqli_query($connection, $query))   {
+        $response=array(
+              'status' => 1,
+              'status_message' =>'Transaction Modification Successfully.'
+               );
+     }
+     else     {
+        $response=array(
+              'status' => 0,
+              'status_message' =>'Transaction Modification Failed.'
+              );
+     }   
+     header('Content-Type: application/json');
+     echo json_encode($response);
+}
+function getSaving($data, $html){
+    global $connection;
+    $query = "select * from Savings WHERE Id=".$data;
+    $response=array();
+    $result=mysqli_query($connection, $query);
+    //$result=mysqli_query($connection, $query);
+    while($row=mysqli_fetch_array($result))  {
+        $response[]=$row;
+    }
+    if(!$http){return $response;}else{
+        header('Content-Type: application/json'); //header
+        echo json_encode($response); //in JSON format }
+        //echo json_encode($query); //in JSON format }
+    } 
+}
+function insertSaving($data){
+    //Name;Destination;DesDate;CreatorId;Personal
+    global $connection;
+    $Name = $data['name'];
+    $destination = $data['DesVal'];
+    $DesDate = $data['DesDat'];
+    $creatorId = $data['creaId'];
+    $Personal = $data['per'];
+    $query="INSERT INTO Savings SET Name ='".$Name."', Destination=".$destination.", DesDate=".$DesDate.", CreatorId= ".$creatorId.", Personal=".$Personal;
+    //$query="INSERT INTO Categorys SET Name ='".$Name."', CreatorId=".$creaId.",Global=".$global;
+    if(mysqli_query($connection, $query))   {
+         $response=array(
+               'status' => 1,
+               'status_message' =>'Savings Added Successfully.'
+                );
+      }
+      else     {
+         $response=array(
+               'status' => 0,
+               'status_message' =>'Savings Addition Failed.'
+               );
+      }   
+      header('Content-Type: application/json');
+      echo json_encode($response); 
 
+}
 function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, $personal){
    
     global $connection;
     //UserId,TranCatId,Value,Personal,TranDate
-    if($personal == "1"){
+    if($personal == "-1"){
         $uId[0] = $userId;
-        $per = 1;
-    }else{
+        $per = -1;
+    }else if($personal == "0"){
         $familyMembers = getFamilyMemberList(getFamilyId($userId),false);
         $uId = array_column($familyMembers,'Id');
         $per = 0;
+    }else{
+        $familyMembers = getFamilyMemberList(getFamilyId($userId),false);
+        $uId = array_column($familyMembers,'Id');
+        $per = $personal;
     }
         $query = "SELECT * FROM Transactions WHERE personal = ".$per;
         if(count($uId)>0){$szuro = " AND (";}
