@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>MALACPERSELY</title>
+
+  <!-- Bootstrap core CSS -->
+
+  <script src="https://kit.fontawesome.com/812fb0504e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="vendor/sidebar/css/style.css">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    
+      <a class="h2 font-weight-bold ml-5" style="color: pink !important;" href="mainPage.html">MALACPERSELY</a>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pénzügyek
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Beállítások</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Profil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Statisztika</a>
+          </li>
+        </ul>
+      </div>
+      <ul class="navbar-nav ml-5">
+        <li class="nav-item mt-2">
+            <a class="nav-item font-weight-bold ml-5" style="color: rgb(190, 77, 153) !important;">Felhasználónév</a>
+        </li>
+        <li class="nav-item ml-3">
+            <img src="profile.png" class="rounded mx-auto d-block" height="42" width="42">
+        </li>
+       </ul>
+  </nav>
+
+	<div class="wrapper d-flex align-items-stretch ">
+			<nav id="sidebar" class="bg-primary">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4 pt-5">
+		  		<h1><a href="index.html" class="logo">Menü</a></h1>
+	        <ul class="list-unstyled components mb-5">
+	          <li>
+	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fas fa-users"></i>
+               <span class="ml-4">Család</span></a>
+	            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                  <a href="#">Családtag1</a>
+                </li>
+                <li>
+                  <a href="#">Családtag2</a>
+              </li>
+              <ul>
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#familyAdd">Családtag hozzáadása</a>
+                </li>
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#familyDelete">Családtag törlése</a>
+                </li>                
+              </ul>
+            </ul>
+	          </li>
+	         
+	          <li>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fas fa-clipboard-list"></i>
+               <span class="ml-4">Kategóriák</span></a>
+              </a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="#">Kategória 1</a>
+                </li>
+                <li>
+                   <a href="#">Kategória 2</a>
+              </li>
+              <ul>
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#categoryAdd">Kategória hozzáadása</a>
+                </li>
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#categoryDelete">Kategória törlése</a>
+                </li>
+              </ul>
+              </ul>
+            </li>
+            
+            <li>
+              <a href="#page2Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="ml-4">Tranzakciók</span></a>
+              </a>
+              <ul class="collapse list-unstyled" id="page2Submenu">
+                <li>
+                    <a href="#">Hónap 1</a>
+                </li>
+                <li>
+                  <a href="#">Hónap 2</a>
+               </li>
+              </ul>
+	          </li>
+	        </ul>
+      </div>
+    </nav>
+
+      <!-- Page Content  -->
+    <div id="content" class="p-4 p-md-5 pt-5">
+
+      <div class="row align-items-start">
+      <!-- Family Card -->
+      <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card border-left shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Családtagok</div>
+                <div class="text-xs"><b>Családtag1</b></div>
+                <div class="text-xs"><b>Családtag2</b></div>
+                <div class="text-xs"><b>Családtag3</b></div>
+                <div class="text-xs"><b>Családtag4</b></div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-users fa-2x text-gray-200"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Card -->
+      <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card border-left shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Kategóriák</div>
+                <div class="text-xs"><b>Kategória1</b></div>
+                <div class="text-xs"><b>Kategória2</b></div>
+                <div class="text-xs"><b>Kategória3</b></div>
+                <div class="text-xs"><b>Kategória4</b></div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-clipboard-list fa-2x text-gray-200"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <!-- Summary Card -->
+       <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card border shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Összesítés</div>
+                <div class="text-xs"><b>Előző havi záróegyenleg: </b>12000</div>
+                <div class="text-xs"><b>Ehavi bevétel-kiadás: </b>11000</div>
+                <div class="text-xs"><b>Jelenlegi egyenleg: </b>23000</div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-check-double fa-2x text-gray-200"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+     
+      <h2 class="mb-4">Bevételek:</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Összeg</th>
+            <th scope="col">Dátum</th>
+            <th scope="col">Módosítás / Törlés</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>12000</td>
+            <td>2019.01.02</td>
+            <td>
+              <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">Módosítás</button>
+                <button type="button" class="btn btn-secondary">Törlés</button>
+                </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#incomeAdd">Bevétel hozzáadása</button>
+
+
+      <h2 class="mb-4 mt-5">Kiadások:</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Kategória</th>
+            <th scope="col">Összeg</th>
+            <th scope="col">Dátum</th>
+            <th scope="col">Módosítás / Törlés</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Étel</td>
+            <td>1000</td>
+            <td>2019.01.02</td>
+            <td>
+             
+                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-secondary">Módosítás</button>
+                  <button type="button" class="btn btn-secondary">Törlés</button>
+                  </div>
+             
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#costAdd">Kiadás hozzáadása</button>
+
+  <!--Family add modal-->
+  <div class="modal" id="familyAdd">
+    <div class="row">
+      <div class="col-sm-7 col-md-5 col-lg-4 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h5 class="card-title text-center">Családtag hozzáadása</h5>
+            <form class="form-signin">
+              <div class="form-label-group">
+                <label for="inputFamilyMember font-weight-bold">Teljes név</label>
+                <input type="text" id="inputFamilyMember" class="form-control" placeholder="Ide írd be a nevet!" required autofocus>
+              </div>
+            </br>
+              <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit">Hozzáadás</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!--Family delete modal-->
+   <div class="modal" id="familyDelete">
+    <div class="row">
+      <div class="col-sm-7 col-md-5 col-lg-4 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h5 class="card-title text-center">Családtag törlése</h5>
+            <form class="form-signin">
+              <div class="form-label-group">
+                <label for="inputFamilyMember font-weight-bold">Válaszd ki a törölni kívánt családtagot!</label>
+                <div class="row align-items-start ">
+                  <select class="col-md-10 text-m font-weight-bold rounded-sm border p-md-1 m-1 ml-3">
+                  </select>
+                  </div>
+              </div>
+            </br>
+              <button class="btn btn-lg btn-danger btn-block text-uppercase" type="submit">Családtag törlése</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Category add modal-->
+  <div class="modal" id="categoryAdd">
+    <div class="row">
+      <div class="col-sm-7 col-md-5 col-lg-4 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h5 class="card-title text-center">Kategória hozzáadása</h5>
+            <form class="form-signin">
+              <div class="form-label-group">
+                <label for="inputFamilyMember font-weight-bold">Kategória</label>
+                <input type="text" id="inputFamilyMember" class="form-control" placeholder="Ide írd be a kategóriát!" required autofocus>
+              </div>
+            </br>
+              <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit">Hozzáadás</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!--Category delete modal-->
+    <div class="modal" id="categoryDelete">
+      <div class="row">
+        <div class="col-sm-7 col-md-5 col-lg-4 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <button type="button" class="close" data-dismiss="modal">×</button>
+              <h5 class="card-title text-center">Kategória törlése</h5>
+              <form class="form-signin">
+                <div class="form-label-group">
+                  <label for="inputFamilyMember font-weight-bold">Válaszd ki a törölni kívánt kategóriát!</label>
+                  <div class="row align-items-start ">
+                    <select class="col-md-10 text-m font-weight-bold rounded-sm border p-md-1 m-1 ml-3">
+                    </select>
+                    </div>
+                </div>
+              </br>
+                <button class="btn btn-lg btn-danger btn-block text-uppercase" type="submit">Kategória törlése</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!--Income add modal-->
+  <div class="modal" id="incomeAdd">
+    <div class="row">
+      <div class="col-sm-7 col-md-5 col-lg-4 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h5 class="card-title text-center">Bevétel hozzáadása</h5>
+            <form class="form-signin">
+              <div class="form-label-group">
+                <label for="inputIncome font-weight-bold">Összeg</label>
+                <input type="text" id="inputIncome" class="form-control" placeholder="Összeg" required autofocus>
+              </div>
+              <div class="form-label-group">
+                <label for="inputIncomeDate">Dátum</label>
+                <input type="date" id="inputIncomeDate" class="form-control" required autofocus>
+              </div>
+            </br>
+              <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit">Hozzáadás</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+       <!--Cost add modal-->
+       <div class="modal" id="costAdd">
+        <div class="row">
+          <div class="col-sm-7 col-md-5 col-lg-4 mx-auto">
+            <div class="card card-signin my-5">
+              <div class="card-body">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h5 class="card-title text-center">Kiadás hozzáadása</h5>
+                <form class="form-signin">
+                  <div class="form-label-group">
+                    <label for="inputCategory font-weight-bold">Válaszd ki a kategóriát!</label>
+                    <div class="row align-items-start ">
+                      <select class="col-md-10 text-m font-weight-bold rounded-sm border p-md-1 m-1 ml-3">
+                      </select>
+                      </div>
+                      <br>
+                  <div class="form-label-group">
+                    <label for="inputCost font-weight-bold">Összeg</label>
+                    <input type="text" id="inputIncome" class="form-control" placeholder="Összeg" required autofocus>
+                  </div>
+                  <div class="form-label-group">
+                    <label for="inputCostDate">Dátum</label>
+                    <input type="date" id="inputCostDate" class="form-control" required autofocus>
+                  </div>
+                </br>
+                  <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit">Hozzáadás</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <script src="vendor/sidebar/js/jquery.min.js"></script>
+  <script src="vendor/sidebar/js/popper.js"></script>
+  <script src="vendor/sidebar/js/bootstrap.min.js"></script>
+  <script src="vendor/sidebar/js/main.js"></script>
+
+</body>
+</html>
