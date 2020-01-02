@@ -33,11 +33,9 @@ request.open('GET', 'phpApi.php?com=user', true)
 request.onload = function() {
     var users = JSON.parse(request.responseText);
 
-    if (request.readyState == 4 && request.status == "1") {
+    
         console.table(users);        
-        } else {
-            alert(request.status_message);
-        }
+        
 
 }
 
