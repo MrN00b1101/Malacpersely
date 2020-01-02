@@ -34,10 +34,8 @@ request.onload = function() {
     var users = JSON.parse(xhr.responseText);
 
     if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
-        console.table(users);
-
-                
-            });
+        console.table(users);        
+            
         } else {
             alert(smlhttp.status_message);
         }
@@ -48,6 +46,6 @@ request.onload = function() {
 request.send()
 }
 </script>
-<buton onclick="newUser();">Új felhasználó</buton>
-<buton onclick="getusers();">Felhasználók listája!</buton>
+<button onclick="newUser();">Uj felhasznalo</button>
+<button onclick="getusers();">Felhasznalok listaja!</button>
 <div id="lista"></div>
