@@ -9,9 +9,9 @@ function newUser(){
     xmlhttp.onload = function () {
         var users = JSON.parse(xmlhttp.responseText);
         if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
-            alert(smlhttp.status_message);
+            alert(xmlhttp.status_message);
         } else {
-            alert(smlhttp.status_message);
+            alert(xmlhttp.status_message);
         }
     }
 
