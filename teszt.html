@@ -25,18 +25,18 @@ function newUser(){
     }));
 }
 function getusers(){
-    var request = new XMLHttpRequest()
+var request = new XMLHttpRequest()
 
 // Open a new connection, using the GET request on the URL endpoi
 request.open('GET', 'phpApi.php/?com=user', true)
 
 request.onload = function() {
-    var users = JSON.parse(xhr.responseText);
+    var users = JSON.parse(request.responseText);
 
-    if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+    if (request.readyState == 4 && request.status == "1") {
         console.table(users);        
         } else {
-            alert(smlhttp.status_message);
+            alert(request.status_message);
         }
 
 }
