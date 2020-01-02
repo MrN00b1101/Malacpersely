@@ -53,9 +53,9 @@
   </nav>
 
 	<div class="wrapper d-flex align-items-stretch ">
-			<nav id="sidebar" class="bg-primary">
+			<nav id="sidebar" class="bg-dark">
 				<div class="custom-menu">
-					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+					<button type="button" id="sidebarCollapse" class="btn btn-dark">
 	          <i class="fa fa-bars"></i>
 	          <span class="sr-only">Toggle Menu</span>
 	        </button>
@@ -110,7 +110,7 @@
             
             <li>
               <a href="#page2Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-coins"></i>
                 <span class="ml-4">Tranzakciók</span></a>
               </a>
               <ul class="collapse list-unstyled" id="page2Submenu">
@@ -121,8 +121,37 @@
                   <a href="#">Hónap 2</a>
                </li>
               </ul>
+
+              <li>
+                <a href="#page3Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                  <i class="fas fa-piggy-bank"></i>
+                  <span class="ml-4">Megtakarítások</span></a>
+                </a>
+                <ul class="collapse list-unstyled" id="page3Submenu">
+                  <li>
+                      <a href="#">Hónap 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Hónap 2</a>
+                 </li>
+                </ul>
+
+                <li>
+                  <a href="#page4Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="ml-4">Költségvetés</span></a>
+                  </a>
+                  <ul class="collapse list-unstyled" id="page4Submenu">
+                    <li>
+                        <a href="#">Hónap 1</a>
+                    </li>
+                    <li>
+                      <a href="#">Hónap 2</a>
+                   </li>
+                  </ul>
+
 	          </li>
-	        </ul>
+          </ul>
       </div>
     </nav>
 
@@ -199,6 +228,7 @@
             <th scope="col">Összeg</th>
             <th scope="col">Dátum</th>
             <th scope="col">Módosítás / Törlés</th>
+            <th scope="col">Személyes?</th>
           </tr>
         </thead>
         <tbody>
@@ -261,7 +291,7 @@
             <h5 class="card-title text-center">Családtag hozzáadása</h5>
             <form class="form-signin">
               <div class="form-label-group">
-                <label for="inputFamilyMember font-weight-bold">Teljes név</label>
+                <label for="inputFamilyMember font-weight-bold">Felhasználónév</label>
                 <input type="text" id="inputFamilyMember" class="form-control" placeholder="Ide írd be a nevet!" required autofocus>
               </div>
             </br>
@@ -364,6 +394,11 @@
                 <input type="date" id="inputIncomeDate" class="form-control" required autofocus>
               </div>
             </br>
+            <div class="custom-control custom-checkbox mr-sm-2">
+              <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+              <label class="custom-control-label" for="customControlAutosizing">Személyes bevétel</label>
+            </div>
+            </br>
               <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit">Hozzáadás</button>
             </form>
           </div>
@@ -396,6 +431,11 @@
                     <label for="inputCostDate">Dátum</label>
                     <input type="date" id="inputCostDate" class="form-control" required autofocus>
                   </div>
+                </br>
+                <div class="custom-control custom-checkbox mr-sm-2">
+                  <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                  <label class="custom-control-label" for="customControlAutosizing">Személyes kiadás</label>
+                </div>
                 </br>
                   <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit">Hozzáadás</button>
                 </form>
