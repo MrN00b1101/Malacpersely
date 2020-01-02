@@ -34,9 +34,9 @@ request.onload = function() {
     var obj = JSON.parse(request.response);
 
     for(i=0; i< obj.length;i++){
-        document.getElementById('lista').html =obj[i]+"<br>";
+        document.getElementById('lista').html ="Név: "+obj[i].Name+" Email: "+obj[i].Mail+" Id: "+obj[i].Id+" Család Id: "+obj[i].FamilyId+"   <br>";
     }
-        alert(obj[2].Name);        
+    //    alert(obj[2].Name);        
         
 
 }
