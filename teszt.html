@@ -31,7 +31,7 @@ var request = new XMLHttpRequest()
 request.open('GET', 'phpApi.php?com=user', true)
 
 request.onload = function() {
-    var jsonResponse = request.response;
+    var obj = JSON.parse(request.response);
 
     
         alert(jsonResponse);        
