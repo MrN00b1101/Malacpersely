@@ -4,7 +4,7 @@ xmlhttp.open("POST", "phpApi.php", true);
 xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
 
-.onload = function () {
+xmlhttp.onload = function () {
 	var users = JSON.parse(xhr.responseText);
 	if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
 		console.table(users);
