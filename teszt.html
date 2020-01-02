@@ -1,27 +1,53 @@
 <script>
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.open("POST", "phpApi.php", true);
-xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+function newUser(){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "phpApi.php", true);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
 
-xmlhttp.onload = function () {
-	var users = JSON.parse(xmlhttp.responseText);
-	if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
-		console.table(users);
-	} else {
-		console.error(users);
-	}
+    xmlhttp.onload = function () {
+        var users = JSON.parse(xmlhttp.responseText);
+        if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+            alert(smlhttp.status_message);
+        } else {
+            alert(smlhttp.status_message);
+        }
+    }
+
+
+
+    xmlhttp.send(JSON.stringify(
+        { 
+    "com": "user",
+    "name": "JavaScriptU",
+    "mail": "java@script.hu",
+    "pass": "jelszo",
+    }));
+}
+function getusers(){
+    var request = new XMLHttpRequest()
+
+// Open a new connection, using the GET request on the URL endpoint
+request.open('GET', 'phpApi.php/?com=user', true)
+
+request.onload = function() {
+    var users = JSON.parse(xhr.responseText);
+
+    if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+        console.table(users);
+
+                
+            });
+        } else {
+            alert(smlhttp.status_message);
+        }
+  // Begin accessing JSON data here
 }
 
-
-
-xmlhttp.send(JSON.stringify(
-    { 
-"com": "user",
-"name": "JavaScriptU",
-"mail": "java@script.hu",
-"pass": "jelszo",
-  }));
-
+// Send request
+request.send()
+}
 </script>
-
+<buton onclick="newUser();">Új felhasználó</buton>
+<buton onclick="getusers();">Felhasználók listája!</buton>
+<div id="lista"></div>
