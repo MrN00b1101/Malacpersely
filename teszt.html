@@ -28,7 +28,7 @@ function getusers(){
 var request = new XMLHttpRequest()
 
 // Open a new conne
-request.open('GET', 'phpApi.php/?com=user', true)
+request.open('GET', 'phpApi.php?com=user', true)
 
 request.onload = function() {
     var users = JSON.parse(request.responseText);
