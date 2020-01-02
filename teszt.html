@@ -27,7 +27,7 @@ function newUser(){
 function getusers(){
     var request = new XMLHttpRequest()
 
-// Open a new connection, using the GET request on the URL endpoint
+// Open a new connection, using the GET request on the URL endpoi
 request.open('GET', 'phpApi.php/?com=user', true)
 
 request.onload = function() {
@@ -38,7 +38,7 @@ request.onload = function() {
         } else {
             alert(smlhttp.status_message);
         }
-  // Begin accessing JSON data here
+
 }
 
 // Send request
