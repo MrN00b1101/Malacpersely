@@ -1,3 +1,4 @@
+<div id="lista"></div>
 <script>
 function newUser(){
     var xmlhttp = new XMLHttpRequest();
@@ -32,9 +33,10 @@ request.open('GET', 'phpApi.php?com=user', true)
 
 request.onload = function() {
     var obj = JSON.parse(request.response);
-
+    //alert(obj.length);
+    var lista = document.getElementById("lista");
     for(i=0; i< obj.length;i++){
-        document.getElementById('lista').html ="Név: "+obj[i].Name+" Email: "+obj[i].Mail+" Id: "+obj[i].Id+" Család Id: "+obj[i].FamilyId+"   <br>";
+    lista.innerHTML =lista.innerHTML+"Nev: "+obj[i].Name+" |Email: "+obj[i].Mail+" |Id: "+obj[i].Id+" |Csalad Id: "+obj[i].FamilyId+"<br>";
     }
     //    alert(obj[2].Name);        
         
@@ -47,4 +49,3 @@ request.send()
 </script>
 <button onclick="newUser();">Uj felhasznalo</button>
 <button onclick="getusers();">Felhasznalok listaja!</button>
-<div id="lista"></div>
