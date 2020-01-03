@@ -88,8 +88,8 @@ A Megtakarításokat tároljuk ebben a táblában.
 |:-------|:-----|:--------|:-------|:------|
 |Id|Number|Not Null|Elsődleges kulcs|A megtakarítás egyedi azonosítója|
 |Name|Varchar2(30)|Not Null||A megtakarítás megnevezése|
-|Destination|Number||A megtakarítás célösszegét tároljuk a mezőben|
-|DesDat|Date|||A megtakarítás határidejét tároljuk|
+|Destination|Number| |A megtakarítás célösszegét tároljuk a mezőben|
+|DesDat|Date| | |A megtakarítás határidejét tároljuk|
 |CreatorId|Id|Not Null|Idegen kulcs a User tábla Id mezőjéhez kötve|A készítő azonosítója|
 |Personal|Bit|Not Null||Ha az értéke 1 akkor a megtakarítás személyes, ha 0 akkor a kiadás családi|
 
