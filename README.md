@@ -58,7 +58,7 @@ A pénzügyi tranzakciókat tároljuk ebben a táblában.
 |UserId|Number|Not Null|Idegen kulcs (User tábla Id mezőjéhez kapcsolva)|A tranzakciót végrehajtó felhasználó azonosítója|
 |TranCatId|Number|Not Null|Idegen kulcs (Categorys tábla Id mezőjéhez kapcsolva)|A tranzakció típusa|
 |Value|Number|Not Null||A tranzakció összege, ha minusz akkor kiadás ha plussz akkor bevétel|
-|Personal|Bit|Not Null||Ha az értéke 1 akkor a kiadás személyes, ha 0 akkor a kiadás családi|
+|Personal|Bit|Not Null||Ha az értéke -1 akkor a kiadás személyes, ha 0 akkor a kiadás családi ha ezektől eltérő akkor annak a megtakarításnak az azonosítója amihez tartozik|
 |Date|TimeStamp|Not Null||A tranzakció ideje|
 
 **Categorys:**  
@@ -79,6 +79,20 @@ A családokat tároljuk ebben a táblában.
 |Id|Number|Not Null|Elsődleges kulcs|A család egyedi azonosítója|
 |Name|Varchar2(10)|Not Null||A család megnevezése|
 |FatherId|Id|Not Null|Idegen kulcs a User tábla Id mezőjéhez kötve|A családfő azonosítója (ő hozza létre a családod, és ő tud tagokat hozzá adni!)|
+
+**Savings:**  
+
+A Megtakarításokat tároljuk ebben a táblában.
+
+|Mezőnév:|Típus:|Megkötés:|Kulcs-e:|Leírás:|
+|:-------|:-----|:--------|:-------|:------|
+|Id|Number|Not Null|Elsődleges kulcs|A megtakarítás egyedi azonosítója|
+|Name|Varchar2(30)|Not Null||A megtakarítás megnevezése|
+|Destination|Number||A megtakarítás célösszegét tároljuk a mezőben|
+|DesDat|Date|||A megtakarítás határidejét tároljuk|
+|CreatorId|Id|Not Null|Idegen kulcs a User tábla Id mezőjéhez kötve|A készítő azonosítója|
+|Personal|Bit|Not Null||Ha az értéke 1 akkor a megtakarítás személyes, ha 0 akkor a kiadás családi|
+
 
 ## Api használat:
     Az api Json obijektumban várja az adatokat!
