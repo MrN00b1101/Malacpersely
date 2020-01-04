@@ -1,4 +1,5 @@
 <?php
+require 'jwt.php';
 
 /*
 -Regisztráció (insert) kész
@@ -571,7 +572,7 @@ function getUser($data, $type){
 }
 function logout($data)
 {
-    if(isset(session_id($data['sid'])));
+    //if(isset(session_id($data['sid'])));
     header('Content-Type: application/json'); 
     echo json_encode("ok"); 
    /* session_start();
@@ -583,7 +584,8 @@ function login($data){
     global $connection;
     $mail = $data['Mail'];
     $password = $data['password'];
-
+    $secret_key = 'some_test_key';
+    $valid_for = '3600';
     $query ="SELECT Name, Id, FamilyId, Mail FROM User WHERE Mail='".$mail."' AND Password ='".md5($password)."'";
     $response=array();
     $result=mysqli_query($connection, $query);
@@ -592,11 +594,18 @@ function login($data){
     }
     
     if(count($response) == 1){
-        session_start();
-        $_SESSION['UserId']=$response[0]['Id'];
+        $token = array();
+            $token['id'] = $response[0]['Name'];
+            $token['Name'] = $response[0]['Name'];
+            $token['Mail'] = $response[0]['Mail'];
+            $token['FamId'] = $response[0]['FamilyId'];
+            $token['exp'] = time() + $valid_for;
+            setcookie("Token", JWT::encode($token, $secret_key), time()+3600);
+        
+    /*    $_SESSION['UserId']=$response[0]['Id'];
         $_SESSION['Name']=$response[0]['Name'];
         $_SESSION['Mail']=$response[0]['Mail'];
-        $_SESSION['FamId']=$response[0]['FamilyId'];  
+        $_SESSION['FamId']=$response[0]['FamilyId'];  */
     }else{        
         $response=array(
             'status' => 0,
