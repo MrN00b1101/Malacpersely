@@ -89,7 +89,7 @@ function getTranList(){
         if(obj[i].Value > 0)
         {
             document.getElementById("inComeId").innerHTML += inComeId+"<br>";
-            incomeId++;
+            inComeId++;
             document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
             document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
         }
