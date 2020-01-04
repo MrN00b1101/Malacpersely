@@ -619,14 +619,14 @@ function login($data){
     echo json_encode($response);        
 }
 function isLogged($token){
-    return false;
     $secret_key = 'some_test_key';
-
+try{
     $user = JWT::decode($token, $secret_key);
     if ($user->exp >= time()) {
         return true;
     } else {
         return false;
     }
+}catch(Exception $e){return false;}
 }
 ?>
