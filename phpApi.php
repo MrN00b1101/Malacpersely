@@ -22,7 +22,9 @@ switch($request_method) {
     //if(!empty($_GET["id"]))
     switch ($_GET['com']){
         case 'tran':
-            getPersonTranList($_GET['user'],$_GET['cat'],$_GET['minVal'],$_GET['maxVal'],$_GET['minDat'],$_GET['maxDat'],$_GET['personal']);
+            if(isset($_SESSION['UserId'])){
+                getPersonTranList($_GET['user'],$_GET['cat'],$_GET['minVal'],$_GET['maxVal'],$_GET['minDat'],$_GET['maxDat'],$_GET['personal']);
+            }
         break;
         case 'cat':
             getCategoryList($_GET['user'],$_GET['fam']);
@@ -38,6 +40,9 @@ switch($request_method) {
         break;
         case 'SpecUser':
             getUser($_GET['Uid'], $_GET['attributum']);
+        break;
+        case 'logout':
+            logout();
         break;
     } 
    break;
