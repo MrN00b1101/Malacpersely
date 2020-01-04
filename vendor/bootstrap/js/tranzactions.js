@@ -20,3 +20,7 @@ function getTranList(){
 request.send()
 //alert(getCookie("Token"));
 }
+
+window.onload = function() {
+    this.getTranList();
+};
