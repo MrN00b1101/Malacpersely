@@ -83,19 +83,22 @@ function getTranList(){
     request.onload = function() {
     var obj = JSON.parse(request.response);
     //alert(obj.length);
-    
+    var inComeId = 1;
+    var costId = 1;
     for(i=0; i< obj.length;i++){
         if(obj[i].Value > 0)
         {
-            document.getElementById("inComeId").innerHTML += i+1;
+            document.getElementById("inComeId").innerHTML += inComeId+"<br>";
+            incomeId++;
             document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
             document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
         }
-        else
-        document.getElementById("costId").innerHTML += i+1;
+        else{
+        document.getElementById("costId").innerHTML += costId+"<br>";
+        costId++;
         document.getElementById("costValue").innerHTML += obj[i].Value+"<br>";
         document.getElementById("costDate").innerHTML += obj[i].TranDate+"<br>";
-        
+        }
     }
  
 
