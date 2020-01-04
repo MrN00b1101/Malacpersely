@@ -571,7 +571,7 @@ function login($data){
     global $connection;
     $mail = $data['Mail'];
     $password = $data['password'];
-    $query ="SELECT Name, Id, FamilyId, Mail FROM Users WHERE Mail='".$mail."' AND Password ='".md5($password)."'";
+    $query ="SELECT Name, Id, FamilyId, Mail FROM Users WHERE Mail=\'".$mail."\' AND Password =\'".md5($password)."\'";
     $response=array();
     $result=mysqli_query($connection, $query);
     while($row=mysqli_fetch_array($result))  {
