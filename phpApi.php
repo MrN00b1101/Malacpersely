@@ -24,6 +24,8 @@ switch($request_method) {
         case 'tran':
             if(isset($_SESSION['UserId'])){
                 getPersonTranList($_GET['user'],$_GET['cat'],$_GET['minVal'],$_GET['maxVal'],$_GET['minDat'],$_GET['maxDat'],$_GET['personal']);
+            }else{
+                header("HTTP/1.1 401 Need to login");
             }
         break;
         case 'cat':
