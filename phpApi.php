@@ -22,11 +22,11 @@ switch($request_method) {
     //if(!empty($_GET["id"]))
     switch ($_GET['com']){
         case 'tran':
-            if(isset($_SESSION[$data['sesID']]){
+          //  if(isset($_SESSION[$data['sesID']]){
                 getPersonTranList($_GET['user'],$_GET['cat'],$_GET['minVal'],$_GET['maxVal'],$_GET['minDat'],$_GET['maxDat'],$_GET['personal']);
-            }else{
-                header("HTTP/1.1 401 Need to login");
-            }
+          //  }else{
+           //     header("HTTP/1.1 401 Need to login");
+           // }
         break;
         case 'cat':
             getCategoryList($_GET['user'],$_GET['fam']);
@@ -44,7 +44,7 @@ switch($request_method) {
             getUser($_GET['Uid'], $_GET['attributum']);
         break;
         case 'logout':
-            logout();
+            logout($_GET['sessId'];);
         break;
     } 
    break;
@@ -569,11 +569,13 @@ function getUser($data, $type){
         //echo json_encode($query); 
     } 
 }
-function logout()
+function logout($data)
 {
-    $_SESSION = array(); //destroy all of the session variables
+    session_id() = $data;
+    session_start();
     session_unset();
     session_destroy();
+    session_id() = "";
 }
 function login($data){
     global $connection;
