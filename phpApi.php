@@ -571,11 +571,13 @@ function getUser($data, $type){
 }
 function logout($data)
 {
-    session_id($data['sid']);
-    session_start();
+    if(isset(session_id($data['sid'])));
+    header('Content-Type: application/json'); 
+    echo json_encode("ok"); 
+   /* session_start();
     session_unset();
     session_destroy();
-    session_id("");
+    session_id("");*/
 }
 function login($data){
     global $connection;
