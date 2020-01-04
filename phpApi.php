@@ -53,11 +53,9 @@ switch($request_method) {
             getUser($_GET['Uid'], $_GET['attributum']);
         break;
         case 'logout':
-            if(isLogged($_GET['token'])){
+           
                 logout($_GET['sessId']);
-            }else{
-                header("HTTP/1.1 401 Need to login");
-            }   
+            
         break;
     } 
    break;
