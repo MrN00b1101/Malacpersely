@@ -588,7 +588,7 @@ function login($data){
     }else{        
         $response=array(
             'status' => 0,
-            'status_message' =>'Savings Addition Failed.'
+            'status_message' =>'Login Failed.'
             );
             
     }
