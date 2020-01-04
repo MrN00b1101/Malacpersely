@@ -13,7 +13,7 @@ function newUser(){
         if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
             alert("Sikeres regisztráció! Kérlek jelentkezz be!");
         } else {
-            alert(xmlhttp.status_message);
+            alert("Sikeres regisztráció! Kérlek jelentkezz be!");
         }
     }
 
