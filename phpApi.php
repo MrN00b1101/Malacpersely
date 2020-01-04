@@ -619,6 +619,7 @@ function login($data){
     echo json_encode($response);        
 }
 function isLogged($token){
+    return false;
     $secret_key = 'some_test_key';
 
     $user = JWT::decode($token, $secret_key);
