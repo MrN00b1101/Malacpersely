@@ -577,14 +577,16 @@ function login($data){
     while($row=mysqli_fetch_array($result))  {
         $response[]=$row;
     }
+    header('Content-Type: application/json'); 
+            echo json_encode($response);    
     if(count($response) == 1){
         session_start();
         $_SESSION['UserId']=$response[0]['Id'];
         $_SESSION['Name']=$response[0]['Name'];
         $_SESSION['Mail']=$response[0]['Mail'];
         $_SESSION['FamId']=$response[0]['FamilyId'];  
-            header('Content-Type: application/json'); 
-            echo json_encode($response); 
+        header('Content-Type: application/json'); 
+        echo json_encode($response); 
     }else{        
             header('Content-Type: application/json'); 
             echo json_encode($response);        
