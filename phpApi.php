@@ -582,19 +582,12 @@ function login($data){
         $_SESSION['UserId']=$response[0]['Id'];
         $_SESSION['Name']=$response[0]['Name'];
         $_SESSION['Mail']=$response[0]['Mail'];
-        $_SESSION['FamId']=$response[0]['FamilyId'];
-        if(!$http){return $response;}else{
+        $_SESSION['FamId']=$response[0]['FamilyId'];  
             header('Content-Type: application/json'); 
             echo json_encode($response); 
-            //echo json_encode($query); 
-        }
-
-    }else{
-        if(!$http){return $response;}else{
+    }else{        
             header('Content-Type: application/json'); 
-            echo json_encode($response); 
-            //echo json_encode($query); 
-        }
+            echo json_encode($response);        
     }
 }
 ?>
