@@ -573,8 +573,10 @@ function getUser($data, $type){
 function logout($data)
 {
     //if(isset(session_id($data['sid'])));
+    setcookie("Token", time() - 3600);
+
     header('Content-Type: application/json'); 
-    echo json_encode("ok"); 
+    echo json_encode("logged out"); 
    /* session_start();
     session_unset();
     session_destroy();
