@@ -5,10 +5,10 @@
 -Login (Select +Session) 
 -Tranzakció felvitele (insert) kész
 -Kategória felvitele (insert) kész
--Család menedzselése (select, insert) 
+-Család menedzselése (SELECT, insert) 
 -Állandó tranzakciók beállítása (??)
--Költségvetés tételes megjelenítése (select) kész
--Megtakarítási célok kezelése (select. insert)
+-Költségvetés tételes megjelenítése (SELECT) kész
+-Megtakarítási célok kezelése (SELECT. insert)
 -tranzakció törlése (delete, userId, TimeStamp)kész
 -savings létrehozása!
 -savings lekérdezése!
@@ -36,6 +36,9 @@ switch($request_method) {
         case 'famMem':
             getFamilyMemberList($_GET['famId'],true);
         break;
+        case 'SpecUser':
+            getUser($_GET['Uid'], $_GET['attributum']);
+        break;
     } 
    break;
  case 'POST':
@@ -57,6 +60,9 @@ switch($request_method) {
         break;
         case 'saving':
             insertSaving($data);
+        break;
+        case 'login':
+            login($data);
         break;
     }
     
@@ -102,7 +108,7 @@ function insertUser($data){
     global $connection;
     $Name = $data['name'];
     $Mail = $data['mail'];
-    $Pass = $data['password'];
+    $Pass = md5($data['password']);
     $query="INSERT INTO User SET Name ='".$Name."', Mail='".$Mail."', Password='".$Pass."'";
     //$query="INSERT INTO 'User' VALUES ('dd', 'ff', 'gg')";
     if(mysqli_query($connection, $query))   {
@@ -385,17 +391,16 @@ function updateTransaction($data){
 }
 function getSaving($data, $html){
     global $connection;
-    $query = "select * from Savings WHERE Id=".$data;
+    $query = "SELECT * FROM Savings WHERE Id=".$data;
     $response=array();
     $result=mysqli_query($connection, $query);
-    //$result=mysqli_query($connection, $query);
     while($row=mysqli_fetch_array($result))  {
         $response[]=$row;
     }
     if(!$http){return $response;}else{
-        header('Content-Type: application/json'); //header
-        echo json_encode($response); //in JSON format }
-        //echo json_encode($query); //in JSON format }
+        header('Content-Type: application/json'); 
+        echo json_encode($response); 
+        //echo json_encode($query); 
     } 
 }
 function insertSaving($data){
@@ -470,14 +475,13 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
         $response=array();
         $query = $query.$szuro;
         $result=mysqli_query($connection, $query);
-        //$result=mysqli_query($connection, $query);
-        while($row=mysqli_fetch_array($result))  {
+            while($row=mysqli_fetch_array($result))  {
             $response[]=$row;
         }
     
-    header('Content-Type: application/json'); //header
-    //echo json_encode($query); //in JSON format }
-    echo json_encode($response); //in JSON format }
+    header('Content-Type: application/json'); 
+    //echo json_encode($query); 
+    echo json_encode($response); 
     
 }
 function getFamilyMemberList($famId, $http)
@@ -486,14 +490,13 @@ function getFamilyMemberList($famId, $http)
     $query ="SELECT Id, Name FROM User WHERE FamilyId=".$famId;
     $response=array();
     $result=mysqli_query($connection, $query);
-    //$result=mysqli_query($connection, $query);
     while($row=mysqli_fetch_array($result))  {
         $response[]=$row;
     }
     if(!$http){return $response;}else{
-        header('Content-Type: application/json'); //header
-        echo json_encode($response); //in JSON format }
-        //echo json_encode($query); //in JSON format }
+        header('Content-Type: application/json'); 
+        echo json_encode($response); 
+        //echo json_encode($query); 
     } 
 }
 function getCategoryList($userid, $fam){
@@ -514,38 +517,82 @@ function getCategoryList($userid, $fam){
     }
     $response=array();
     $result=mysqli_query($connection, $query);
-    //$result=mysqli_query($connection, $query);
     while($row=mysqli_fetch_array($result))  {
         $response[]=$row;
     }
-    header('Content-Type: application/json'); //header
-        echo json_encode($response); //in JSON format }
-        //echo json_encode($query); //in JSON format }
+    header('Content-Type: application/json'); 
+        echo json_encode($response); 
+        //echo json_encode($query); 
 }
 function getUserList(){
     global $connection;
     $query = "SELECT Id, Name, Mail, FamilyId FROM User";
     $response=array();
     $result=mysqli_query($connection, $query);
-    //$result=mysqli_query($connection, $query);
     while($row=mysqli_fetch_array($result))  {
         $response[]=$row;
     }
-    header('Content-Type: application/json'); //header
-    echo json_encode($response); //in JSON format }
-        //echo json_encode($query); //in JSON format }
+    header('Content-Type: application/json'); 
+    echo json_encode($response); 
+        //echo json_encode($query); 
 }
 function getFamilyList(){
     global $connection;
     $query = "SELECT * FROM Family";
     $response=array();
     $result=mysqli_query($connection, $query);
-    //$result=mysqli_query($connection, $query);
     while($row=mysqli_fetch_array($result))  {
         $response[]=$row;
     }
-    header('Content-Type: application/json'); //header
-    echo json_encode($response); //in JSON format }
+    header('Content-Type: application/json'); 
+    echo json_encode($response); 
         //echo json_encode($query); //in 
+}
+function getUser($data, $type){
+    global $connection;
+    $query = "SELECT Name, Id, FamilyId, Mail FROM Users WHERE ".$type."=".$data;
+    $response=array();
+    $result=mysqli_query($connection, $query);
+    while($row=mysqli_fetch_array($result))  {
+        $response[]=$row;
+    }
+    if(!$http){return $response;}else{
+        header('Content-Type: application/json'); 
+        echo json_encode($response); 
+        //echo json_encode($query); 
+    } 
+}
+function logout()
+{
+    session_unset();
+    session_destroy();
+}
+function login($username, $password){
+    global $connection;
+    $query ="SELECT Name, Id, FamilyId, Mail FROM Users WHERE Mail=".$username." AND Password =".md5($password);
+    $response=array();
+    $result=mysqli_query($connection, $query);
+    while($row=mysqli_fetch_array($result))  {
+        $response[]=$row;
+    }
+    if(count($response) == 1){
+        session_start();
+        $_SESSION['UserId']=$response[0]['Id'];
+        $_SESSION['Name']=$response[0]['Name'];
+        $_SESSION['Mail']=$response[0]['Mail'];
+        $_SESSION['FamId']=$response[0]['FamilyId'];
+        if(!$http){return $response;}else{
+            header('Content-Type: application/json'); 
+            echo json_encode($response); 
+            //echo json_encode($query); 
+        }
+
+    }else{
+        if(!$http){return $response;}else{
+            header('Content-Type: application/json'); 
+            echo json_encode($response); 
+            //echo json_encode($query); 
+        }
+    }
 }
 ?>
