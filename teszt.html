@@ -83,8 +83,18 @@ function getCookie(cname) {
   return "";
 }
 function getTranList(){
-   /* var request = new XMLHttpRequest()
-
+    var request = new XMLHttpRequest();
+    var com = 'tran';
+    var user = 9;
+    var cat = 'null';
+    var minVal = 'null';
+    var maxVal = 'null';
+    var minDat = '2019-12-30';
+    var maxDat = 'null';
+    var personal = 1;
+    var token = getCookie("Token");
+    
+    var param = "user="+user+"&cat="+cat+"&minVal="+minVal+"&maxVal="+maxVal+"&minDat='"+minDat+"'&maxDat="+maxDat+"&com="+com+"&personal="+personal+"&token="+token;
 
     request.open('GET', 'phpApi.php?com=user', true)
 
@@ -93,14 +103,14 @@ function getTranList(){
     //alert(obj.length);
     var lista = document.getElementById("lista");
     for(i=0; i< obj.length;i++){
-    lista.innerHTML =lista.innerHTML+"Nev: "+obj[i].Name+" |Email: "+obj[i].Mail+" |Id: "+obj[i].Id+" |Csalad Id: "+obj[i].FamilyId+"<br>";
+    lista.innerHTML =lista.innerHTML+"UserId: "+obj[i].UserId+" |CategoryId: "+obj[i].TranCatId+" |Value: "+obj[i].Value+" |Personal: "+obj[i].Personal+" |Date: "+obj[i].TranDate+"<br>";
     }
     //    alert(obj[2].Name);        
         
 
 }
 // Send request
-request.send()*/
+request.send()
 alert(getCookie("Token"));
 }
 </script>
