@@ -22,7 +22,7 @@ switch($request_method) {
     //if(!empty($_GET["id"]))
     switch ($_GET['com']){
         case 'tran':
-            if(ISSET($_SESSION[$data['sesID']]){
+            if(isset($_SESSION[$data['sesID']]){
                 getPersonTranList($_GET['user'],$_GET['cat'],$_GET['minVal'],$_GET['maxVal'],$_GET['minDat'],$_GET['maxDat'],$_GET['personal']);
             }else{
                 header("HTTP/1.1 401 Need to login");
@@ -572,13 +572,7 @@ function getUser($data, $type){
 function logout()
 {
     $_SESSION = array(); //destroy all of the session variables
-    if (ini_get("session.use_cookies")) {
-        $params = session_get_cookie_params();
-        setcookie(session_name(), '', time() - 42000,
-            $params["path"], $params["domain"],
-            $params["secure"], $params["httponly"]
-        );
-    }
+    session_unset();
     session_destroy();
 }
 function login($data){
