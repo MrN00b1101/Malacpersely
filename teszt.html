@@ -67,6 +67,21 @@ function login(){
     "password": "dd"
      }));
 }
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 function getTranList(){
    /* var request = new XMLHttpRequest()
 
@@ -86,7 +101,7 @@ function getTranList(){
 }
 // Send request
 request.send()*/
-alert(document.cookie);
+alert(getCookie("Token"));
 }
 </script>
 <button onclick="newUser();">Uj felhasznalo</button>
