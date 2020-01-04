@@ -571,26 +571,28 @@ function login($data){
     global $connection;
     $mail = $data['Mail'];
     $password = $data['password'];
-    
+
     $query ="SELECT Name, Id, FamilyId, Mail FROM Users WHERE Mail=".$mail." AND Password =".md5($password);
     $response=array();
     $result=mysqli_query($connection, $query);
     while($row=mysqli_fetch_array($result))  {
         $response[]=$row;
     }
-    header('Content-Type: application/json'); 
-            echo json_encode($query);    
+    
     if(count($response) == 1){
         session_start();
         $_SESSION['UserId']=$response[0]['Id'];
         $_SESSION['Name']=$response[0]['Name'];
         $_SESSION['Mail']=$response[0]['Mail'];
         $_SESSION['FamId']=$response[0]['FamilyId'];  
-        header('Content-Type: application/json'); 
-        echo json_encode($response); 
     }else{        
-            header('Content-Type: application/json'); 
-            echo json_encode($response);        
+        $response=array(
+            'status' => 0,
+            'status_message' =>'Savings Addition Failed.'
+            );
+            
     }
+    header('Content-Type: application/json'); 
+    echo json_encode($query);        
 }
 ?>
