@@ -571,7 +571,7 @@ function getUser($data, $type){
 }
 function logout($data)
 {
-    session_id($data);
+    session_id($data['sid']);
     session_start();
     session_unset();
     session_destroy();
