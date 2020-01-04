@@ -547,7 +547,7 @@ function getTranList(){
    
     global $connection;
   
-        $query = "SELECT * FROM Transactions";
+        $query = "SELECT Value FROM Transactions";
        
         $response=array();
         $query = $query.$szuro;

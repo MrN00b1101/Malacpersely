@@ -20,7 +20,7 @@ function getTranList(){
     
    
     for(i=0; i< obj.length;i++){
-        if(obj[i].Value > 0)
+       // if(obj[i].Value > 0)
         document.getElementById("inComeValue") +=obj[i].Value;
     }
     //    alert(obj[2].Name);        
