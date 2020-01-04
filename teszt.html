@@ -111,10 +111,31 @@ function getTranList(){
 }
 // Send request
 request.send()
-alert(getCookie("Token"));
+//alert(getCookie("Token"));
+}
+function logout(){
+    var request = new XMLHttpRequest();
+ 
+    var param = "?com=logout";
+
+    request.open('GET', 'phpApi.php'+param, true)
+
+    request.onload = function() {
+    var obj = JSON.parse(request.response);
+    alert(obj);
+    
+    
+   
+        
+
+}
+// Send request
+request.send()
 }
 </script>
 <button onclick="newUser();">Uj felhasznalo</button>
 <button onclick="getusers();">Felhasznalok listaja!</button>
 <button onClick="login();">Login</button>
 <button onClick="getTranList()">TranList</button>
+<button onClick="logout()">logout</button>
+
