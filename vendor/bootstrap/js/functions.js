@@ -82,7 +82,7 @@ function getTranList(){
 
     request.onload = function() {
     var obj = JSON.parse(request.response);
-    //alert(obj.length);
+    alert(obj.length);
     var inComeId = 1;
     var costId = 1;
     for(i=0; i< obj.length;i++){
