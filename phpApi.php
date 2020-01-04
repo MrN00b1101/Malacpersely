@@ -571,11 +571,11 @@ function getUser($data, $type){
 }
 function logout($data)
 {
-    session_id() = $data;
+    session_id($data);
     session_start();
     session_unset();
     session_destroy();
-    session_id() = "";
+    session_id("");
 }
 function login($data){
     global $connection;
