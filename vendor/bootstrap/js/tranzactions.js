@@ -1,17 +1,4 @@
 
-/*var request = new XMLHttpRequest();
-
-request.open('GET', 'phpApi.php',true)
-
-request.onload = function() {
-var obj = JSON.parse(request.response);
-for(i=0; i< obj.length;i++){
-    // if(obj[i].Value > 0)
-     document.getElementById("inComeValue").innerHTML +=obj[i].Value;
- }
- request.send()
-}*/
-
 function getPersonTranList(){
     var request = new XMLHttpRequest();
     var com = 'tran';
