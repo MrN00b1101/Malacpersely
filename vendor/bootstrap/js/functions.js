@@ -1,8 +1,7 @@
 
-<body onload="getTranList()">
-<div id="lista"></div>
+//'http://localhost/Malacpersely/phpApi.php';
+//'http://mrnoobrft.ddns.net/Malacpersely/phpApi.php'
 
-<script>
 function newUser(){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", "phpApi.php", true);
@@ -14,38 +13,19 @@ function newUser(){
         if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
             alert(xmlhttp.status_message);
         } else {
-            alert(xmlhttp.status_message);
+            alert("Sikeres regisztráció! Kérlek jelentkezz be!");
         }
     }
 
     xmlhttp.send(JSON.stringify(
         { 
     "com": "user",
-    "name": "JavaScriptU",
-    "mail": "java@script.hu",
-    "pass": "jelszo",
+    "name": document.getElementById("inputUserName").value,
+    "mail": document.getElementById("inputEmailReg").value,
+    "pass": document.getElementById("inputPassword").value,
     }));
 }
-function getusers(){
-var request = new XMLHttpRequest()
 
-// Open a new conne
-request.open('GET', 'phpApi.php?com=user', true)
-
-request.onload = function() {
-    var obj = JSON.parse(request.response);
-    //alert(obj.length);
-    var lista = document.getElementById("lista");
-    for(i=0; i< obj.length;i++){
-    lista.innerHTML =lista.innerHTML+"Nev: "+obj[i].Name+" |Email: "+obj[i].Mail+" |Id: "+obj[i].Id+" |Csalad Id: "+obj[i].FamilyId+"<br>";
-    }
-    //    alert(obj[2].Name);        
-        
-
-}
-// Send request
-request.send()
-}
 
 function login(){
     var xmlhttp = new XMLHttpRequest();
@@ -65,8 +45,8 @@ function login(){
     xmlhttp.send(JSON.stringify(
         { 
     "com": "login",
-    "Mail": "valami",
-    "password": "dd"
+    "Mail": document.getElementById("inputEmailLog").value,
+    "password": document.getElementById("inputPasswordLog").value
      }));
 }
 function getCookie(cname) {
@@ -134,11 +114,3 @@ function logout(){
 // Send request
 request.send()
 }
-</script>
-<button onclick="newUser();">Uj felhasznalo</button>
-<button onclick="getusers();">Felhasznalok listaja!</button>
-<button onClick="login();">Login</button>
-<button onClick="getTranList()">TranList</button>
-<button onClick="logout()">logout</button>
-
-</body>
