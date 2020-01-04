@@ -85,10 +85,9 @@ function getTranList(){
     //alert(obj.length);
     var lista = document.getElementById("lista");
     for(i=0; i< obj.length;i++){
-    lista.innerHTML =lista.innerHTML+"UserId: "+obj[i].UserId+" |CategoryId: "+obj[i].TranCatId+" |Value: "+obj[i].Value+" |Personal: "+obj[i].Personal+" |Date: "+obj[i].TranDate+"<br>";
+    lista.innerHTML =obj[i].Value+"<br>";
     }
-        alert(obj[2].Name);        
-        
+ 
 
 }
 // Send request
