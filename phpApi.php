@@ -542,6 +542,25 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
     echo json_encode($response); 
     
 }
+
+function getTranList(){
+   
+    global $connection;
+  
+        $query = "SELECT * FROM Transactions";
+       
+        $response=array();
+        $query = $query.$szuro;
+        $result=mysqli_query($connection, $query);
+            while($row=mysqli_fetch_array($result))  {
+            $response[]=$row;
+        }
+    
+    header('Content-Type: application/json'); 
+    //echo json_encode($query); 
+    echo json_encode($response); 
+    
+}
 function getFamilyMemberList($famId, $http)
 {
     global $connection;
