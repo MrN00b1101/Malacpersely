@@ -20,14 +20,14 @@ $db = new dbObj(); $connection =  $db->getConnstring();
 $request_method=$_SERVER["REQUEST_METHOD"]; //melyik metódussal hívták az API-t?
 switch($request_method) {
   case 'GET':
-    //if(!empty($_GET["id"]))
     switch ($_GET['com']){
         case 'tran':
-          //  if(isset($_SESSION[$data['sesID']]){
+            if(isLogged($_GET['token'])){
+
                 getPersonTranList($_GET['user'],$_GET['cat'],$_GET['minVal'],$_GET['maxVal'],$_GET['minDat'],$_GET['maxDat'],$_GET['personal']);
-          //  }else{
-           //     header("HTTP/1.1 401 Need to login");
-           // }
+            }else{
+                header("HTTP/1.1 401 Need to login");
+            }
         break;
         case 'cat':
             getCategoryList($_GET['user'],$_GET['fam']);
@@ -617,5 +617,15 @@ function login($data){
     }
     header('Content-Type: application/json'); 
     echo json_encode($response);        
+}
+function isLogged($token){
+    $secret_key = 'some_test_key';
+
+    $user = JWT::decode($token, $secret_key);
+    if ($user->exp >= time()) {
+        return true;
+    } else {
+        return false;
+    }
 }
 ?>
