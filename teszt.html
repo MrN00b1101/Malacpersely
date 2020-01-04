@@ -40,10 +40,34 @@ request.onload = function() {
         
 
 }
-
 // Send request
 request.send()
+}
+
+function login(){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "phpApi.php", true);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+
+    xmlhttp.onload = function () {
+        var users = JSON.parse(xmlhttp.responseText);
+        if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+            alert(xmlhttp.status_message);
+        } else {
+            alert(xmlhttp.status_message);
+        }
+    }
+
+    xmlhttp.send(JSON.stringify(
+        { 
+    "com": "login",
+    "Mail": "valami",
+    "password": "dd"
+     }));
 }
 </script>
 <button onclick="newUser();">Uj felhasznalo</button>
 <button onclick="getusers();">Felhasznalok listaja!</button>
+<button onClick="login();">Login</button>
+<button onClick="getTranList()"></button>
