@@ -98,6 +98,30 @@ A Megtakarításokat tároljuk ebben a táblában.
     Az api Json obijektumban várja az adatokat!
 **Modulok:**
 
+    Tranzakciók listája:
+    Kategóriák listája:
+    Felhasználók listája:
+    Családok listája:
+    Családtagok listája:
+    User adatai:
+    Kijelentkezés
+
+    Regisztráció:
+    Kategória felvitele:
+    Tranzakció felvitele:
+    Család felvitele:
+    Megtakarítás készítése:
+    Bejelentkezés:
+
+    Felhasználó adatainak módosítása:
+    Kategória adatainak módosítása:
+    Tranzakció adatainak módosítása:
+    Családtag családhoz való adása:
+
+    Tranzakció törlése:
+    Bármi más törlése:
+    
+
     Regisztráció: Post request 
     
     szükséges adatok: 
