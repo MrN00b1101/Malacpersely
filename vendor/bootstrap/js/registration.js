@@ -21,7 +21,7 @@ function newUser(){
         { 
     "com": "user",
     "name": document.getElementById("inputUserName").value,
-    "mail": document.getElementById("inputEmail").value,
+    "mail": document.getElementById("inputEmailReg").value,
     "pass": document.getElementById("inputPassword").value,
     }));
 }
