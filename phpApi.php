@@ -567,9 +567,11 @@ function logout()
     session_unset();
     session_destroy();
 }
-function login($username, $password){
+function login($data){
     global $connection;
-    $query ="SELECT Name, Id, FamilyId, Mail FROM Users WHERE Mail=".$username." AND Password =".md5($password);
+    $mail = $data['Mail'];
+    $password = $data['password'];
+    $query ="SELECT Name, Id, FamilyId, Mail FROM Users WHERE Mail=".$mail." AND Password =".md5($password);
     $response=array();
     $result=mysqli_query($connection, $query);
     while($row=mysqli_fetch_array($result))  {
