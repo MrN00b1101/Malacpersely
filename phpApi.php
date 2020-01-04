@@ -30,7 +30,11 @@ switch($request_method) {
             }
         break;
         case 'cat':
-            getCategoryList($_GET['user'],$_GET['fam']);
+            if(isLogged($_GET['token'])){
+                getCategoryList($_GET['user'],$_GET['fam']);
+            }else{
+                header("HTTP/1.1 401 Need to login");
+            }
         break;
         case 'user':
             getUserList();
@@ -39,13 +43,21 @@ switch($request_method) {
             getFamilyList();
         break;
         case 'famMem':
-            getFamilyMemberList($_GET['famId'],true);
+            if(isLogged($_GET['token'])){
+                getFamilyMemberList($_GET['famId'],true);
+            }else{
+                header("HTTP/1.1 401 Need to login");
+            }    
         break;
         case 'SpecUser':
             getUser($_GET['Uid'], $_GET['attributum']);
         break;
         case 'logout':
-            logout($_GET['sessId']);
+            if(isLogged($_GET['token'])){
+                logout($_GET['sessId']);
+            }else{
+                header("HTTP/1.1 401 Need to login");
+            }   
         break;
     } 
    break;
@@ -58,16 +70,32 @@ switch($request_method) {
             insertUser($data);
         break;
         case 'cat':
-            insertCategory($data);
+            if(isLogged($data['token'])){
+                insertCategory($data);
+            }else{
+                header("HTTP/1.1 401 Need to login");
+            }  
         break;
         case 'tran':
-            insertTransaction($data);
+            if(isLogged($data['token'])){
+                insertTransaction($data);
+            }else{
+                header("HTTP/1.1 401 Need to login");
+            }  
         break;
         case 'family':
-            insertFamily($data);
+            if(isLogged($data['token'])){
+                insertFamily($data);
+            }else{
+                header("HTTP/1.1 401 Need to login");
+            }  
         break;
         case 'saving':
-            insertSaving($data);
+            if(isLogged($data['token'])){
+                insertSaving($data);
+            }else{
+                header("HTTP/1.1 401 Need to login");
+            }  
         break;
         case 'login':
             login($data);
@@ -79,16 +107,32 @@ case 'PUT':
     $data = json_decode(file_get_contents('php://input'), true);
     switch ($data['com']){
         case 'user':
-            updateUser($data);
+            if(isLogged($data['token'])){
+                updateUser($data);
+            }else{
+                header("HTTP/1.1 401 Need to login");
+            }  
         break;
         case 'cat':
-            updateCategory($data);
+            if(isLogged($data['token'])){
+                updateCategory($data);
+            }else{
+                header("HTTP/1.1 401 Need to login");
+            }  
         break;
         case 'tran':
-            updateTransaction($data);
+            if(isLogged($data['token'])){
+                updateTransaction($data);
+            }else{
+                header("HTTP/1.1 401 Need to login");
+            }  
         break;
         case 'fammember':
-            updateFamMember($data);
+            if(isLogged($data['token'])){
+                updateFamMember($data);
+            }else{
+                header("HTTP/1.1 401 Need to login");
+            }  
         break;
     }
 
@@ -98,10 +142,18 @@ case 'PUT':
     $data = json_decode(file_get_contents('php://input'), true);
     switch($data['com']){
         case 'tran':
-            delTransaction($data);
+            if(isLogged($data['token'])){
+                delTransaction($data);
+            }else{
+                header("HTTP/1.1 401 Need to login");
+            }  
         break;
         default:
-            delete($data);
+            if(isLogged($data['token'])){
+                delete($data);
+            }else{
+                header("HTTP/1.1 401 Need to login");
+            }  
         break;
     }
     
