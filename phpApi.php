@@ -22,7 +22,7 @@ switch($request_method) {
     //if(!empty($_GET["id"]))
     switch ($_GET['com']){
         case 'tran':
-            if($data['sesID'] == session_id()){
+            if(ISSET($_SESSION[$data['sesID']]){
                 getPersonTranList($_GET['user'],$_GET['cat'],$_GET['minVal'],$_GET['maxVal'],$_GET['minDat'],$_GET['maxDat'],$_GET['personal']);
             }else{
                 header("HTTP/1.1 401 Need to login");
