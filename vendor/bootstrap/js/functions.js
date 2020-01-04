@@ -85,9 +85,7 @@ function getTranList(){
     //alert(obj.length);
     var inComeId = 1;
     var costId = 1;
-    var inOutSum = 0;
     for(i=0; i< obj.length;i++){
-       // inOutSum += obj[i].Value;
         if(obj[i].Value > 0)
         {
             document.getElementById("inComeId").innerHTML += inComeId+"<br>";
@@ -102,8 +100,6 @@ function getTranList(){
         document.getElementById("costDate").innerHTML += obj[i].TranDate+"<br>";
         }
     }
-    //document.getElementById("inOutSum").innerHTML = inOutSum;
-
  
 
 }
