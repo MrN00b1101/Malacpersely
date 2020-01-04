@@ -578,7 +578,7 @@ function login($data){
         $response[]=$row;
     }
     header('Content-Type: application/json'); 
-            echo json_encode($response);    
+            echo json_encode($query);    
     if(count($response) == 1){
         session_start();
         $_SESSION['UserId']=$response[0]['Id'];
