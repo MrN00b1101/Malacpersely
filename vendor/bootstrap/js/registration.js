@@ -11,7 +11,7 @@ function newUser(){
     xmlhttp.onload = function () {
         var users = JSON.parse(xmlhttp.responseText);
         if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
-            alert("Sikeres regisztráció! Kérlek jelentkezz be!");
+            alert(xmlhttp.status_message);
         } else {
             alert("Sikeres regisztráció! Kérlek jelentkezz be!");
         }
