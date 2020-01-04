@@ -1,4 +1,3 @@
-document.getElementById("inComeValue").innerHTML = 12;
 
 function getTranList(){
     var request = new XMLHttpRequest();
@@ -24,5 +23,5 @@ request.send()
 }
 
 window.onload = function() {
-    getTranList();
+    this.getTranList();
 };
