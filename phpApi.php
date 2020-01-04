@@ -22,7 +22,7 @@ switch($request_method) {
     //if(!empty($_GET["id"]))
     switch ($_GET['com']){
         case 'tran':
-            if(isset($_SESSION['UserId'])){
+            if(session_is_registered()){
                 getPersonTranList($_GET['user'],$_GET['cat'],$_GET['minVal'],$_GET['maxVal'],$_GET['minDat'],$_GET['maxDat'],$_GET['personal']);
             }else{
                 header("HTTP/1.1 401 Need to login");
@@ -600,6 +600,6 @@ function login($data){
             
     }
     header('Content-Type: application/json'); 
-    echo json_encode($response[0]['Id']);        
+    echo json_encode($response);        
 }
 ?>
