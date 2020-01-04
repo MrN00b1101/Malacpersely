@@ -94,9 +94,9 @@ function getTranList(){
     var personal = 1;
     var token = getCookie("Token");
     
-    var param = "user="+user+"&cat="+cat+"&minVal="+minVal+"&maxVal="+maxVal+"&minDat='"+minDat+"'&maxDat="+maxDat+"&com="+com+"&personal="+personal+"&token="+token;
+    var param = "?user="+user+"&cat="+cat+"&minVal="+minVal+"&maxVal="+maxVal+"&minDat='"+minDat+"'&maxDat="+maxDat+"&com="+com+"&personal="+personal+"&token="+token;
 
-    request.open('GET', 'phpApi.php?com=user', true)
+    request.open('GET', 'phpApi.php'+param, true)
 
     request.onload = function() {
     var obj = JSON.parse(request.response);
