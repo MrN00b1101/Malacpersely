@@ -44,7 +44,7 @@ switch($request_method) {
             getUser($_GET['Uid'], $_GET['attributum']);
         break;
         case 'logout':
-            logout($_GET['sessId'];);
+            logout($_GET['sessId']);
         break;
     } 
    break;
