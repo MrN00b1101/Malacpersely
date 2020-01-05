@@ -68,12 +68,12 @@ function getTranList(){
     var request = new XMLHttpRequest();
     var com = 'tran';
     var user = 9;
-    var cat = 3;
+    var cat = 'null';
     var minVal = 'null';
     var maxVal = 'null';
-    var minDat = '2019-01-30';
+    var minDat = '2019-12-30';
     var maxDat = 'null';
-    var personal = 0;
+    var personal = 1;
     var token = getCookie("Token");
     
     var param = "?user="+user+"&cat="+cat+"&minVal="+minVal+"&maxVal="+maxVal+"&minDat='"+minDat+"'&maxDat="+maxDat+"&com="+com+"&personal="+personal+"&token="+token;
@@ -83,34 +83,18 @@ function getTranList(){
     request.onload = function() {
     var obj = JSON.parse(request.response);
     //alert(obj.length);
-    var inComeId = 1;
-    var costId = 1;
+   
     for(i=0; i< obj.length;i++){
-        if(obj[i].Value > 0)
-        {
-            document.getElementById("inComeId").innerHTML += inComeId+"<br>";
-            incomeId++;
-            document.getElementById("inComeCategory").innerHTML += obj[i].Value+"<br>";
-            document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
-            document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
-        }
-        else{
-        document.getElementById("costId").innerHTML += costId+"<br>";
-        costId++;
-        document.getElementById("costCategory").innerHTML += obj[i].Value+"<br>";
-        document.getElementById("costValue").innerHTML += obj[i].Value+"<br>";
-        document.getElementById("costDate").innerHTML += obj[i].TranDate+"<br>";
-        }
+        document.getElementById("inComeValue").innerHTM +=obj[i].Value+"<br>";
     }
- 
+        alert(obj[2].Name);        
+        
 
 }
-
 // Send request
 request.send()
 //alert(getCookie("Token"));
 }
-
 function getCategoryList(){
     var request = new XMLHttpRequest();
     var com = 'cat';
