@@ -148,38 +148,13 @@ request.send()
 //alert(getCookie("Token"));
 }
 
-function getCategoryList2(){
-    var request = new XMLHttpRequest();
-    var com = 'cat';
-    var user = 9;
-    var fam = 0;
-    var token = getCookie("Token");
-    
-    var param = "?user="+user+"&com="+com+"&fam="+fam+"&token="+token;
-
-    request.open('GET', 'phpApi.php'+param, false)
-
-    request.onload = function() {
-    var obj = JSON.parse(request.response);
-
-    for(i=0; i< obj.length;i++){
-        document.getElementById("getCategories3").innerHTML +="<option>" + obj[i].Name+"</option>"+"<br>";
-       
-    }
-
-}
-// Send request
-request.send()
-//alert(getCookie("Token"));
-}
-
 
 
 function newTransaction(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
     var user = 9;
-    var cat = 3;
+    var cat = document.getElementById("getCategories3").value;
     var value = document.getElementById('inputIncome').value;
     var personal = 1;
     var token = getCookie("Token");
