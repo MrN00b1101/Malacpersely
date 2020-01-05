@@ -88,15 +88,12 @@
 	          <li>
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                 <i class="fas fa-clipboard-list"></i>
-               <span onload="getCategoryList()" class="ml-4">Kategóriák</span></a>
+               <span class="ml-4">Kategóriák</span></a>
               </a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li>
-                    <a href="#">Kategória 1</a>
+                    <a href="#" id="getCategories"></a>
                 </li>
-                <li>
-                   <a href="#">Kategória 2</a>
-              </li>
               <ul>
                 <li>
                     <a href="#" data-toggle="modal" data-target="#categoryAdd">Kategória hozzáadása</a>
@@ -186,7 +183,7 @@
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Kategóriák</div>
-                <div class="text-xs" id="getCategories"><b></b></div>
+                <div class="text-xs " id="getCategories"><b></b></div>
                
               </div>
               <div class="col-auto">
@@ -205,7 +202,7 @@
               <div class="col mr-2">
                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Összesítés</div>
                 <div class="text-xs"><b>Előző havi záróegyenleg: </b></div>
-                <div class="text-xs" id="inOutSum"><b>Ehavi bevétel-kiadás: </b></div>
+                <div class="text-xs font-weight-bold"><b>Ehavi bevétel-kiadás: </b><p class="text-xs font-weight-bold" id="inOutSum"></p></div>
                 <div class="text-xs"><b>Jelenlegi egyenleg: </b></div>
               </div>
               <div class="col-auto">
@@ -361,7 +358,7 @@
                 <div class="form-label-group">
                   <label for="inputFamilyMember font-weight-bold">Válaszd ki a törölni kívánt kategóriát!</label>
                   <div class="row align-items-start ">
-                    <select class="col-md-10 text-m font-weight-bold rounded-sm border p-md-1 m-1 ml-3">
+                    <select class="col-md-10 text-m font-weight-bold rounded-sm border p-md-1 m-1 ml-3" id="getCategories">
                     </select>
                     </div>
                 </div>
@@ -387,7 +384,7 @@
                   <div class="form-label-group">
                     <label for="inputCategory font-weight-bold">Válaszd ki a kategóriát!</label>
                     <div class="row align-items-start ">
-                      <select class="col-md-10 text-m font-weight-bold rounded-sm border p-md-1 m-1 ml-3">
+                      <select class="col-md-10 text-m font-weight-bold rounded-sm border p-md-1 m-1 ml-3" id="getCategories">
                       </select>
                       </div>
                       <br>
@@ -395,17 +392,13 @@
                     <label for="inputCost font-weight-bold">Összeg</label>
                     <input type="text" id="inputIncome" class="form-control" placeholder="Összeg" required autofocus>
                   </div>
-                  <div class="form-label-group">
-                    <label for="inputCostDate">Dátum</label>
-                    <input type="date" id="inputCostDate" class="form-control" required autofocus>
-                  </div>
                 </br>
                 <div class="custom-control custom-checkbox mr-sm-2">
                   <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
                   <label class="custom-control-label" for="customControlAutosizing">Személyes kiadás</label>
                 </div>
                 </br>
-                  <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit" onclick="newTranzaction()">Tranzakció hozzáadás</button>
+                  <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit" onclick="newTransaction()">Tranzakció hozzáadás</button>
                 </form>
               </div>
             </div>

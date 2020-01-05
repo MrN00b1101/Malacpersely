@@ -134,7 +134,6 @@ function getCategoryList(){
 
     request.onload = function() {
     var obj = JSON.parse(request.response);
-    alert(obj.length);
 
     for(i=0; i< obj.length;i++){
         document.getElementById("getCategories").innerHTML +=obj[i].Name+"<br>";
@@ -147,7 +146,7 @@ request.send()
 }
 
 
-function newTranzaction(){
+function newTransaction(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
     var user = 9;
