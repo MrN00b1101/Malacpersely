@@ -1,6 +1,12 @@
 
 //'http://localhost/Malacpersely/phpApi.php';
 //'http://mrnoobrft.ddns.net/Malacpersely/phpApi.php'
+
+window.onload = function() {
+    this.getCategoryList();
+    this.getTranList();
+};
+
 function loggin(){
     
     var loginReq = new XMLHttpRequest();
@@ -63,7 +69,6 @@ function getCookie(cname) {
   }
   return "";
 }
-function start(){
 
 function getTranList(){
     var request = new XMLHttpRequest();
@@ -140,7 +145,7 @@ function getCategoryList(){
 request.send()
 //alert(getCookie("Token"));
 }
-}
+
 
 function newTranzaction(){
     var xmlhttp = new XMLHttpRequest();
