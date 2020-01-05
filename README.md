@@ -118,8 +118,14 @@ A Megtakarításokat tároljuk ebben a táblában.
     Visszakapott adatok:
 |Kulcs:|Érték pléda:|Leírás|
 |:-----|:-----------|:------|
-|UserId|9|A tranzakciók készítőjének azonosítója|
-
+|Savings|Kocsira|A megtakarítási zseb neve, ha a tranzakció nem tartozik kölön zsebhez akkor az érték "Personal" vagy "Family"|
+|User|Valaki|A tranzakciót felvivő felhasználó neve|
+|Category|Megtakarítás|A tranzakció kategóriájának neve|
+|UseId|9|A tranzakciót felvivő felhasználó azonosítója|
+|TranCatId|4|A tranzakció kategóriájának azonosítója|
+|Value|200|A tranzakció értéke|
+|Personal|3|Ha az értéke -1 akkor a kiadás személyes, ha 0 akkor a kiadás családi ha ezektől eltérő akkor annak a megtakarításnak az azonosítója amihez tartozik|
+|TranDate|"2019-12-30 11:05:28"|A tranzakció időpontja|
 
     Kategóriák listája:
     Felhasználók listája:
