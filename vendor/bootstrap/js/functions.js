@@ -136,10 +136,10 @@ function getCategoryList(){
     var obj = JSON.parse(request.response);
 
     for(i=0; i< obj.length;i++){
-        document.getElementById("getCategories1").innerHTML +=obj[i].Name+"<br>";
-        document.getElementById("getCategories2").innerHTML +=obj[i].Name+"<br>";
+        document.getElementById("getCategories1").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>'+"<br>";
+        document.getElementById("getCategories2").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>'+"<br>";
         document.getElementById("getCategories3").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>'+"<br>";
-        document.getElementById("getCategories4").innerHTML +=obj[i].Name+"<br>";
+        document.getElementById("getCategories4").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>'+"<br>";
       
     }
 
