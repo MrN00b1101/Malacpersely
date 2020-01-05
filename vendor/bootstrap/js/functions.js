@@ -139,7 +139,7 @@ function getCategoryList(){
         document.getElementById("getCategories1").innerHTML +=obj[i].Name+"<br>";
         document.getElementById("getCategories2").innerHTML +=obj[i].Name+"<br>";
         document.getElementById("getCategories3").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>'+"<br>";
-      //  document.getElementById("getCategories4").innerHTML +='<option id="' + i + '">' +obj[i].Name+'</option>'+"<br>";
+        document.getElementById("getCategories4").innerHTML +=obj[i].Name+"<br>";
       
     }
 
@@ -155,16 +155,12 @@ function newTranzaction(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
     var user = 9;
-    var cat = 3;
     
     var el = document.getElementById('getCategories3');
     var x = el.options[el.selectedIndex].value;
     var catArray = x.split(" - ");
     var cat = parseInt(catArray[0]);
-    alert(parseInt(catArray[0]));
-  /*  var el = document.getElementById('getCategories3');
-    var cat = el.options[el.selectedIndex].value;*/
-    
+
     var value = document.getElementById('inputIncome').value;
     var personal = 0;
     var token = getCookie("Token");
@@ -189,6 +185,34 @@ function newTranzaction(){
     "catId" : cat,
     "value" : value,
     "personal" : personal,
+    "token" : token
+    }));
+}
+
+function newCategory(){
+    var xmlhttp = new XMLHttpRequest();
+    var com = 'cat';
+    var name = document.getElementById('inputCategory').innerHTML.value;
+    var creaId = 9;
+    var global = 0;
+    var token = getCookie("Token");
+    xmlhttp.open("POST", "phpApi.php", false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+    xmlhttp.onload = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+            alert(xmlhttp.status_message);
+        } else {
+            alert("Kategória sikeresen hozzáadva!");
+        }
+    }
+
+    xmlhttp.send(JSON.stringify(
+        { 
+    "com": com,
+    "name" : name,
+    "creaId" : creaId,
+    "global" : global,
     "token" : token
     }));
 }
