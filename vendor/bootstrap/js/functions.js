@@ -164,7 +164,6 @@ function getCategoryList(){
     for(i=0; i< obj.length;i++){
         document.getElementById("getCategories").innerHTML +=obj[i].Name+"<br>";
     }
- 
 
 }
 // Send request
