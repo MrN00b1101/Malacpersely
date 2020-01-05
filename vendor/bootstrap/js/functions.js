@@ -20,7 +20,7 @@ function loggin(){
     loginReq.send(JSON.stringify(
         { 
     "com": "login",
-    "Mail": document.getElementById('inputEmailLog'),
+    "Name": document.getElementById('inputNameLog'),
     "password": document.getElementById('inputPasswordLog'),
      }));
 }

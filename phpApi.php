@@ -636,11 +636,11 @@ function logout($data)
 }
 function login($data){
     global $connection;
-    $mail = $data['Mail'];
+    $name = $data['Name'];
     $password = $data['password'];
     $secret_key = 'some_test_key';
     $valid_for = '3600';
-    $query ="SELECT Name, Id, FamilyId, Mail FROM User WHERE Mail='".$mail."' AND Password ='".md5($password)."'";
+    $query ="SELECT Name, Id, FamilyId, Mail FROM User WHERE Name='".$name."' AND Password ='".md5($password)."'";
     $response=array();
     $result=mysqli_query($connection, $query);
     while($row=mysqli_fetch_array($result))  {
