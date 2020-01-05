@@ -4,7 +4,7 @@
 function loggin(){
     
     var loginReq = new XMLHttpRequest();
-    loginReq.open("POST", "phpApi.php", true);
+    loginReq.open("POST", "phpApi.php", false);
     loginReq.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
 
