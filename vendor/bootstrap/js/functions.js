@@ -154,7 +154,7 @@ function newTransaction(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
     var user = 9;
-    var cat = document.getElementById('getCategories3').selectedIndex.value;
+    var cat = document.getElementById(selectedIndex).value;
     var value = document.getElementById('inputIncome').value;
     var personal = 1;
     var token = getCookie("Token");
