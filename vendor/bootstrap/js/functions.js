@@ -156,7 +156,7 @@ function newTranzaction(){
     var user = 9;
     var cat = 3;
     var el = document.getElementById('getCategories3');
-    alert(el.options[el.selectedIndex].innerHTML);
+    alert(el.options[el.selectedIndex].value);
   /*  var el = document.getElementById('getCategories3');
     var cat = el.options[el.selectedIndex].value;*/
     
