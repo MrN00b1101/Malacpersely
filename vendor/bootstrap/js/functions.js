@@ -138,7 +138,8 @@ function getCategoryList(){
     for(i=0; i< obj.length;i++){
         document.getElementById("getCategories1").innerHTML +=obj[i].Name+"<br>";
         document.getElementById("getCategories2").innerHTML +=obj[i].Name+"<br>";
-        document.getElementById("getCategories3").innerHTML +=obj[i].Name+"<br>";
+        document.getElementById("getCategories3").innerHTML +="<option>" + obj[i].Name+"</option>"+"<br>";
+       
     }
 
 }
@@ -146,6 +147,32 @@ function getCategoryList(){
 request.send()
 //alert(getCookie("Token"));
 }
+
+function getCategoryList2(){
+    var request = new XMLHttpRequest();
+    var com = 'cat';
+    var user = 9;
+    var fam = 0;
+    var token = getCookie("Token");
+    
+    var param = "?user="+user+"&com="+com+"&fam="+fam+"&token="+token;
+
+    request.open('GET', 'phpApi.php'+param, false)
+
+    request.onload = function() {
+    var obj = JSON.parse(request.response);
+
+    for(i=0; i< obj.length;i++){
+        document.getElementById("getCategories3").innerHTML +="<option>" + obj[i].Name+"</option>"+"<br>";
+       
+    }
+
+}
+// Send request
+request.send()
+//alert(getCookie("Token"));
+}
+
 
 
 function newTransaction(){
