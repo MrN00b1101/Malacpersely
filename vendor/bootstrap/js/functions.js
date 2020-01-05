@@ -70,7 +70,7 @@ function getTranList(){
     var cat = 'null';
     var minVal = 'null';
     var maxVal = 'null';
-    var minDat = '2019-12-30';
+    var minDat = '2019-01-30';
     var maxDat = 'null';
     var personal = 0;
     var token = getCookie("Token");
@@ -150,10 +150,10 @@ function getCategoryList(){
     var request = new XMLHttpRequest();
     var com = 'cat';
     var user = 9;
-    var global = 0;
+    var fam = 0;
     var token = getCookie("Token");
     
-    var param = "?user="+user+"&global="+global;
+    var param = "?user="+user+"&com="+com+"&fam="+fam+"&token="+token;
 
     request.open('GET', 'phpApi.php'+param, false)
 
@@ -162,7 +162,7 @@ function getCategoryList(){
     //alert(obj.length);
     var lista = document.getElementById("getCategories");
     for(i=0; i< obj.length;i++){
-    lista.innerHTML =obj[i].Name+"<br>";
+        lista.innerHTML =obj[i].Name+"<br>";
     }
  
 
