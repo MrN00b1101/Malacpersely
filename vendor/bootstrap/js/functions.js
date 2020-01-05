@@ -121,8 +121,8 @@ function newTranzaction(){
     var value = document.getElementById('inputIncome').value;
     var personal = 1;
     var token = getCookie("Token");
-    var param = "?uId="+user+"&catId="+cat+"&value="+value+"&com="+com+"&personal="+personal+"&token="+token;
-    xmlhttp.open("POST", "phpApi.php" + param, false);
+    //var param = "?uId="+user+"&catId="+cat+"&value="+value+"&com="+com+"&personal="+personal+"&token="+token;
+    xmlhttp.open("POST", "phpApi.php", false);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
 
