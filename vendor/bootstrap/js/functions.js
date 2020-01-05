@@ -155,7 +155,7 @@ function newTranzaction(){
     var com = 'tran';
     var user = 9;
     var cat = 3;
-    alert(document.getElementById('getCategories3').options[el.selectedIndex].innerHTML);
+    //alert(document.getElementById('getCategories3').options[el.selectedIndex].innerHTML);
   /*  var el = document.getElementById('getCategories3');
     var cat = el.options[el.selectedIndex].value;*/
     
