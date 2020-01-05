@@ -27,7 +27,7 @@ function newUser(){
 }
 
 
-function login(){
+function loggin(){
     alert("rtt");
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", "phpApi.php", true);
