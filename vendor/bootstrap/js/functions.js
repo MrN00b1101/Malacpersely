@@ -150,7 +150,7 @@ request.send()
 
 
 
-function newTransaction(){
+function newTranzaction(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
     var user = 9;
