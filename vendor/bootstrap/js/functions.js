@@ -137,12 +137,12 @@ function newTranzaction(){
 
     xmlhttp.send(JSON.stringify(
         { 
-    "com": "tran",
-    "uId": 9,
-    "catId" : 3,
-    "value" : document.getElementById('inputIncome').value,
-    "personal" : 1,
-    "token" : getCookie("Token")
+    "com": com,
+    "uId": user,
+    "catId" : cat,
+    "value" : value,
+    "personal" : personal,
+    "token" : token
     }));
 }
 
