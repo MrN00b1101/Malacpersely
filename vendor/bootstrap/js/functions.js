@@ -232,6 +232,7 @@ function deleteCategory(){
     var com = 'cat';
     var table = 'Categorys';
     var el = document.getElementById('getCategories4');
+    alert(document.getElementById('getCategories4'));
     var x = el.options[el.selectedIndex].value;
     var catArray = x.split(" - ");
     var id = parseInt(catArray[0]);
