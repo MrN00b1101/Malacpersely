@@ -68,12 +68,12 @@ function getTranList(){
     var request = new XMLHttpRequest();
     var com = 'tran';
     var user = 9;
-    var cat = 'null';
+    var cat = 3;
     var minVal = 'null';
     var maxVal = 'null';
     var minDat = '2019-01-30';
     var maxDat = 'null';
-    var personal = 1;
+    var personal = 0;
     var token = getCookie("Token");
     
     var param = "?user="+user+"&cat="+cat+"&minVal="+minVal+"&maxVal="+maxVal+"&minDat='"+minDat+"'&maxDat="+maxDat+"&com="+com+"&personal="+personal+"&token="+token;

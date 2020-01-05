@@ -25,7 +25,7 @@
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     
       <a class="h2 font-weight-bold ml-5" style="color: pink !important;" href="mainPage.html">MALACPERSELY</a>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
+      <div onload="getTranList()" class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="#">Pénzügyek
@@ -219,7 +219,7 @@
     </div>
      
       <h2 class="mb-4">Bevételek:</h2>
-      <table class="table" onload="getTranList()">
+      <table class="table">
         <thead>
           <tr>
             <th scope="col">#</th>
