@@ -28,7 +28,7 @@ function newUser(){
 
 
 function loggin(){
-    alert("rtt");
+    
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", "phpApi.php", true);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -46,8 +46,8 @@ function loggin(){
     xmlhttp.send(JSON.stringify(
         { 
     "com": "login",
-    "Mail": "'"+document.getElementById('inputEmailLog')+"'",
-    "password": "'"+document.getElementById('inputPasswordLog')+"'",
+    "Mail": document.getElementById('inputEmailLog'),
+    "password": document.getElementById('inputPasswordLog'),
      }));
 }
 function getCookie(cname) {
