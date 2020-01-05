@@ -1,7 +1,29 @@
 
 //'http://localhost/Malacpersely/phpApi.php';
 //'http://mrnoobrft.ddns.net/Malacpersely/phpApi.php'
+function loggin(){
+    
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "phpApi.php", true);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
+
+    xmlhttp.onload = function () {
+        var users = JSON.parse(xmlhttp.responseText);
+        if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+            alert("Bejelentkezve");
+        } else {
+            alert("Hiba a bejelentkezésnél");
+        }
+    }
+
+    xmlhttp.send(JSON.stringify(
+        { 
+    "com": "login",
+    "Mail": document.getElementById('inputEmailLog'),
+    "password": document.getElementById('inputPasswordLog'),
+     }));
+}
 function newUser(){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", "phpApi.php", true);
@@ -27,29 +49,7 @@ function newUser(){
 }
 
 
-function loggin(){
-    
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("POST", "phpApi.php", true);
-    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
-
-    xmlhttp.onload = function () {
-        var users = JSON.parse(xmlhttp.responseText);
-        if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
-            alert("Bejelentkezve");
-        } else {
-            alert("Hiba a bejelentkezésnél");
-        }
-    }
-
-    xmlhttp.send(JSON.stringify(
-        { 
-    "com": "login",
-    "Mail": document.getElementById('inputEmailLog'),
-    "password": document.getElementById('inputPasswordLog'),
-     }));
-}
 function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
