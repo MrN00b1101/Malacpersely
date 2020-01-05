@@ -85,7 +85,7 @@ function getTranList(){
     //alert(obj.length);
    
     for(i=0; i< obj.length;i++){
-        document.getElementById("inComeValue").innerHTM +=obj[i].Value+"<br>";
+        document.getElementById("inComeValue").innerHTML +=obj[i].Value+"<br>";
     }
         alert(obj[2].Name);        
         
