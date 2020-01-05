@@ -490,7 +490,8 @@ function insertSaving($data){
 
 }
 function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, $personal){
-   
+   //Select Savings.Name, User.Name,Categorys.Name, Transactions.* FROM Transactions INNER JOIN Savings on Transactions.Personal = Savings.Id INNER JOIN User on Transactions.UserId = User.Id INNER JOIN Categorys on Transactions.TranCatId = Categorys.Id 
+
     global $connection;
     //UserId,TranCatId,Value,Personal,TranDate
     if($personal == "-1"){
@@ -505,29 +506,29 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
         $uId = array_column($familyMembers,'Id');
         $per = $personal;
     }
-        $query = "SELECT * FROM Transactions WHERE personal = ".$per;
+        $query = "SELECT Savings.Name, User.Name,Categorys.Name, Transactions.*  FROM Transactions INNER JOIN Savings on Transactions.Personal = Savings.Id INNER JOIN User on Transactions.UserId = User.Id INNER JOIN Categorys on Transactions.TranCatId = Categorys.Id WHERE Transactions.personal = ".$per;
         if(count($uId)>0){$szuro = " AND (";}
         for($i = 0; $i <= count($uId)-1; $i++){
-            if($i<count($uId)-1){$szuro = $szuro." UserId=".$uId[$i]." OR ";}else{$szuro = $szuro." UserId=".$uId[$i].")";}
+            if($i<count($uId)-1){$szuro = $szuro." Transactions.UserId=".$uId[$i]." OR ";}else{$szuro = $szuro." Transactions.UserId=".$uId[$i].")";}
         }
         if($catId != "null"){
             $cat = explode('|',$catId);
             if(count($cat)>0){$szuro = $szuro." AND (";}
             for($i = 0; $i <= count($cat)-1; $i++){
-                if($i<count($cat)-1){$szuro = $szuro." TranCatId=".$cat[$i]." OR ";}else{$szuro = $szuro." TranCatId=".$cat[$i].")";}
+                if($i<count($cat)-1){$szuro = $szuro." Transactions.TranCatId=".$cat[$i]." OR ";}else{$szuro = $szuro." Transactions.TranCatId=".$cat[$i].")";}
             }
         }
         if($minVal != "null" || $maxVal != "null"){
             $szuro = $szuro." AND (";
-            if($minVal != "null"){$szuro = $szuro."Value >".$minVal;}
-            if($maxVal != "null"){$szuro = $szuro." AND Value <".$maxVal;}
+            if($minVal != "null"){$szuro = $szuro."Transactions.Value >".$minVal;}
+            if($maxVal != "null"){$szuro = $szuro." AND Transactions.Value <".$maxVal;}
             $szuro = $szuro." )";
         }
 
         if($minDat != "null" || $maxDat != "null"){
             $szuro = $szuro." AND (";
-            if($minDat != "null"){$szuro = $szuro." TranDate >".$minDat;}
-            if($maxDat != "null"){$szuro = $szuro."AND TranDate <".$maxDat;}
+            if($minDat != "null"){$szuro = $szuro." Transactions.TranDate >".$minDat;}
+            if($maxDat != "null"){$szuro = $szuro."AND Transactions.TranDate <".$maxDat;}
             $szuro = $szuro." )";
         }
         $response=array();

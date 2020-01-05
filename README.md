@@ -58,7 +58,7 @@ A pénzügyi tranzakciókat tároljuk ebben a táblában.
 |UserId|Number|Not Null|Idegen kulcs (User tábla Id mezőjéhez kapcsolva)|A tranzakciót végrehajtó felhasználó azonosítója|
 |TranCatId|Number|Not Null|Idegen kulcs (Categorys tábla Id mezőjéhez kapcsolva)|A tranzakció típusa|
 |Value|Number|Not Null||A tranzakció összege, ha minusz akkor kiadás ha plussz akkor bevétel|
-|Personal|Bit|Not Null||Ha az értéke -1 akkor a kiadás személyes, ha 0 akkor a kiadás családi ha ezektől eltérő akkor annak a megtakarításnak az azonosítója amihez tartozik|
+|Personal|Number|Not Null||Ha az értéke -1 akkor a kiadás személyes, ha 0 akkor a kiadás családi ha ezektől eltérő akkor annak a megtakarításnak az azonosítója amihez tartozik|
 |Date|TimeStamp|Not Null||A tranzakció ideje|
 
 **Categorys:**  
@@ -95,10 +95,32 @@ A Megtakarításokat tároljuk ebben a táblában.
 
 
 ## Api használat:
-    Az api Json obijektumban várja az adatokat!
+    Az api a következő hívásokra van felkészítve (ha egy parméternél engedélyezett a 'null' abban az esetben egy 'null'-t stringként várja)
 **Modulok:**
 
-    Tranzakciók listája:
+    Get requestel elérhető funkciók
+
+*Tranzakciók listája:
+    Szükséges adatok:
+
+|Kulcs:|Érték példa:|Leírás:|
+|:-----|:-----------|:------|
+|com|'tran'|Ez határozza meg milyen adatot kérünk|
+|user|12|userID|
+|cat|'null'|kategóriaID (lehet 'null')|
+|minVal|-100|minimum érték (lehet 'null')|
+|maxVal|0|maximum érték (lehet 'null')|
+|minDat|'null'|kezdő dátum (lehet 'null')|
+|maxDat|'2019-12-30'|vég dátum (lehet 'null')|
+|personal|0|Ha az értéke -1 akkor a kiadás személyes, ha 0 akkor a kiadás családi ha ezektől eltérő akkor annak a megtakarításnak az azonosítója amihez tartozik|
+|token|cookieből olvasott token|A login során kapott token (a teszt.html-ben bemutatott módszerrel olvasható ki)|
+
+    Visszakapott adatok:
+|Kulcs:|Érték pléda:|Leírás|
+|:-----|:-----------|:------|
+|UserId|9|A tranzakciók készítőjének azonosítója|
+
+
     Kategóriák listája:
     Felhasználók listája:
     Családok listája:
