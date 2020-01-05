@@ -38,7 +38,7 @@ function login(){
         if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
             //alert(xmlhttp.status_message);
         } else {
-            alert(xmlhttp.status_message);
+            //alert(xmlhttp.status_message);
         }
     }
 
