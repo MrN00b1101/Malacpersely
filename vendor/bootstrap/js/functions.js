@@ -85,6 +85,7 @@ function getTranList(){
     //alert(obj.length);
    var inComeId = 1;
    var costId = 1;
+   var inOutSum = 0;
     for(i=0; i< obj.length;i++){
         if(obj[i].Value > 0)
         {
@@ -93,6 +94,8 @@ function getTranList(){
             document.getElementById("inComeCategory").innerHTML += obj[i].TranCatId+"<br>";
             document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
             document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
+            document.getElementById("inOutSum").innerHTML += obj[i].TranDate+"<br>";
+            inOutSum+=obj[i].Value;
         }
         else{
         document.getElementById("costId").innerHTML += costId+"<br>";
@@ -100,8 +103,10 @@ function getTranList(){
         document.getElementById("costCategory").innerHTML += obj[i].TranCatId+"<br>";
         document.getElementById("costValue").innerHTML += obj[i].Value+"<br>";
         document.getElementById("costDate").innerHTML += obj[i].TranDate+"<br>";
+        inOutSum+=obj[i].Value;
         }
 }
+document.getElementById("inOutSum").innerHTML = inOutSum;
         
         
 
