@@ -72,7 +72,7 @@ function getTranList(){
     var maxVal = 'null';
     var minDat = '2019-12-30';
     var maxDat = 'null';
-    var personal = 1;
+    var personal = 0;
     var token = getCookie("Token");
     
     var param = "?user="+user+"&cat="+cat+"&minVal="+minVal+"&maxVal="+maxVal+"&minDat='"+minDat+"'&maxDat="+maxDat+"&com="+com+"&personal="+personal+"&token="+token;
@@ -80,6 +80,7 @@ function getTranList(){
     request.open('GET', 'phpApi.php'+param, false)
 
     request.onload = function() {
+        alert(request.response);
     var obj = JSON.parse(request.response);
     //alert(obj.length);
    var inComeId = 1;
