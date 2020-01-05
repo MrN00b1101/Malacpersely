@@ -117,7 +117,7 @@ function newTranzaction(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
     var user = 9;
-    var cat = 'null';
+    var cat = 3;
     var value = document.getElementById('inputIncome').value;
     var personal = 1;
     var token = getCookie("Token");
@@ -138,9 +138,11 @@ function newTranzaction(){
     xmlhttp.send(JSON.stringify(
         { 
     "com": "tran",
-    "name": document.getElementById("inputUserName").value,
-    "mail": document.getElementById("inputEmailReg").value,
-    "pass": document.getElementById("inputPassword").value,
+    "user": 9,
+    "cat" : 3,
+    "value" : document.getElementById('inputIncome').value,
+    "personal" : 1,
+    "token" : getCookie("Token")
     }));
 }
 
