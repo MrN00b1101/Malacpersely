@@ -98,7 +98,7 @@ function getTranList(){
         {
             document.getElementById("inComeId").innerHTML += inComeId+"<br>";
             inComeId++;
-            document.getElementById("inComeCategory").innerHTML += obj[i].TranCatId+"<br>";
+            document.getElementById("inComeCategory").innerHTML += obj[i].Name+"<br>";
             document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
             document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
             document.getElementById("inOutSum").innerHTML += obj[i].TranDate+"<br>";
@@ -107,7 +107,7 @@ function getTranList(){
         else{
         document.getElementById("costId").innerHTML += costId+"<br>";
         costId++;
-        document.getElementById("costCategory").innerHTML += obj[i].TranCatId+"<br>";
+        document.getElementById("costCategory").innerHTML += obj[i].Name+"<br>";
         document.getElementById("costValue").innerHTML += obj[i].Value+"<br>";
         document.getElementById("costDate").innerHTML += obj[i].TranDate+"<br>";
         inOutSum+=parseInt(obj[i].Value);
@@ -136,7 +136,9 @@ function getCategoryList(){
     var obj = JSON.parse(request.response);
 
     for(i=0; i< obj.length;i++){
-        document.getElementById("getCategories").innerHTML +=obj[i].Name+"<br>";
+        document.getElementById("getCategories1").innerHTML +=obj[i].Name+"<br>";
+        document.getElementById("getCategories2").innerHTML +=obj[i].Name+"<br>";
+        document.getElementById("getCategories3").innerHTML +=obj[i].Name+"<br>";
     }
 
 }
