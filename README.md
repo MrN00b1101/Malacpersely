@@ -100,34 +100,55 @@ A Megtakarításokat tároljuk ebben a táblában.
 
     Get requestel elérhető funkciók
 
-*Tranzakciók listája:
-    Szükséges adatok:
+* Tranzakciók listája:
 
-|Kulcs:|Érték példa:|Leírás:|
-|:-----|:-----------|:------|
-|com|'tran'|Ez határozza meg milyen adatot kérünk|
-|user|12|userID|
-|cat|'null'|kategóriaID (lehet 'null')|
-|minVal|-100|minimum érték (lehet 'null')|
-|maxVal|0|maximum érték (lehet 'null')|
-|minDat|'null'|kezdő dátum (lehet 'null')|
-|maxDat|'2019-12-30'|vég dátum (lehet 'null')|
-|personal|0|Ha az értéke -1 akkor a kiadás személyes, ha 0 akkor a kiadás családi ha ezektől eltérő akkor annak a megtakarításnak az azonosítója amihez tartozik|
-|token|cookieből olvasott token|A login során kapott token (a teszt.html-ben bemutatott módszerrel olvasható ki)|
+    Szükséges adatok:
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'tran'|Ez határozza meg milyen adatot kérünk|
+    |user|12|userID|
+    |cat|'null'|kategóriaID (lehet 'null')|
+    |minVal|-100|minimum érték (lehet 'null')|
+    |maxVal|0|maximum érték (lehet 'null')|
+    |minDat|'null'|kezdő dátum (lehet 'null')|
+    |maxDat|'2019-12-30'|vég dátum (lehet 'null')|
+    |personal|0|Ha az értéke -1 akkor a kiadás személyes, ha 0 akkor a kiadás családi ha ezektől eltérő akkor annak a megtakarításnak az azonosítója amihez tartozik|
+    |token|cookieből olvasott token|A login során kapott token (a teszt.html-ben bemutatott módszerrel olvasható ki)|
 
     Visszakapott adatok:
-|Kulcs:|Érték pléda:|Leírás|
-|:-----|:-----------|:------|
-|Savings|Kocsira|A megtakarítási zseb neve, ha a tranzakció nem tartozik kölön zsebhez akkor az érték "Personal" vagy "Family"|
-|User|Valaki|A tranzakciót felvivő felhasználó neve|
-|Category|Megtakarítás|A tranzakció kategóriájának neve|
-|UseId|9|A tranzakciót felvivő felhasználó azonosítója|
-|TranCatId|4|A tranzakció kategóriájának azonosítója|
-|Value|200|A tranzakció értéke|
-|Personal|3|Ha az értéke -1 akkor a kiadás személyes, ha 0 akkor a kiadás családi ha ezektől eltérő akkor annak a megtakarításnak az azonosítója amihez tartozik|
-|TranDate|"2019-12-30 11:05:28"|A tranzakció időpontja|
+    |Kulcs:|Érték pléda:|Leírás|
+    |:-----|:-----------|:------|
+    |Savings|Kocsira|A megtakarítási zseb neve, ha a tranzakció nem tartozik kölön zsebhez akkor az érték "Personal" vagy "Family"|
+    |User|Valaki|A tranzakciót felvivő felhasználó neve|
+    |Category|Megtakarítás|A tranzakció kategóriájának neve|
+    |UseId|9|A tranzakciót felvivő felhasználó azonosítója|
+    |TranCatId|4|A tranzakció kategóriájának azonosítója|
+    |Value|200|A tranzakció értéke|
+    |Personal|3|Ha az értéke -1 akkor a kiadás személyes, ha 0 akkor a kiadás családi ha ezektől eltérő akkor annak a megtakarításnak az azonosítója amihez tartozik|
+    |TranDate|"2019-12-30 11:05:28"|A tranzakció időpontja|
 
-    Kategóriák listája:
+* Kategóriák listája:
+
+    Szükséges adatok:
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'cat'|Ez határozza meg milyen adatot kérünk|
+    |user|12|userID|
+    |fam|0|Ha az értéke 0 akkor a Globális kategóriákat listázza, ha 1 akkor a személyes kategóriákat ha pedig 2 akkor a létrehozó családjának kategóriáit|
+    |token|cookieből olvasott token|A login során kapott token (a teszt.html-ben bemutatott módszerrel olvasható ki)|
+
+    Visszakapott adatok:
+    |Kulcs:|Érték pléda:|Leírás|
+    |:-----|:-----------|:------|
+    |User|"Valaki"|A kategóriát felvivő felhasználó neve|
+    |Id|3|A kategória azonosítója|
+    |Name|"Fizetés"|A kategória megnevezése|
+    |CreatorId|9|A kategória létrehozójának azonosítója|
+    |Global|0|Ha az értéke 0 akkor a Globális kategóriákat listázza, ha 1 akkor a személyes kategóriákat ha pedig 2 akkor a létrehozó családjának kategóriáit|
+    
+
+
+    
     Felhasználók listája:
     Családok listája:
     Családtagok listája:
