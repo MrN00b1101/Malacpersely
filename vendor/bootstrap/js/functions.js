@@ -63,6 +63,8 @@ function getCookie(cname) {
   }
   return "";
 }
+function start(){
+
 function getTranList(){
     var request = new XMLHttpRequest();
     var com = 'tran';
@@ -113,6 +115,33 @@ request.send()
 //alert(getCookie("Token"));
 }
 
+
+function getCategoryList(){
+    var request = new XMLHttpRequest();
+    var com = 'cat';
+    var user = 9;
+    var fam = 0;
+    var token = getCookie("Token");
+    
+    var param = "?user="+user+"&com="+com+"&fam="+fam+"&token="+token;
+
+    request.open('GET', 'phpApi.php'+param, false)
+
+    request.onload = function() {
+    var obj = JSON.parse(request.response);
+    alert(obj.length);
+
+    for(i=0; i< obj.length;i++){
+        document.getElementById("getCategories").innerHTML +=obj[i].Name+"<br>";
+    }
+
+}
+// Send request
+request.send()
+//alert(getCookie("Token"));
+}
+}
+
 function newTranzaction(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
@@ -146,30 +175,7 @@ function newTranzaction(){
     }));
 }
 
-function getCategoryList(){
-    var request = new XMLHttpRequest();
-    var com = 'cat';
-    var user = 9;
-    var fam = 0;
-    var token = getCookie("Token");
-    
-    var param = "?user="+user+"&com="+com+"&fam="+fam+"&token="+token;
 
-    request.open('GET', 'phpApi.php'+param, false)
-
-    request.onload = function() {
-    var obj = JSON.parse(request.response);
-    alert(obj.length);
-
-    for(i=0; i< obj.length;i++){
-        document.getElementById("getCategories").innerHTML +=obj[i].Name+"<br>";
-    }
-
-}
-// Send request
-request.send()
-//alert(getCookie("Token"));
-}
 
 function logout(){
     var request = new XMLHttpRequest();
