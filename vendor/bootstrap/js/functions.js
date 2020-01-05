@@ -107,14 +107,43 @@ function getTranList(){
         }
 }
 document.getElementById("inOutSum").innerHTML = inOutSum;
-        
-        
-
 }
 // Send request
 request.send()
 //alert(getCookie("Token"));
 }
+
+function newTranzaction(){
+    var xmlhttp = new XMLHttpRequest();
+    var com = 'tran';
+    var user = 9;
+    var cat = 'null';
+    var value = document.getElementById('inputIncome').value;
+    var personal = 1;
+    var token = getCookie("Token");
+    var param = "?uId="+user+"&catId="+cat+"&value="+value+"&com="+com+"&personal="+personal+"&token="+token;
+    xmlhttp.open("POST", "phpApi.php" + param, true);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+
+    xmlhttp.onload = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+            alert(xmlhttp.status_message);
+        } else {
+            alert("Tranzakció sikeresen hozzáadva!");
+        }
+    }
+
+
+    xmlhttp.send(JSON.stringify(
+        { 
+    "com": "tran",
+    "name": document.getElementById("inputUserName").value,
+    "mail": document.getElementById("inputEmailReg").value,
+    "pass": document.getElementById("inputPassword").value,
+    }));
+}
+
 function getCategoryList(){
     var request = new XMLHttpRequest();
     var com = 'cat';
@@ -151,10 +180,6 @@ function logout(){
     request.onload = function() {
     
     alert(request.response);
-    
-    
-   
-        
 
 }
 // Send request
