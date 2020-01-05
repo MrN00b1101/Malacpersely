@@ -85,9 +85,21 @@ function getTranList(){
     //alert(obj.length);
    
     for(i=0; i< obj.length;i++){
-        document.getElementById("inComeValue").innerHTML +=obj[i].Value+"<br>";
-    }
-        alert(obj[2].Name);        
+        if(obj[i].Value > 0)
+        {
+            document.getElementById("inComeId").innerHTML += inComeId+"<br>";
+            incomeId++;
+            document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
+            document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
+        }
+        else{
+        document.getElementById("costId").innerHTML += costId+"<br>";
+        costId++;
+        document.getElementById("costValue").innerHTML += obj[i].Value+"<br>";
+        document.getElementById("costDate").innerHTML += obj[i].TranDate+"<br>";
+        }
+}
+        
         
 
 }
