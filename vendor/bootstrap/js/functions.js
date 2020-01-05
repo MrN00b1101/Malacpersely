@@ -71,7 +71,7 @@ function getTranList(){
     var cat = 'null';
     var minVal = 'null';
     var maxVal = 'null';
-    var minDat = '2019-12-30';
+    var minDat = '2019-01-30';
     var maxDat = 'null';
     var personal = 1;
     var token = getCookie("Token");
@@ -83,12 +83,29 @@ function getTranList(){
     request.onload = function() {
     var obj = JSON.parse(request.response);
     //alert(obj.length);
+    var inComeId = 1;
+    var costId = 1;
     for(i=0; i< obj.length;i++){
-        document.getElementById("inComeValue").innerHTML =obj[i].Value+"<br>";
+        if(obj[i].Value > 0)
+        {
+            document.getElementById("inComeId").innerHTML += inComeId+"<br>";
+            incomeId++;
+            document.getElementById("inComeCategory").innerHTML += obj[i].Value+"<br>";
+            document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
+            document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
+        }
+        else{
+        document.getElementById("costId").innerHTML += costId+"<br>";
+        costId++;
+        document.getElementById("costCategory").innerHTML += obj[i].Value+"<br>";
+        document.getElementById("costValue").innerHTML += obj[i].Value+"<br>";
+        document.getElementById("costDate").innerHTML += obj[i].TranDate+"<br>";
+        }
     }
  
 
 }
+
 // Send request
 request.send()
 //alert(getCookie("Token"));
