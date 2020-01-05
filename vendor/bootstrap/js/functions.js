@@ -36,7 +36,7 @@ function login(){
     xmlhttp.onload = function () {
         var users = JSON.parse(xmlhttp.responseText);
         if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
-            alert(xmlhttp.status_message);
+            //alert(xmlhttp.status_message);
         } else {
             alert(xmlhttp.status_message);
         }
@@ -45,8 +45,8 @@ function login(){
     xmlhttp.send(JSON.stringify(
         { 
     "com": "login",
-    "Mail": "valami",
-    "password": "dd"
+    "Mail": document.getElementById('inputEmailLog'),
+    "password": document.getElementById('inputPasswordLog'),
      }));
 }
 function getCookie(cname) {
