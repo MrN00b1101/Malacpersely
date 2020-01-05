@@ -138,7 +138,7 @@ function getCategoryList(){
     for(i=0; i< obj.length;i++){
         document.getElementById("getCategories1").innerHTML +=obj[i].Name+"<br>";
         document.getElementById("getCategories2").innerHTML +=obj[i].Name+"<br>";
-        document.getElementById("getCategories3").innerHTML +='<option id="' + i + '">' +obj[i].Name+'</option>'+"<br>";
+        document.getElementById("getCategories3").innerHTML +='<option id="' + i + '">' +obj[i].TranCatId+' - '+obj[i].Name+'</option>'+"<br>";
       //  document.getElementById("getCategories4").innerHTML +='<option id="' + i + '">' +obj[i].Name+'</option>'+"<br>";
       
     }
@@ -156,8 +156,12 @@ function newTranzaction(){
     var com = 'tran';
     var user = 9;
     var cat = 3;
+    
     var el = document.getElementById('getCategories3');
-    alert(el.options[el.selectedIndex].TranCatId);
+    var x = el.options[el.selectedIndex].value;
+    var catArray = x.split(" - ");
+    var cat = parseInt(catArray[0]);
+    alert(parseInt(catArray[0]));
   /*  var el = document.getElementById('getCategories3');
     var cat = el.options[el.selectedIndex].value;*/
     
