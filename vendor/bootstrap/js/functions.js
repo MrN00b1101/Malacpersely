@@ -192,8 +192,8 @@ function newTranzaction(){
 function newCategory(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'cat';
-    var name = document.getElementById('inputCategory').innerHTML;
-    alert(document.getElementById('inputCategory').innerHTML);
+    var name = document.getElementById('inputCategory');
+    alert(document.getElementById('inputCategory'));
     var creaId = 9;
     var global = 0;
     var token = getCookie("Token");
