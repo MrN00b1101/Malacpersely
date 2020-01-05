@@ -80,7 +80,7 @@ function getTranList(){
     request.open('GET', 'phpApi.php'+param, false)
 
     request.onload = function() {
-        alert(request.response);
+       
     var obj = JSON.parse(request.response);
     //alert(obj.length);
    var inComeId = 1;
@@ -138,8 +138,8 @@ function newTranzaction(){
     xmlhttp.send(JSON.stringify(
         { 
     "com": "tran",
-    "user": 9,
-    "cat" : 3,
+    "uId": 9,
+    "catId" : 3,
     "value" : document.getElementById('inputIncome').value,
     "personal" : 1,
     "token" : getCookie("Token")
