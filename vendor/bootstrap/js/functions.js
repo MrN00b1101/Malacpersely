@@ -139,6 +139,7 @@ function getCategoryList(){
         document.getElementById("getCategories1").innerHTML +=obj[i].Name+"<br>";
         document.getElementById("getCategories2").innerHTML +=obj[i].Name+"<br>";
         document.getElementById("getCategories3").innerHTML +='<option id="' + i + '">' +obj[i].Name+'</option>'+"<br>";
+      //  document.getElementById("getCategories4").innerHTML +='<option id="' + i + '">' +obj[i].Name+'</option>'+"<br>";
       
     }
 
@@ -156,7 +157,7 @@ function newTranzaction(){
     var user = 9;
     var cat = 3;
     var el = document.getElementById('getCategories3');
-    alert(el.options[el.selectedIndex].Id);
+    alert(el.options[el.selectedIndex].TranCatId);
   /*  var el = document.getElementById('getCategories3');
     var cat = el.options[el.selectedIndex].value;*/
     
