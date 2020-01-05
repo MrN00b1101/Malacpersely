@@ -235,16 +235,15 @@ function deleteCategory(){
     var x = el.options[el.selectedIndex].value;
     var catArray = x.split(" - ");
     var id = parseInt(catArray[0]);
-    alert(document.getElementById('inputCategory').value);
     var token = getCookie("Token");
-    xmlhttp.open("POST", "phpApi.php", false);
+    xmlhttp.open("DELETE", "phpApi.php", false);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
     xmlhttp.onload = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
             alert(xmlhttp.status_message);
         } else {
-            alert("Kategória sikeresen hozzáadva!");
+            alert("Kategória sikeresen törölve!");
         }
     }
 
