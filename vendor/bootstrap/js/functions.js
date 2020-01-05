@@ -4,7 +4,7 @@
 function loggin(){
     
     var loginReq = new XMLHttpRequest();
-    loginReq.open("POST", "phpApi.php", false);
+    loginReq.open("POST", "phpApi.php", true);
     loginReq.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
 
@@ -77,7 +77,7 @@ function getTranList(){
     
     var param = "?user="+user+"&cat="+cat+"&minVal="+minVal+"&maxVal="+maxVal+"&minDat='"+minDat+"'&maxDat="+maxDat+"&com="+com+"&personal="+personal+"&token="+token;
 
-    request.open('GET', 'phpApi.php'+param, true)
+    request.open('GET', 'phpApi.php'+param, false)
 
     request.onload = function() {
     var obj = JSON.parse(request.response);
@@ -121,7 +121,7 @@ function newTranzaction(){
     var personal = 1;
     var token = getCookie("Token");
     var param = "?uId="+user+"&catId="+cat+"&value="+value+"&com="+com+"&personal="+personal+"&token="+token;
-    xmlhttp.open("POST", "phpApi.php" + param, true);
+    xmlhttp.open("POST", "phpApi.php" + param, false);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
 
@@ -154,7 +154,7 @@ function getCategoryList(){
     
     var param = "?user="+user+"&global="+global;
 
-    request.open('GET', 'phpApi.php'+param, true)
+    request.open('GET', 'phpApi.php'+param, false)
 
     request.onload = function() {
     var obj = JSON.parse(request.response);
@@ -176,7 +176,7 @@ function logout(){
  
     var param = "?com=logout";
 
-    request.open('GET', 'phpApi.php'+param, true)
+    request.open('GET', 'phpApi.php'+param, false)
 
     request.onload = function() {
     
