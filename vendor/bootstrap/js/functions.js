@@ -45,8 +45,8 @@ function login(){
     xmlhttp.send(JSON.stringify(
         { 
     "com": "login",
-    "Mail": document.getElementById('inputEmailLog'),
-    "password": document.getElementById('inputPasswordLog'),
+    "Mail": "'"+document.getElementById('inputEmailLog')+"'",
+    "password": "'"+document.getElementById('inputPasswordLog')+"'",
      }));
 }
 function getCookie(cname) {
