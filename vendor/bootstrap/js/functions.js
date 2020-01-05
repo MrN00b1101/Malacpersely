@@ -28,6 +28,7 @@ function newUser(){
 
 
 function login(){
+    alert("rtt");
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", "phpApi.php", true);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
