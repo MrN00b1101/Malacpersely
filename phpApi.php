@@ -562,18 +562,18 @@ function getFamilyMemberList($famId, $http)
 function getCategoryList($userid, $fam){
     //kellenek a globalok és vagy a personalok, vagy a családiak!
     global $connection;
-    
+    //SELECT User.Name as 'User',Categorys.* FROM Categorys INNER JOIN User ON Categorys.CreatorId = User.Id
     if($fam == '0'){
         $familyMembers = getFamilyMemberList(getFamilyId($userid),false);
         $uId = array_column($familyMembers,'Id');
-        $query = "SELECT * FROM Categorys WHERE Global=0 OR (Global = 2  AND (CreatorId=".$uId[0];
+        $query = "SELECT User.Name as 'User',Categorys.* FROM Categorys INNER JOIN User ON Categorys.CreatorId = User.Id WHERE Global=0 OR (Global = 2  AND (CreatorId=".$uId[0];
 
         for ($i=1; $i<=count($uId)-1; $i++){
             $query = $query." OR CreatorId=".$uId[$i];
         }
         $query =  $query."))";
     }else{
-        $query = "SELECT * FROM Categorys WHERE Global=0 OR CreatorId=".$uid;
+        $query = "SELECT User.Name as 'User',Categorys.* FROM Categorys INNER JOIN User ON Categorys.CreatorId = User.Id WHERE Global=0 OR CreatorId=".$uid;
     }
     $response=array();
     $result=mysqli_query($connection, $query);
