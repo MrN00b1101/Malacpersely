@@ -10,10 +10,8 @@ function loggin(){
 
     loginReq.onload = function () {
         var users = JSON.parse(loginReq.responseText);
-        if (loginReq.readyState == 4 && loginReq.status == "1") {
-            alert("Bejelentkezve");
-        } else {
-            alert("Hiba a bejelentkezésnél");
+        if (loginReq.readyState != 4 || loginReq.status == "0") {
+            alert("Hiba a bejelentkezésnél");   
         }
     }
 
