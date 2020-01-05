@@ -90,14 +90,14 @@ function getTranList(){
         {
             document.getElementById("inComeId").innerHTML += inComeId+"<br>";
             inComeId++;
-            document.getElementById("inComeCategory").innerHTML += obj[i].Value+"<br>";
+            document.getElementById("inComeCategory").innerHTML += obj[i].TranCatId+"<br>";
             document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
             document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
         }
         else{
         document.getElementById("costId").innerHTML += costId+"<br>";
         costId++;
-        document.getElementById("costCategory").innerHTML += obj[i].Value+"<br>";
+        document.getElementById("costCategory").innerHTML += obj[i].TranCatId+"<br>";
         document.getElementById("costValue").innerHTML += obj[i].Value+"<br>";
         document.getElementById("costDate").innerHTML += obj[i].TranDate+"<br>";
         }
