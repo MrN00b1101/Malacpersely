@@ -102,7 +102,7 @@ function getCategoryList(){
     var global = 0;
     var token = getCookie("Token");
     
-    var param = "?user="+user+"&com="+com+"&global="+global+"&token="+token;
+    var param = "?user="+user+"&global="+global;
 
     request.open('GET', 'phpApi.php'+param, true)
 
