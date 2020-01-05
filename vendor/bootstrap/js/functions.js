@@ -18,8 +18,8 @@ function loggin(){
     loginReq.send(JSON.stringify(
         { 
     "com": "login",
-    "Name": document.getElementById('inputNameLog'),
-    "password": document.getElementById('inputPasswordLog'),
+    "Name": document.getElementById('inputNameLog').value,
+    "password": document.getElementById('inputPasswordLog').value,
      }));
 }
 function newUser(){
