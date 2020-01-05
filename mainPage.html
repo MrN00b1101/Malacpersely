@@ -19,13 +19,13 @@
 
 </head>
 
-<body>
+<body onload="getTranList()">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     
       <a class="h2 font-weight-bold ml-5" style="color: pink !important;" href="mainPage.html">MALACPERSELY</a>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
+      <div  class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="#">Pénzügyek
@@ -204,9 +204,9 @@
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Összesítés</div>
-                <div class="text-xs"><b>Előző havi záróegyenleg: </b>12000</div>
-                <div class="text-xs"><b>Ehavi bevétel-kiadás: </b>11000</div>
-                <div class="text-xs"><b>Jelenlegi egyenleg: </b>23000</div>
+                <div class="text-xs"><b>Előző havi záróegyenleg: </b></div>
+                <div class="text-xs" id="inOutSum"><b>Ehavi bevétel-kiadás: </b></div>
+                <div class="text-xs"><b>Jelenlegi egyenleg: </b></div>
               </div>
               <div class="col-auto">
                 <i class="fas fa-check-double fa-2x text-gray-200"></i>
@@ -219,7 +219,7 @@
     </div>
      
       <h2 class="mb-4">Bevételek:</h2>
-      <table class="table" onload="getTranList()">
+      <table class="table">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -230,10 +230,10 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
+            <th scope="row" id="inComeId"></th>
+            <td id=inComeCategory></td>
             <td id="inComeValue"></td>
-            
-            <td>2019.01.02</td>
+            <td id="inComeDate"></td>
             <td>
               <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-secondary">Módosítás</button>
@@ -261,10 +261,10 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Étel</td>
-            <td>1000</td>
-            <td>2019.01.02</td>
+            <th scope="row" id="costId"></th>
+            <td id=costCategory></td>
+            <td id="costValue"></td>
+            <td id="costDate"></td>
             <td>
              
                 <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
@@ -397,7 +397,7 @@
               <label class="custom-control-label" for="customControlAutosizing">Személyes bevétel</label>
             </div>
             </br>
-              <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit">Hozzáadás</button>
+              <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit" onclick="newTranzaction()">Hozzáadás</button>
             </form>
           </div>
         </div>
