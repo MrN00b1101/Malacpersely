@@ -94,6 +94,33 @@ function getTranList(){
 request.send()
 //alert(getCookie("Token"));
 }
+
+function getCategoryList(){
+    var request = new XMLHttpRequest();
+    var com = 'cat';
+    var user = 9;
+    var global = 0;
+    var token = getCookie("Token");
+    
+    var param = "?user="+user+"&com="+com+"&global="+global+"&token="+token;
+
+    request.open('GET', 'phpApi.php'+param, true)
+
+    request.onload = function() {
+    var obj = JSON.parse(request.response);
+    //alert(obj.length);
+    var lista = document.getElementById("getCategories");
+    for(i=0; i< obj.length;i++){
+    lista.innerHTML =obj[i].Name+"<br>";
+    }
+ 
+
+}
+// Send request
+request.send()
+//alert(getCookie("Token"));
+}
+
 function logout(){
     var request = new XMLHttpRequest();
  
