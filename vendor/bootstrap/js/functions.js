@@ -83,9 +83,8 @@ function getTranList(){
     request.onload = function() {
     var obj = JSON.parse(request.response);
     //alert(obj.length);
-    var lista = document.getElementById("inComeValue");
     for(i=0; i< obj.length;i++){
-    lista.innerHTML =obj[i].Value+"<br>";
+        document.getElementById("inComeValue").innerHTML =obj[i].Value+"<br>";
     }
  
 
