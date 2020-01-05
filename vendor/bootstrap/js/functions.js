@@ -156,12 +156,12 @@ function newTranzaction(){
     var user = 9;
     var cat = 3;
     var el = document.getElementById('getCategories3');
-    alert(el.options[el.selectedIndex].value);
+    alert(el.options[el.selectedIndex].Id);
   /*  var el = document.getElementById('getCategories3');
     var cat = el.options[el.selectedIndex].value;*/
     
     var value = document.getElementById('inputIncome').value;
-    var personal = 1;
+    var personal = 0;
     var token = getCookie("Token");
     //var param = "?uId="+user+"&catId="+cat+"&value="+value+"&com="+com+"&personal="+personal+"&token="+token;
     xmlhttp.open("POST", "phpApi.php", false);
