@@ -160,9 +160,9 @@ function getCategoryList(){
     request.onload = function() {
     var obj = JSON.parse(request.response);
     alert(obj.length);
-    var lista = document.getElementById("getCategories");
+
     for(i=0; i< obj.length;i++){
-        lista.innerHTML =obj[i].Name+"<br>";
+        document.getElementById("getCategories").innerHTML +=obj[i].Name+"<br>";
     }
  
 

@@ -19,7 +19,7 @@
 
 </head>
 
-<body onload="getTranList()">
+<body onload="getCategoryList()">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -186,7 +186,7 @@
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Kategóriák</div>
-                <div onload="getCategoryList()" class="text-xs" id="getCategories"><b></b></div>
+                <div class="text-xs" id="getCategories"><b></b></div>
                
               </div>
               <div class="col-auto">
@@ -217,7 +217,7 @@
       </div>
 
     </div>
-     
+    <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#costAdd">Tranzakció hozzáadása</button>
       <h2 class="mb-4">Bevételek:</h2>
       <table class="table">
         <thead>
@@ -277,7 +277,7 @@
         </tbody>
       </table>
 
-      <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#costAdd">Kiadás hozzáadása</button>
+      
 
   <!--Family add modal-->
   <div class="modal" id="familyAdd">
