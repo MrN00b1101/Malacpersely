@@ -146,6 +146,13 @@ case 'PUT':
                 header("HTTP/1.1 401 Need to login");
             }  
         break;
+        case 'cat':
+            if(isLogged($data['token'])){
+                delete($data);
+            }else{
+                header("HTTP/1.1 401 Need to login");
+            }  
+        break;
         default:
             if(isLogged($data['token'])){
                 delete($data);
@@ -342,6 +349,7 @@ function delTransaction($data){
      header('Content-Type: application/json');
      echo json_encode($response);
 }
+
 function delFamMember($data){
     global $connection;
     $uId = $data['uid'];

@@ -28,6 +28,23 @@ function loggin(){
     "password": document.getElementById('inputPasswordLog').value,
      }));
 }
+
+function logout(){
+    var request = new XMLHttpRequest();
+ 
+    var param = "?com=logout";
+
+    request.open('GET', 'phpApi.php'+param, false)
+
+    request.onload = function() {
+    
+    alert(request.response);
+
+}
+// Send request
+request.send()
+}
+
 function newUser(){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", "phpApi.php", true);
@@ -51,8 +68,6 @@ function newUser(){
     "pass": document.getElementById("inputPassword").value,
     }));
 }
-
-
 
 function getCookie(cname) {
   var name = cname + "=";
@@ -120,7 +135,6 @@ request.send()
 //alert(getCookie("Token"));
 }
 
-
 function getCategoryList(){
     var request = new XMLHttpRequest();
     var com = 'cat';
@@ -137,19 +151,16 @@ function getCategoryList(){
 
     for(i=0; i< obj.length;i++){
         document.getElementById("getCategories1").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>'+"<br>";
-        document.getElementById("getCategories2").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>'+"<br>";
+        document.getElementById("getCategories2").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>';
         document.getElementById("getCategories3").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>'+"<br>";
         document.getElementById("getCategories4").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>'+"<br>";
-      
-    }
 
+    }
 }
 // Send request
 request.send()
 //alert(getCookie("Token"));
 }
-
-
 
 function newTranzaction(){
     var xmlhttp = new XMLHttpRequest();
@@ -168,7 +179,6 @@ function newTranzaction(){
     xmlhttp.open("POST", "phpApi.php", false);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
-
     xmlhttp.onload = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
             alert(xmlhttp.status_message);
@@ -176,7 +186,6 @@ function newTranzaction(){
             alert("Tranzakció sikeresen hozzáadva!");
         }
     }
-
 
     xmlhttp.send(JSON.stringify(
         { 
@@ -218,20 +227,33 @@ function newCategory(){
     }));
 }
 
+function deleteCategory(){
+    var xmlhttp = new XMLHttpRequest();
+    var com = 'cat';
+    var table = 'Categorys';
+    var el = document.getElementById('getCategories4');
+    var x = el.options[el.selectedIndex].value;
+    var catArray = x.split(" - ");
+    var id = parseInt(catArray[0]);
+    alert(document.getElementById('inputCategory').value);
+    var token = getCookie("Token");
+    xmlhttp.open("POST", "phpApi.php", false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
+    xmlhttp.onload = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+            alert(xmlhttp.status_message);
+        } else {
+            alert("Kategória sikeresen hozzáadva!");
+        }
+    }
 
-function logout(){
-    var request = new XMLHttpRequest();
- 
-    var param = "?com=logout";
-
-    request.open('GET', 'phpApi.php'+param, false)
-
-    request.onload = function() {
-    
-    alert(request.response);
-
+    xmlhttp.send(JSON.stringify(
+        { 
+    "com" : com,
+    "table" : table,
+    "Id" : id,
+    "token" : token
+    }));
 }
-// Send request
-request.send()
-}
+
