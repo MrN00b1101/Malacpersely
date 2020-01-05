@@ -138,8 +138,8 @@ function getCategoryList(){
     for(i=0; i< obj.length;i++){
         document.getElementById("getCategories1").innerHTML +=obj[i].Name+"<br>";
         document.getElementById("getCategories2").innerHTML +=obj[i].Name+"<br>";
-        document.getElementById("getCategories3").innerHTML +="<option>" + obj[i].Name+"</option>"+"<br>";
-       
+        document.getElementById("getCategories3").innerHTML +='<option id="' + i + '">' +obj[i].Name+'</option>'+"<br>";
+      
     }
 
 }
@@ -154,7 +154,7 @@ function newTransaction(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
     var user = 9;
-    var cat = document.getElementById('getCategories3').value;
+    var cat = document.getElementById('getCategories3').selectedIndex.value;
     var value = document.getElementById('inputIncome').value;
     var personal = 1;
     var token = getCookie("Token");
