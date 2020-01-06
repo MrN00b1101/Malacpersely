@@ -116,6 +116,7 @@ A Megtakarításokat tároljuk ebben a táblában.
     |token|cookieből olvasott token|A login során kapott token (a teszt.html-ben bemutatott módszerrel olvasható ki)|
 
     Visszakapott adatok:
+    
     |Kulcs:|Érték pléda:|Leírás|
     |:-----|:-----------|:------|
     |Savings|Kocsira|A megtakarítási zseb neve, ha a tranzakció nem tartozik kölön zsebhez akkor az érték "Personal" vagy "Family"|
@@ -130,6 +131,7 @@ A Megtakarításokat tároljuk ebben a táblában.
 * Kategóriák listája:
 
     Szükséges adatok:
+    
     |Kulcs:|Érték példa:|Leírás:|
     |:-----|:-----------|:------|
     |com|'cat'|Ez határozza meg milyen adatot kérünk|
