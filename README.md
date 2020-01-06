@@ -103,6 +103,7 @@ A Megtakarításokat tároljuk ebben a táblában.
 * Tranzakciók listája:
 
     Szükséges adatok:
+    
     |Kulcs:|Érték példa:|Leírás:|
     |:-----|:-----------|:------|
     |com|'tran'|Ez határozza meg milyen adatot kérünk|
@@ -140,6 +141,7 @@ A Megtakarításokat tároljuk ebben a táblában.
     |token|cookieből olvasott token|A login során kapott token (a teszt.html-ben bemutatott módszerrel olvasható ki)|
 
     Visszakapott adatok:
+    
     |Kulcs:|Érték pléda:|Leírás|
     |:-----|:-----------|:------|
     |User|"Valaki"|A kategóriát felvivő felhasználó neve|
