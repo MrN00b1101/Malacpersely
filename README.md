@@ -142,17 +142,6 @@ A Megtakarításokat tároljuk ebben a táblában.
 
     Visszakapott adatok:
     
-    |Kulcs:|Érték pléda:|Leírás|
-    |:-----|:-----------|:------|
-    |User|"Valaki"|A kategóriát felvivő felhasználó neve|
-    |Id|3|A kategória azonosítója|
-    |Name|"Fizetés"|A kategória megnevezése|
-    |CreatorId|9|A kategória létrehozójának azonosítója|
-    |Global|0|Ha az értéke 0 akkor a Globális kategóriákat listázza, ha 1 akkor a személyes kategóriákat ha pedig 2 akkor a létrehozó családjának kategóriáit|
-    
-
-
-    
     Felhasználók listája:
     Családok listája:
     Családtagok listája:
