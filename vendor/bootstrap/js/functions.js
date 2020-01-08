@@ -124,6 +124,7 @@ function getTranList(){
             document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
             document.getElementById("inOutSum").innerHTML += obj[i].TranDate+"<br>";
             inOutSum+=parseInt(obj[i].Value);
+            document.getElementById("updateTrans").innerHTML += obj[i].TranDate+"<br>";
             document.getElementById("deleteTrans").innerHTML += '<button type="button" class="btn btn-secondary"> Törlés </button>'+"<br>";
 
         }
