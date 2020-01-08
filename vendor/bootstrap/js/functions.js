@@ -7,6 +7,30 @@ window.onload = function() {
     this.getTranList();
 };
 
+function newUser(){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "phpApi.php", true);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+
+    xmlhttp.onload = function () {
+        var users = JSON.parse(xmlhttp.responseText);
+        if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+            alert(xmlhttp.status_message);
+        } else {
+            alert("Sikeres regisztráció! Kérlek jelentkezz be!");
+        }
+    }
+
+    xmlhttp.send(JSON.stringify(
+        { 
+    "com": "user",
+    "name": document.getElementById("inputUserName").value,
+    "mail": document.getElementById("inputEmailReg").value,
+    "pass": document.getElementById("inputPassword").value,
+    }));
+}
+
 function loggin(){
     
     var loginReq = new XMLHttpRequest();
@@ -49,29 +73,7 @@ function logout(){
 request.send()
 }
 
-function newUser(){
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("POST", "phpApi.php", true);
-    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
-
-    xmlhttp.onload = function () {
-        var users = JSON.parse(xmlhttp.responseText);
-        if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
-            alert(xmlhttp.status_message);
-        } else {
-            alert("Sikeres regisztráció! Kérlek jelentkezz be!");
-        }
-    }
-
-    xmlhttp.send(JSON.stringify(
-        { 
-    "com": "user",
-    "name": document.getElementById("inputUserName").value,
-    "mail": document.getElementById("inputEmailReg").value,
-    "pass": document.getElementById("inputPassword").value,
-    }));
-}
 
 function getCookie(cname) {
   var name = cname + "=";
@@ -122,7 +124,8 @@ function getTranList(){
             document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
             document.getElementById("inOutSum").innerHTML += obj[i].TranDate+"<br>";
             inOutSum+=parseInt(obj[i].Value);
-            document.getElementById("deleteTrans").innerHTML += 'Törlés'+"<br>";
+            document.getElementById("updateTrans").innerHTML += '<option>' + 'Módosítás'+'</option>'+"<br>";
+            document.getElementById("deleteTrans").innerHTML += '<option>' + 'Törlés'+'</option>'+"<br>";
         }
         else{
         document.getElementById("costId").innerHTML += costId+"<br>";
@@ -131,7 +134,8 @@ function getTranList(){
         document.getElementById("costValue").innerHTML += obj[i].Value+"<br>";
         document.getElementById("costDate").innerHTML += obj[i].TranDate+"<br>";
         inOutSum+=parseInt(obj[i].Value);
-        document.getElementById("deleteTrans2").innerHTML += 'Törlés'+"<br>";
+        document.getElementById("updateTrans2").innerHTML += '<option>' + 'Módosítás'+'</option>'+"<br>";
+        document.getElementById("deleteTrans").innerHTML += '<option>' + 'Törlés'+'</option>'+"<br>";
         }
 }
 document.getElementById("inOutSum").innerHTML = inOutSum;
