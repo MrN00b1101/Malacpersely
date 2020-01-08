@@ -237,6 +237,33 @@ function newCategory(){
     }));
 }
 
+function deleteTransaction(){
+    var xmlhttp = new XMLHttpRequest();
+    var com = 'tran';
+    var el = document.getElementById('deleteTrans');
+    var x = el.buttons[el.selectedIndex];
+    alert(x);
+    var token = getCookie("Token");
+    xmlhttp.open("DELETE", "phpApi.php", false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+    xmlhttp.onload = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+            alert(xmlhttp.status_message);
+        } else {
+            alert("Kategória sikeresen törölve!");
+        }
+    }
+
+    xmlhttp.send(JSON.stringify(
+        { 
+    "com" : com,
+    "table" : table,
+    "Id" : id,
+    "token" : token
+    }));
+}
+
 function deleteCategory(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'cat';
