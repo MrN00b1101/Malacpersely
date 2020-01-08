@@ -122,8 +122,8 @@ function getTranList(){
             document.getElementById("inComeCategory").innerHTML += obj[i].TranCatId+"<br>";
             document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
             document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
-            document.getElementById("inOutSum").innerHTML += obj[i].TranDate+"<br>";
-            document.getElementById("updateTrans").innerHTML += obj[i].TranDate+"<br>";
+            //document.getElementById("inOutSum").innerHTML += obj[i].TranDate+"<br>";
+           // document.getElementById("updateTrans").innerHTML += obj[i].TranDate+"<br>";
             //document.getElementById("deleteTrans").innerHTML += '<button type="button" class="btn btn-secondary"> Törlés </button>'+"<br>";
             inOutSum+=parseInt(obj[i].Value);
         }
