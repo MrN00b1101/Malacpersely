@@ -241,7 +241,7 @@ function deleteTransaction(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
     var el = document.getElementById('deleteTrans');
-    var x = el.buttons[el.selectedIndex];
+    var x = el.options[el.selectedIndex];
     alert(x);
     var token = getCookie("Token");
     xmlhttp.open("DELETE", "phpApi.php", false);
