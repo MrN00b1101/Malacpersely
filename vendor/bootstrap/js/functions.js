@@ -19,7 +19,7 @@ function loggin(){
         if (loginReq.readyState != 4 || loginReq.status == "0") {
             alert("Hiba a bejelentkezésnél");   
         } else {
-            alert(xmlhttp.status_message);
+            alert(loginReq.status_message);
         }
     }
 
