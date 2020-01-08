@@ -168,7 +168,33 @@ A Megtakarításokat tároljuk ebben a táblában.
 
     Felhasználó adatainak módosítása:
     Kategória adatainak módosítása:
-    Tranzakció adatainak módosítása:
+    
+    * Tranzakció adatainak módosítása:
+
+    Szükséges adatok:
+    
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'tran'|Ez határozza meg milyen adatot szeretnénk módosítani|
+    |Value|100|Amire módosítani szeretnénk a tranzakció értékét|
+    |TranCatId|3|Annak a kategóriának az azonosítója amire módosítani szeretnénk|
+    |Personal|0|Az érték amire a Personal mező értékét módosítani szeretnénk|
+    |uid|9|Annak a felhasználónak az ID-je aki a módosítandó tranzakciót létrehozta|
+    |Personal|0|Az érték amire a Personal mező értékét módosítani szeretnénk|
+    |time|'2019-12-28 13:13:28'|A módosítandó tranzakció időbélyegzője|
+    |token|cookieből olvasott token|A login során kapott token (a teszt.html-ben bemutatott módszerrel olvasható ki)|
+    
+    Visszakapott adatok:
+    
+    |Kulcs:|Érték pléda:|Leírás|
+    |:-----|:-----------|:------|
+    |User|"Valaki"|A kategóriát felvivő felhasználó neve|
+    |Id|3|A kategória azonosítója|
+    |Name|"Fizetés"|A kategória megnevezése|
+    |CreatorId|9|A kategória létrehozójának azonosítója|
+    |Global|0|Ha az értéke 0 akkor a Globális kategóriákat listázza, ha 1 akkor a személyes kategóriákat ha pedig 2 akkor a létrehozó családjának kategóriáit|
+    
+    
     Családtag családhoz való adása:
 
     Tranzakció törlése:
