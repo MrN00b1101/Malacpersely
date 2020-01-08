@@ -124,7 +124,7 @@ function getTranList(){
             document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
             document.getElementById("inOutSum").innerHTML += obj[i].TranDate+"<br>";
             inOutSum+=parseInt(obj[i].Value);
-            document.getElementById("updateTrans").innerHTML += '<button id="updateButton' + i + '"> Módosítás </button>'+"<br>";
+            document.getElementById("updateTrans").innerHTML +='<button id="updateButton' + i + '">' + 'Módosítás '+'</button>'+"<br>";
             document.getElementById("deleteTrans").innerHTML += '<button id="deleteButton' + i + '"> Törlés </button>'+"<br>";
         }
         else{
