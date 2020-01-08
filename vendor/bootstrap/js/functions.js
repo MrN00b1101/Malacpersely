@@ -18,6 +18,8 @@ function loggin(){
         var users = JSON.parse(loginReq.responseText);
         if (loginReq.readyState != 4 || loginReq.status == "0") {
             alert("Hiba a bejelentkezésnél");   
+        } else {
+            alert(xmlhttp.status_message);
         }
     }
 
@@ -25,8 +27,10 @@ function loggin(){
         { 
     "com": "login",
     "Name": document.getElementById('inputNameLog').value,
-    "password": document.getElementById('inputPasswordLog').value,
+    "password": document.getElementById('inputPasswordLog').value
      }));
+     alert(document.getElementById('inputNameLog').value);
+     alert(document.getElementById('inputPasswordLog').value);
 }
 
 function logout(){
@@ -198,6 +202,7 @@ function newTranzaction(){
     "personal" : personal,
     "token" : token
     }));
+    window.onload();
 }
 
 function newCategory(){
