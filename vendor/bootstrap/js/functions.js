@@ -121,10 +121,10 @@ function getTranList(){
             inComeId++;
             document.getElementById("inComeCategory").innerHTML += obj[i].TranCatId+"<br>";
             document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
-           // document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
+           document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
             //document.getElementById("inOutSum").innerHTML += obj[i].TranDate+"<br>";
-           // document.getElementById("updateTrans").innerHTML += obj[i].TranDate+"<br>";
-            //document.getElementById("deleteTrans").innerHTML += '<button type="button" class="btn btn-secondary"> Törlés </button>'+"<br>";
+           document.getElementById("updateTrans").innerHTML += '<button type="button" class="btn btn-secondary"> Módosítás </button>'+"<br>";
+            document.getElementById("deleteTrans").innerHTML += '<button type="button" class="btn btn-secondary"> Törlés </button>'+"<br>";
             inOutSum+=parseInt(obj[i].Value);
         }
         else{
@@ -132,8 +132,9 @@ function getTranList(){
         costId++;
         document.getElementById("costCategory").innerHTML += obj[i].TranCatId+"<br>";
         document.getElementById("costValue").innerHTML += obj[i].Value+"<br>";
-      //  document.getElementById("costDate").innerHTML += obj[i].TranDate+"<br>";
-      //  document.getElementById("deleteTrans2").innerHTML += '<button type="button" class="btn btn-secondary"> Törlés </button>'+"<br>";
+        document.getElementById("costDate").innerHTML += obj[i].TranDate+"<br>";
+        document.getElementById("updateTrans2").innerHTML += '<button type="button" class="btn btn-secondary"> Módosítás </button>'+"<br>";
+        document.getElementById("deleteTrans2").innerHTML += '<button type="button" class="btn btn-secondary"> Törlés </button>'+"<br>";
         inOutSum+=parseInt(obj[i].Value);
         }
 }
