@@ -271,20 +271,20 @@ function deleteTransaction(){
 
         
     var deleteObjects = document.getElementsByName("deletee");
-    var pozDates = document.getElementById("inComeDate").value;
-    var negDates = document.getElementById("costDate").value;
+   // var pozDates = document.getElementById("inComeDate").value;
+   // var negDates = document.getElementById("costDate").value;
   
 
     for(i = 0; i < 13; i++)
     {   
-       pozDate[i] = document.getElementById("inComeDate")[i].value;
-       pozId[i] = document.getElementById("inComeUserId")[i].value;
+       pozDate[i] = document.getElementById("inComeDate")[i];
+       pozId[i] = document.getElementById("inComeUserId")[i];
     }
 
     for(i = 0; i < 5; i++)
     {   
-        negDate[i] = document.getElementById("costDate")[i].value;
-        negId[i] = document.getElementById("costUserId")[i].value;
+        negDate[i] = document.getElementById("costDate")[i];
+        negId[i] = document.getElementById("costUserId")[i];
     }
 
     var sumDates = pozDate.concat(negDate);
