@@ -110,34 +110,43 @@ function getTranList(){
        
     var obj = JSON.parse(request.response);
     //alert(obj.length);
-   var inComeId = 1;
-   var costId = 1;
+   var inComeId = 0;
+   var costId = 0;
    var inOutSum = 0;
     for(i=0; i< obj.length;i++){
         if(obj[i].Value > 0)
         {
-            document.getElementById("inComeId").innerHTML += inComeId+"<br>";
             inComeId++;
+            document.getElementById("inComeId").innerHTML += inComeId+"<br>";
             document.getElementById("inComeUserId").innerHTML += obj[i].UserId+"<br>";
             document.getElementById("inComeCategory").innerHTML += obj[i].TranCatId+"<br>";
             document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
            document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
-           document.getElementById("updateTrans").innerHTML += '<input id="' + i + '" type="radio" value="' + i+'" name="updatee"></input>'+"<br>";
-            document.getElementById("deleteTrans").innerHTML += '<input id="' + i + '" type="checkbox" value="' + i+'" name="deletee"></input>'+"<br>";
+           
             inOutSum+=parseInt(obj[i].Value);
         }
         else{
-        document.getElementById("costId").innerHTML += costId+"<br>";
         costId++;
+        document.getElementById("costId").innerHTML += costId+"<br>";
         document.getElementById("costUserId").innerHTML += obj[i].UserId+"<br>";
         document.getElementById("costCategory").innerHTML += obj[i].TranCatId+"<br>";
         document.getElementById("costValue").innerHTML += obj[i].Value+"<br>";
         document.getElementById("costDate").innerHTML += obj[i].TranDate+"<br>";
-        document.getElementById("updateTrans2").innerHTML += '<input id="' + i + '" type="radio" value="' + i+'" name="updatee"> </input>'+"<br>";
-        document.getElementById("deleteTrans2").innerHTML += '<input id="' + i + '" type="checkbox" value="' + i+'" name="deletee">  </input>'+"<br>";
         inOutSum+=parseInt(obj[i].Value);
         }
-}
+    }
+
+    for(i=0; i<= inComeId;i++){
+        document.getElementById("updateTrans").innerHTML += '<input id="' + i + '" type="radio" value="' + i+'" name="updatee"></input>'+"<br>";
+        document.getElementById("deleteTrans").innerHTML += '<input id="' + i + '" type="checkbox" value="' + i+'" name="deletee"></input>'+"<br>";
+    }
+
+    for(i=0; i<= costId;i++){
+        document.getElementById("updateTrans2").innerHTML += '<input id="' + i + '" type="radio" value="' + i+'" name="updatee"> </input>'+"<br>";
+        document.getElementById("deleteTrans2").innerHTML += '<input id="' + i + '" type="checkbox" value="' + i+'" name="deletee">  </input>'+"<br>";
+
+    }
+
 document.getElementById("inOutSum").innerHTML = inOutSum;
 }
 // Send request
@@ -251,19 +260,14 @@ function deleteTransaction(){
     var token = getCookie("Token");
     
     var param = "?user="+user+"&cat="+cat+"&minVal="+minVal+"&maxVal="+maxVal+"&minDat='"+minDat+"'&maxDat="+maxDat+"&com="+com+"&personal="+personal+"&token="+token;
-
     request.open('GET', 'phpApi.php'+param, false)
-
     request.onload = function() {
        
-    
     var obj = JSON.parse(request.response);
-
-    var deleteObjecjts = document.getElementsByName("deletee");
-
+    var deleteObjects = document.getElementsByName("deletee");
 
     for(i=0; i< obj.length;i++){
-        if (deleteObjecjts[i].checked == true)
+        if (deleteObjects[i].checked == true)
         {
             var xmlhttp = new XMLHttpRequest();
             var uId = obj[i].UserId;
