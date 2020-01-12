@@ -298,12 +298,12 @@ function deleteTransaction(){
     var sumUserId = pozId.concat(negId);
     alert(sumDates.length);
 
-    for(i=0; i< sumDates.length;i++){
+    for(i=0; i< obj.length;i++){
         if (deleteObjects[i].checked == true)
         {
             var xmlhttp = new XMLHttpRequest();
-            var uId = sumUserId[i];
-            var time = sumDates[i];
+            var uId = obj[i].UserId;
+            var time = obj[i].TranDate;
             xmlhttp.open("DELETE", "phpApi.php", false);
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         
