@@ -239,12 +239,11 @@ function newCategory(){
 }
 
 function deleteTransaction(){
-    var inUserId = 0;
-    for(var i = 0; i<5; i++)
-    {
-        inUserId += document.getElementById("inComeUserId").value
+ 
+   
+    inUserId = document.getElementById("inComeUserId").value
         
-    }
+    
     alert(inUserId);
 
 
