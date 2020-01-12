@@ -278,6 +278,11 @@ function deleteTransaction(){
                     alert("Tranzakció sikeresen törölve!");
                 }
             }
+
+            alert(com);
+            alert(uId);
+            alert(time);
+            alert(token);
         
             xmlhttp.send(JSON.stringify(
                 { 
