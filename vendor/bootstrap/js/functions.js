@@ -239,23 +239,42 @@ function newCategory(){
 }
 
 function deleteTransaction(){
- 
-   
-    inUserId = document.getElementById("inComeUserId").value;
-    for(var i = 0; i < inUserId.length; i++)
-    {
-        alert(inUserId[i]);
-    }
-        
+    var request = new XMLHttpRequest();
+    var com = 'tran';
+    var user = 9;
+    var cat = 'null';
+    var minVal = 'null';
+    var maxVal = 'null';
+    var minDat = '2019-01-30';
+    var maxDat = 'null';
+    var personal = 0;
+    var token = getCookie("Token");
     
-    alert(inUserId);
+    var param = "?user="+user+"&cat="+cat+"&minVal="+minVal+"&maxVal="+maxVal+"&minDat='"+minDat+"'&maxDat="+maxDat+"&com="+com+"&personal="+personal+"&token="+token;
 
+    request.open('GET', 'phpApi.php'+param, false)
+
+    request.onload = function() {
+       
+    
+    var obj = JSON.parse(request.response);
 
     var deleteObjecjts = document.getElementsByName("deletee");
-    var inUserId = document.getElementById("inComeUserId").value;
-    var cUserId = document.getElementById("costUserId").value;
-    var inTranDate= document.getElementById("inComeDate").value;
-    var cTranDate = document.getElementById("costDate").value;
+
+
+    for(i=0; i< obj.length;i++){
+        if (deleteObjecjts[i].checked == true)
+        {
+            alert(obj[i].TranDate)
+        }
+
+
+    }
+
+    }
+ 
+    request.send()
+    
 
     /*var userSum = inUserId.concat(cUserId);
     var dateSum = inTranDate.concat(cTranDate);
