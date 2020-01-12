@@ -266,10 +266,8 @@ function deleteTransaction(){
         if (deleteObjecjts[i].checked == true)
         {
             var xmlhttp = new XMLHttpRequest();
-            var com = 'tran';
             var uId = obj[i].UserId;
             var time = obj[i].TranDate;
-            var token = getCookie("Token");
             xmlhttp.open("DELETE", "phpApi.php", false);
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         
@@ -364,23 +362,6 @@ function deleteCategory(){
     }));
 }
 
-function send() {
-    var genders = document.getElementsByName("gender");
-    if (genders[0].checked == true) {
-        alert("Your gender is male");
-    } else if (genders[1].checked == true) {
-        alert("Your gender is female");
-    } else {
-        // no checked
-        var msg = '<span style="color:red;">You must select your gender!</span><br /><br />';
-        document.getElementById('msg').innerHTML = msg;
-        return false;
-    }
-    return true;
-}
 
-function reset_msg() {
-    document.getElementById('msg').innerHTML = '';
-}
 
 
