@@ -239,6 +239,13 @@ function newCategory(){
 }
 
 function deleteTransaction(){
+    var inUserId;
+    for(var i = 0; i<5; i++)
+    {
+        inUserId += document.getElementById("inComeUserId").value
+        alert(inUserId);
+    }
+
 
     var deleteObjecjts = document.getElementsByName("deletee");
     var inUserId = document.getElementById("inComeUserId").value;
@@ -246,7 +253,7 @@ function deleteTransaction(){
     var inTranDate= document.getElementById("inComeDate").value;
     var cTranDate = document.getElementById("costDate").value;
 
-    var userSum = inUserId.concat(cUserId);
+    /*var userSum = inUserId.concat(cUserId);
     var dateSum = inTranDate.concat(cTranDate);
 
     for(var i = 0; i<deleteObjecjts.length; i++)
@@ -276,10 +283,10 @@ function deleteTransaction(){
             "table" : table,
             "Id" : id,
             "token" : token
-            }));*/
+            }));
         }
 
-    }
+    }*/
 
 }
 
