@@ -275,13 +275,13 @@ function deleteTransaction(){
     var negDates = document.getElementById("costDate").value;
   
 
-    for(i = 0; i < pozDates.length; i++)
+    for(i = 0; i < 13; i++)
     {   
        pozDate[i] = document.getElementById("inComeDate")[i].value;
        pozId[i] = document.getElementById("inComeUserId")[i].value;
     }
 
-    for(i = 0; i < negDates.length; i++)
+    for(i = 0; i < 5; i++)
     {   
         negDate[i] = document.getElementById("costDate")[i].value;
         negId[i] = document.getElementById("costUserId")[i].value;
