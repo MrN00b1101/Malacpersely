@@ -136,12 +136,12 @@ function getTranList(){
         }
     }
 
-    for(i=0; i<= inComeId;i++){
+    for(i=0; i< inComeId;i++){
         document.getElementById("updateTrans").innerHTML += '<input id="' + i + '" type="radio" value="' + i+'" name="updatee"></input>'+"<br>";
         document.getElementById("deleteTrans").innerHTML += '<input id="' + i + '" type="checkbox" value="' + i+'" name="deletee"></input>'+"<br>";
     }
 
-    for(i=0; i<= costId;i++){
+    for(i=0; i< costId;i++){
         document.getElementById("updateTrans2").innerHTML += '<input id="' + i + '" type="radio" value="' + i+'" name="updatee"> </input>'+"<br>";
         document.getElementById("deleteTrans2").innerHTML += '<input id="' + i + '" type="checkbox" value="' + i+'" name="deletee">  </input>'+"<br>";
 
