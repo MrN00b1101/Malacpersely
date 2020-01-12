@@ -241,7 +241,7 @@ function newCategory(){
 function deleteTransaction(){
  
    
-    inUserId = document.getElementById("inComeUserId");
+    inUserId = document.getElementById("inComeUserId").value;
     for(var i = 0; i < inUserId.length; i++)
     {
         alert(inUserId[i]);
