@@ -294,11 +294,5 @@ function deleteCategory(){
     }));
 }
 
-$("input[type='radio']").change(function(){
-    var count = $("input[type='radio']:checked").length;
-  if(count>3){
-      $(this).prop('checked', false);
-    alert("You cannot add more than 3");
-  }
-});
+
 
