@@ -277,14 +277,14 @@ function deleteTransaction(){
 
     for(i = 0; i < 13; i++)
     {   
-       pozDate[i] = document.getElementById("inComeDate")[i];
-       pozId[i] = document.getElementById("inComeUserId")[i];
+       pozDate[i] = document.getElementById("inComeDate")[i].value;
+       pozId[i] = document.getElementById("inComeUserId")[i].value;
     }
 
     for(i = 0; i < 5; i++)
     {   
-        negDate[i] = document.getElementById("costDate")[i];
-        negId[i] = document.getElementById("costUserId")[i];
+        negDate[i] = document.getElementById("costDate")[i].value;
+        negId[i] = document.getElementById("costUserId")[i].value;
     }
 
     var sumDates = pozDate.concat(negDate);
