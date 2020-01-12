@@ -264,27 +264,36 @@ function deleteTransaction(){
        
     var obj = JSON.parse(request.response);
 
-    var poz = [];
-    var neg = [];
+    var pozDate = [];
+    var pozId = [];
+    var negDate = [];
+    var negId = [];
 
     for(i = 0; i < obj.length; i++)
     {   
         if(obj[i].Value > 0)
-                poz[i] = obj[i].TranDate;
+        {
+            pozDate[i] = obj[i].TranDate;
+            pozId[i] = obj[i].UserId;
+        }
         else
-                neg[i] = obj[i].TranDate;
+        {
+            negDate[i] = obj[i].TranDate;
+            negId[i] = obj[i].UserId;
+        }
     }
 
-    var sumArray = poz.concat(neg);
+    var sumArrayDate = pozDate.concat(negDate);
+    var sumArrayId = pozId.concat(negId);
         
     var deleteObjects = document.getElementsByName("deletee");
 
-    for(i=0; i< sumArray.length;i++){
+    for(i=0; i< sumArrayDate.length;i++){
         if (deleteObjects[i].checked == true)
         {
             var xmlhttp = new XMLHttpRequest();
-           // var uId = sumArray[i].UserId;
-            var time = sumArray[i].TranDate;
+            var uId = sumArrayId[i].UserId;
+            var time = sumArrayDate[i].TranDate;
             xmlhttp.open("DELETE", "phpApi.php", false);
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         
