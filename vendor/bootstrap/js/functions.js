@@ -53,8 +53,7 @@ function loggin(){
     "Name": document.getElementById('inputNameLog').value,
     "password": document.getElementById('inputPasswordLog').value
      }));
-     alert(document.getElementById('inputNameLog').value);
-     alert(document.getElementById('inputPasswordLog').value);
+
 }
 
 function logout(){
@@ -119,6 +118,7 @@ function getTranList(){
         {
             document.getElementById("inComeId").innerHTML += inComeId+"<br>";
             inComeId++;
+            document.getElementById("inComeUserId").innerHTML += UserId+"<br>";
             document.getElementById("inComeCategory").innerHTML += obj[i].TranCatId+"<br>";
             document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
            document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
@@ -129,6 +129,7 @@ function getTranList(){
         else{
         document.getElementById("costId").innerHTML += costId+"<br>";
         costId++;
+        document.getElementById("costUserId").innerHTML += UserId+"<br>";
         document.getElementById("costCategory").innerHTML += obj[i].TranCatId+"<br>";
         document.getElementById("costValue").innerHTML += obj[i].Value+"<br>";
         document.getElementById("costDate").innerHTML += obj[i].TranDate+"<br>";
@@ -238,30 +239,48 @@ function newCategory(){
 }
 
 function deleteTransaction(){
-    var xmlhttp = new XMLHttpRequest();
-    var com = 'tran';
-    var el = document.getElementById('deleteTrans');
-    var x = el.options[el.selectedIndex];
-    alert(x);
-    var token = getCookie("Token");
-    xmlhttp.open("DELETE", "phpApi.php", false);
-    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
-    xmlhttp.onload = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
-            alert(xmlhttp.status_message);
-        } else {
-            alert("Kategória sikeresen törölve!");
+    var deleteObjecjts = document.getElementsByName("deletee");
+    var inUserId = document.getElementsById("inComeUserId").value;
+    var cUserId = document.getElementsById("costUserId").value;
+    var inTranDate= document.getElementsById("inComeDate").value;
+    var cTranDate = document.getElementsById("costDate").value;
+
+    var userSum = inUserId.concat(cUserId);
+    var dateSum = inTranDate.concat(cTranDate);
+
+    for(var i = 0; i<deleteObjecjts.length; i++)
+    {
+        if (deleteObjecjts[i].checked == true)
+        {
+            alert(dateSum);
+            
+            
+            /*var xmlhttp = new XMLHttpRequest();
+            var com = 'tran';
+            var token = getCookie("Token");
+            xmlhttp.open("DELETE", "phpApi.php", false);
+            xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        
+            xmlhttp.onload = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+                    alert(xmlhttp.status_message);
+                } else {
+                    alert("Tranzakció sikeresen törölve!");
+                }
+            }
+        
+            xmlhttp.send(JSON.stringify(
+                { 
+            "com" : com,
+            "table" : table,
+            "Id" : id,
+            "token" : token
+            }));*/
         }
+
     }
 
-    xmlhttp.send(JSON.stringify(
-        { 
-    "com" : com,
-    "table" : table,
-    "Id" : id,
-    "token" : token
-    }));
 }
 
 function deleteCategory(){
@@ -269,7 +288,6 @@ function deleteCategory(){
     var com = 'cat';
     var table = 'Categorys';
     var el = document.getElementById('getCategories4');
-    //alert(document.getElementById('getCategories4'));
     var x = el.options[el.selectedIndex].value;
     var catArray = x.split(" - ");
     var id = parseInt(catArray[0]);

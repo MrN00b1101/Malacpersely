@@ -215,11 +215,14 @@
 
     </div>
     <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#costAdd">Tranzakció hozzáadása</button>
+    <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#costAdd">Tranzakció módosítása</button>
+    <button type="button" class="btn btn-info pull-right" type="submit" onclick="deleteTransaction()">Tranzakció törlése</button>
       <h2 class="mb-4">Bevételek:</h2>
       <table class="table">
         <thead>
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Felhasználó Id</th>
             <th scope="col">Kategória</th>
             <th scope="col">Összeg</th>
             <th scope="col">Dátum</th>
@@ -230,13 +233,12 @@
         <tbody>
           <tr>
             <th scope="row" id="inComeId"></th>
+            <td id=inComeUserId></td>
             <td id=inComeCategory></td>
             <td id="inComeValue"></td>
             <td id="inComeDate"></td>
-            <div class="btn-group" role="group" aria-label="Basic example">
-              <td id="updateTrans"></td>
-              <td onclick="deleteTransaction()" id="deleteTrans"></td>
-            </div>
+            <td id="updateTrans"></td>
+            <td id="deleteTrans"></td>
           </tr>
         </tbody>
       </table>
@@ -258,6 +260,7 @@
         <thead>
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Felhasználó Id</th>
             <th scope="col">Kategória</th>
             <th scope="col">Összeg</th>
             <th scope="col">Dátum</th>
@@ -269,13 +272,12 @@
         <tbody>
           <tr>
             <th scope="row" id="costId"></th>
+            <td id=costUserId></td>
             <td id=costCategory></td>
             <td id="costValue"></td>
             <td id="costDate"></td>
-            <div class="btn-group" role="group" aria-label="Basic example">
-              <td id="updateTrans2"></td>
-              <td id="deleteTrans2"></td>
-            </div>
+            <td id="updateTrans2"></td>
+            <td id="deleteTrans2"></td>
           </tr>
         </tbody>
       </table>
@@ -406,6 +408,40 @@
                 </div>
                 </br>
                   <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit" onclick="newTranzaction()">Tranzakció hozzáadás</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Cost add modal-->
+      <div class="modal" id="costUpdating">
+        <div class="row">
+          <div class="col-sm-7 col-md-5 col-lg-4 mx-auto">
+            <div class="card card-signin my-5">
+              <div class="card-body">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h5 class="card-title text-center">Tranzakció módosítása</h5>
+                <form class="form-signin">
+                  <div class="form-label-group">
+                    <label for="categories font-weight-bold">Válaszd ki a kategóriát!</label>
+                    <div class="row align-items-start ">
+                      <select class="col-md-10 text-m rounded-sm border p-md-1 m-1 ml-3" id="getCategories3">
+                      </select>
+                      </div>
+                      <br>
+                  <div class="form-label-group">
+                    <label for="costUpdating font-weight-bold">Összeg</label>
+                    <input type="text" id="costUpdate" class="form-control" placeholder="Összeg" required autofocus>
+                  </div>
+                </br>
+                <div class="custom-control custom-checkbox mr-sm-2">
+                  <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                  <label class="custom-control-label" for="customControlAutosizing">Személyes kiadás</label>
+                </div>
+                </br>
+                  <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit" onclick="updateTransaction()">Tranzakció módosítása</button>
                 </form>
               </div>
             </div>
