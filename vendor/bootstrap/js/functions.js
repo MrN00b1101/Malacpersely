@@ -265,7 +265,29 @@ function deleteTransaction(){
     for(i=0; i< obj.length;i++){
         if (deleteObjecjts[i].checked == true)
         {
-            alert(obj[i].TranDate)
+            var xmlhttp = new XMLHttpRequest();
+            var com = 'tran';
+            var uId = obj[i].UserId;
+            var time = obj[i].TranDate;
+            var token = getCookie("Token");
+            xmlhttp.open("DELETE", "phpApi.php", false);
+            xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        
+            xmlhttp.onload = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+                    alert(xmlhttp.status_message);
+                } else {
+                    alert("Tranzakció sikeresen törölve!");
+                }
+            }
+        
+            xmlhttp.send(JSON.stringify(
+                { 
+            "com" : com,
+            "uId" : uId,
+            "time" : time,
+            "token" : token
+            }));
         }
 
 
