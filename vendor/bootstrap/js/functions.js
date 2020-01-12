@@ -270,22 +270,20 @@ function deleteTransaction(){
     for(i = 0; i < obj.length; i++)
     {   
         if(obj[i].Value > 0)
-                poz[i] = obj[i];
+                poz[i] = obj[i].TranDate;
         else
-                neg[i] = obj[i];
+                neg[i] = obj[i].TranDate;
     }
 
     var sumArray = poz.concat(neg);
         
-
-
     var deleteObjects = document.getElementsByName("deletee");
 
     for(i=0; i< sumArray.length;i++){
         if (deleteObjects[i].checked == true)
         {
             var xmlhttp = new XMLHttpRequest();
-            var uId = sumArray[i].UserId;
+           // var uId = sumArray[i].UserId;
             var time = sumArray[i].TranDate;
             xmlhttp.open("DELETE", "phpApi.php", false);
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
