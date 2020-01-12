@@ -284,7 +284,7 @@ function deleteTransaction(){
 
     
 
-        
+    alert(obj.length);
     var deleteObjects = document.getElementsByName("deletee");
 
 
