@@ -285,18 +285,18 @@ function deleteTransaction(){
     
 
     alert(obj.length);
+    alert(pozDate.length);
+    alert(pozId.length);
+    alert(negDate.length);
+
+    alert(negId.length);
     var deleteObjects = document.getElementsByName("deletee");
 
 
     var sumDates = pozDate.concat(negDate);
-    alert(pozDate.length);
-    alert(pozId.length);
-    alert(negDate.length);
-    alert(sumDates.length);
-    alert(negId.length);
-
   
     var sumUserId = pozId.concat(negId);
+    alert(sumDates.length);
 
     for(i=0; i< sumDates.length;i++){
         if (deleteObjects[i].checked == true)
