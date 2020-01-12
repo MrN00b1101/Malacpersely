@@ -275,7 +275,6 @@ function deleteTransaction(){
         {
             pozDate[i] = obj[i].TranDate;
             pozId[i] = obj[i].UserId;
-            alert(pozDate[i]);
         }
         else
         {
@@ -289,7 +288,7 @@ function deleteTransaction(){
         
     var deleteObjects = document.getElementsByName("deletee");
 
-    for(i=0; i< sumArrayDate.length;i++){
+    for(i=0; i< pozDate.length;i++){
         if (deleteObjects[i].checked == true)
         {
             var xmlhttp = new XMLHttpRequest();
