@@ -276,7 +276,7 @@ function deleteTransaction(){
             pozId[i] = obj[i].UserId;
             
         }
-        else{
+        else if(obj[i].Value < 0){
             negDate[i] = obj[i].TranDate;
             negId[i] = obj[i].UserId;
         }
