@@ -289,6 +289,7 @@ function deleteTransaction(){
 
 
     var sumDates = pozDate.concat(negDate);
+    alert(sumDates.length);
 
   
     var sumUserId = pozId.concat(negId);
