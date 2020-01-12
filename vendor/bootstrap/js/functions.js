@@ -122,7 +122,6 @@ function getTranList(){
             document.getElementById("inComeCategory").innerHTML += obj[i].TranCatId+"<br>";
             document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
            document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
-           
             inOutSum+=parseInt(obj[i].Value);
         }
         else{
@@ -264,14 +263,30 @@ function deleteTransaction(){
     request.onload = function() {
        
     var obj = JSON.parse(request.response);
+
+    var poz = [];
+    var neg = [];
+
+    for(i = 0; i < obj.length; i++)
+    {   
+        if(obj[i].Value > 0)
+                poz[i] = obj[i];
+        else
+                neg[i] = obj[i];
+    }
+
+    var sumArray = poz.concat(neg);
+        
+
+
     var deleteObjects = document.getElementsByName("deletee");
 
-    for(i=0; i< obj.length;i++){
+    for(i=0; i< sumArray.length;i++){
         if (deleteObjects[i].checked == true)
         {
             var xmlhttp = new XMLHttpRequest();
-            var uId = obj[i].UserId;
-            var time = obj[i].TranDate;
+            var uId = sumArray[i].UserId;
+            var time = sumArray[i].TranDate;
             xmlhttp.open("DELETE", "phpApi.php", false);
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         
@@ -283,10 +298,7 @@ function deleteTransaction(){
                 }
             }
 
-            alert(com);
-            alert(uId);
             alert(time);
-            alert(token);
         
             xmlhttp.send(JSON.stringify(
                 { 
