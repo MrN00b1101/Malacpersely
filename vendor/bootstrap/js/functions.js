@@ -283,17 +283,17 @@ function deleteTransaction(){
         }
     }
 
-   /* var sumArrayDate = pozDate.concat(negDate);
-    var sumArrayId = pozId.concat(negId);*/
+    var sumArrayDate = pozDate.concat(negDate);
+    var sumArrayId = pozId.concat(negId);
         
     var deleteObjects = document.getElementsByName("deletee");
 
-    for(i=0; i< pozDate.length;i++){
+    for(i=0; i< sumArrayDate.length;i++){
         if (deleteObjects[i].checked == true)
         {
             var xmlhttp = new XMLHttpRequest();
-            var uId = pozId[i].UserId;
-            var time = pozDate[i].TranDate;
+            var uId = sumArrayId[i];
+            var time = sumArrayDate[i];
             xmlhttp.open("DELETE", "phpApi.php", false);
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         
