@@ -274,6 +274,7 @@ function deleteTransaction(){
         {
             pozDate[i] = obj[i].TranDate;
             pozId[i] = obj[i].UserId;
+            alert(pozDate[i]);
         }
         else{
             negDate[i] = obj[i].TranDate;
@@ -289,10 +290,7 @@ function deleteTransaction(){
 
     var sumDates = pozDate.concat(negDate);
 
-    for(i = 0; i<sumDates.length; i++)
-    {
-        alert(sumDates[i]);
-    }
+  
     var sumUserId = pozId.concat(negId);
 
     for(i=0; i< sumDates.length;i++){
