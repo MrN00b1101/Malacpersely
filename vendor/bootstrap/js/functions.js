@@ -122,8 +122,8 @@ function getTranList(){
             document.getElementById("inComeCategory").innerHTML += obj[i].TranCatId+"<br>";
             document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
            document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
-           document.getElementById("updateTrans").innerHTML += '<input id="' + i + '" type="radio">' +obj[i]+'</input>'+"<br>";
-            document.getElementById("deleteTrans").innerHTML += '<input id="' + i + '" type="checkbox"> </input>'+"<br>";
+           document.getElementById("updateTrans").innerHTML += '<input id="' + i + '" type="radio" value="' + i+'"name="' + i+'"></input>'+"<br>";
+            document.getElementById("deleteTrans").innerHTML += '<input id="' + i + '" type="checkbox" value="' + i+'"name="' + i+'"></input>'+"<br>";
             inOutSum+=parseInt(obj[i].Value);
         }
         else{
@@ -132,8 +132,8 @@ function getTranList(){
         document.getElementById("costCategory").innerHTML += obj[i].TranCatId+"<br>";
         document.getElementById("costValue").innerHTML += obj[i].Value+"<br>";
         document.getElementById("costDate").innerHTML += obj[i].TranDate+"<br>";
-        document.getElementById("updateTrans2").innerHTML += '<input id="' + i + '" type="radio"> </input>'+"<br>";
-        document.getElementById("deleteTrans2").innerHTML += '<input id="' + i + '" type="checkbox">  </input>'+"<br>";
+        document.getElementById("updateTrans2").innerHTML += '<input id="' + i + '" type="radio" value="' + i+'"name="' + i+'"> </input>'+"<br>";
+        document.getElementById("deleteTrans2").innerHTML += '<input id="' + i + '" type="checkbox" value="' + i+'"name="' + i+'">  </input>'+"<br>";
         inOutSum+=parseInt(obj[i].Value);
         }
 }
@@ -294,5 +294,23 @@ function deleteCategory(){
     }));
 }
 
+function send() {
+    var genders = document.getElementsByName("gender");
+    if (genders[0].checked == true) {
+        alert("Your gender is male");
+    } else if (genders[1].checked == true) {
+        alert("Your gender is female");
+    } else {
+        // no checked
+        var msg = '<span style="color:red;">You must select your gender!</span><br /><br />';
+        document.getElementById('msg').innerHTML = msg;
+        return false;
+    }
+    return true;
+}
+
+function reset_msg() {
+    document.getElementById('msg').innerHTML = '';
+}
 
 
