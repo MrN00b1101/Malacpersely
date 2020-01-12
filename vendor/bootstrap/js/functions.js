@@ -269,23 +269,23 @@ function deleteTransaction(){
     var negDate = [];
     var negId = [];
 
+    for(i=0; i< obj.length;i++){
+        if(obj[i].Value > 0)
+        {
+            pozDate[i] = obj[i].TranDate;
+            pozId[i] = obj[i].UserId;
+        }
+        else{
+            negDate[i] = obj[i].TranDate;
+            negId[i] = obj[i].UserId;
+        }
+    }
+
+    
+
         
     var deleteObjects = document.getElementsByName("deletee");
-   // var pozDates = document.getElementById("inComeDate").value;
-   // var negDates = document.getElementById("costDate").value;
-  
 
-    for(i = 0; i < 13; i++)
-    {   
-       pozDate[i] = document.getElementById("inComeDate")[i].value;
-       pozId[i] = document.getElementById("inComeUserId")[i].value;
-    }
-
-    for(i = 0; i < 5; i++)
-    {   
-        negDate[i] = document.getElementById("costDate")[i].value;
-        negId[i] = document.getElementById("costUserId")[i].value;
-    }
 
     var sumDates = pozDate.concat(negDate);
     var sumUserId = pozId.concat(negId);
