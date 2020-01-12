@@ -241,10 +241,10 @@ function newCategory(){
 function deleteTransaction(){
 
     var deleteObjecjts = document.getElementsByName("deletee");
-    var inUserId = document.getElementsById("inComeUserId").value;
-    var cUserId = document.getElementsById("costUserId").value;
-    var inTranDate= document.getElementsById("inComeDate").value;
-    var cTranDate = document.getElementsById("costDate").value;
+    var inUserId = document.getElementById("inComeUserId").value;
+    var cUserId = document.getElementById("costUserId").value;
+    var inTranDate= document.getElementById("inComeDate").value;
+    var cTranDate = document.getElementById("costDate").value;
 
     var userSum = inUserId.concat(cUserId);
     var dateSum = inTranDate.concat(cTranDate);
