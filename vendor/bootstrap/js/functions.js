@@ -118,7 +118,7 @@ function getTranList(){
         {
             document.getElementById("inComeId").innerHTML += inComeId+"<br>";
             inComeId++;
-            document.getElementById("inComeUserId").innerHTML += UserId+"<br>";
+            document.getElementById("inComeUserId").innerHTML += obj[i].UserId+"<br>";
             document.getElementById("inComeCategory").innerHTML += obj[i].TranCatId+"<br>";
             document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
            document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
@@ -129,7 +129,7 @@ function getTranList(){
         else{
         document.getElementById("costId").innerHTML += costId+"<br>";
         costId++;
-        document.getElementById("costUserId").innerHTML += UserId+"<br>";
+        document.getElementById("costUserId").innerHTML += obj[i].UserId+"<br>";
         document.getElementById("costCategory").innerHTML += obj[i].TranCatId+"<br>";
         document.getElementById("costValue").innerHTML += obj[i].Value+"<br>";
         document.getElementById("costDate").innerHTML += obj[i].TranDate+"<br>";
