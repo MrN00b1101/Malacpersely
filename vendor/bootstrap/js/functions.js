@@ -117,20 +117,20 @@ function getTranList(){
         if(obj[i].Value > 0)
         {
             inComeId++;
-            document.getElementById("inComeId").innerHTML += '<option>'+inComeId+'</option>'+"<br>";
-            document.getElementById("inComeUserId").innerHTML += '<option id="User'+i+'">'+obj[i].UserId+'</option>'+"<br>";
-            document.getElementById("inComeCategory").innerHTML += '<option>'+obj[i].TranCatId+'</option>'+"<br>";
-            document.getElementById("inComeValue").innerHTML += '<option>'+obj[i].Value+'</option>'+"<br>";
-           document.getElementById("inComeDate").innerHTML += '<option>'+obj[i].TranDate+'</option>'+"<br>";
+            document.getElementById("inComeId").innerHTML += inComeId+"<br>";
+            document.getElementById("inComeUserId").innerHTML += obj[i].UserId+"<br>";
+            document.getElementById("inComeCategory").innerHTML += obj[i].TranCatId+"<br>";
+            document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
+            document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
             inOutSum+=parseInt(obj[i].Value);
         }
         else{
         costId++;
-        document.getElementById("costId").innerHTML += '<option>'+costId+'</option>'+"<br>";
-        document.getElementById("costUserId").innerHTML += '<option>'+obj[i].UserId+'</option>'+"<br>";
-        document.getElementById("costCategory").innerHTML += '<option>'+obj[i].TranCatId+'</option>'+"<br>";
-        document.getElementById("costValue").innerHTML += '<option>'+obj[i].Value+'</option>'+"<br>";
-        document.getElementById("costDate").innerHTML += '<option>'+obj[i].TranDate+'</option>'+"<br>";
+        document.getElementById("costId").innerHTML += costId+"<br>";
+        document.getElementById("costUserId").innerHTML += obj[i].UserId+"<br>";
+        document.getElementById("costCategory").innerHTML += obj[i].TranCatId+"<br>";
+        document.getElementById("costValue").innerHTML += obj[i].Value+"<br>";
+        document.getElementById("costDate").innerHTML += obj[i].TranDate+"<br>";
         inOutSum+=parseInt(obj[i].Value);
         }
     }
@@ -337,11 +337,8 @@ function deleteTransTest(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
     var uId = '9';
+    var time = "2019-12-28 13:13:28";
  
-    var time = '2019-12-28 13:13:28';
- 
-    
-    //alert(time);
     var token = getCookie("Token");
     xmlhttp.open("DELETE", "phpApi.php", false);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
