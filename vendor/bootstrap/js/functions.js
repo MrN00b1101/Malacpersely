@@ -136,13 +136,13 @@ function getTranList(){
     }
 
     for(i=0; i< inComeId;i++){
-        document.getElementById("updateTrans").innerHTML += '<input id="' + i + '" type="radio" value="' + i+'" name="updatee"></input>'+"<br>";
-        document.getElementById("deleteTrans").innerHTML += '<input id="' + i + '" type="checkbox" value="' + i+'" name="deletee"></input>'+"<br>";
+        document.getElementById("updateTrans").innerHTML += '<input id="update' + i + '" type="radio" value="' + i+'" name="updatee"></input>'+"<br>";
+        document.getElementById("deleteTrans").innerHTML += '<input id="delete' + i + '" type="checkbox" value="' + i+'" name="deletee"></input>'+"<br>";
     }
 
     for(i=0; i< costId;i++){
-        document.getElementById("updateTrans2").innerHTML += '<input id="' + i + '" type="radio" value="' + i+'" name="updatee"> </input>'+"<br>";
-        document.getElementById("deleteTrans2").innerHTML += '<input id="' + i + '" type="checkbox" value="' + i+'" name="deletee">  </input>'+"<br>";
+        document.getElementById("updateTrans2").innerHTML += '<input id="update' + i + '" type="radio" value="' + i+'" name="updatee"> </input>'+"<br>";
+        document.getElementById("deleteTrans2").innerHTML += '<input id="delete' + i + '" type="checkbox" value="' + i+'" name="deletee">  </input>'+"<br>";
 
     }
 
@@ -264,7 +264,7 @@ function deleteTransaction(){
        
     var obj = JSON.parse(request.response);
 
-    var pozDate = [];
+   var pozDate = [];
     var pozId = [];
     var negDate = [];
     var negId = [];
@@ -273,35 +273,31 @@ function deleteTransaction(){
         if(obj[i].Value > 0)
         {
             pozDate[i] = obj[i].TranDate;
-            pozId[i] = obj[i].UserId;
+           // pozId[i] = obj[i].UserId;
             
         }
         else if(obj[i].Value < 0){
             negDate[i] = obj[i].TranDate;
-            negId[i] = obj[i].UserId;
+           // negId[i] = obj[i].UserId;
         }
     }
 
-    
-
-    alert(obj.length);
     alert(pozDate.length);
-    alert(pozId.length);
     alert(negDate.length);
 
-    alert(negId.length);
+   
     var deleteObjects = document.getElementsByName("deletee");
 
 
-    var sumDates = pozDate.concat(negDate);
+   /* var sumDates = pozDate.concat(negDate);
   
-    var sumUserId = pozId.concat(negId);
-    alert(sumDates.length);
+    var sumUserId = pozId.concat(negId);*/
+  
 
     for(i=0; i< obj.length;i++){
         if (deleteObjects[i].checked == true)
         {
-            var xmlhttp = new XMLHttpRequest();
+          /*  var xmlhttp = new XMLHttpRequest();
             var uId = obj[i].UserId;
             var time = obj[i].TranDate;
             xmlhttp.open("DELETE", "phpApi.php", false);
@@ -323,7 +319,7 @@ function deleteTransaction(){
             "uId" : uId,
             "time" : time,
             "token" : token
-            }));
+            }));*/
         }
 
 
@@ -332,42 +328,7 @@ function deleteTransaction(){
     }
  
     request.send()
-    
-
-    /*var userSum = inUserId.concat(cUserId);
-    var dateSum = inTranDate.concat(cTranDate);
-
-    for(var i = 0; i<deleteObjecjts.length; i++)
-    {
-        if (deleteObjecjts[i].checked == true)
-        {
-            alert(dateSum);
-            
-            
-            /*var xmlhttp = new XMLHttpRequest();
-            var com = 'tran';
-            var token = getCookie("Token");
-            xmlhttp.open("DELETE", "phpApi.php", false);
-            xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        
-            xmlhttp.onload = function () {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
-                    alert(xmlhttp.status_message);
-                } else {
-                    alert("Tranzakció sikeresen törölve!");
-                }
-            }
-        
-            xmlhttp.send(JSON.stringify(
-                { 
-            "com" : com,
-            "table" : table,
-            "Id" : id,
-            "token" : token
-            }));
-        }
-
-    }*/
+     
 
 }
 
