@@ -166,7 +166,7 @@ function getCategoryList(){
 
     request.onload = function() {
     var obj = JSON.parse(request.response);
-
+    request.send()
     for(i=0; i< obj.length;i++){
         document.getElementById("getCategories1").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>'+"<br>";
         document.getElementById("getCategories2").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>';
@@ -176,7 +176,7 @@ function getCategoryList(){
     }
 }
 // Send request
-request.send()
+
 //alert(getCookie("Token"));
 }
 
@@ -263,7 +263,7 @@ function deleteTransaction(){
     request.onload = function() {
        
     var obj = JSON.parse(request.response);
-
+    request.send()
 
    var pozDate = [];
     var pozId = [];
@@ -326,7 +326,7 @@ function deleteTransaction(){
 
     }
  
-    request.send()
+
      
 
 }
