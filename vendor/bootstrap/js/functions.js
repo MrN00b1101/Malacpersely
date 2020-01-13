@@ -336,11 +336,14 @@ function deleteTransaction(){
 function deleteTransTest(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
-    var uId = document.getElementById("inComeUserId");
-    var time = document.getElementById("inComeDate");
+    var x = document.getElementById("inComeUserId");
+    var uId = x.options[0].value;
+    
+    var y = document.getElementById("inComeDate");
+    var time = y.options[0].value;
 
-    alert(uId[0].responseText);
-    alert(time[0]);
+    alert(uId);
+    alert(time);
   /*  var token = getCookie("Token");
     xmlhttp.open("DELETE", "phpApi.php", false);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
