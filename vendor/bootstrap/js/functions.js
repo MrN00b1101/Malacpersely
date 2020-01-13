@@ -297,7 +297,7 @@ function deleteTransaction(){
     for(i=0; i< obj.length;i++){
         if (deleteObjects[i].checked == true)
         {
-            var datee = document.getElementById("inComeDate")[i];
+            var datee = document.getElementById("inComeDate")[i].value;
             alert(datee);
             var xmlhttp = new XMLHttpRequest();
             var uId = sumUserId[i];
