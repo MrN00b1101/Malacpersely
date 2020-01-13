@@ -286,8 +286,8 @@ function deleteTransaction(){
 
    
     var deleteObjects = document.getElementsByName("deletee");
-    var deleteObjects2 = document.getElementsByName("deletee").value;
-    alert(deleteObjects2.length);
+    var deleteObjects2 = document.getElementsByName("deletee").length;
+    alert(deleteObjects2);
 
      var sumDates = pozDate.concat(negDate);
      var sumUserId = pozId.concat(negId);
