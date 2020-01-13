@@ -337,7 +337,7 @@ function deleteTransTest(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
     var x = document.getElementById("User0")[0];
-    var uId = x.options;
+   // var uId = x.options;
     
    /* var y = document.getElementById("inComeDate");
     var time = y.options[0].value;*/
