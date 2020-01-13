@@ -336,15 +336,13 @@ function deleteTransaction(){
 function deleteTransTest(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
-    var x = document.getElementById("User0")[0];
-   // var uId = x.options;
+    var uId = '9';
+ 
+    var time = '2019-12-28 13:13:28';
+ 
     
-   /* var y = document.getElementById("inComeDate");
-    var time = y.options[0].value;*/
-    alert(x);
-    alert(uId);
     //alert(time);
-  /*  var token = getCookie("Token");
+    var token = getCookie("Token");
     xmlhttp.open("DELETE", "phpApi.php", false);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
@@ -363,7 +361,7 @@ function deleteTransTest(){
     "uId" : uId,
     "time" : time,
     "token" : token
-    }));*/
+    }));
 }
 
 function deleteCategory(){
