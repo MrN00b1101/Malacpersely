@@ -339,8 +339,8 @@ function deleteTransTest(){
     var uId = document.getElementById("inComeUserId");
     var time = document.getElementById("inComeDate");
 
-    alert(uId[0].value);
-    alert(time[0].value);
+    alert(uId[0]);
+    alert(time[0]);
   /*  var token = getCookie("Token");
     xmlhttp.open("DELETE", "phpApi.php", false);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
