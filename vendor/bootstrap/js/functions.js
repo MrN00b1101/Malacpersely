@@ -337,9 +337,9 @@ function deleteTransTest(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
     var uId = 9;
-    var time = "2019-12-28 13:13:28";
- 
+    var time = '2019-12-28 13:13:28';
     var token = getCookie("Token");
+
     xmlhttp.open("DELETE", "phpApi.php", false);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
@@ -351,7 +351,6 @@ function deleteTransTest(){
         }
     }
   
-
     xmlhttp.send(JSON.stringify(
         { 
     "com" : com,
