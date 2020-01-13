@@ -337,11 +337,11 @@ function deleteTransTest(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
     var x = document.getElementById("User0");
-    var uId = x.options.value;
+    var uId = x.options;
     
    /* var y = document.getElementById("inComeDate");
     var time = y.options[0].value;*/
-
+    alert(x);
     alert(uId);
     //alert(time);
   /*  var token = getCookie("Token");
