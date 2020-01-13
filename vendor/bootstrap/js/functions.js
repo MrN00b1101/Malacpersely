@@ -262,7 +262,8 @@ function deleteTransaction(){
     request.onload = function() {
        
     var obj = JSON.parse(request.response);
-
+    
+    var deleteObjects2 = document.getElementsByName("deletee").length;
 
    var pozDate = [];
     var pozId = [];
@@ -286,7 +287,7 @@ function deleteTransaction(){
 
    
     var deleteObjects = document.getElementsByName("deletee");
-    var deleteObjects2 = document.getElementsByName("deletee").length;
+    
     alert(deleteObjects2);
 
      var sumDates = pozDate.concat(negDate);
@@ -296,6 +297,8 @@ function deleteTransaction(){
     for(i=0; i< obj.length;i++){
         if (deleteObjects[i].checked == true)
         {
+            var datee = document.getElementById("inComeDate")[i];
+            alert(datee);
             var xmlhttp = new XMLHttpRequest();
             var uId = sumUserId[i];
             var time = sumDates[i];
@@ -310,7 +313,7 @@ function deleteTransaction(){
                 }
             }
 
-            alert(time);
+           // alert(time);
         
             xmlhttp.send(JSON.stringify(
                 { 
