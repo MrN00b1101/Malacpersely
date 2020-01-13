@@ -264,8 +264,6 @@ function deleteTransaction(){
        
     var obj = JSON.parse(request.response);
 
-    var pozDateCount = 0;
-    var negDateCount = 0;
 
    var pozDate = [];
     var pozId = [];
@@ -275,36 +273,32 @@ function deleteTransaction(){
     for(i=0; i< obj.length;i++){
         if(obj[i].Value > 0)
         {
-            pozDateCount++;
-            pozDate[i] = obj[i].TranDate;
-           // pozId[i] = obj[i].UserId;
+          
+            pozDate.push(obj[i].TranDate);
+            pozId.push(obj[i].UserId);
             
         }
         else if(obj[i].Value < 0){
-            negDateCount++;
-            negDate[i] = obj[i].TranDate;
-           // negId[i] = obj[i].UserId;
+          
+            negDate.push(obj[i].TranDate);
+            negId.push(obj[i].UserId);
         }
     }
-
-    alert(pozDateCount);
-    alert( negDateCount);
 
    
     var deleteObjects = document.getElementsByName("deletee");
 
 
-   /* var sumDates = pozDate.concat(negDate);
-  
-    var sumUserId = pozId.concat(negId);*/
+     var sumDates = pozDate.concat(negDate);
+     var sumUserId = pozId.concat(negId);
   
 
     for(i=0; i< obj.length;i++){
         if (deleteObjects[i].checked == true)
         {
-          /*  var xmlhttp = new XMLHttpRequest();
-            var uId = obj[i].UserId;
-            var time = obj[i].TranDate;
+            var xmlhttp = new XMLHttpRequest();
+            var uId = sumUserId[i];
+            var time = sumDates[i];
             xmlhttp.open("DELETE", "phpApi.php", false);
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         
@@ -324,7 +318,7 @@ function deleteTransaction(){
             "uId" : uId,
             "time" : time,
             "token" : token
-            }));*/
+            }));
         }
 
 
