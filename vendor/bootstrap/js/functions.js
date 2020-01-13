@@ -166,7 +166,7 @@ function getCategoryList(){
 
     request.onload = function() {
     var obj = JSON.parse(request.response);
-    request.send()
+
     for(i=0; i< obj.length;i++){
         document.getElementById("getCategories1").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>'+"<br>";
         document.getElementById("getCategories2").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>';
@@ -176,7 +176,7 @@ function getCategoryList(){
     }
 }
 // Send request
-
+request.send()
 //alert(getCookie("Token"));
 }
 
@@ -193,7 +193,6 @@ function newTranzaction(){
     var value = document.getElementById('inputIncome').value;
     var personal = 0;
     var token = getCookie("Token");
-    //var param = "?uId="+user+"&catId="+cat+"&value="+value+"&com="+com+"&personal="+personal+"&token="+token;
     xmlhttp.open("POST", "phpApi.php", false);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
@@ -263,7 +262,7 @@ function deleteTransaction(){
     request.onload = function() {
        
     var obj = JSON.parse(request.response);
-    request.send()
+
 
    var pozDate = [];
     var pozId = [];
@@ -287,7 +286,8 @@ function deleteTransaction(){
 
    
     var deleteObjects = document.getElementsByName("deletee");
-
+    var deleteObjects2 = document.getElementsByName("deletee").value;
+    alert(deleteObjects2.length);
 
      var sumDates = pozDate.concat(negDate);
      var sumUserId = pozId.concat(negId);
@@ -326,7 +326,7 @@ function deleteTransaction(){
 
     }
  
-
+    request.send()
      
 
 }
