@@ -293,7 +293,7 @@ function deleteTransaction(){
      var sumUserId = pozId.concat(negId);
   
 
-    //for(i=0; i< obj.length;i++){
+       for(i=0; i< obj.length;i++){
         if (deleteObjects[0].checked == true)
         {
             var xmlhttp = new XMLHttpRequest();
@@ -324,13 +324,43 @@ function deleteTransaction(){
         }
 
 
-   // }
+      }
 
     }
  
     request.send()
      
 
+}
+
+function deleteTransTest(){
+    var xmlhttp = new XMLHttpRequest();
+    var com = 'tran';
+    var uId = document.getElementById("inComeUserId");
+    var time = document.getElementById("inComeDate");
+
+    alert(uId[0].value);
+    alert(time[0].value);
+  /*  var token = getCookie("Token");
+    xmlhttp.open("DELETE", "phpApi.php", false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+    xmlhttp.onload = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+            alert(xmlhttp.status_message);
+        } else {
+            alert("Tranzakció sikeresen törölve!");
+        }
+    }
+  
+
+    xmlhttp.send(JSON.stringify(
+        { 
+    "com" : com,
+    "uId" : uId,
+    "time" : time,
+    "token" : token
+    }));*/
 }
 
 function deleteCategory(){
