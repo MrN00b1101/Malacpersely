@@ -262,8 +262,7 @@ function deleteTransaction(){
     request.onload = function() {
        
     var obj = JSON.parse(request.response);
-    
-    var deleteObjects2 = document.getElementsByName("deletee").length;
+   var deleteObjects2 = document.getElementsByName("deletee").length;
 
    var pozDate = [];
     var pozId = [];
@@ -294,14 +293,12 @@ function deleteTransaction(){
      var sumUserId = pozId.concat(negId);
   
 
-    for(i=0; i< obj.length;i++){
-        if (deleteObjects[i].checked == true)
+    //for(i=0; i< obj.length;i++){
+        if (deleteObjects[0].checked == true)
         {
-            var datee = document.getElementById("inComeDate")[i].value;
-            alert(datee);
             var xmlhttp = new XMLHttpRequest();
-            var uId = sumUserId[i];
-            var time = sumDates[i];
+            var uId = sumUserId[0];
+            var time = sumDates[0];
             xmlhttp.open("DELETE", "phpApi.php", false);
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         
@@ -312,8 +309,10 @@ function deleteTransaction(){
                     alert("Tranzakció sikeresen törölve!");
                 }
             }
-
-           // alert(time);
+            alert(com);
+            alert(time);
+            alert(uId);
+            alert(token);
         
             xmlhttp.send(JSON.stringify(
                 { 
@@ -325,7 +324,7 @@ function deleteTransaction(){
         }
 
 
-    }
+   // }
 
     }
  
