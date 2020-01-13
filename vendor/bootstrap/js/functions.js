@@ -118,7 +118,7 @@ function getTranList(){
         {
             inComeId++;
             document.getElementById("inComeId").innerHTML += '<option>'+inComeId+'</option>'+"<br>";
-            document.getElementById("inComeUserId").innerHTML += '<option>'+obj[i].UserId+'</option>'+"<br>";
+            document.getElementById("inComeUserId").innerHTML += '<option id="User'+i+'">'+obj[i].UserId+'</option>'+"<br>";
             document.getElementById("inComeCategory").innerHTML += '<option>'+obj[i].TranCatId+'</option>'+"<br>";
             document.getElementById("inComeValue").innerHTML += '<option>'+obj[i].Value+'</option>'+"<br>";
            document.getElementById("inComeDate").innerHTML += '<option>'+obj[i].TranDate+'</option>'+"<br>";
@@ -336,14 +336,14 @@ function deleteTransaction(){
 function deleteTransTest(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
-    var x = document.getElementById("inComeUserId");
-    var uId = x.options[0].value;
+    var x = document.getElementById("User0");
+    var uId = x.options.value;
     
-    var y = document.getElementById("inComeDate");
-    var time = y.options[0].value;
+   /* var y = document.getElementById("inComeDate");
+    var time = y.options[0].value;*/
 
     alert(uId);
-    alert(time);
+    //alert(time);
   /*  var token = getCookie("Token");
     xmlhttp.open("DELETE", "phpApi.php", false);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
