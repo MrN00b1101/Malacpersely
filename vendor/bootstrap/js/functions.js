@@ -264,6 +264,9 @@ function deleteTransaction(){
        
     var obj = JSON.parse(request.response);
 
+    var pozDateCount = 0;
+    var negDateCount = 0;
+
    var pozDate = [];
     var pozId = [];
     var negDate = [];
@@ -272,18 +275,20 @@ function deleteTransaction(){
     for(i=0; i< obj.length;i++){
         if(obj[i].Value > 0)
         {
+            pozDateCount++;
             pozDate[i] = obj[i].TranDate;
            // pozId[i] = obj[i].UserId;
             
         }
         else if(obj[i].Value < 0){
+            negDateCount++;
             negDate[i] = obj[i].TranDate;
            // negId[i] = obj[i].UserId;
         }
     }
 
-    alert(pozDate.length);
-    alert(negDate.length);
+    alert(pozDateCount);
+    alert( negDateCount);
 
    
     var deleteObjects = document.getElementsByName("deletee");
