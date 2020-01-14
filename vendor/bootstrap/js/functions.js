@@ -322,7 +322,7 @@ function deleteTransaction(){
     }
  
     request.send()
-     
+    window.onload();
 
 }
 
