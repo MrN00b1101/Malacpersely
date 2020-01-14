@@ -355,7 +355,7 @@ function deleteTransTest(){
         { 
     "com" : com,
     "uId" : uId,
-    "time" : "'".time."'",
+    "time" : "'"+time+"'",
     "token" : token
     }));
 }
