@@ -306,10 +306,6 @@ function deleteTransaction(){
                     alert("Tranzakció sikeresen törölve!");
                 }
             }
-            alert(com);
-            alert(time);
-            alert(uId);
-            alert(token);
         
             xmlhttp.send(JSON.stringify(
                 { 
