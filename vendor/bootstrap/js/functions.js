@@ -109,6 +109,20 @@ function getTranList(){
     request.onload = function() {
        
     var obj = JSON.parse(request.response);
+
+  
+    document.getElementById("inComeId").innerHTML ="";
+    document.getElementById("inComeUserId").innerHTML ="";
+    document.getElementById("inComeCategory").innerHTML ="";
+    document.getElementById("inComeValue").innerHTML ="";
+    document.getElementById("inComeDate").innerHTML ="";
+    
+    document.getElementById("costId").innerHTML ="";
+    document.getElementById("costUserId").innerHTML ="";
+    document.getElementById("costCategory").innerHTML ="";
+    document.getElementById("costValue").innerHTML ="";
+    document.getElementById("costDate").innerHTML ="";
+    
     //alert(obj.length);
    var inComeId = 0;
    var costId = 0;
@@ -166,6 +180,11 @@ function getCategoryList(){
 
     request.onload = function() {
     var obj = JSON.parse(request.response);
+
+    document.getElementById("getCategories1").innerHTML ="";
+    document.getElementById("getCategories2").innerHTML ="";
+    document.getElementById("getCategories3").innerHTML ="";
+    document.getElementById("getCategories4").innerHTML ="";
 
     for(i=0; i< obj.length;i++){
         document.getElementById("getCategories1").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>'+"<br>";
@@ -320,9 +339,9 @@ function deleteTransaction(){
       }
 
     }
- 
-    request.send()
     window.onload();
+    request.send()
+    
 
 }
 
