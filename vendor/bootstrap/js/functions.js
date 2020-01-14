@@ -191,12 +191,14 @@ function getCategoryList(){
     document.getElementById("getCategories2").innerHTML ="";
     document.getElementById("getCategories3").innerHTML ="";
     document.getElementById("getCategories4").innerHTML ="";
+    document.getElementById("getCategories5").innerHTML ="";
 
     for(i=0; i< obj.length;i++){
         document.getElementById("getCategories1").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>'+"<br>";
         document.getElementById("getCategories2").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>';
         document.getElementById("getCategories3").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>'+"<br>";
         document.getElementById("getCategories4").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>'+"<br>";
+        document.getElementById("getCategories5").innerHTML +='<option id="' + i + '">' +obj[i].Id+' - '+obj[i].Name+'</option>'+"<br>";
 
     }
 }
@@ -308,12 +310,11 @@ function deleteTransaction(){
         }
     }
 
+    var sumDates = pozDate.concat(negDate);
+    var sumUserId = pozId.concat(negId);
+
     var deleteObjects = document.getElementsByName("deletee");
     
-
-     var sumDates = pozDate.concat(negDate);
-     var sumUserId = pozId.concat(negId);
-  
 
        for(i=0; i< obj.length;i++){
         if (deleteObjects[i].checked == true)
@@ -351,31 +352,93 @@ function deleteTransaction(){
 
 }
 
-function deleteTransTest(){
-    var xmlhttp = new XMLHttpRequest();
+function updateTransaction(){
+    var request = new XMLHttpRequest();
     var com = 'tran';
-    var uId = 9;
-    var time = '2019-12-28 13:13:28';
+    var user = 9;
+    var cat = 'null';
+    var minVal = 'null';
+    var maxVal = 'null';
+    var minDat = '2019-01-30';
+    var maxDat = 'null';
+    var personal = 0;
     var token = getCookie("Token");
+    
+    var param = "?user="+user+"&cat="+cat+"&minVal="+minVal+"&maxVal="+maxVal+"&minDat='"+minDat+"'&maxDat="+maxDat+"&com="+com+"&personal="+personal+"&token="+token;
+    request.open('GET', 'phpApi.php'+param, false)
+    request.onload = function() {
+       
+    var obj = JSON.parse(request.response);
 
-    xmlhttp.open("DELETE", "phpApi.php", false);
-    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+   var pozDate = [];
+    var pozId = [];
+    var negDate = [];
+    var negId = [];
 
-    xmlhttp.onload = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
-            alert(xmlhttp.status_message);
-        } else {
-            alert("Tranzakció sikeresen törölve!");
+    for(i=0; i< obj.length;i++){
+        if(obj[i].Value > 0)
+        {
+          
+            pozDate.push(obj[i].TranDate);
+            pozId.push(obj[i].UserId);
+            
+        }
+        else if(obj[i].Value < 0){
+          
+            negDate.push(obj[i].TranDate);
+            negId.push(obj[i].UserId);
         }
     }
-  
-    xmlhttp.send(JSON.stringify(
-        { 
-    "com" : com,
-    "uId" : uId,
-    "time" : "'"+time+"'",
-    "token" : token
-    }));
+
+    var sumDates = pozDate.concat(negDate);
+    var sumUserId = pozId.concat(negId);
+
+    var updateObjects = document.getElementsByName("updatee");
+    var el = document.getElementById('getCategories5');
+    var x = el.options[el.selectedIndex].value;
+    var catArray = x.split(" - ");
+    var cat = parseInt(catArray[0]);
+
+    var value = document.getElementById('costUpdate').value;
+    
+
+       for(i=0; i< obj.length;i++){
+        if (updateObjects[i].checked == true)
+        {
+            var xmlhttp = new XMLHttpRequest();
+            var uid = sumUserId[i];
+            var time = sumDates[i];
+            xmlhttp.open("PUT", "phpApi.php", false);
+            xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        
+            xmlhttp.onload = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+                    alert(xmlhttp.status_message);
+                } else {
+                    
+                }
+            }
+        
+            xmlhttp.send(JSON.stringify(
+                { 
+            "com" : com,
+            "Value" : value,
+            "TranCatId" : cat,
+            "Personal" : personal,
+            "uid" : uid,
+            "time" : "'"+time+"'",
+            "token" : token
+            }));
+        }
+
+
+      }
+
+    }
+    alert("Tranzakció sikeresen törölve!");
+    request.send()
+    window.onload();
+
 }
 
 function deleteCategory(){
@@ -406,7 +469,5 @@ function deleteCategory(){
     "token" : token
     }));
 }
-
-
 
 
