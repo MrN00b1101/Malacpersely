@@ -336,7 +336,7 @@ function delTransaction($data){
      else     {
         $response=array(
               'status' => 0,
-              'status_message' =>'Deleted Failed.'
+              'status_message' =>'Deleted Failed.'.$uid.':::'.$time.":::".$query
               );
      }   
      header('Content-Type: application/json');
