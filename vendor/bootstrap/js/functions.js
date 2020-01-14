@@ -291,11 +291,11 @@ function deleteTransaction(){
   
 
        for(i=0; i< obj.length;i++){
-        if (deleteObjects[0].checked == true)
+        if (deleteObjects[i].checked == true)
         {
             var xmlhttp = new XMLHttpRequest();
-            var uId = sumUserId[0];
-            var time = sumDates[0];
+            var uId = sumUserId[i];
+            var time = sumDates[i];
             xmlhttp.open("DELETE", "phpApi.php", false);
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         
