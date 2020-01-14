@@ -345,9 +345,9 @@ function deleteTransaction(){
       }
 
     }
-    window.onload();
-    request.send()
     
+    request.send()
+    window.onload();
 
 }
 
