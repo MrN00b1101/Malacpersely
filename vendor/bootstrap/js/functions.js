@@ -328,7 +328,7 @@ function deleteTransaction(){
                 if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
                     alert(xmlhttp.status_message);
                 } else {
-                    alert("Tranzakció sikeresen törölve!");
+                    
                 }
             }
         
@@ -345,7 +345,7 @@ function deleteTransaction(){
       }
 
     }
-    
+    alert("Tranzakció sikeresen törölve!");
     request.send()
     window.onload();
 
