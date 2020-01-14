@@ -122,6 +122,12 @@ function getTranList(){
     document.getElementById("costCategory").innerHTML ="";
     document.getElementById("costValue").innerHTML ="";
     document.getElementById("costDate").innerHTML ="";
+
+    document.getElementById("updateTrans").innerHTML ="";
+    document.getElementById("deleteTrans").innerHTML ="";
+ 
+    document.getElementById("updateTrans2").innerHTML ="";
+    document.getElementById("deleteTrans2").innerHTML ="";
     
     //alert(obj.length);
    var inComeId = 0;
