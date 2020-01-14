@@ -262,7 +262,6 @@ function deleteTransaction(){
     request.onload = function() {
        
     var obj = JSON.parse(request.response);
-   var deleteObjects2 = document.getElementsByName("deletee").length;
 
    var pozDate = [];
     var pozId = [];
@@ -284,10 +283,8 @@ function deleteTransaction(){
         }
     }
 
-   
     var deleteObjects = document.getElementsByName("deletee");
     
-    alert(deleteObjects2);
 
      var sumDates = pozDate.concat(negDate);
      var sumUserId = pozId.concat(negId);
@@ -318,7 +315,7 @@ function deleteTransaction(){
                 { 
             "com" : com,
             "uId" : uId,
-            "time" : time,
+            "time" : "'"+time+"'",
             "token" : token
             }));
         }
