@@ -1,135 +1,135 @@
 RENDSZERTERV
 
 
-A projektet két nagyobb részre lehet elkülöníteni, amik az adatbázis és 
-az internetes alkalmazás. 
+A projektet kÃ©t nagyobb rÃ©szre lehet elkÃ¼lÃ¶nÃ­teni, amik az adatbÃ¡zis Ã©s 
+az internetes alkalmazÃ¡s. 
 
-ADATBÁZISTERV
+ADATBÃZISTERV
 
 
 User:
 
-A felhasználók adatainak tárolására használjuk.
+A felhasznÃ¡lÃ³k adatainak tÃ¡rolÃ¡sÃ¡ra hasznÃ¡ljuk.
 
-	Mezõk:
+	MezÅ‘k:
 
-	Id - Number, Not Null, Elsõdleges Kulcs
-	A felhasználó egyedi azonosítója
+	Id - Number, Not Null, ElsÅ‘dleges Kulcs
+	A felhasznÃ¡lÃ³ egyedi azonosÃ­tÃ³ja
 
 	Name - Varchar2(30), Not Null
-	A felhasználó neve
+	A felhasznÃ¡lÃ³ neve
 
 	Mail - Varchar2(50), Not Null
-	A felhasználó e-mail címe
+	A felhasznÃ¡lÃ³ e-mail cÃ­me
 
 	Password - Varchar2(32), Not Null
-	A felhasználó jelszavának a hash-e
+	A felhasznÃ¡lÃ³ jelszavÃ¡nak a hash-e
 
-	FamilyId - Number, Not Null, Idegen kulcs (a Family tábla Id mezõjéhez kapcsolva)
-	A felhasználó családjának azonosítója
+	FamilyId - Number, Not Null, Idegen kulcs (a Family tÃ¡bla Id mezÅ‘jÃ©hez kapcsolva)
+	A felhasznÃ¡lÃ³ csalÃ¡djÃ¡nak azonosÃ­tÃ³ja
 
 
 Transactions:
 
-A pénzügyi tranzakciókat tároljuk ebben a táblában.
+A pÃ©nzÃ¼gyi tranzakciÃ³kat tÃ¡roljuk ebben a tÃ¡blÃ¡ban.
 
-	Mezõk:
+	MezÅ‘k:
 
-	UserId - Number, Not Null, Idegen kulcs (User tábla Id mezõjéhez kapcsolva)
-	A tranzakciót végrehajtó felhasználó azonosítója
+	UserId - Number, Not Null, Idegen kulcs (User tÃ¡bla Id mezÅ‘jÃ©hez kapcsolva)
+	A tranzakciÃ³t vÃ©grehajtÃ³ felhasznÃ¡lÃ³ azonosÃ­tÃ³ja
 
-	TranCatId - Number, Not Null, Idegen kulcs(Categorys tábla Id mezõjéhez kapcsolva)
-	A tranzakció típusa
+	TranCatId - Number, Not Null, Idegen kulcs(Categorys tÃ¡bla Id mezÅ‘jÃ©hez kapcsolva)
+	A tranzakciÃ³ tÃ­pusa
 
 	Value - Number, Not Null
-	A tranzakció összege, ha minusz, akkor kiadás, ha plusz, akkor bevétel
+	A tranzakciÃ³ Ã¶sszege, ha minusz, akkor kiadÃ¡s, ha plusz, akkor bevÃ©tel
 
 	Personal - Bit, Not Null
-	Ha az értéke 1, akkor a kiadás személyes, ha 0, akkor a kiadás családi
+	Ha az Ã©rtÃ©ke 1, akkor a kiadÃ¡s szemÃ©lyes, ha 0, akkor a kiadÃ¡s csalÃ¡di
 
 	Date - TimeStamp, Not Null
-	A tranzakció ideje
+	A tranzakciÃ³ ideje
 
 Categorys:
 
-A tranzakciók kategóriáit tároljuk itt.
+A tranzakciÃ³k kategÃ³riÃ¡it tÃ¡roljuk itt.
 
-	Mezõk:
+	MezÅ‘k:
 
-	Id - Number, Not Null, Elsõdleges kulcs
-	A kategória egyedi azonosítója
+	Id - Number, Not Null, ElsÅ‘dleges kulcs
+	A kategÃ³ria egyedi azonosÃ­tÃ³ja
 	
 	Name - Varchar2(10), Not Null
-	A kategória megnevezése
+	A kategÃ³ria megnevezÃ©se
 
 Family:
 
-A családokat tároljuk ebben a táblában.
+A csalÃ¡dokat tÃ¡roljuk ebben a tÃ¡blÃ¡ban.
 
-	Mezõk:
+	MezÅ‘k:
 
-	Id - Number, Not Null, ELsõdleges kulcs
-	A család egyedi azonosítója
+	Id - Number, Not Null, ELsÅ‘dleges kulcs
+	A csalÃ¡d egyedi azonosÃ­tÃ³ja
 
 	Name - Varchar2(10), Not Null
-	A család megnevezése
+	A csalÃ¡d megnevezÃ©se
 
-	FatherId - Id, Not Null, Idegen kulcs (a User tábla Id mezõjéhez kötve)
-	A családfõ azonosítója (õ hozza létre a családot, õ tud tagokat hozzá adni)
-
-
+	FatherId - Id, Not Null, Idegen kulcs (a User tÃ¡bla Id mezÅ‘jÃ©hez kÃ¶tve)
+	A csalÃ¡dfÅ‘ azonosÃ­tÃ³ja (Å‘ hozza lÃ©tre a csalÃ¡dot, Å‘ tud tagokat hozzÃ¡ adni)
 
 
 
 
-API HASZNÁLAT TERVE
 
-Az api Json obijektumban várja az adatokat!
+
+API HASZNÃLAT TERVE
+
+Az api Json obijektumban vÃ¡rja az adatokat!
 
 
 MODULOK:
 
-Regisztráció: Post request 
+RegisztrÃ¡ciÃ³: Post request 
 
-szükséges adatok: 
+szÃ¼ksÃ©ges adatok: 
 {
 com:'user',
-name:'felhasználó neve',
-mail:'email cím',
-password:'jelszó hash'
+name:'felhasznÃ¡lÃ³ neve',
+mail:'email cÃ­m',
+password:'jelszÃ³ hash'
 }
 
 
-Kategória felvitele: Post request, 
+KategÃ³ria felvitele: Post request, 
 
-szükséges adatok:    
+szÃ¼ksÃ©ges adatok:    
 {    
 com:'cat',
-name:'kategória név',
-creaId:'létrehozó felhasználó azonosítója',  
-global:'láthatóság (0-global,1-personal,2-család)'   
+name:'kategÃ³ria nÃ©v',
+creaId:'lÃ©trehozÃ³ felhasznÃ¡lÃ³ azonosÃ­tÃ³ja',  
+global:'lÃ¡thatÃ³sÃ¡g (0-global,1-personal,2-csalÃ¡d)'   
 }
 
 
-Tranzakció felvitele: Post request, 
+TranzakciÃ³ felvitele: Post request, 
 
-szükséges adatok:    
+szÃ¼ksÃ©ges adatok:    
 {    
 com:'tran',
-uId:'felhasználó azonosító',
-catId:'kategória azonosító',  
-value:'érték',
-persona: '0/1 személyes vagy családi'   
+uId:'felhasznÃ¡lÃ³ azonosÃ­tÃ³',
+catId:'kategÃ³ria azonosÃ­tÃ³',  
+value:'Ã©rtÃ©k',
+persona: '0/1 szemÃ©lyes vagy csalÃ¡di'   
 }
 
 
-Család felvitele: Post request, 
+CsalÃ¡d felvitele: Post request, 
 
-szükséges adatok:    
+szÃ¼ksÃ©ges adatok:    
 {    
 com:'family',
-name:'család név',
-fId:'Családfõ azonosítója'   
+name:'csalÃ¡d nÃ©v',
+fId:'CsalÃ¡dfÅ‘ azonosÃ­tÃ³ja'   
 }
 
 

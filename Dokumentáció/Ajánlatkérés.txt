@@ -1,66 +1,66 @@
-AJÁNLATKÉRÉS
+AJÃNLATKÃ‰RÃ‰S
 
 
 
-Ajánlatkérõ bemutatása:
+AjÃ¡nlatkÃ©rÅ‘ bemutatÃ¡sa:
 
 OVB  Kft.
 
 1138 Budapest
-Váci út 140.
+VÃ¡ci Ãºt 140.
 Telefon: +36 1 231 0670
 Telefax: +36 1 231 0679
 Mail: ovb@office.ovb.hu
 
 
 
-Bemutatkozás:
+BemutatkozÃ¡s:
 
-Az OVB már több évtizede nyújt vagyoni tanácsadást, jelenleg 15 országban 
-elérhetõ Európában, amik közé tartozik Magyarország is 1992-óta. 
-Tanácsadásaink az ügyfeleink pénzügyi helyzetésenk gondos elemzésén alapulnak,
-egyénre szabottan, mindig az élethelyzetükhöz igazítva segítjük döntéseiket. 
-Szeretnénk még több segítséget és lehetõséget nyújtani a mindennapok pénzügyeinek 
-kezelésében is, nyitva az online felület adta lehetõségek felé egy webapplikációval 
-és késõbb, a fogadtatása alapján esetleg egy mobil applikációval is. Névnek 
-a Malacperselyt választottunk, utalva a pénz gyûjtésének kedves, gyerekkori és 
-egyben egyszerû voltára.
-
-
-
-Követelmény specifikáció:
-
-Leírás:
-
-Egy pénzügyeket átláhatóbbá tevõ és egyszerûen használható internetes alkalmazást 
-kell megvalósítani. A Malacpersely névhez ragaszkodunk és szeretnénk, 
-ha ez a téma valahogyan tükrözõdne az applikáció designjában és/vagy használatában. 
-Egészében letisztult felületet és barátságos, vidám színek alkalmazását szeretnénk.
-
-A következõ funkciókkal rendelkezzen:
-
-Egyéni fiók létrehozása.
-Vagyon összegének megadása.
-Állandó idõközönként ráiratandó/levonandó összeg megadásának lehetõsége.
-Egyéni pénzügyi célok beállításának lehetõsége.
-Beállítható, a pénzmozgást mutató ábrák.
-Családi közös kassza beállításának lehetõsége, amihez több egyén hozzáadható.
-A családtagok között kezdeményezhetõ pénz átvezetés. (Például zsebpénz, amit a 
-gyerekek a saját egyéni részükön láthatnak a alkalmazásban.)
-Általunk biztosított pénzügyi tanácsadóval való kapcsolatfelvétel lehetõsége, 
-közvetlenül a weboldalról.
+Az OVB mÃ¡r tÃ¶bb Ã©vtizede nyÃºjt vagyoni tanÃ¡csadÃ¡st, jelenleg 15 orszÃ¡gban 
+elÃ©rhetÅ‘ EurÃ³pÃ¡ban, amik kÃ¶zÃ© tartozik MagyarorszÃ¡g is 1992-Ã³ta. 
+TanÃ¡csadÃ¡saink az Ã¼gyfeleink pÃ©nzÃ¼gyi helyzetÃ©senk gondos elemzÃ©sÃ©n alapulnak,
+egyÃ©nre szabottan, mindig az Ã©lethelyzetÃ¼khÃ¶z igazÃ­tva segÃ­tjÃ¼k dÃ¶ntÃ©seiket. 
+SzeretnÃ©nk mÃ©g tÃ¶bb segÃ­tsÃ©get Ã©s lehetÅ‘sÃ©get nyÃºjtani a mindennapok pÃ©nzÃ¼gyeinek 
+kezelÃ©sÃ©ben is, nyitva az online felÃ¼let adta lehetÅ‘sÃ©gek felÃ© egy webapplikÃ¡ciÃ³val 
+Ã©s kÃ©sÅ‘bb, a fogadtatÃ¡sa alapjÃ¡n esetleg egy mobil applikÃ¡ciÃ³val is. NÃ©vnek 
+a Malacperselyt vÃ¡lasztottunk, utalva a pÃ©nz gyÅ±jtÃ©sÃ©nek kedves, gyerekkori Ã©s 
+egyben egyszerÅ± voltÃ¡ra.
 
 
 
-Az ajánlatadóval szembeni elvárások:
+KÃ¶vetelmÃ©ny specifikÃ¡ciÃ³:
 
-Legyen minimum 2 éve bejegyzett vállalkozás.
-Valósítsa meg a projektet 60 nap alatt.
+LeÃ­rÃ¡s:
+
+Egy pÃ©nzÃ¼gyeket Ã¡tlÃ¡hatÃ³bbÃ¡ tevÅ‘ Ã©s egyszerÅ±en hasznÃ¡lhatÃ³ internetes alkalmazÃ¡st 
+kell megvalÃ³sÃ­tani. A Malacpersely nÃ©vhez ragaszkodunk Ã©s szeretnÃ©nk, 
+ha ez a tÃ©ma valahogyan tÃ¼krÃ¶zÅ‘dne az applikÃ¡ciÃ³ designjÃ¡ban Ã©s/vagy hasznÃ¡latÃ¡ban. 
+EgÃ©szÃ©ben letisztult felÃ¼letet Ã©s barÃ¡tsÃ¡gos, vidÃ¡m szÃ­nek alkalmazÃ¡sÃ¡t szeretnÃ©nk.
+
+A kÃ¶vetkezÅ‘ funkciÃ³kkal rendelkezzen:
+
+EgyÃ©ni fiÃ³k lÃ©trehozÃ¡sa.
+Vagyon Ã¶sszegÃ©nek megadÃ¡sa.
+ÃllandÃ³ idÅ‘kÃ¶zÃ¶nkÃ©nt rÃ¡iratandÃ³/levonandÃ³ Ã¶sszeg megadÃ¡sÃ¡nak lehetÅ‘sÃ©ge.
+EgyÃ©ni pÃ©nzÃ¼gyi cÃ©lok beÃ¡llÃ­tÃ¡sÃ¡nak lehetÅ‘sÃ©ge.
+BeÃ¡llÃ­thatÃ³, a pÃ©nzmozgÃ¡st mutatÃ³ Ã¡brÃ¡k.
+CsalÃ¡di kÃ¶zÃ¶s kassza beÃ¡llÃ­tÃ¡sÃ¡nak lehetÅ‘sÃ©ge, amihez tÃ¶bb egyÃ©n hozzÃ¡adhatÃ³.
+A csalÃ¡dtagok kÃ¶zÃ¶tt kezdemÃ©nyezhetÅ‘ pÃ©nz Ã¡tvezetÃ©s. (PÃ©ldÃ¡ul zsebpÃ©nz, amit a 
+gyerekek a sajÃ¡t egyÃ©ni rÃ©szÃ¼kÃ¶n lÃ¡thatnak a alkalmazÃ¡sban.)
+Ãltalunk biztosÃ­tott pÃ©nzÃ¼gyi tanÃ¡csadÃ³val valÃ³ kapcsolatfelvÃ©tel lehetÅ‘sÃ©ge, 
+kÃ¶zvetlenÃ¼l a weboldalrÃ³l.
 
 
 
-Pénzügyek:
+Az ajÃ¡nlatadÃ³val szembeni elvÃ¡rÃ¡sok:
 
-A munkadíj ne kerüljön többe mint 60.000 Ft.
-A kifizetés megbeszélés alapján történhet 2 részletben, vagy egyszerre a projekt 
-átadásának napján.
+Legyen minimum 2 Ã©ve bejegyzett vÃ¡llalkozÃ¡s.
+ValÃ³sÃ­tsa meg a projektet 60 nap alatt.
+
+
+
+PÃ©nzÃ¼gyek:
+
+A munkadÃ­j ne kerÃ¼ljÃ¶n tÃ¶bbe mint 60.000 Ft.
+A kifizetÃ©s megbeszÃ©lÃ©s alapjÃ¡n tÃ¶rtÃ©nhet 2 rÃ©szletben, vagy egyszerre a projekt 
+Ã¡tadÃ¡sÃ¡nak napjÃ¡n.
