@@ -43,9 +43,7 @@ function loggin(){
         var users = JSON.parse(loginReq.responseText);
         if (loginReq.readyState != 4 || loginReq.status == "0") {
             alert("Hiba a bejelentkezésnél");   
-        } else {
-            alert(loginReq.status_message);
-        }
+        } 
     }
 
     loginReq.send(JSON.stringify(
