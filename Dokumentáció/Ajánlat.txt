@@ -1,57 +1,57 @@
-AJÁNLAT
+AJÃNLAT
 
 
-Ajánlattevõ ismertetése:
+AjÃ¡nlattevÅ‘ ismertetÃ©se:
 
-Cégünk, a Triton Corp. 2018 óta vállal munkákat, amelyek széles skálája áll
-többek között szoftverfejlesztésbõl, mobil programozásból, weblapszerkesztésbõl 
-és 3D-s tárgyak modellezésébõl, valamint nyomtatásából áll.
-
-
-
-Funkcionális specifikáció:
-
-A projekt egy olyan webalkalmazás, amivel könnyedén nyomonkövethetõek a családi,
-illetve családtagonkénti pénzügyek, bevételek és kiadások. Az állandó pénzmozgások 
-esetében beállíthatóak lennének bizonyos idõközönkénti levonások illetve hozzáadások. 
-Az alapvetõ funkciókon kívül a felhasználók megfogalmazhatnának egyéni pénzügyi célokat, 
-amiket el szeretnének érni és az alkalmazás elõre mutatná az eddigi megtakarításokat és 
-hiányzó pénzösszeget. Elérhetõek lennének hónaponkénti és évi kimutatások, grafikonok.
+CÃ©gÃ¼nk, a Triton Corp. 2018 Ã³ta vÃ¡llal munkÃ¡kat, amelyek szÃ©les skÃ¡lÃ¡ja Ã¡ll
+tÃ¶bbek kÃ¶zÃ¶tt szoftverfejlesztÃ©sbÅ‘l, mobil programozÃ¡sbÃ³l, weblapszerkesztÃ©sbÅ‘l 
+Ã©s 3D-s tÃ¡rgyak modellezÃ©sÃ©bÅ‘l, valamint nyomtatÃ¡sÃ¡bÃ³l Ã¡ll.
 
 
-Fõbb funkciók:
 
-Elõreláthatólag a webalkalmazás tartalmazni fogja, a regisztrációhoz és bejelentkezéshez 
-nem kötött bemutatkozást, a cégünkkel, valamint egy pénzügyi tanácsadóval történõ 
-kapcsolatfelvételi lehetõséget, közvetlenül a weboldalról írt e-maillel. Természetesen a 
-többi funkció csak regisztrációt és bejelentkezést követõen fog megnyílni. A regisztráció 
-e-mailcím vagy Google fiók használatával is lehetséges lesz, a bejelentkezés pedig az ezt 
-támogató böngészõbe való Google fiókos bejelentkezést követõen automatikusan megtörténne.
-Az elsõ bejelentkezés alkalmával rögtön beállítható lesz, hogy a felhasználó csak egyéni 
-pénzügyeket szeretne meneddzselni, vagy létrehozható rögtön egy 'Család', névvel ellátva 
-(legegyszerûbb esetben a felhasználó vezeték neve), amihez aztán hozzáadhatóak családtagok. 
-Bejelentkezve megadhatóak az egyén adatai, az alkalmazáson belüli név és a pénzügyi 
-információk: kezdõ tõke, beállítható hónaponta hozzáírt bevételek és levonások és 
-hozzáadhatóak lesznek egyéni célok is, hasonlóan a bankok célbetétéhez.
+FunkcionÃ¡lis specifikÃ¡ciÃ³:
+
+A projekt egy olyan webalkalmazÃ¡s, amivel kÃ¶nnyedÃ©n nyomonkÃ¶vethetÅ‘ek a csalÃ¡di,
+illetve csalÃ¡dtagonkÃ©nti pÃ©nzÃ¼gyek, bevÃ©telek Ã©s kiadÃ¡sok. Az Ã¡llandÃ³ pÃ©nzmozgÃ¡sok 
+esetÃ©ben beÃ¡llÃ­thatÃ³ak lennÃ©nek bizonyos idÅ‘kÃ¶zÃ¶nkÃ©nti levonÃ¡sok illetve hozzÃ¡adÃ¡sok. 
+Az alapvetÅ‘ funkciÃ³kon kÃ­vÃ¼l a felhasznÃ¡lÃ³k megfogalmazhatnÃ¡nak egyÃ©ni pÃ©nzÃ¼gyi cÃ©lokat, 
+amiket el szeretnÃ©nek Ã©rni Ã©s az alkalmazÃ¡s elÅ‘re mutatnÃ¡ az eddigi megtakarÃ­tÃ¡sokat Ã©s 
+hiÃ¡nyzÃ³ pÃ©nzÃ¶sszeget. ElÃ©rhetÅ‘ek lennÃ©nek hÃ³naponkÃ©nti Ã©s Ã©vi kimutatÃ¡sok, grafikonok.
 
 
-Árajánlat:
+FÅ‘bb funkciÃ³k:
+
+ElÅ‘relÃ¡thatÃ³lag a webalkalmazÃ¡s tartalmazni fogja, a regisztrÃ¡ciÃ³hoz Ã©s bejelentkezÃ©shez 
+nem kÃ¶tÃ¶tt bemutatkozÃ¡st, a cÃ©gÃ¼nkkel, valamint egy pÃ©nzÃ¼gyi tanÃ¡csadÃ³val tÃ¶rtÃ©nÅ‘ 
+kapcsolatfelvÃ©teli lehetÅ‘sÃ©get, kÃ¶zvetlenÃ¼l a weboldalrÃ³l Ã­rt e-maillel. TermÃ©szetesen a 
+tÃ¶bbi funkciÃ³ csak regisztrÃ¡ciÃ³t Ã©s bejelentkezÃ©st kÃ¶vetÅ‘en fog megnyÃ­lni. A regisztrÃ¡ciÃ³ 
+e-mailcÃ­m vagy Google fiÃ³k hasznÃ¡latÃ¡val is lehetsÃ©ges lesz, a bejelentkezÃ©s pedig az ezt 
+tÃ¡mogatÃ³ bÃ¶ngÃ©szÅ‘be valÃ³ Google fiÃ³kos bejelentkezÃ©st kÃ¶vetÅ‘en automatikusan megtÃ¶rtÃ©nne.
+Az elsÅ‘ bejelentkezÃ©s alkalmÃ¡val rÃ¶gtÃ¶n beÃ¡llÃ­thatÃ³ lesz, hogy a felhasznÃ¡lÃ³ csak egyÃ©ni 
+pÃ©nzÃ¼gyeket szeretne meneddzselni, vagy lÃ©trehozhatÃ³ rÃ¶gtÃ¶n egy 'CsalÃ¡d', nÃ©vvel ellÃ¡tva 
+(legegyszerÅ±bb esetben a felhasznÃ¡lÃ³ vezetÃ©k neve), amihez aztÃ¡n hozzÃ¡adhatÃ³ak csalÃ¡dtagok. 
+Bejelentkezve megadhatÃ³ak az egyÃ©n adatai, az alkalmazÃ¡son belÃ¼li nÃ©v Ã©s a pÃ©nzÃ¼gyi 
+informÃ¡ciÃ³k: kezdÅ‘ tÅ‘ke, beÃ¡llÃ­thatÃ³ hÃ³naponta hozzÃ¡Ã­rt bevÃ©telek Ã©s levonÃ¡sok Ã©s 
+hozzÃ¡adhatÃ³ak lesznek egyÃ©ni cÃ©lok is, hasonlÃ³an a bankok cÃ©lbetÃ©tÃ©hez.
+
+
+ÃrajÃ¡nlat:
 	
-	Fõ megrendelõ:	OVB Kft.
+	FÅ‘ megrendelÅ‘:	OVB Kft.
 
-	Munkadíj:	60 000 Ft
-
-
+	MunkadÃ­j:	60 000 Ft
 
 
 
 
 
-Feltételek a megrendelõ felé:
 
-A projekttel kapcsolatos kérdéseinkre kérjük mindig válaszoljon 1 napon belül.
-Az ajánlatunk elfogadása esetén a program frissítéseit kizárólagosan a Triton Corp. végezheti.
-Az ajánlatunk 30 napig érvényes.
+
+FeltÃ©telek a megrendelÅ‘ felÃ©:
+
+A projekttel kapcsolatos kÃ©rdÃ©seinkre kÃ©rjÃ¼k mindig vÃ¡laszoljon 1 napon belÃ¼l.
+Az ajÃ¡nlatunk elfogadÃ¡sa esetÃ©n a program frissÃ­tÃ©seit kizÃ¡rÃ³lagosan a Triton Corp. vÃ©gezheti.
+Az ajÃ¡nlatunk 30 napig Ã©rvÃ©nyes.
 
 
 

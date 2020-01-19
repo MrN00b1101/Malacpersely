@@ -1,30 +1,30 @@
-JEGYZÕKÖNYV
+JEGYZÅKÃ–NYV
 
 
 
-Konferencia beszélgetés
+Konferencia beszÃ©lgetÃ©s
 
-Dátum: 2019.10.03.
-
-
-
-RÉSZTVEVÕK:
-
-Géczi Katalin
-Ragó Ádám
-Varga Balázs
-
-(Teljes létszám jelen.)
+DÃ¡tum: 2019.10.03.
 
 
-TÉMA:
 
-A projekt témája, megvalósításának folyamata, használni kívánt eszközök és részfeladatok.
+RÃ‰SZTVEVÅK:
+
+GÃ©czi Katalin
+RagÃ³ ÃdÃ¡m
+Varga BalÃ¡zs
+
+(Teljes lÃ©tszÃ¡m jelen.)
 
 
-HASZNÁLNI KÍVÁNT TECHNOLÓGIÁK:
+TÃ‰MA:
 
-Web applikáció
+A projekt tÃ©mÃ¡ja, megvalÃ³sÃ­tÃ¡sÃ¡nak folyamata, hasznÃ¡lni kÃ­vÃ¡nt eszkÃ¶zÃ¶k Ã©s rÃ©szfeladatok.
+
+
+HASZNÃLNI KÃVÃNT TECHNOLÃ“GIÃK:
+
+Web applikÃ¡ciÃ³
 MySQL
 RestAPI
 Google autentication
@@ -32,43 +32,43 @@ Bootstrap
 
 
 
-FELOSZTOTT RÉSZFELADATOK:
+FELOSZTOTT RÃ‰SZFELADATOK:
 
-Géczi Katalin
-- Látványterv
-- Dokumentáció
-- Konzultáció a Bootstrap-es végsõ kinézet kialakításában
+GÃ©czi Katalin
+- LÃ¡tvÃ¡nyterv
+- DokumentÃ¡ciÃ³
+- KonzultÃ¡ciÃ³ a Bootstrap-es vÃ©gsÅ‘ kinÃ©zet kialakÃ­tÃ¡sÃ¡ban
 
-Ragó Ádám
-- Frontend logaikai része
+RagÃ³ ÃdÃ¡m
+- Frontend logaikai rÃ©sze
 - Bootsrap
 - JavaScript
 
-Varga Balázs
+Varga BalÃ¡zs
 - BackEnd
-- Adatbázis felépítése
-- Adatbázissal való kommunikáció kiépítése
+- AdatbÃ¡zis felÃ©pÃ­tÃ©se
+- AdatbÃ¡zissal valÃ³ kommunikÃ¡ciÃ³ kiÃ©pÃ­tÃ©se
 
 
 
-KEZDETLEGES ADATBÁZISTERV:
+KEZDETLEGES ADATBÃZISTERV:
 
 User:
 - Id (Primary key)
 - Nev
-- Mail Jelszó
+- Mail JelszÃ³
 
 Outgoings:
 - Id (Foreign key)
-- Kiadás kategória
-- Összeg
-- Dátum
+- KiadÃ¡s kategÃ³ria
+- Ã–sszeg
+- DÃ¡tum
 
 Incomes:
 - Id (Foreign key)
-- Bevétel kategória
-- Összeg
-- Dátum
+- BevÃ©tel kategÃ³ria
+- Ã–sszeg
+- DÃ¡tum
 
 Categorys:
 - Id (Primary key)
@@ -84,61 +84,61 @@ Family_members:
 
 
 
-REGISZTRÁCIÓS ÉS BEJELENTKEZTETÕ FELÜLET:
+REGISZTRÃCIÃ“S Ã‰S BEJELENTKEZTETÅ FELÃœLET:
 
-1.Jogosultsági szintek felhasználók szerint.
-1-es szintû jogosultsággal rendelkezõ felhasználó meg tudja a költségvetést tekinteni, 
-költséget/bevételt hozzáadni, törölni, módosítani
-2-es szintû jogosultsággal rendelkezõ felhasználó meg tudja a költségvetést tekinteni.
+1.JogosultsÃ¡gi szintek felhasznÃ¡lÃ³k szerint.
+1-es szintÅ± jogosultsÃ¡ggal rendelkezÅ‘ felhasznÃ¡lÃ³ meg tudja a kÃ¶ltsÃ©gvetÃ©st tekinteni, 
+kÃ¶ltsÃ©get/bevÃ©telt hozzÃ¡adni, tÃ¶rÃ¶lni, mÃ³dosÃ­tani
+2-es szintÅ± jogosultsÃ¡ggal rendelkezÅ‘ felhasznÃ¡lÃ³ meg tudja a kÃ¶ltsÃ©gvetÃ©st tekinteni.
 
-2.Jelszó megváltoztatása, és elfelejtett jelszó esetén jelszó emlékeztetõ, és e-mail 
-címre átmeneti jelszó küldése. Bejelentkezés után a bevétel és költségek havi nézete. 
-Itt lehet bevételt, költséget hozzáadni, és alapértelmezetten a felhasználó havi nézete 
-jelenik meg. A havi nézetrõl tud váltani napi, heti, és éves összesítõre, továbbá az 
-egyéni költségrõl lehet váltani a családi költség mutatására számokkal és diagramokkal 
-illusztrálva. Az éppen aktuálisan megjelenõ nézetet Excel fájlba ki lehet exportálni. 
-Megtakarítás kalkulátor, ahol meg lehet határozni egy elérni kívánt célt, és az oldal 
-kikalkulálja az összeg, és a havi rászánt megtakarított összeg alapján, hogy mikorra 
-lehet összegyûjteni a hozzá szükséges pénzt, és az oldal havi szinten nyomon követi a 
-megtakarítás sikerességét. Családtag hozzáadása, eltávolítása menüpont.
-
-
+2.JelszÃ³ megvÃ¡ltoztatÃ¡sa, Ã©s elfelejtett jelszÃ³ esetÃ©n jelszÃ³ emlÃ©keztetÅ‘, Ã©s e-mail 
+cÃ­mre Ã¡tmeneti jelszÃ³ kÃ¼ldÃ©se. BejelentkezÃ©s utÃ¡n a bevÃ©tel Ã©s kÃ¶ltsÃ©gek havi nÃ©zete. 
+Itt lehet bevÃ©telt, kÃ¶ltsÃ©get hozzÃ¡adni, Ã©s alapÃ©rtelmezetten a felhasznÃ¡lÃ³ havi nÃ©zete 
+jelenik meg. A havi nÃ©zetrÅ‘l tud vÃ¡ltani napi, heti, Ã©s Ã©ves Ã¶sszesÃ­tÅ‘re, tovÃ¡bbÃ¡ az 
+egyÃ©ni kÃ¶ltsÃ©grÅ‘l lehet vÃ¡ltani a csalÃ¡di kÃ¶ltsÃ©g mutatÃ¡sÃ¡ra szÃ¡mokkal Ã©s diagramokkal 
+illusztrÃ¡lva. Az Ã©ppen aktuÃ¡lisan megjelenÅ‘ nÃ©zetet Excel fÃ¡jlba ki lehet exportÃ¡lni. 
+MegtakarÃ­tÃ¡s kalkulÃ¡tor, ahol meg lehet hatÃ¡rozni egy elÃ©rni kÃ­vÃ¡nt cÃ©lt, Ã©s az oldal 
+kikalkulÃ¡lja az Ã¶sszeg, Ã©s a havi rÃ¡szÃ¡nt megtakarÃ­tott Ã¶sszeg alapjÃ¡n, hogy mikorra 
+lehet Ã¶sszegyÅ±jteni a hozzÃ¡ szÃ¼ksÃ©ges pÃ©nzt, Ã©s az oldal havi szinten nyomon kÃ¶veti a 
+megtakarÃ­tÃ¡s sikeressÃ©gÃ©t. CsalÃ¡dtag hozzÃ¡adÃ¡sa, eltÃ¡volÃ­tÃ¡sa menÃ¼pont.
 
 
-JEGYZÕKÖNYV II.
 
 
-Konferencia beszélgetés
-
-Dátum: 2019.11.01.
+JEGYZÅKÃ–NYV II.
 
 
-RÉSZTVEVÕK:
+Konferencia beszÃ©lgetÃ©s
 
-Géczi Katalin
-Ragó Ádám
-Varga Balázs
-
-(Teljes létszám jelen.)
+DÃ¡tum: 2019.11.01.
 
 
-TÉMA:
+RÃ‰SZTVEVÅK:
 
-Modulok megbeszélése, azok mibõl állnak, hogyan kapcsolódnak a felületen.
+GÃ©czi Katalin
+RagÃ³ ÃdÃ¡m
+Varga BalÃ¡zs
+
+(Teljes lÃ©tszÃ¡m jelen.)
+
+
+TÃ‰MA:
+
+Modulok megbeszÃ©lÃ©se, azok mibÅ‘l Ã¡llnak, hogyan kapcsolÃ³dnak a felÃ¼leten.
 
 
 MODULOK:
 
-Regisztráció
+RegisztrÃ¡ciÃ³
 Login
-Tranzakciók felvitele
-Kategória felvitele
-Család menedzselése
-Állandó tranzakciók beállítása
-Költségvetés tételes megjelenítése
-Grafikus megjelenítés (grafikonok)
-Csoportos megjelenés
-Megtakarítási célok kezelése
+TranzakciÃ³k felvitele
+KategÃ³ria felvitele
+CsalÃ¡d menedzselÃ©se
+ÃllandÃ³ tranzakciÃ³k beÃ¡llÃ­tÃ¡sa
+KÃ¶ltsÃ©gvetÃ©s tÃ©teles megjelenÃ­tÃ©se
+Grafikus megjelenÃ­tÃ©s (grafikonok)
+Csoportos megjelenÃ©s
+MegtakarÃ­tÃ¡si cÃ©lok kezelÃ©se
 
 
 
