@@ -175,7 +175,7 @@ request.send()
 function getCategoryList(){
     var request = new XMLHttpRequest();
     var com = 'cat';
-    var user = 9;
+    var user = getCookie("Id");
     var fam = 0;
     var token = getCookie("Token");
     
@@ -209,7 +209,7 @@ request.send()
 function newTranzaction(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'tran';
-    var user = 9;
+    var user = getCookie("Id");
     
     var el = document.getElementById('getCategories3');
     var x = el.options[el.selectedIndex].value;
@@ -247,7 +247,7 @@ function newCategory(){
     var com = 'cat';
     var name = document.getElementById('inputCategory').value;
    
-    var creaId = 9;
+    var creaId = getCookie("Id");
     var global = 0;
     var token = getCookie("Token");
     xmlhttp.open("POST", "phpApi.php", false);
@@ -274,7 +274,7 @@ function newCategory(){
 function deleteTransaction(){
     var request = new XMLHttpRequest();
     var com = 'tran';
-    var user = 9;
+    var user = getCookie("Id");
     var cat = 'null';
     var minVal = 'null';
     var maxVal = 'null';
@@ -354,7 +354,7 @@ function deleteTransaction(){
 function updateTransaction(){
     var request = new XMLHttpRequest();
     var com = 'tran';
-    var user = 9;
+    var user = getCookie("Id");
     var cat = 'null';       
     var minVal = 'null';
     var maxVal = 'null';
