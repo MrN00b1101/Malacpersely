@@ -5,6 +5,7 @@
 window.onload = function() {
     this.getCategoryList();
     this.getTranList();
+    if(getCookie("Token") != null){window.location.replace("mainPage.html");}
 };
 
 function newUser(){
@@ -93,7 +94,7 @@ function getCookie(cname) {
 function getTranList(){
     var request = new XMLHttpRequest();
     var com = 'tran';
-    var user = 9;
+    var user = getCookie("Id");
     var cat = 'null';
     var minVal = 'null';
     var maxVal = 'null';
