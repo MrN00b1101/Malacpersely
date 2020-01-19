@@ -356,7 +356,7 @@ function updateTransaction(){
     var request = new XMLHttpRequest();
     var com = 'tran';
     var user = 9;
-    var cat = 'null';
+    var cat = 'null';       
     var minVal = 'null';
     var maxVal = 'null';
     var minDat = '2019-01-30';

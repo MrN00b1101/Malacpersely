@@ -242,23 +242,25 @@ A Megtakarításokat tároljuk ebben a táblában.
     }
 
 ## Weboldal felépítés:
-    ** index.html **
-    	*Felső navigációs bár*
+**index.html:**
+* Felső navigációs bár
+
 		Malacpersely - Főoldal - Információ - Kapcsolat - Belépés
 		Malacpersely: A webalkalmazás megnevezése.
 		Főoldal (gomb): Frissíti az éppen aktuális oldalt.
 		Információ (gomb): A webalkalmazás tulajdonosának tevékenységéről, és magáról az alkalmazásról alapvető információkhoz 		       			  navigál.
 		Kapcsolat (gomb): A webalkalmazás tulajdonosának elérhetőségéhez navigál.
 		Belépés (gomb): Előhívja a bejelentkezési felületet (modalt).
-	* Content *
+* Content
+
 		Háttérkép
 		Rövid promóciós leírás az alkalmazásról.
 		Regisztráció (gomb): Előhívja a regisztrációs felületet.
 		Bővebb információ a weboldalról.
 		A weboldal tulajdonosának elérhetősége.
-	* Modalok *
+* Modalok
+
 		Bejelentkezési modal
-		
 		x - kilépés a modalból.
 		Felhasználónév megadás.
 		Jelszó megadás.
@@ -278,10 +280,10 @@ A Megtakarításokat tároljuk ebben a táblában.
 		Bejelentkezés (gomb): Bejelentkezés modal előhívása. (Ha már rendelkezik profillal a user)
 		Regisztráció facebook profillal lehetőség.
 		Regisztráció google profillal lehetőség.
-		
 	
-    ** mainPage.html **
-    	*Felső navigációs bár*
+**mainPage.html:**
+* Felső navigációs bár
+
 		Malacpersely - Pénzügyek - Beállítások - Profil - Statisztika
 		Malacpersely: A webalkalmazás megnevezése, az oldal frissítése.
 		Pénzügyek: A felhasználó pénzügyeinek összesítése, kimutatása.
@@ -289,7 +291,8 @@ A Megtakarításokat tároljuk ebben a táblában.
 		Profil: Felhasználó adatok megjelenítése.
 		Statisztika: Statisztikai diagramok megjelenítése.
 		
-	* Oldalsó navigációs bár *
+* Oldalsó navigációs bár
+
 		Menü - Család - Kategóriák - Tranzakciók - Megtakarítások - Költségvetés
 		Oldalsó menü ki-be gomb.
 		Család: Családtagok listázása.
@@ -302,8 +305,10 @@ A Megtakarításokat tároljuk ebben a táblában.
 		Megtakarítások: Megtakarítani kívánt célok kilistázása, és a cél eléréséhez szükséges követelmények elemzése.
 		Költségvetés: Hónapok kilistázása, amelyikről a költségvetésmegjelenítést kérjük.
 	
-	* Content *
+* Content
+
 		Kártyák
+
 		Családtagok - Kategóriák - Összesítés
 		Családtagok: Családtagok kilistázása
 		Kategóriák: Kategóriák kilistázása
@@ -316,6 +321,7 @@ A Megtakarításokat tároljuk ebben a táblában.
 		Tranzakció törlése gomb: Kijelölt tételek törlése.
 		
 		Bevételek:
+
 		Sorszám - UserId - Kategória - Összeg - Dátum - Módosítás radiobuttonok - Törlés checkboxok
 		Sorszám: Bevétel sorszáma.
 		UserId: Felhasználó azonosítója.
@@ -327,6 +333,7 @@ A Megtakarításokat tároljuk ebben a táblában.
 		Bevételek összesítése.
 		
 		Kiadások:
+
 		Sorszám - UserId - Kategória - Összeg - Dátum - Módosítás radiobuttonok - Törlés checkboxok
 		Sorszám: Kiadás sorszáma.
 		UserId: Felhasználó azonosítója.
@@ -337,7 +344,8 @@ A Megtakarításokat tároljuk ebben a táblában.
 		Törlés checkbox: Checkboxok kiválasztásával kijelölhetőek az adott kiadások.
 		Kiadások összesítése.
 		
-	* Modalok *
+* Modalok
+
 		Családtag hozzáadása
 		x - Modal bezárása
 		Felhasználónév - A családhoz hozzáadni kívánt felhasználónév.
@@ -372,19 +380,130 @@ A Megtakarításokat tároljuk ebben a táblában.
 		Személyes kiadás checkbox bepipálása lehetőség.
 		Tranzakció hozzáadása gomb: Meghívásra kerül a updateTransaction() function.
 		
-    ** Javascript function leírások **
-    		newUser()
-			   "com": "user",
-   			   "name": "inputUserName" mező értéke.
-    			   "mail": "inputEmailReg" mező értéke.
-    			   "pass": "inputPassword" mező értéke.
-		loggin()
-			 "com": "login",
-    			 "Name": "inputNameLog" mező értéke.
-    			 "password": "inputPasswordLog" mező értéke.
+## Javascript function leírások
 
-        logout()
-		
+**newUser()**
+
+    Új felhasználó hozzáadása.
+
+        'POST' request
+		"com": "user",
+   		"name": "inputUserName" mező értéke.
+    	"mail": "inputEmailReg" mező értéke.
+    	"pass": "inputPassword" mező értéke.
+
+**loggin()**
+
+    Felhasználó bejelentkezés.
+
+        'POST' request
+		"com": "login",
+    	"Name": "inputNameLog" mező értéke.
+    	"password": "inputPasswordLog" mező értéke.
+
+**logout()**
+
+    Kijelentkezés.
+
+        'GET' request
+        "com": "logout"
+
+**getTranList()**
+
+        'GET' request
+
+        Paraméterek: 
+
+        com : 'tran'
+        user : Bejelentkezett userId
+        cat : Az összes kategória
+        minVal : Legkisebb tranzakcióérték
+        maxVal : Legnagyobb tranzakcióérték
+        minDat : Legkorábbi tranzakciódátum
+        maxDat : Legkésőbbi tranzakciódátum
+        personal : Személyes kiadás
+        token : cookie
+
+        Tranzakciók kilistázása értékük alapján. Ha a tranzakció értéke nagyobb, mint 0, akkor a bevétel oldalon jelenik meg, különben pedig a kiadás oldalon.
+
+        Bevétel és kiadás összesen számítása.
+
+        A tranzakció törléséhez használandó checkboxok, valamint a tranzakció módosításához való radio buttonok kilistázása a tranzakciók mellé. 
+
+**getCategoryList()**
+
+        'GET' request
+
+        Paraméterek: 
+
+        com : 'cat'
+        user : Bejelentkezett userId
+        token : cookie
+
+        Kategóriák kilistázása a megfelelő mezőkbe.
+
+
+**newTranzaction()**
+
+    Tranzakció felvétele a modalban szereplő értékek alapján.
+
+    'POST' request
+
+    "com": tran
+    "uId": userId
+    "catId" : Kiválasztott kategória
+    "value" : 'inputIncome' mezőben levő érték
+    "personal" : Személyes kiadás?
+    "token" : token
+
+**newCategory()**
+
+    Kategória felvétele a modalban szereplő értékek alapján.
+
+    'POST' request
+
+    "com": 'cat'
+    "name" : 'inputCategory' mezőben levő érték
+    "creaId" : creaId
+    "global" : global
+    "token" : token
+
+**deleteTransaction()**
+
+    A checkbox által kiválasztott tranzakciók törlése.
+
+    'DELETE' request
+
+    'delete' nevű checkboxok által kiválasztott tételek.
+    "com" : 'tran'
+    "uId" : userId
+    "time" : a kiválasztott tranzakciók dátuma
+    "token" : token
+
+**updateTransaction()**
+
+    A radiobutton által kiválasztott tranzakció módosítása a modal-ban szereplő értékek alapján.
+
+    'PUT' request
+
+    "com" : tran
+    "Value" : 'updatee' nevű radiobutton által kiválasztott tétel
+    "TranCatId" : Kategória kiválasztása
+    "Personal" : Személyes kiadás?
+    "uid" : userId
+    "time" : a kiválasztott tranzakció dátuma
+    "token" : token
+
+**deleteCategory()**
+
+    A modalban kiválasztott kategória törlése.
+
+    'DELETE' request
+
+    "com" : cat
+    "table" : Categorys
+    "Id" : A kiválasztott kategória ID-ja
+    "token" : token
 
 ## Látványterv:
 
