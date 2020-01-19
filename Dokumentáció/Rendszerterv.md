@@ -62,55 +62,148 @@ A Megtakarításokat tároljuk ebben a táblában.
 |Personal|Bit|Not Null||Ha az értéke 1 akkor a megtakarítás személyes, ha 0 akkor a kiadás családi|
 
 
-API HASZNÁLAT TERVE
+## Api használat:
+Az api a következő hívásokra van felkészítve (ha egy parméternél engedélyezett a 'null' abban az esetben egy 'null'-t stringként várja)
+**Modulok:**
 
-Az api Json obijektumban várja az adatokat!
+Get requestel elérhető funkciók
 
+* Tranzakciók listája:
 
-MODULOK:
+    Szükséges adatok:
+    
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'tran'|Ez határozza meg milyen adatot kérünk|
+    |user|12|userID|
+    |cat|'null'|kategóriaID (lehet 'null')|
+    |minVal|-100|minimum érték (lehet 'null')|
+    |maxVal|0|maximum érték (lehet 'null')|
+    |minDat|'null'|kezdő dátum (lehet 'null')|
+    |maxDat|'2019-12-30'|vég dátum (lehet 'null')|
+    |personal|0|Ha az értéke -1 akkor a kiadás személyes, ha 0 akkor a kiadás családi ha ezektől eltérő akkor annak a megtakarításnak az azonosítója amihez tartozik|
+    |token|cookieből olvasott token|A login során kapott token (a teszt.html-ben bemutatott módszerrel olvasható ki)|
 
-Regisztráció: Post request 
+    Visszakapott adatok:
+    
+    |Kulcs:|Érték pléda:|Leírás|
+    |:-----|:-----------|:------|
+    |Savings|Kocsira|A megtakarítási zseb neve, ha a tranzakció nem tartozik kölön zsebhez akkor az érték "Personal" vagy "Family"|
+    |User|Valaki|A tranzakciót felvivő felhasználó neve|
+    |Category|Megtakarítás|A tranzakció kategóriájának neve|
+    |UseId|9|A tranzakciót felvivő felhasználó azonosítója|
+    |TranCatId|4|A tranzakció kategóriájának azonosítója|
+    |Value|200|A tranzakció értéke|
+    |Personal|3|Ha az értéke -1 akkor a kiadás személyes, ha 0 akkor a kiadás családi ha ezektől eltérő akkor annak a megtakarításnak az azonosítója amihez tartozik|
+    |TranDate|"2019-12-30 11:05:28"|A tranzakció időpontja|
 
-szükséges adatok: 
-{
-com:'user',
-name:'felhasználó neve',
-mail:'email cím',
-password:'jelszó hash'
-}
+* Kategóriák listája:
 
+    Szükséges adatok:
+    
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'cat'|Ez határozza meg milyen adatot kérünk|
+    |user|12|userID|
+    |fam|0|Ha az értéke 0 akkor a Globális kategóriákat listázza, ha 1 akkor a személyes kategóriákat ha pedig 2 akkor a létrehozó családjának kategóriáit|
+    |token|cookieből olvasott token|A login során kapott token (a teszt.html-ben bemutatott módszerrel olvasható ki)|
 
-Kategória felvitele: Post request, 
+    Visszakapott adatok:
+    
+* Felhasználók listája:
+* Családok listája:
+* Családtagok listája:
+* User adatai:
+* Kijelentkezés:
 
-szükséges adatok:    
-{    
-com:'cat',
-name:'kategória név',
-creaId:'létrehozó felhasználó azonosítója',  
-global:'láthatóság (0-global,1-personal,2-család)'   
-}
+* Regisztráció:
+* Kategória felvitele:
+* Tranzakció felvitele:
+* Család felvitele:
+* Bejelentkezés:
 
+* Felhasználó adatainak módosítása:
+* Kategória adatainak módosítása:
+    
+* Tranzakció adatainak módosítása:
 
-Tranzakció felvitele: Post request, 
+    Szükséges adatok:
+    
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'tran'|Ez határozza meg milyen adatot szeretnénk módosítani|
+    |Value|100|Amire módosítani szeretnénk a tranzakció értékét|
+    |TranCatId|3|Annak a kategóriának az azonosítója amire módosítani szeretnénk|
+    |Personal|0|Az érték amire a Personal mező értékét módosítani szeretnénk|
+    |uid|9|Annak a felhasználónak az ID-je aki a módosítandó tranzakciót létrehozta|
+    |Personal|0|Az érték amire a Personal mező értékét módosítani szeretnénk|
+    |time|'2019-12-28 13:13:28'|A módosítandó tranzakció időbélyegzője|
+    |token|cookieből olvasott token|A login során kapott token (a teszt.html-ben bemutatott módszerrel olvasható ki)|    
+   
+    
+    
+    Családtag családhoz való adása:
 
-szükséges adatok:    
-{    
-com:'tran',
-uId:'felhasználó azonosító',
-catId:'kategória azonosító',  
-value:'érték',
-persona: '0/1 személyes vagy családi'   
-}
+    * Tranzakció törlése:
 
+    Szükséges adatok:
+    
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'tran'|Ez határozza meg milyen adatot szeretnénk törölni|
+    |uid|9|Annak a felhasználónak az ID-je aki a módosítandó tranzakciót létrehozta|
+    |time|'2019-12-28 13:13:28'|A módosítandó tranzakció időbélyegzője|
+    |token|cookieből olvasott token|A login során kapott token (a teszt.html-ben bemutatott módszerrel olvasható ki)|
+    
+    
+    
+    Bármi más törlése:
+    
 
-Család felvitele: Post request, 
+    Regisztráció: Post request 
+    
+    szükséges adatok: 
+    {
+    "com":"user",
+    "name":"felhasználó neve",
+    "mail":"email cím",
+    "password":"jelszó hash"
+    }
+    
+    Kategória felvitele: Post request, 
+    
+    szükséges adatok:    
+    {    
+    "com":"cat",
+    "name":"kategória név",
+    "creaId":létrehozó felhasználó azonosítója,  
+    "global":láthatóság (0-global,1-personal,2-család)   
+    }
+    
+    Tranzakció felvitele: Post request, 
+    
+    szükséges adatok:    
+    {    
+    "com": "tran",
+    "uId":felhasználó azonosító,
+    "catId":kategória azonosító,  
+    "value":érték,
+    "personal": 0/1 személyes vagy családi'  
+    }
+    
+    Család felvitele: Post request, 
+    
+    szükséges adatok:    
+    {    
+    "com":"family",
+    "name":"család név",
+    "fId":Családfő azonosítója   
+    }
 
-szükséges adatok:    
-{    
-com:'family',
-name:'család név',
-fId:'Családfő azonosítója'   
-}
-
-
-
+    User, Család, Kategória törlése: DELETE request,
+    
+    szükséges adatok:
+    {
+    "table": "tábla neve ahonnan törölni akarunk",
+    "Id":a rekord azonosítója amit törölni akarunk
+    }
