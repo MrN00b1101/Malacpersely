@@ -502,7 +502,7 @@ A Megtakarításokat tároljuk ebben a táblában.
 
     "com" : cat
     "table" : Categorys
-    "Id" : A kiválasztott kategória ID-ja
+    "Id" : A kiválasztott kategória ID-ja.
     "token" : token
 
 ## Látványterv:
