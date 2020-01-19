@@ -382,6 +382,8 @@ A Megtakarításokat tároljuk ebben a táblában.
 			 "com": "login",
     			 "Name": "inputNameLog" mező értéke.
     			 "password": "inputPasswordLog" mező értéke.
+
+        logout()
 		
 
 ## Látványterv:
