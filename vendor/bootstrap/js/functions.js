@@ -5,7 +5,7 @@
 window.onload = function() {
     this.getCategoryList();
     this.getTranList();
-    if(getCookie("Token") != null){window.location.replace("mainPage.html");}
+    
 };
 
 function newUser(){
