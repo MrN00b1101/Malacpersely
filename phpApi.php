@@ -625,15 +625,13 @@ function getUser($data, $type){
 }
 function logout($data)
 {
-    //if(isset(session_id($data['sid'])));
+    
     setcookie("Token", "", time() - 3600);
-
+    setcookie("User", "", time()-3600);
+    setcookie("Id", "", time()-3600);
     header('Content-Type: application/json'); 
     echo json_encode("logged out"); 
-   /* session_start();
-    session_unset();
-    session_destroy();
-    session_id("");*/
+  
 }
 function login($data){
     global $connection;
@@ -656,7 +654,8 @@ function login($data){
             $token['FamId'] = $response[0]['FamilyId'];
             $token['exp'] = time() + $valid_for;
             setcookie("Token", JWT::encode($token, $secret_key), time()+3600);
-        
+            setcookie("User", $response[0]['Name'], time()+3600);
+            setcookie("Id", $response[0]['Id'], time()+3600);
     /*    $_SESSION['UserId']=$response[0]['Id'];
         $_SESSION['Name']=$response[0]['Name'];
         $_SESSION['Mail']=$response[0]['Mail'];
