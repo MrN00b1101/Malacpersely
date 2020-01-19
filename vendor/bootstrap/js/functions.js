@@ -138,7 +138,9 @@ function getTranList(){
         {
             inComeId++;
             document.getElementById("inComeId").innerHTML += inComeId+"<br>";
-            document.getElementById("inComeUserId").innerHTML += obj[i].UserId+"<br>";
+            document.getElementById("inComeUserId").innerHTML += obj[i].User+"<br>";
+            
+            //document.getElementById("inComeUserId").innerHTML += obj[i].UserId+"<br>";
             document.getElementById("inComeCategory").innerHTML += obj[i].TranCatId+"<br>";
             document.getElementById("inComeValue").innerHTML += obj[i].Value+"<br>";
             document.getElementById("inComeDate").innerHTML += obj[i].TranDate+"<br>";
