@@ -166,7 +166,7 @@ function getTranList(){
     }
 
 document.getElementById("inOutSum").innerHTML = inOutSum;
-document.getElementById("userNameHere").innerHTML += obj[0].User;
+document.getElementById("userNameHere").innerHTML = obj[0].User;
 document.getElementById("inSum").innerHTML = inSum;
 document.getElementById("outSum").innerHTML = outSum;
 
