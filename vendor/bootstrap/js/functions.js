@@ -3,7 +3,7 @@
 //'http://mrnoobrft.ddns.net/Malacpersely/phpApi.php'
 
 window.onload = function() {
-    if(getCookie("Token") != "")
+    if(this.getCookie("Token") != "")
     {
         this.getCategoryList();
         this.getTranList();
