@@ -425,16 +425,7 @@ function updateTransaction(){
                     
                 }
             }
-
-            alert(com);
-            alert(value);
-            alert(cat);
-            alert(personal);
-            alert(uid);
-            alert(time);
-            alert(token);
-
-        
+  
             xmlhttp.send(JSON.stringify(
                 { 
             "com" : com,
