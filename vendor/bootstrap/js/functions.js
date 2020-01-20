@@ -9,7 +9,7 @@ window.onload = function() {
         this.getTranList();
         document.getElementById("username").innerHTML = this.getCookie("User");
     }
-    
+        
 };
 
 function newUser(){
