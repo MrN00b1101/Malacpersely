@@ -172,7 +172,8 @@ function getTranList(){
 document.getElementById("inOutSum").innerHTML = inOutSum;
 document.getElementById("userNameHere").innerHTML = obj[0].User;
 document.getElementById("inSum").innerHTML = inSum;
-document.getElementById("outSum").innerHTML = outSum;
+var money = outSum.search(/^\$?[\d,]+(\.\d*)?$/) >= 0;
+document.getElementById("outSum").innerHTML = money;
 
 }
 // Send request
