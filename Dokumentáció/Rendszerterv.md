@@ -68,9 +68,8 @@ A Megtakarításokat tároljuk ebben a táblában.
 Az api a következő hívásokra van felkészítve (ha egy parméternél engedélyezett a 'null' abban az esetben egy 'null'-t stringként várja)
 **Modulok:**
 
-Get requestel elérhető funkciók
 
-* Tranzakciók listája:
+* Tranzakciók listája (Get request):
 
     Szükséges adatok:
     
@@ -84,7 +83,7 @@ Get requestel elérhető funkciók
     |minDat|'null'|kezdő dátum (lehet 'null')|
     |maxDat|'2019-12-30'|vég dátum (lehet 'null')|
     |personal|0|Ha az értéke -1 akkor a kiadás személyes, ha 0 akkor a kiadás családi ha ezektől eltérő akkor annak a megtakarításnak az azonosítója amihez tartozik|
-    |token|cookieből olvasott token|A login során kapott token (a teszt.html-ben bemutatott módszerrel olvasható ki)|
+    |token|cookieből olvasott token|A login során kapott token |
 
     Visszakapott adatok:
     
@@ -99,7 +98,7 @@ Get requestel elérhető funkciók
     |Personal|3|Ha az értéke -1 akkor a kiadás személyes, ha 0 akkor a kiadás családi ha ezektől eltérő akkor annak a megtakarításnak az azonosítója amihez tartozik|
     |TranDate|"2019-12-30 11:05:28"|A tranzakció időpontja|
 
-* Kategóriák listája:
+* Kategóriák listája (Get request):
 
     Szükséges adatok:
     
@@ -108,7 +107,7 @@ Get requestel elérhető funkciók
     |com|'cat'|Ez határozza meg milyen adatot kérünk|
     |user|12|userID|
     |fam|0|Ha az értéke 0 akkor a Globális kategóriákat listázza, ha 1 akkor a személyes kategóriákat ha pedig 2 akkor a létrehozó családjának kategóriáit|
-    |token|cookieből olvasott token|A login során kapott token (a teszt.html-ben bemutatott módszerrel olvasható ki)|
+    |token|cookieből olvasott token|A login során kapott token |
 
    Visszakapott adatok:
     
@@ -122,21 +121,154 @@ Get requestel elérhető funkciók
     
     
 * Felhasználók listája:
-* Családok listája:
-* Családtagok listája:
-* User adatai:
-* Kijelentkezés:
 
-* Regisztráció:
-* Kategória felvitele:
+    Szükséges adatok (Get request):
+
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'user'|Ez határozza meg milyen adatot kérünk|
+    |token|cookieből olvasott token|A login során kapott token |
+
+   Visszakapott adatok:
+    Az adatokat egy JSON tömben kapjuk vissza!
+
+    |Kulcs:|Érték pléda:|Leírás|
+    |:-----|:-----------|:------|
+    |Id|9|Felhasználó azonsítója|
+    |Name|'Valaki|A tranzakció kategóriájának neve|
+    |Mail|'valaki@valami.hu'|A felhasználó mail címe|
+    
+
+* Családok listája:
+
+    Szükséges adatok (Get request):
+    
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'family'|Ez határozza meg milyen adatot kérünk|
+    |token|cookieből olvasott token|A login során kapott token |
+
+   Visszakapott adatok:
+    Az adatokat egy JSON tömben kapjuk vissza!
+
+    |Kulcs:|Érték pléda:|Leírás|
+    |:-----|:-----------|:------|
+    |Id|Valaki|Család azonosítója|
+    |Name|'Kiss'|A család neve|
+    |FatherId|9|A család alapítójának azonosítója|
+
+* Családtagok listája:
+
+    Szükséges adatok (Get request):
+    
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'famMem'|Ez határozza meg milyen adatot kérünk|
+    |famId|2|A család azonosítója amelyik tagjait lekérdezzük|
+    |token|cookieből olvasott token|A login során kapott token |
+
+   Visszakapott adatok:
+    Az adatokat egy JSON tömben kapjuk vissza!
+
+    |Kulcs:|Érték pléda:|Leírás|
+    |:-----|:-----------|:------|
+    |Id|Valaki|A felhasználó azonosítója|
+    |Name|'Kiss'|A felhasználó neve|
+
+
+* Kijelentkezés (Get request):
+
+    Szükséges adatok:
+    
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'logout'|Csak ezt az egy értéket kell megadnunk a kijelentkezéshez!|
+    
+
+* Regisztráció (Post request):
+
+    Szükséges adatok:
+    
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'user'|Ez határozza meg milyen adatot szeretnénk az adatbázishoz adni|
+    |name|'Valaki'|Regisztráló felhasználó neve|
+    |mail|'valaki@valami.hu'|A felhasználó e-mail címe|
+    |password|'Bonyolult jelszó!'|A felhasználó jelszava (a szerver már csak MD5 hash értéket tárol|
+
+* Kategória felvitele (Post request):
+
+    Szükséges adatok:
+    
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'cat'|Ez határozza meg milyen adatot szeretnénk az adatbázishoz adni|
+    |name|'fizetés'|A kategória neve|
+    |creaId|9|A kategóriát létrehozó felhasználó azonosítója|
+    |global|0|Meghatározza, hogy a kategória globális, személyes vagy családi|
+    |token|cookieből olvasott token|A login során kapott token |
+
 * Tranzakció felvitele:
-* Család felvitele:
+    
+    Szükséges adatok:
+    
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'cat'|Ez határozza meg milyen adatot szeretnénk az adatbázishoz adni|
+    |name|'fizetés'|A kategória neve|
+    |creaId|9|A kategóriát létrehozó felhasználó azonosítója|
+    |global|0|Meghatározza, hogy a kategória globális, személyes vagy családi|
+    |token|cookieből olvasott token|A login során kapott token |
+
+* Család felvitele (Post request):
+
+    Szükséges adatok:
+    
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'family'|Ez határozza meg milyen adatot szeretnénk az adatbázishoz adni|
+    |name|'Kiss'|A család neve|
+    |fId|9|A család létrehozó felhasználó azonosítója|
+    |token|cookieből olvasott token|A login során kapott token |
+
+
 * Bejelentkezés:
 
-* Felhasználó adatainak módosítása:
-* Kategória adatainak módosítása:
+    Szükséges adatok (Post request):
     
-* Tranzakció adatainak módosítása:
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'login'|Ez határozza meg mit szeretnénk kérni az APItól|
+    |Name|'Kiss'|A felhasználó neve|
+    |password|'Bonyolult jelszó'|A felhasználó jelszava|
+
+
+* Felhasználó adatainak módosítása (Put request):
+
+    Szükséges adatok (Put request):
+    
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'user'|Ez határozza meg mit szeretnénk módosítani|
+    |userId|9|A módosítandó felhasználó azonosítója|
+    |Name|'Valaki'|A felhasználó neve, amire módosítani szeretnénk (lehet null)|
+    |Mail|'valaki@valammi.hu'|A felhasználó mail címe, amire módosítani szeretnénk (lehet null)|
+    |password|'Bonyolult jelszó'|A felhasználó jelszava, amire módosítani szeretnénk (lehet null|
+    |token|cookieből olvasott token|A login során kapott token |    
+
+
+* Kategória adatainak módosítása (Put request):
+
+    Szükséges adatok (Put request):
+    
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'cat'|Ez határozza meg mit szeretnénk módosítani|
+    |catId|9|A módosítandó kategória azonosítója|
+    |Name|'Valaki'|A kategória neve, amire módosítani szeretnénk (lehet null)|
+    |token|cookieből olvasott token|A login során kapott token |    
+    
+* Tranzakció adatainak módosítása (Put request):
 
     Szükséges adatok:
     
@@ -149,13 +281,22 @@ Get requestel elérhető funkciók
     |uid|9|Annak a felhasználónak az ID-je aki a módosítandó tranzakciót létrehozta|
     |Personal|0|Az érték amire a Personal mező értékét módosítani szeretnénk|
     |time|'2019-12-28 13:13:28'|A módosítandó tranzakció időbélyegzője|
-    |token|cookieből olvasott token|A login során kapott token (a teszt.html-ben bemutatott módszerrel olvasható ki)|    
+    |token|cookieből olvasott token|A login során kapott token |    
    
     
     
-    Családtag családhoz való adása:
+    *Családtag családhoz való adása (Put request):
 
-    * Tranzakció törlése:
+    Szükséges adatok:
+    
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |com|'fammember'|Ez határozza meg milyen adattal szeretnénk dolgozni|
+    |uId|9|Kit szeretnénk a családhoz adni?|
+    |famId|3|Melyik családhoz szeretnénk adni?|
+    |token|cookieből olvasott token|A login során kapott token |    
+
+    * Tranzakció törlése (Delete request):
 
     Szükséges adatok:
     
@@ -164,57 +305,18 @@ Get requestel elérhető funkciók
     |com|'tran'|Ez határozza meg milyen adatot szeretnénk törölni|
     |uid|9|Annak a felhasználónak az ID-je aki a módosítandó tranzakciót létrehozta|
     |time|'2019-12-28 13:13:28'|A módosítandó tranzakció időbélyegzője|
-    |token|cookieből olvasott token|A login során kapott token (a teszt.html-ben bemutatott módszerrel olvasható ki)|
+    |token|cookieből olvasott token|A login során kapott token|
     
     
     
-    Bármi más törlése:
-    
+    *Bármi más törlése (Delete request):
 
-    Regisztráció: Post request 
-    
-    szükséges adatok: 
-    {
-    "com":"user",
-    "name":"felhasználó neve",
-    "mail":"email cím",
-    "password":"jelszó hash"
-    }
-    
-    Kategória felvitele: Post request, 
-    
-    szükséges adatok:    
-    {    
-    "com":"cat",
-    "name":"kategória név",
-    "creaId":létrehozó felhasználó azonosítója,  
-    "global":láthatóság (0-global,1-personal,2-család)   
-    }
-    
-    Tranzakció felvitele: Post request, 
-    
-    szükséges adatok:    
-    {    
-    "com": "tran",
-    "uId":felhasználó azonosító,
-    "catId":kategória azonosító,  
-    "value":érték,
-    "personal": 0/1 személyes vagy családi'  
-    }
-    
-    Család felvitele: Post request, 
-    
-    szükséges adatok:    
-    {    
-    "com":"family",
-    "name":"család név",
-    "fId":Családfő azonosítója   
-    }
+    Szükséges adatok:
 
-    User, Család, Kategória törlése: DELETE request,
-    
-    szükséges adatok:
-    {
-    "table": "tábla neve ahonnan törölni akarunk",
-    "Id":a rekord azonosítója amit törölni akarunk
-    }
+    |Kulcs:|Érték példa:|Leírás:|
+    |:-----|:-----------|:------|
+    |table|'User'|Ez határozza meg melyik táblából szeretnénk törölni|
+    |Id|9|Annak a rekordnak az azonosítója amit törölni szeretnénk|
+    |token|cookieből olvasott token|A login során kapott token|
+
+   
