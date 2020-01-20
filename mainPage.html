@@ -52,7 +52,7 @@
       </div>
       <ul class="navbar-nav ml-5">
         <li class="nav-item mt-2">
-            <a class="nav-item font-weight-bold ml-5" style="color: #F48AE1 !important;">Felhasználónév</a>
+            <a class="nav-item font-weight-bold ml-5" style="color: #F48AE1 !important;" id="userNameHere"></a>
         </li>
         <li class="nav-item ml-3">
             <img src="profile.png" class="rounded mx-auto d-block" height="42" width="42">
@@ -231,7 +231,6 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Felhasználó Id</th>
             <th scope="col">Kategória</th>
             <th scope="col">Összeg</th>
             <th scope="col">Dátum</th>
@@ -242,7 +241,6 @@
         <tbody>
           <tr>
             <th scope="row" id="inComeId"></th>
-            <td id=inComeUserId></td>
             <td id=inComeCategory></td>
             <td id="inComeValue"></td>
             <td id="inComeDate"></td>
@@ -252,13 +250,22 @@
         </tbody>
       </table>
 
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Az összes bevétel: </th>
+            <th scope="col" id="inSum" class="lg"></th>
+          </tr>
+        </thead>
+      </table>
+   
+
 
       <h2 class="mb-4 mt-5">Kiadások:</h2>
       <table class="table">
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Felhasználó Id</th>
             <th scope="col">Kategória</th>
             <th scope="col">Összeg</th>
             <th scope="col">Dátum</th>
@@ -270,7 +277,6 @@
         <tbody>
           <tr>
             <th scope="row" id="costId"></th>
-            <td id=costUserId></td>
             <td id=costCategory></td>
             <td id="costValue"></td>
             <td id="costDate"></td>
@@ -280,7 +286,14 @@
         </tbody>
       </table>
 
-
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Az összes kiadás: </th>
+            <th scope="col" id="outSum" class="h4"></th>
+          </tr>
+        </thead>
+      </table>
       
 
   <!--Family add modal-->
@@ -420,18 +433,18 @@
             <div class="card card-signin my-5">
               <div class="card-body">
                 <button type="button" class="close" data-dismiss="modal">×</button>
-                <h5 class="card-title text-center">Tranzakció módosítása</h5>
+                <h5 class="card-title text-center">Tranzakció hozzáadása</h5>
                 <form class="form-signin">
                   <div class="form-label-group">
                     <label for="categories font-weight-bold">Válaszd ki a kategóriát!</label>
                     <div class="row align-items-start ">
-                      <select class="col-md-10 text-m rounded-sm border p-md-1 m-1 ml-3" id="getCategories5">
+                      <select class="col-md-10 text-m rounded-sm border p-md-1 m-1 ml-3" id="getCategories3">
                       </select>
                       </div>
                       <br>
                   <div class="form-label-group">
-                    <label for="costUpdat font-weight-bold">Összeg</label>
-                    <input type="text" id="costUpdate" class="form-control" placeholder="Összeg" required autofocus>
+                    <label for="inputCost font-weight-bold">Összeg</label>
+                    <input type="text" id="inputIncome" class="form-control" placeholder="Összeg" required autofocus>
                   </div>
                 </br>
                 <div class="custom-control custom-checkbox mr-sm-2">
@@ -439,7 +452,7 @@
                   <label class="custom-control-label" for="customControlAutosizing">Személyes kiadás</label>
                 </div>
                 </br>
-                  <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit" onclick="updateTransaction()">Tranzakció módosítása</button>
+                  <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit" onclick="newTranzaction()">Tranzakció hozzáadás</button>
                 </form>
               </div>
             </div>
