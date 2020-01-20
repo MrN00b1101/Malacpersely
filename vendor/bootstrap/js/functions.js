@@ -5,7 +5,7 @@
 window.onload = function() {
     this.getCategoryList();
     this.getTranList();
-    
+    document.getElementById("username").innerHTML = getcookie("user");
 };
 
 function newUser(){
