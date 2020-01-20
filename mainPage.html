@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link href="favicon_malac.ico" rel="icon" type="image/ico">
 
-  <title>MALACPERSELY</title>
+  <title>Belépve - Malacpersely</title>
 
   <!-- Bootstrap core CSS -->
 
@@ -17,6 +18,13 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="vendor/sidebar/css/style.css">
 
+
+<style type="text/css">
+@font-face {
+    font-family: 'Sniglet';
+    src: url('Sniglet.ttf') format('truetype');
+}</style>
+
 </head>
 
 <body>
@@ -24,27 +32,27 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     
-      <a class="h2 font-weight-bold ml-5" style="color: pink !important;" href="mainPage.html">MALACPERSELY</a>
+      <a class="ml-3 h2" style="font-size: 250%; font-family: Sniglet; color: #F48AE1 !important;" href="mainPage.html">MALACPERSELY</a>
       <div  class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Pénzügyek
+            <a class="h6 nav-link" href="#">Pénzügyek
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Beállítások</a>
+            <a class="h6 ml-4 nav-link" href="#">Beállítások</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Profil</a>
+            <a class="h6 ml-4 nav-link" href="#">Profil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Statisztika</a>
+            <a class="h6 ml-4 nav-link" href="#">Statisztika</a>
           </li>
         </ul>
       </div>
       <ul class="navbar-nav ml-5">
         <li class="nav-item mt-2">
-            <a class="nav-item font-weight-bold ml-5" id="userNameHere" style="color: rgb(190, 77, 153) !important;"></a>
+            <a class="nav-item font-weight-bold ml-5" style="color: #F48AE1 !important;">Felhasználónév</a>
         </li>
         <li class="nav-item ml-3">
             <img src="profile.png" class="rounded mx-auto d-block" height="42" width="42">
@@ -112,8 +120,11 @@
               </a>
               <ul class="collapse list-unstyled" id="page2Submenu">
                 <li>
-                    <a href="#" id="getTranDate"></a>
-		</li>
+                    <a href="#">2019.December</a>
+                </li>
+                <li>
+                  <a href="#">2020. Január</a>
+               </li>
               </ul>
 
               <li>
@@ -220,6 +231,7 @@
         <thead>
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Felhasználó Id</th>
             <th scope="col">Kategória</th>
             <th scope="col">Összeg</th>
             <th scope="col">Dátum</th>
@@ -230,6 +242,7 @@
         <tbody>
           <tr>
             <th scope="row" id="inComeId"></th>
+            <td id=inComeUserId></td>
             <td id=inComeCategory></td>
             <td id="inComeValue"></td>
             <td id="inComeDate"></td>
@@ -239,14 +252,13 @@
         </tbody>
       </table>
 
-      <h4 class="mb-4">Az összes bevétel:<p id="inSum"></p></h4>
-
 
       <h2 class="mb-4 mt-5">Kiadások:</h2>
       <table class="table">
         <thead>
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Felhasználó Id</th>
             <th scope="col">Kategória</th>
             <th scope="col">Összeg</th>
             <th scope="col">Dátum</th>
@@ -258,6 +270,7 @@
         <tbody>
           <tr>
             <th scope="row" id="costId"></th>
+            <td id=costUserId></td>
             <td id=costCategory></td>
             <td id="costValue"></td>
             <td id="costDate"></td>
@@ -267,7 +280,7 @@
         </tbody>
       </table>
 
-      <h4 class="mb-4">Az összes kiadás:<p id="outSum"></p></h4>
+
       
 
   <!--Family add modal-->
@@ -280,7 +293,7 @@
             <h5 class="card-title text-center">Családtag hozzáadása</h5>
             <form class="form-signin">
               <div class="form-label-group">
-                <label id="username" for="inputFamilyMember font-weight-bold">Felhasználónév</label>
+                <label for="inputFamilyMember font-weight-bold">Felhasználónév</label>
                 <input type="text" id="inputFamilyMember" class="form-control" placeholder="Ide írd be a nevet!" required autofocus>
               </div>
             </br>
