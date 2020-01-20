@@ -54,7 +54,7 @@ switch($request_method) {
         break;
         case 'logout':
            
-                logout($_GET['sessId']);
+                logout();
             
         break;
     } 
@@ -623,7 +623,7 @@ function getUser($data, $type){
         //echo json_encode($query); 
     } 
 }
-function logout($data)
+function logout()
 {
     
     setcookie("Token", "", time() - 3600);
