@@ -37,6 +37,8 @@ A tranzakciók kategóriáit tároljuk itt.
 |:-------|:-----|:--------|:-------|:------|
 |Id|Number|Not Null|Elsődleges kulcs|A kategória egyedi azonosítója|
 |Name|Varchar2(10)|Not Null||A kategória megnevezése|
+|CreatorId|int|Not Null|Idegen kulcs (User tábla Id mezőjéhez kapcsolva)|A létrehozó felhasználó azonosítója|
+|Global|int|Not Null||Ennek a mezőnek az értéke határozza meg, hogy az adott kategóriát kik láthatják, 0 esetén mindenki, 1 esetén csak a létrehozó, 2 esetén pedig csak a létrehozó csládja|
 
 **Family:**  
 
@@ -108,7 +110,16 @@ Get requestel elérhető funkciók
     |fam|0|Ha az értéke 0 akkor a Globális kategóriákat listázza, ha 1 akkor a személyes kategóriákat ha pedig 2 akkor a létrehozó családjának kategóriáit|
     |token|cookieből olvasott token|A login során kapott token (a teszt.html-ben bemutatott módszerrel olvasható ki)|
 
-    Visszakapott adatok:
+   Visszakapott adatok:
+    
+    |Kulcs:|Érték pléda:|Leírás|
+    |:-----|:-----------|:------|
+    |User|Kocsira|A megtakarítási zseb neve, ha a tranzakció nem tartozik kölön zsebhez akkor az érték "Personal" vagy "Family"|
+    |Id|Valaki|A tranzakciót felvivő felhasználó neve|
+    |Name|Megtakarítás|A tranzakció kategóriájának neve|
+    |CreatorId|9|A tranzakciót felvivő felhasználó azonosítója|
+    |Global|4|A tranzakció kategóriájának azonosítója|
+    
     
 * Felhasználók listája:
 * Családok listája:
