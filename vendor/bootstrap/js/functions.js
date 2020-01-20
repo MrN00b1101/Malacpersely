@@ -169,10 +169,10 @@ function getTranList(){
 
     }
 
-document.getElementById("inOutSum").innerHTML = inOutSum + ' Ft';
+document.getElementById("inOutSum").innerHTML = inOutSum;
 document.getElementById("userNameHere").innerHTML = obj[0].User;
-document.getElementById("inSum").innerHTML = inSum + ' Ft';
-document.getElementById("outSum").innerHTML = outSum + ' Ft';
+document.getElementById("inSum").innerHTML = inSum;
+document.getElementById("outSum").innerHTML = outSum;
 
 }
 // Send request
