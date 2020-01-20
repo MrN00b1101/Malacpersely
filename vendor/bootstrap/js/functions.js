@@ -7,8 +7,9 @@ window.onload = function() {
     {
         this.getCategoryList();
         this.getTranList();
+        document.getElementById("username").innerHTML = this.getcookie("user");
     }
-    document.getElementById("username").innerHTML = getcookie("user");
+    
 };
 
 function newUser(){
