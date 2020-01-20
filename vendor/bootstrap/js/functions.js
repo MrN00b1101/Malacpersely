@@ -3,8 +3,11 @@
 //'http://mrnoobrft.ddns.net/Malacpersely/phpApi.php'
 
 window.onload = function() {
-    this.getCategoryList();
-    this.getTranList();
+    if(getCookie("Token") != "")
+    {
+        this.getCategoryList();
+        this.getTranList();
+    }
     document.getElementById("username").innerHTML = getcookie("user");
 };
 
