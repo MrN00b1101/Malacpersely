@@ -169,11 +169,10 @@ function getTranList(){
 
     }
 
-document.getElementById("inOutSum").innerHTML = inOutSum;
+document.getElementById("inOutSum").innerHTML = inOutSum + ' Ft';
 document.getElementById("userNameHere").innerHTML = obj[0].User;
-document.getElementById("inSum").innerHTML = inSum;
-var money = outSum.search(/^\$?[\d,]+(\.\d*)?$/) >= 0;
-document.getElementById("outSum").innerHTML = money;
+document.getElementById("inSum").innerHTML = inSum + ' Ft';
+document.getElementById("outSum").innerHTML = outSum + ' Ft';
 
 }
 // Send request
