@@ -425,6 +425,15 @@ function updateTransaction(){
                     
                 }
             }
+
+            alert(com);
+            alert(value);
+            alert(cat);
+            alert(personal);
+            alert(uid);
+            alert(time);
+            alert(token);
+
         
             xmlhttp.send(JSON.stringify(
                 { 
@@ -442,7 +451,7 @@ function updateTransaction(){
       }
 
     }
-    alert("Tranzakció sikeresen törölve!");
+    alert("Tranzakció sikeresen hozzáadva!");
     request.send()
     window.onload();
 
