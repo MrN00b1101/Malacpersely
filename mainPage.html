@@ -57,7 +57,7 @@
         <li class="nav-item mt-2">
             <a class="nav-item font-weight-bold ml-5" style="color: #F48AE1 !important;" id="userNameHere"></a>
         </li>
-        <li class="nav-item mr-3">
+        <li class="nav-item mr-3 ml-5">
             <img src="profile.png" class="rounded mx-auto d-block" height="42" width="42">
         </li>
        </ul>
@@ -477,6 +477,40 @@
   <script src="vendor/sidebar/js/popper.js"></script>
   <script src="vendor/sidebar/js/bootstrap.min.js"></script>
   <script src="vendor/sidebar/js/main.js"></script>
+
+  <script>
+  function valami(){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("PUT", "phpApi.php", false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+    xmlhttp.onload = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+            alert(xmlhttp.status_message);
+        } else {
+            
+        }
+    }
+
+    var token = getCookie("Token");
+    xmlhttp.send(JSON.stringify(
+        { 
+    "com" : 'tran',
+    "Value" : 200,
+    "TranCatId" : 3,
+    "Personal" : 0,
+    "uid" : 9,
+    "time" : "'"+'2020-01-19 18:36:41'+"'",
+    "token" : token
+    }));
+
+alert("Tranzakció sikeresen módosítva!");
+request.send()
+window.onload();
+
+}
+  
+  </script>
 
 
 </body>
