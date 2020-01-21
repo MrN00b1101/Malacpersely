@@ -448,6 +448,40 @@ function updateTransaction(){
 
 }
 
+function updateTeszt(){
+   
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.open("PUT", "phpApi.php", false);
+            xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        
+            xmlhttp.onload = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+                    alert(xmlhttp.status_message);
+                } else {
+                    
+                }
+            }
+  
+            var token = getCookie("Token");
+            xmlhttp.send(JSON.stringify(
+                { 
+            "com" : 'tran',
+            "Value" : 200,
+            "TranCatId" : 3,
+            "Personal" : 0,
+            "uid" : 9,
+            "time" : "'"+'2020-01-19 18:36:41'+"'",
+            "token" : token
+            }));
+        
+
+    alert("Tranzakció sikeresen módosítva!");
+    request.send()
+    window.onload();
+
+}
+
 function deleteCategory(){
     var xmlhttp = new XMLHttpRequest();
     var com = 'cat';
