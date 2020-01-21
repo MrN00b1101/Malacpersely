@@ -12,7 +12,7 @@ window.onload = function() {
 
 };
 
-function updateTeszt(){
+function valami(){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("PUT", "phpApi.php", false);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
