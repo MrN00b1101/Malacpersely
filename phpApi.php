@@ -543,8 +543,8 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
         }
     
     header('Content-Type: application/json'); 
-    echo json_encode($query); 
-    //echo json_encode($response); 
+    //echo json_encode($query); 
+    echo json_encode($response); 
     
 }
 
