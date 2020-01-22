@@ -507,14 +507,14 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
         //$uId = array_column($familyMembers,'Id');
         $per = $personal;
     }
-        $query = "SELECT Savings.Name as 'Savings', User.Name as 'User' ,Categorys.Name as 'Category', Transactions.*  FROM Transactions INNER JOIN Savings on Transactions.Personal = Savings.Id INNER JOIN User on Transactions.UserId = User.Id INNER JOIN Categorys on Transactions.TranCatId = Categorys.Id WHERE Transactions.personal = ".$per;
+        $query = "SELECT Savings.Name as 'Savings', User.Name as 'User' ,Categorys.Name as 'Category', Transactions.*  FROM Transactions INNER JOIN Savings on Transactions.Personal = Savings.Id INNER JOIN User on Transactions.UserId = User.Id INNER JOIN Categorys on Transactions.TranCatId = Categorys.Id WHERE Transactions.UserId=".$userId."  Transactions.personal = ".$per;
         /*
         if(count($uId)>0){$szuro = " AND (";}
         for($i = 0; $i <= count($uId)-1; $i++){
             if($i<count($uId)-1){$szuro = $szuro." Transactions.UserId=".$uId[$i]." OR ";}else{$szuro = $szuro." Transactions.UserId=".$uId[$i].")";}
         }
         */
-        $szuro = "AND Transactions.UserId=".$userId; 
+       
         if($catId != "null"){
             $cat = explode('|',$catId);
             if(count($cat)>0){$szuro = $szuro." AND (";}
