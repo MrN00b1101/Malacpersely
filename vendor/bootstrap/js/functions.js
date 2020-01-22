@@ -5,6 +5,7 @@
 window.onload = function() {
     if(this.getCookie("Token") != "")
     {
+        alert(window.location);
         if(window.location == "index.html") 
         {
             window.location.replace = "mainPage.html";
