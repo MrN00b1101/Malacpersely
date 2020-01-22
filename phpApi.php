@@ -431,8 +431,9 @@ function updateTransaction($data){
         if($data['Personal'] != "null"){$set = $set.",";}
     }
     if($data['Personal'] != "null"){$set = $set." Personal=".$data['Personal']; }
-    $query = "UPDATE Transaction ".$set." WHERE UserId=".$data['uid']." AND TranDate=".$data['time'];
+    $query = "UPDATE Transactions ".$set." WHERE UserId=".$data['uid']." AND TranDate=".$data['time'];
     
+
     if(mysqli_query($connection, $query))   {
         $response=array(
               'status' => 1,
