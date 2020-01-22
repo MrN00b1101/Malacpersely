@@ -100,7 +100,7 @@ function getCookie(cname) {
 function getTranList(){
     var request = new XMLHttpRequest();
     var com = 'tran';
-    var user = getCookie("Id");
+    var user = [getCookie("Id")];
     var cat = 'null';
     var minVal = 'null';
     var maxVal = 'null';
