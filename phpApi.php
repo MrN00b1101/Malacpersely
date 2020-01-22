@@ -168,8 +168,11 @@ function insertUser($data){
     $Mail = $data['mail'];
     $Pass = md5($data['password']);
     $query="INSERT INTO User SET Name ='".$Name."', Mail='".$Mail."', Password='".$Pass."'";
+    header('Content-Type: application/json');
+     echo ($query+"    "+$data['password']);
     //$query="INSERT INTO 'User' VALUES ('dd', 'ff', 'gg')";
     if(mysqli_query($connection, $query))   {
+        
          $response=array(
                'status' => 1,
                'status_message' =>'User Added Successfully.'
