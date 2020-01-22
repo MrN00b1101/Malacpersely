@@ -362,7 +362,41 @@ function deleteTransaction(){
     window.onload();
 
 }
+function tranMod(){
+    
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("PUT", "phpApi.php", false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
+    xmlhttp.onload = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+            alert(xmlhttp.status_message);
+        } else {
+            
+        }
+    }
+    var time = "'2020-01-19 18:36:41'";
+    
+
+    var token = getCookie("Token");
+    xmlhttp.send(JSON.stringify(
+        { 
+    "com" : 'tran',
+    "Value" : 200,
+   "TranCatId" : 'null',
+    "Personal" : 'null',
+    "uid" : 9,
+    "time" :  time,
+    "token" : token
+
+
+    }));
+
+
+alert('siker');
+window.onload();
+
+}
 function updateTransaction(){
     var request = new XMLHttpRequest();
     var com = 'tran';
