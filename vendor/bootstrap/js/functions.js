@@ -5,6 +5,8 @@
 window.onload = function() {
     if(this.getCookie("Token") != "")
     {
+        
+       
         this.getCategoryList();
         this.getTranList();
         
@@ -172,7 +174,7 @@ function getTranList(){
     }
 
 document.getElementById("inOutSum").innerHTML = inOutSum;
-document.getElementById("userNameHere").innerHTML = obj[0].User;
+document.getElementById("userNameHere").innerHTML = getCookie("User");
 document.getElementById("inSum").innerHTML = inSum;
 document.getElementById("outSum").innerHTML = outSum;
 
