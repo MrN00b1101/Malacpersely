@@ -585,8 +585,8 @@ function getCategoryList($userid, $fam){
         $response[]=$row;
     }
     header('Content-Type: application/json'); 
-        echo json_encode($response); 
-        //echo json_encode($query); 
+        //echo json_encode($response); 
+        echo json_encode($query); 
 }
 function getUserList(){
     global $connection;
