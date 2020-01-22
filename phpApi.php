@@ -168,7 +168,7 @@ function insertUser($data){
     $Mail = $data['mail'];
     $Pass = $data['pass'];
    // $Pass = md5($data['password']);
-    $query="INSERT INTO User SET Name ='".$Name."', Mail='".$Mail."', Password='".$Pass."'";
+    $query="INSERT INTO User SET Name ='".$Name."', Mail='".$Mail."', Password='".md5($Pass)."'";
     
     //$query="INSERT INTO 'User' VALUES ('dd', 'ff', 'gg')";
     if(mysqli_query($connection, $query))   {
@@ -649,7 +649,7 @@ function login($data){
     $password = $data['password'];
     $secret_key = 'some_test_key';
     $valid_for = '3600';
-    $query ="SELECT Name, Id, FamilyId, Mail FROM User WHERE Name='".$name."' AND Password ='".$password."'";
+    $query ="SELECT Name, Id, FamilyId, Mail FROM User WHERE Name='".$name."' AND Password ='".md5($password)."'";
     $response=array();
     $result=mysqli_query($connection, $query);
     while($row=mysqli_fetch_array($result))  {
