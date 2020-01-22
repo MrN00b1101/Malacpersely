@@ -496,15 +496,15 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
     global $connection;
     //UserId,TranCatId,Value,Personal,TranDate
     if($personal == "-1"){
-        $uId[0] = $userId;
+      //  $uId[0] = $userId;
         $per = -1;
     }else if($personal == "0"){
         $familyMembers = getFamilyMemberList(getFamilyId($userId),false);
-        $uId = array_column($familyMembers,'Id');
+       // $uId = array_column($familyMembers,'Id');
         $per = 0;
     }else{
         $familyMembers = getFamilyMemberList(getFamilyId($userId),false);
-        $uId = array_column($familyMembers,'Id');
+        //$uId = array_column($familyMembers,'Id');
         $per = $personal;
     }
         $query = "SELECT Savings.Name as 'Savings', User.Name as 'User' ,Categorys.Name as 'Category', Transactions.*  FROM Transactions INNER JOIN Savings on Transactions.Personal = Savings.Id INNER JOIN User on Transactions.UserId = User.Id INNER JOIN Categorys on Transactions.TranCatId = Categorys.Id WHERE Transactions.personal = ".$per;
@@ -514,7 +514,7 @@ function getPersonTranList($userId, $catId, $minVal, $maxVal, $minDat, $maxDat, 
             if($i<count($uId)-1){$szuro = $szuro." Transactions.UserId=".$uId[$i]." OR ";}else{$szuro = $szuro." Transactions.UserId=".$uId[$i].")";}
         }
         */
-        $szuro = "AND Id=".$userId; 
+        $szuro = "AND Transactions.UserId=".$userId; 
         if($catId != "null"){
             $cat = explode('|',$catId);
             if(count($cat)>0){$szuro = $szuro." AND (";}
