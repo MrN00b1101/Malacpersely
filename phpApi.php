@@ -166,10 +166,10 @@ function insertUser($data){
     global $connection;
     $Name = $data['name'];
     $Mail = $data['mail'];
-    $Pass = md5($data['password']);
+    $Pass = $data['password'];
+   // $Pass = md5($data['password']);
     $query="INSERT INTO User SET Name ='".$Name."', Mail='".$Mail."', Password='".$Pass."'";
-    header('Content-Type: application/json');
-     echo ($query+"    "+$data['password']);
+    
     //$query="INSERT INTO 'User' VALUES ('dd', 'ff', 'gg')";
     if(mysqli_query($connection, $query))   {
         
@@ -186,7 +186,7 @@ function insertUser($data){
       }   
       header('Content-Type: application/json');
      echo ($query+"    "+$data['password']);
-      // echo json_encode($response); 
+       echo json_encode($response); 
 }
 
 function insertCategory($data){
@@ -649,7 +649,7 @@ function login($data){
     $password = $data['password'];
     $secret_key = 'some_test_key';
     $valid_for = '3600';
-    $query ="SELECT Name, Id, FamilyId, Mail FROM User WHERE Name='".$name."' AND Password ='".md5($password)."'";
+    $query ="SELECT Name, Id, FamilyId, Mail FROM User WHERE Name='".$name."' AND Password ='".$password."'";
     $response=array();
     $result=mysqli_query($connection, $query);
     while($row=mysqli_fetch_array($result))  {
