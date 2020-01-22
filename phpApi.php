@@ -166,7 +166,7 @@ function insertUser($data){
     global $connection;
     $Name = $data['name'];
     $Mail = $data['mail'];
-    $Pass = $data['password'];
+    $Pass = $data['pass'];
    // $Pass = md5($data['password']);
     $query="INSERT INTO User SET Name ='".$Name."', Mail='".$Mail."', Password='".$Pass."'";
     
