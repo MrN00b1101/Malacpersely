@@ -5,6 +5,10 @@
 window.onload = function() {
     if(this.getCookie("Token") != "")
     {
+        if(window.location == "index.html") 
+        {
+            window.location.replace = "mainPage.html";
+        }
         this.getCategoryList();
         this.getTranList();
         
