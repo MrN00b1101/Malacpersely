@@ -570,7 +570,7 @@ function getCategoryList($userid, $fam){
     if($fam == '0'){
         $familyMembers = getFamilyMemberList(getFamilyId($userid),false);
         $uId = array_column($familyMembers,'Id');
-        $query = "SELECT User.Name as 'User',Categorys.* FROM Categorys INNER JOIN User ON Categorys.CreatorId = User.Id WHERE CreatorId = ".$userId;
+        $query = "SELECT User.Name as 'User',Categorys.* FROM Categorys INNER JOIN User ON Categorys.CreatorId = User.Id WHERE CreatorId = ".$userid;
 
        /* for ($i=1; $i<=count($uId)-1; $i++){
             $query = $query." OR CreatorId=".$uId[$i];
