@@ -16,6 +16,8 @@ window.onload = function() {
 
 };
 
+
+
 function newUser(){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", "phpApi.php", true);
@@ -429,7 +431,7 @@ function updateTransaction(){
                     
                 }
             }
-        
+  
             xmlhttp.send(JSON.stringify(
                 { 
             "com" : com,
@@ -446,11 +448,13 @@ function updateTransaction(){
       }
 
     }
-    alert("Tranzakció sikeresen törölve!");
+    alert("Tranzakció sikeresen hozzáadva!");
     request.send()
     window.onload();
 
 }
+
+
 
 function deleteCategory(){
     var xmlhttp = new XMLHttpRequest();
@@ -480,5 +484,7 @@ function deleteCategory(){
     "token" : token
     }));
 }
+
+
 
 

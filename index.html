@@ -20,6 +20,10 @@
 @font-face {
     font-family: 'Sniglet';
     src: url('Sniglet.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'IstokWeb';
+	src: url('IstokWeb.ttf') format('truetype');
 }</style>
 
 </head>
@@ -45,7 +49,7 @@
           </li>
           <li class="nav-item">
             <button type="button" class="btn-outline-light btn-primary btn-lg  font-weight-bold offset-10" 
-            data-toggle="modal" data-target="#myModal">BELÉPÉS</button>
+            data-toggle="modal" data-target="#myModal">Belépés</button>
           </li>
         </ul>
       </div>
@@ -60,7 +64,7 @@
         <h3 class="mt-5 text-white">Válaszd a Malacperselyt!</h3>
         <h3 class="mt-5 text-white">Egy ingyenes alkalmazás, amivel a bevételek,<br> kiadások, és az elérni kívánt pénzügyi célok<br> áttekintése gyerekjáték!</h3>
         <button type="button" class="btn-outline-light btn-primary btn-lg mt-5 font-weight-bold offset-3"
-        data-toggle="modal" data-target="#myModal2">REGISZTRÁCIÓ</button>
+        data-toggle="modal" data-target="#myModal2">Regisztráció</button>
       </div>
     </div>
   </div>
@@ -70,17 +74,24 @@
    <div class="container">
     <div class="row">
 	 <div class="col-6">
-		 <h4 id="informacio_anchor" class="bold text-black">Kezdjünk hozzá!<h4><br>
+		 <h4 id="informacio_anchor" style="font-family: IstokWeb; font-weight: bold" class="text-black">Kezdjünk hozzá!<h4><br>
 		 <h5 class="text-gray">Az alkalmazás egy egyszerű regisztráció után azonnal használható.</h5>
 		 <h5 class="text-gray">Belépés után megadhatjuk kezdő enegylegünket, állandó kiadásainkat és bevételeinket,
-		 akár családtagjainkkal közös csoportot alkotva is megfigyelhetjük és tervezhetjük pénzügyeinket.</h5><br>
+		 akár családtagjainkkal közös csoportot alkotva is megfigyelhetjük és tervezhetjük pénzügyeinket.</h5>
+		 <h5 class="text-gray">Az egyszerűen kezelhető és átlátható felület, ami a bankok internetes
+								felületéhez hasonló, egy nagyon jó eszköz lehet a gyermekek számára is 
+								a pénzkezelés világába való veszélytelen betekintéshez.<br>
 	 </div>
 	 <div class="col-6">
-		<h4 class="mr-5 bold text-black">Cégünkről</h4><br>
-		<h5 class="mr-6 text-grey">A Triton Corp. 2018 óta vállal munkákat, amelyek széles skálája áll
+		<h4 class="ml-5 text-black" style="font-family: IstokWeb; font-weight: bold">Cégünkről</h4><br>
+		<h5 class="ml-5 text-grey">A Triton Corp. 2018 óta vállal munkákat, amelyek széles skálája áll
 									többek között szoftverfejlesztésből, mobil programozásból, weblapszerkesztésből 
 									és 3D-s tárgyak modellezéséből, valamint nyomtatásából áll.</h5>
-		<h5 class="mr-6 text-grey">Megbeszélés alapján vállalunk a palettánkon még nem szereplő megbízásokat is.</h5>
+		<h5 class="ml-5 text-grey"> Az ajánlatkérésekkel kapcsolatos leveleket a cég hivatalos e-mail címére várjuk, amit 
+									a Kapcsolat menüpont alatt találnak.
+		<h5 class="ml-5 text-grey"> A feladatköreiknek megfelelő megbízásokat a cég tagjai egyénileg 
+									is válallnak, ez esetben kárjük az egyéni e-mail címekre irjanak.
+									Megbeszélés alapján vállalunk a palettánkon még nem szereplő projekteket is.</h5>
 	 </div>
     </div>
    </div>
@@ -90,7 +101,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h4 id="kapcsolat_anchor" class="text-white">Kapcsolat:</h4><br>
+				<h4 id="kapcsolat_anchor" class="text-white" style="font-family: IstokWeb">Kapcsolat:</h4><br>
 				<h5 class="text-white">Triton Corp.<h5>
 				<h5 class="text-white">3300 Eger Diófakút utca 1.</h5><br>
 				<h4 class="text-white">Tagok és elérhetőségük:</h4><br>
@@ -191,7 +202,7 @@
               </div>
             </br>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onclick="newUser()">Regisztráció</button>
-              <a class="d-block text-center mt-2 small" href="#" data-dismiss="modal" data-toggle="modal" data-target="#myModal">Bejelentkezés</a>
+              <a class="d-block text-center mt-2 small" data-dismiss="modal" data-toggle="modal" data-target="#myModal">Bejelentkezés</a>
               <hr class="my-4">
               <button class="btn btn-lg btn-social btn-facebook btn-block" type="submit"><i class="fab fa-facebook-f mr-2" style="font-size:40px;color:blue"></i>Regisztráció Facebook fiókkal</button>
               <button class="btn btn-lg btn-social btn-google btn-block" type="submit"><i class="fab fa-google mr-2" style="font-size:40px;color:rgb(226, 25, 25)"></i>Regisztráció Google fiókkal</button>

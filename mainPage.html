@@ -46,15 +46,18 @@
             <a class="h6 ml-4 nav-link" href="#">Profil</a>
           </li>
           <li class="nav-item">
-            <a class="h6 ml-4 nav-link" href="#">Statisztika</a>
+            <a class="h6 ml-4 mr-5 nav-link" href="#">Statisztika</a>
+          </li>
+          <li class="nav-item">
+            <a class="h6 ml-4 nav-link" style="color: #F48AE1" onclick="logout()" href="index.html">Kijelentkezés</a>
           </li>
         </ul>
       </div>
       <ul class="navbar-nav ml-5">
         <li class="nav-item mt-2">
-            <a class="nav-item font-weight-bold ml-5" style="color: #F48AE1 !important;" id="userNameHere"></a>
+            <a class="nav-item font-weight-bold ml-5" style="color: #F48AE1 !important;" id="userNameHere">s</a>
         </li>
-        <li class="nav-item ml-3">
+        <li class="nav-item mr-3 ml-3">
             <img src="profile.png" class="rounded mx-auto d-block" height="42" width="42">
         </li>
        </ul>
@@ -225,7 +228,9 @@
     <button type="button" class="btn btn-danger pull-right ml-3" type="submit" onclick="deleteTransaction()">Tranzakció törlése</button>
     <button type="button" class="btn btn-info pull-right ml-3" data-toggle="modal" data-target="#costUpdating">Tranzakció módosítása</button>
     <button type="button" class="btn btn-success pull-right ml-3" data-toggle="modal" data-target="#costAdd">Tranzakció hozzáadása</button>
- 
+    <button type="button" class="btn btn-success pull-right ml-3" onclick="valami()">Tranzakció módosítás teszt</button>
+
+    
       <h2 class="mb-4">Bevételek:</h2>
       <table class="table">
         <thead>
@@ -253,8 +258,8 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">Az összes bevétel: </th>
-            <th scope="col" id="inSum" class="lg"></th>
+            <th scope="col" class="h4">Az összes bevétel: </th>
+            <th scope="col" id="inSum" class="h4"></th>
           </tr>
         </thead>
       </table>
@@ -289,11 +294,13 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">Az összes kiadás: </th>
+            <th scope="col" class="h4">Az összes kiadás: </th>
             <th scope="col" id="outSum" class="h4"></th>
           </tr>
         </thead>
       </table>
+
+     
       
 
   <!--Family add modal-->
@@ -391,6 +398,44 @@
       </div>
     </div>
 
+    
+    <!--Cost update modal-->
+    <div class="modal" id="costUpdating">
+      <div class="row">
+        <div class="col-sm-7 col-md-5 col-lg-4 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <button type="button" class="close" data-dismiss="modal">×</button>
+              <h5 class="card-title text-center">Tranzakció módosítása</h5>
+              <form class="form-signin">
+                <div class="form-label-group">
+                  <label for="inputFamilyMember font-weight-bold">Válaszd ki a kategóriát!</label>
+                  <div class="row align-items-start ">
+                    <select class="col-md-10 text-m font-weight-bold rounded-sm border p-md-1 m-1 ml-3" id="getCategories5">
+                    </select>
+                    </div>
+                </div>
+              </br>
+              <div class="form-label-group">
+                <label for="inputCost font-weight-bold">Összeg</label>
+                <input type="text" id="costUpdate" class="form-control" placeholder="Összeg" required autofocus>
+              </div>
+            </br>
+            <div class="custom-control custom-checkbox mr-sm-2">
+              <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+              <label class="custom-control-label" for="customControlAutosizing">Személyes kiadás</label>
+            </div>
+            </br>
+              <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit" onclick="updateTeszt()">Tranzakció módosítása</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+ 
 
        <!--Cost add modal-->
        <div class="modal" id="costAdd">
@@ -423,48 +468,52 @@
               </div>
             </div>
           </div>
-        </div>
       </div>
-
-      <!--Cost update modal-->
-      <div class="modal" id="costUpdating">
-        <div class="row">
-          <div class="col-sm-7 col-md-5 col-lg-4 mx-auto">
-            <div class="card card-signin my-5">
-              <div class="card-body">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h5 class="card-title text-center">Tranzakció hozzáadása</h5>
-                <form class="form-signin">
-                  <div class="form-label-group">
-                    <label for="categories font-weight-bold">Válaszd ki a kategóriát!</label>
-                    <div class="row align-items-start ">
-                      <select class="col-md-10 text-m rounded-sm border p-md-1 m-1 ml-3" id="getCategories3">
-                      </select>
-                      </div>
-                      <br>
-                  <div class="form-label-group">
-                    <label for="inputCost font-weight-bold">Összeg</label>
-                    <input type="text" id="inputIncome" class="form-control" placeholder="Összeg" required autofocus>
-                  </div>
-                </br>
-                <div class="custom-control custom-checkbox mr-sm-2">
-                  <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                  <label class="custom-control-label" for="customControlAutosizing">Személyes kiadás</label>
-                </div>
-                </br>
-                  <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit" onclick="newTranzaction()">Tranzakció hozzáadás</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+     
 
   <script src="vendor/bootstrap/js/functions.js"></script> 
   <script src="vendor/sidebar/js/jquery.min.js"></script>
   <script src="vendor/sidebar/js/popper.js"></script>
   <script src="vendor/sidebar/js/bootstrap.min.js"></script>
   <script src="vendor/sidebar/js/main.js"></script>
+
+  <script>
+  function valami(){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("PUT", "phpApi.php", false);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+    xmlhttp.onload = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == "1") {
+            alert(xmlhttp.status_message);
+        } else {
+            
+        }
+    }
+
+
+    var token = getCookie("Token");
+    xmlhttp.send(JSON.stringify(
+        { 
+    "com" : 'tran',
+    "Value" : 200,
+   "TranCatId" : 'null',
+    "Personal" : 'null',
+    "uid" : 9,
+    "time" : '2020-01-19 18:36:41',
+    "token" : token
+
+
+    }));
+
+
+alert('siker');
+window.onload();
+
+}
+  
+  </script>
 
 
 </body>
