@@ -363,7 +363,7 @@ function deleteTransaction(){
 
 }
 function tranMod(){
-    
+
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("PUT", "phpApi.php", false);
     xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -480,7 +480,7 @@ function updateTransaction(){
       }
 
     }
-    alert("Tranzakció sikeresen hozzáadva!");
+    
     request.send()
     window.onload();
 
