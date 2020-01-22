@@ -5,11 +5,8 @@
 window.onload = function() {
     if(this.getCookie("Token") != "")
     {
-        alert(window.location);
-        if(window.location == "http://mrnoobrft.ddns.net/Malacpersely/index.html?") 
-        {
-            window.location.replace = "mainPage.html";
-        }
+        
+        
         this.getCategoryList();
         this.getTranList();
         
