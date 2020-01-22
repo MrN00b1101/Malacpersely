@@ -185,8 +185,8 @@ function insertUser($data){
                );
       }   
       header('Content-Type: application/json');
-     echo ($query+"    "+$data['password']);
-       echo json_encode($response); 
+      echo ($query);
+       //echo json_encode($response); 
 }
 
 function insertCategory($data){
