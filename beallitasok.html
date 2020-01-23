@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="favicon_malac.ico" rel="icon" type="image/ico">
+
+  <title>Beállítások - Malacpersely</title>
+
+  <!-- Bootstrap core CSS -->
+
+  <script src="https://kit.fontawesome.com/812fb0504e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="vendor/sidebar/css/style.css">
+
+
+<style type="text/css">
+@font-face {
+    font-family: 'Sniglet';
+    src: url('Sniglet.ttf') format('truetype');
+}</style>
+
+</head>
+
+ <!-- Navigation -->
+ <nav class="navbar navbar-expand navbar-dark bg-dark">
+    
+    <a class="ml-3 h2" style="font-size: 250%; font-family: Sniglet; color: #F48AE1 !important;" href="mainPage.html">MALACPERSELY</a>
+    <div  class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="h6 nav-link" href="#">Pénzügyek
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="h6 ml-4 nav-link" href="beallitasok.html">Beállítások
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="h6 ml-4 mr-5 nav-link" href="#">Statisztika</a>
+        </li>
+        <li class="nav-item">
+          <a class="h6 ml-4 nav-link" style="color: #F48AE1" onclick="logout()" href="index.html">Kijelentkezés</a>
+        </li>
+      </ul>
+    </div>
+    <ul class="navbar-nav ml-5">
+      <li class="nav-item mt-2">
+          <a class="nav-item font-weight-bold ml-5" style="color: #F48AE1 !important;" id="userNameHere"></a>
+      </li>
+      <li class="nav-item mr-3 ml-3">
+          <img src="profile.png" class="rounded mx-auto d-block" height="42" width="42">
+      </li>
+     </ul>
+</nav>
+
+<div class="wrapper d-flex align-items-stretch ">
+    <nav id="sidebar" class="bg-dark">
+        <div class="custom-menu">
+            <button type="button" id="sidebarCollapse" class="btn btn-dark">
+      <i class="fa fa-bars"></i>
+      <span class="sr-only">Toggle Menu</span>
+    </button>
+</div>
+        <div class="p-4 pt-5">
+          <h1><a href="index.html" class="logo">Menü</a></h1>
+    <ul class="list-unstyled components mb-5">
+      <li>
+        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+        <i class="fas fa-users"></i>
+       <span class="ml-4">Család</span></a>
+        <ul class="collapse list-unstyled" id="homeSubmenu">
+        <li>
+          <a href="#">Családtag1</a>
+        </li>
+        <li>
+          <a href="#">Családtag2</a>
+      </li>
+      <ul>
+        <li>
+            <a href="#" data-toggle="modal" data-target="#familyAdd">Családtag hozzáadása</a>
+        </li>
+        <li>
+            <a href="#" data-toggle="modal" data-target="#familyDelete">Családtag törlése</a>
+        </li>                
+      </ul>
+    </ul>
+      </li>
+     
+      <li>
+      <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+        <i class="fas fa-clipboard-list"></i>
+       <span class="ml-4">Kategóriák</span></a>
+      </a>
+      <ul class="collapse list-unstyled" id="pageSubmenu">
+        <li>
+            <a href="#" id="getCategories1"></a>
+        </li>
+      <ul>
+        <li>
+            <a href="#" data-toggle="modal" data-target="#categoryAdd">Kategória hozzáadása</a>
+        </li>
+        <li>
+            <a href="#" data-toggle="modal" data-target="#categoryDelete">Kategória törlése</a>
+        </li>
+      </ul>
+      </ul>
+    </li>
+    
+    <li>
+      <a href="#page2Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+        <i class="fas fa-coins"></i>
+        <span class="ml-4">Tranzakciók</span></a>
+      </a>
+      <ul class="collapse list-unstyled" id="page2Submenu">
+        <li>
+            <a href="#">2019.December</a>
+        </li>
+        <li>
+          <a href="#">2020. Január</a>
+       </li>
+      </ul>
+
+      <li>
+        <a href="#page3Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+          <i class="fas fa-piggy-bank"></i>
+          <span class="ml-4">Megtakarítások</span></a>
+        </a>
+        <ul class="collapse list-unstyled" id="page3Submenu">
+          <li>
+              <a href="#">Hónap 1</a>
+          </li>
+          <li>
+            <a href="#">Hónap 2</a>
+         </li>
+        </ul>
+
+        <li>
+          <a href="#page4Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="ml-4">Költségvetés</span></a>
+          </a>
+          <ul class="collapse list-unstyled" id="page4Submenu">
+            <li>
+                <a href="#">Hónap 1</a>
+            </li>
+            <li>
+              <a href="#">Hónap 2</a>
+           </li>
+          </ul>
+
+      </li>
+  </ul>
+</div>
+</nav>
+
+<div id="content" class="p-4 p-md-5 pt-5">
+
+    <div class="row align-items-start">
+
+    <!-- Általános beállítások Card -->
+    <div class="col-xl-4 col-md-6 mb-4">
+      <div class="card border-left shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Beállítások</div>
+              <div class="text-xs"><b>Családtag1</b></div>
+              <div class="text-xs"><b>Családtag2</b></div>
+              <div class="text-xs"><b>Családtag3</b></div>
+              <div class="text-xs"><b>Családtag4</b></div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-users fa-2x text-gray-200"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profil Beállítások Card -->
+    <div class="col-xl-4 col-md-6 mb-4">
+      <div class="card border-left shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Profil</div>
+              <div class="text-xs font-weight-bold" id="getCategories2"><b></b></div>
+             
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-clipboard-list fa-2x text-gray-200"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
