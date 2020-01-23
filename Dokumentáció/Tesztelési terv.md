@@ -37,9 +37,10 @@ Tesztelők:
 
 ## Tesztelési eszközök
 
-- fejlesztői felület
+- fejlesztői felület (laptop)
 - Visual Studio Code
-- 
+- Postman tesztelő program
+- internetes böngészők (Chrome, Opera, Microsoft Edge)
 
 
 ## Teszt típusa
@@ -87,3 +88,4 @@ Weboldalak működése
 - tranzakció frissítés
 
 
+2020.01.05.
