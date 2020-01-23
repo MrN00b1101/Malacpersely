@@ -39,7 +39,7 @@ Tesztelők:
 
 - fejlesztői felület (laptop)
 - Visual Studio Code
-- Postman tesztelő program
+- Postman, Api tesztelő program
 - internetes böngészők (Chrome, Opera, Microsoft Edge)
 
 
