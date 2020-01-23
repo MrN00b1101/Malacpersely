@@ -3,13 +3,6 @@
 ## Komponens, integrációs és rendszerteszt
 
 
-A tesztelést végzők:
-* Géczi Katalin
-* Ragó Ádám
-* Varga Balázs
-
-
-
 ## TESZTELÉSI ELVÁRÁSOK
 Funkcionális
 - API funkciók működése
@@ -21,8 +14,6 @@ Nem-funkcionális
 - a desing megfeleljen a megbízó követelményeinek
 
 
-
-
 ## API TESZTELÉS
 
 
@@ -31,6 +22,7 @@ A tesztelés során kölün figyelmet kellett arra fordítanunk, hogy a tesztelt
 megfelelő adatokkal lássa el az API-t.
 
 ## Tesztelt funkciók:
+
 User tábla
 - regisztráció (insertUser)
 - bejelentkezés (login)
@@ -75,13 +67,13 @@ A teszt a megfelelő adatokat szolgáltatta.
 
 Tesztelésre került, hogy az oldal betöltése, és az oldalon található összes részlet 
 elhelyezkedése a különböző böngészőkben egységes képet mutasson.
-
-
-## DESIGN
-
 A weboldalak stílusa a megrendelő elvárásainak eleget téve vidám színeket használ, a sötét kék
 és rózsaszín elemek egységesen kiegészítik egymást.
 
+
+## Rendszer szintű működés
+
+A tesztelt modulok rendszer szinten is megfelelően máködnek.
 
 
 
