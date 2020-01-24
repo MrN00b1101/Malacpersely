@@ -41,11 +41,12 @@
         </li>
         <li class="nav-item">
           <a class="h6 ml-4 nav-link" href="beallitasok.html">Beállítások
-            <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="h6 ml-4 mr-5 nav-link" href="statisztika.html">Statisztika</a>
+          <a class="h6 ml-4 mr-5 nav-link" href="statisztika.html">Statisztika
+            <span class="sr-only">(current)</span>
+          </a>
         </li>
         <li class="nav-item">
           <a class="h6 ml-4 nav-link" style="color: #F48AE1" onclick="logout()" href="index.html">Kijelentkezés</a>
@@ -163,107 +164,30 @@
 </nav>
 
 <body style="background-color:rgb(185, 199, 211)">
+    <div id="content" class="p-4 p-md-5 pt-5">
+        <div class="row align-items-start">
+        <!-- Family Card -->
+        <div class="col-12">
+          <div class="card border-left shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Családtagok</div>
 
-<div id="content" class="p-5 p-md-5 pt-2">
 
-    <div class="row align-items-start">
-      
-    <!-- Profil Card -->
-    <div class="col-xl-8 col-md-8 mb-4 ">
-      <div class="card border-left shadow h-100 py-2" >
-        <div class="card-body ">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 h5">Profil</div><br>
-              <form>
-              <!--Név változtatás-->
-              <div class="form-group">
-                <label class="col-md-8 control-label h6 text-xs" for="textinput">Név változtatás:</label>  <br>
-                <div class="col-md-8 ml-5 mt-3">
-                <input style="background-color: rgb(252, 237, 249);" id="textinput" name="textinput" type="text" placeholder="jelenlegi név" class="form-control font-weight-bold border shadow h-100 py-2"><br>
-                <input id="textinput" name="textinput" type="text" placeholder="új név" class="form-control font-weight-bold border shadow h-100 py-2"> 
+                </div>
+                <div class="col-auto">
                 </div>
               </div>
-              <!--E-mail cím változtatás-->
-              <div class="form-group">
-                <label class="col-md-8 control-label h6 text-xs" for="textinput">E-mail cím változtatás:</label> <br> 
-                <div class="col-md-8 ml-5 mt-3">
-                <input style="background-color: rgb(252, 237, 249);" id="textinput" name="textinput" type="text" placeholder="jelenlegi e-mail" class="form-control font-weight-bold border shadow h-100 py-2"><br>
-                <input id="textinput" name="textinput" type="text" placeholder="új e-mail" class="form-control font-weight-bold border shadow h-100 py-2"> 
-                </div>
-              </div>
-              <!--Jelszó változtatás-->
-              <div class="form-group">
-                <label class="col-md-8 control-label h6 text-xs" for="passwordinput">Jelszó változtatás:</label><br>
-                <div class="col-md-8 ml-5 mt-3">
-                  <input style="background-color: rgb(252, 237, 249);" id="passwordinput" name="passwordinput" type="password" placeholder="jelenlegi jelszó" class="form-control font-weight-bold border shadow h-100 py-2"><br>
-                  <input id="passwordinput" name="passwordinput" type="password" placeholder="új jelszó" class="form-control font-weight-bold border shadow h-100 py-2"><br>
-                  <input id="passwordinput" name="passwordinput" type="password" placeholder="jelszó megerősítése" class="form-control font-weight-bold border shadow h-100 py-2">
-                </div>
-              </div>
-              <!--Új profilkép feltöltés-->
-              <div class="form-group">
-                <label for="exampleFormControlFile1" class="col-md-8 control-label h6 text-xs">Új profilkép:</label><br>
-                <input type="file" class="form-control-file ml-5 mt-3" id="exampleFormControlFile1">
-              </div>
-            </form><br>
-
-            <!--Egyéb beállítások-->
-            <div class="col mr-2 mt-5">
-              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 h5">Egyéb beállítások</div><br>
-                <form>
-                  <!--Maradjon bejelentkezve beállítása-->
-                  <div class="form-check mt-2">
-                    <label class="form-check-label col-md-8 h6 text-xs" for="bejelentkezveCheck">
-                      Maradjon bejelentkezve:
-                    </label>
-                    <input class="form-check-input ml-5" type="checkbox" value="" id="bejelentkezveCheck">
-                  </div><br>
-                  <!--Értesítések küldése beállítás-->
-                  <div class="form-check">
-                    <label class="form-check-label col-md-8 h6 text-xs" for="ertesitesCheck">
-                      Értesítések küldése:
-                    </label>
-                    <input class="form-check-input ml-5" type="checkbox" value="" id="ertesitesCheck">
-                  </div><br>
-                  <!--Család beállítás-->
-                  <div class="form-check">
-                    <label class="form-check-label col-md-8 h6 text-xs" for="lathatoCheck">
-                      Családtagok láthatják a tevékenységem:
-                    </label>
-                    <input class="form-check-input ml-5" type="checkbox" value="" id="lathatoCheck">
-                  </div>
-
-                  <button type="button" class="btn btn-success m-5" >Módosítások mentése</button>
-
-                </form>
-            </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Profilkép és név -->
-    <div class="col-xl-4 col-md-4 mb-4">
-        <div class="card border shadow h-100 py-2">
-          <div class="card-body" >
-            <div class="row no-gutters align-items-center">
-              <img src="profile.png" class="rounded mx-auto d-block" height="200"><br>
-              <a class="nav-item font-weight-bold ml-5" style="color: rgb(26, 22, 70) !important;" id="userNameHere"></a>
-            </div>
-          </div>
-        </div>
-      </div>
-</div>
-</div>
-
-
-<script src="vendor/bootstrap/js/functions.js"></script> 
-<script src="vendor/sidebar/js/jquery.min.js"></script>
-<script src="vendor/sidebar/js/popper.js"></script>
-<script src="vendor/sidebar/js/bootstrap.min.js"></script>
-<script src="vendor/sidebar/js/main.js"></script>
+    
+    <script src="vendor/bootstrap/js/functions.js"></script> 
+    <script src="vendor/sidebar/js/jquery.min.js"></script>
+    <script src="vendor/sidebar/js/popper.js"></script>
+    <script src="vendor/sidebar/js/bootstrap.min.js"></script>
+    <script src="vendor/sidebar/js/main.js"></script>
 
 </body>
 </html>
