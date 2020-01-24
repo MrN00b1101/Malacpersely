@@ -169,8 +169,8 @@
     <div class="row align-items-start">
       
     <!-- Profil Card -->
-    <div class="col-xl-8 col-md-8 mb-4">
-      <div class="card border-left shadow h-100 py-2">
+    <div class="col-xl-8 col-md-8 mb-4 ">
+      <div class="card border-left shadow h-100 py-2" >
         <div class="card-body ">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
@@ -178,41 +178,42 @@
               <form>
               <!--Név változtatás-->
               <div class="form-group">
-                <label class="col-md-8 control-label h6 text-xs" for="textinput">Név változtatás:</label>  
-                <div class="col-md-8 ml-10">
-                <input id="textinput" name="textinput" type="text" placeholder="jelenlegi név" class="form-control font-weight-bold border shadow h-100 py-2">
+                <label class="col-md-8 control-label h6 text-xs" for="textinput">Név változtatás:</label>  <br>
+                <div class="col-md-8 ml-5 mt-3">
+                <input style="background-color: rgb(252, 237, 249);" id="textinput" name="textinput" type="text" placeholder="jelenlegi név" class="form-control font-weight-bold border shadow h-100 py-2"><br>
                 <input id="textinput" name="textinput" type="text" placeholder="új név" class="form-control font-weight-bold border shadow h-100 py-2"> 
                 </div>
               </div>
               <!--E-mail cím változtatás-->
               <div class="form-group">
-                <label class="col-md-8 control-label h6 text-xs" for="textinput">E-mail cím változtatás:</label>  
-                <div class="col-md-8 ml-10">
-                <input id="textinput" name="textinput" type="text" placeholder="jelenlegi e-mail" class="form-control font-weight-bold border shadow h-100 py-2">
+                <label class="col-md-8 control-label h6 text-xs" for="textinput">E-mail cím változtatás:</label> <br> 
+                <div class="col-md-8 ml-5 mt-3">
+                <input style="background-color: rgb(252, 237, 249);" id="textinput" name="textinput" type="text" placeholder="jelenlegi e-mail" class="form-control font-weight-bold border shadow h-100 py-2"><br>
                 <input id="textinput" name="textinput" type="text" placeholder="új e-mail" class="form-control font-weight-bold border shadow h-100 py-2"> 
                 </div>
               </div>
               <!--Jelszó változtatás-->
               <div class="form-group">
-                <label class="col-md-8 control-label h6 text-xs" for="passwordinput">Jelszó változtatás:</label>
-                <div class="col-md-8 ml-10">
-                  <input id="passwordinput" name="passwordinput" type="password" placeholder="új jelszó" class="form-control font-weight-bold border shadow h-100 py-2"> 
+                <label class="col-md-8 control-label h6 text-xs" for="passwordinput">Jelszó változtatás:</label><br>
+                <div class="col-md-8 ml-5 mt-3">
+                  <input style="background-color: rgb(252, 237, 249);" id="passwordinput" name="passwordinput" type="password" placeholder="jelenlegi jelszó" class="form-control font-weight-bold border shadow h-100 py-2"><br>
+                  <input id="passwordinput" name="passwordinput" type="password" placeholder="új jelszó" class="form-control font-weight-bold border shadow h-100 py-2"><br>
                   <input id="passwordinput" name="passwordinput" type="password" placeholder="jelszó megerősítése" class="form-control font-weight-bold border shadow h-100 py-2">
                 </div>
               </div>
               <!--Új profilkép feltöltés-->
               <div class="form-group">
-                <label for="exampleFormControlFile1" class="col-md-8 control-label h6 text-xs">Új profilkép:</label>
-                <input type="file" class="form-control-file ml-10" id="exampleFormControlFile1">
+                <label for="exampleFormControlFile1" class="col-md-8 control-label h6 text-xs">Új profilkép:</label><br>
+                <input type="file" class="form-control-file ml-5 mt-3" id="exampleFormControlFile1">
               </div>
             </form><br>
 
             <!--Egyéb beállítások-->
-            <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-success text-uppercase mb-1 h5">Egyéb beállítások</div><br>
+            <div class="col mr-2 mt-5">
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 h5">Egyéb beállítások</div><br>
                 <form>
                   <!--Maradjon bejelentkezve beállítása-->
-                  <div class="form-check">
+                  <div class="form-check mt-2">
                     <label class="form-check-label col-md-8 h6 text-xs" for="bejelentkezveCheck">
                       Maradjon bejelentkezve:
                     </label>
@@ -246,7 +247,7 @@
     <!-- Profilkép és név -->
     <div class="col-xl-4 col-md-4 mb-4">
         <div class="card border shadow h-100 py-2">
-          <div class="card-body">
+          <div class="card-body" >
             <div class="row no-gutters align-items-center">
               <img src="profile.png" class="rounded mx-auto d-block" height="200"><br>
               <a class="nav-item font-weight-bold ml-5" style="color: rgb(26, 22, 70) !important;" id="userNameHere"></a>
