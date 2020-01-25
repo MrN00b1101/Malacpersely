@@ -14,9 +14,10 @@
   z-index:1000;
 }
 
-.morris-hover.morris-default-style {     border-radius:10px;
+.morris-hover.morris-default-style {     
+  border-radius:10px;
   padding:6px;
-  color:rgb(214, 171, 207);
+  color:rgb(41, 40, 41);
   background:rgba(255, 255, 255, 0.8);
   border:solid 2px rgba(230, 230, 230, 0.8);
   font-family:sans-serif;
@@ -205,13 +206,14 @@ svg { width: 100%; }</style>
 
 <body style="background-color:rgb(185, 199, 211)">
   <div id="content" class="p-5 p-md-5 pt-2">
-    <div class="col-xl-12 col-md-12">
+    <div class="col-xl-15 col-md-15">
       <div class="card border-left shadow h-100 py-2" >
         <div class="card-body ">
             <div class="row">
               <div class="col">
-                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 h5">Statisztika</div><br>
-                <div class="text-xs h6">Hónapos kiadások és bevételek (ezer Ft/hónap)</div><br>
+                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 ml-5 h5">Statisztika</div><br>
+                <div class="text-xs h6 ml-5">Hónapos kiadások és bevételek (ezer Ft/hónap)</div>
+                <div class="h6 ml-5 text-success">2020</div>
               </div>
             </div>
             <div class="col-auto mt-10">
@@ -248,13 +250,18 @@ function barChart() {
   window.barChart = Morris.Bar({
     element: 'bar-chart',
     data: [
-      { y: 'Január', a: 200, b: 250 },
-      { y: 'Február', a: 140,  b: 250 },
-      { y: 'Március', a: 160,  b: 250 },
-      { y: 'Április', a: 100,  b: 250 },
-      { y: 'Május', a: 156,  b: 250 },
-      { y: 'Június', a: 150,  b: 250 },
-      { y: 'Július', a: 200, b: 250 }
+      { y: '01.', a: 140, b: 200 },
+      { y: '02.', a: 100,  b: 200 },
+      { y: '03.', a: 110,  b: 200 },
+      { y: '04.', a: 80,  b: 200 },
+      { y: '05.', a: 75,  b: 200 },
+      { y: '06.', a: 100,  b: 200 },
+      { y: '07.', a: 90, b: 200 },
+      { y: '08.', a: 160,  b: 200 },
+      { y: '09.', a: 110,  b: 200 },
+      { y: '10.', a: 120,  b: 200 },
+      { y: '11.', a: 125,  b: 200 },
+      { y: '12.', a: 150,  b: 200 }
     ],
     xkey: 'y',
     ykeys: ['a', 'b'],
