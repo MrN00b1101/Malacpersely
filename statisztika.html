@@ -16,7 +16,7 @@
 
 .morris-hover.morris-default-style {     border-radius:10px;
   padding:6px;
-  color:#666;
+  color:rgb(214, 171, 207);
   background:rgba(255, 255, 255, 0.8);
   border:solid 2px rgba(230, 230, 230, 0.8);
   font-family:sans-serif;
@@ -210,6 +210,10 @@ svg { width: 100%; }</style>
         <div class="card-body ">
             <div class="row">
               <div class="col">
+                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 h5">Statisztika</div><br>
+                <div class="text-xs h6">Hónapos kiadások és bevételek</div><br>
+              </div>
+              <div class="col-auto mt-10">
                 <div id="bar-chart"></div>
               </div>
             </div>
@@ -244,17 +248,17 @@ function barChart() {
   window.barChart = Morris.Bar({
     element: 'bar-chart',
     data: [
-      { y: '2006', a: 100, b: 90 },
-      { y: '2007', a: 75,  b: 65 },
-      { y: '2008', a: 50,  b: 40 },
-      { y: '2009', a: 75,  b: 65 },
-      { y: '2010', a: 50,  b: 40 },
-      { y: '2011', a: 75,  b: 65 },
-      { y: '2012', a: 100, b: 90 }
+      { y: 'Január', a: 200, b: 250 },
+      { y: 'Február', a: 140,  b: 250 },
+      { y: 'Március', a: 160,  b: 250 },
+      { y: 'Április', a: 100,  b: 250 },
+      { y: 'Május', a: 156,  b: 250 },
+      { y: 'Június', a: 150,  b: 250 },
+      { y: 'Július', a: 200, b: 250 }
     ],
     xkey: 'y',
     ykeys: ['a', 'b'],
-    labels: ['Series A', 'Series B'],
+    labels: ['Kiadás', 'Bevétel'],
     lineColors: ['#1e88e5','#ff3321'],
     lineWidth: '3px',
     resize: true,
