@@ -1,14 +1,52 @@
 <!DOCTYPE html>
-<html>
-
+<html class=''>
 <head>
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="favicon_malac.ico" rel="icon" type="image/ico">
+  
+  <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/luclucena/pen/jbzeZm?depth=everything&order=popularity&page=21&q=services&show_forks=false" />
 
-  <title>Beállítások - Malacpersely</title>
+<link rel='stylesheet prefetch' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<style class="cp-pen-styles">.morris-hover {
+  position:absolute;
+  z-index:1000;
+}
+
+.morris-hover.morris-default-style {     border-radius:10px;
+  padding:6px;
+  color:#666;
+  background:rgba(255, 255, 255, 0.8);
+  border:solid 2px rgba(230, 230, 230, 0.8);
+  font-family:sans-serif;
+  font-size:12px;
+  text-align:center;
+}
+
+.morris-hover.morris-default-style .morris-hover-row-label {
+  font-weight:bold;
+  margin:0.25em 0;
+}
+
+.morris-hover.morris-default-style .morris-hover-point {
+  white-space:nowrap;
+  margin:0.1em 0;
+}
+
+svg { width: 100%; }</style>
+</head>
+<body>
+
+<html>
+<head>
+<link rel="stylesheet" href="https://www.cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+<meta charset=utf-8 />
+
+  <title>Statisztika - Malacpersely</title>
 
   <!-- Bootstrap core CSS -->
 
@@ -26,116 +64,129 @@
 
 </head>
 
- <!-- Navigation -->
- <nav class="navbar navbar-expand navbar-dark bg-dark">
+<!-- Navigation -->
+<nav class="navbar navbar-expand navbar-dark bg-dark">
     
-    <a class="ml-3 h2" style="font-size: 250%; font-family: Sniglet; color: #F48AE1 !important;" href="mainPage.html">MALACPERSELY</a>
-    <div  class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <a class="h6 nav-link" href="mainPage.html">Főoldal</a>
-          </li>
-        <li class="nav-item">
-          <a class="h6 ml-4 nav-link" href="#">Pénzügyek
-          </a>
+  <a class="ml-3 h2" style="font-size: 250%; font-family: Sniglet; color: #F48AE1 !important;" href="mainPage.html">MALACPERSELY</a>
+  <div  class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+          <a class="h6 nav-link" href="mainPage.html">Főoldal</a>
         </li>
-        <li class="nav-item">
-          <a class="h6 ml-4 nav-link" href="beallitasok.html">Beállítások
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="h6 ml-4 mr-5 nav-link" href="statisztika.html">Statisztika
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="h6 ml-4 nav-link" style="color: #F48AE1" onclick="logout()" href="index.html">Kijelentkezés</a>
-        </li>
-      </ul>
-    </div>
-    <ul class="navbar-nav ml-5">
-      <li class="nav-item mt-2">
-          <a class="nav-item font-weight-bold ml-5" style="color: #F48AE1 !important;" id="userNameHere"></a>
+      <li class="nav-item">
+        <a class="h6 ml-4 nav-link" href="#">Pénzügyek
+        </a>
       </li>
-      <li class="nav-item mr-3 ml-3">
-          <img src="profile.png" class="rounded mx-auto d-block" height="42" width="42">
+      <li class="nav-item">
+        <a class="h6 ml-4 nav-link" href="beallitasok.html">Beállítások
+          <span class="sr-only">(current)</span>
+        </a>
       </li>
-     </ul>
+      <li class="nav-item">
+        <a class="h6 ml-4 mr-5 nav-link" href="statisztika.html">Statisztika</a>
+      </li>
+      <li class="nav-item">
+        <a class="h6 ml-4 nav-link" style="color: #F48AE1" onclick="logout()" href="index.html">Kijelentkezés</a>
+      </li>
+    </ul>
+  </div>
+  <ul class="navbar-nav ml-5">
+    <li class="nav-item mt-2">
+        <a class="nav-item font-weight-bold ml-5" style="color: #F48AE1 !important;" id="userNameHere"></a>
+    </li>
+    <li class="nav-item mr-3 ml-3">
+        <img src="profile.png" class="rounded mx-auto d-block" height="42" width="42">
+    </li>
+   </ul>
 </nav>
 
 <div class="wrapper d-flex align-items-stretch ">
-    <nav id="sidebar" class="bg-dark">
-        <div class="custom-menu">
-            <button type="button" id="sidebarCollapse" class="btn btn-dark">
-      <i class="fa fa-bars"></i>
-      <span class="sr-only">Toggle Menu</span>
-    </button>
+  <nav id="sidebar" class="bg-dark">
+      <div class="custom-menu">
+          <button type="button" id="sidebarCollapse" class="btn btn-dark">
+    <i class="fa fa-bars"></i>
+    <span class="sr-only">Toggle Menu</span>
+  </button>
 </div>
-        <div class="p-4 pt-5">
-          <h1><a href="index.html" class="logo">Menü</a></h1>
-    <ul class="list-unstyled components mb-5">
-      <li>
-        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-        <i class="fas fa-users"></i>
-       <span class="ml-4">Család</span></a>
-        <ul class="collapse list-unstyled" id="homeSubmenu">
-        <li>
-          <a href="#">Családtag1</a>
-        </li>
-        <li>
-          <a href="#">Családtag2</a>
-      </li>
-      <ul>
-        <li>
-            <a href="#" data-toggle="modal" data-target="#familyAdd">Családtag hozzáadása</a>
-        </li>
-        <li>
-            <a href="#" data-toggle="modal" data-target="#familyDelete">Családtag törlése</a>
-        </li>                
-      </ul>
-    </ul>
-      </li>
-     
-      <li>
-      <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-        <i class="fas fa-clipboard-list"></i>
-       <span class="ml-4">Kategóriák</span></a>
-      </a>
-      <ul class="collapse list-unstyled" id="pageSubmenu">
-        <li>
-            <a href="#" id="getCategories1"></a>
-        </li>
-      <ul>
-        <li>
-            <a href="#" data-toggle="modal" data-target="#categoryAdd">Kategória hozzáadása</a>
-        </li>
-        <li>
-            <a href="#" data-toggle="modal" data-target="#categoryDelete">Kategória törlése</a>
-        </li>
-      </ul>
-      </ul>
-    </li>
-    
+      <div class="p-4 pt-5">
+        <h1><a href="index.html" class="logo">Menü</a></h1>
+  <ul class="list-unstyled components mb-5">
     <li>
-      <a href="#page2Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-        <i class="fas fa-coins"></i>
-        <span class="ml-4">Tranzakciók</span></a>
+      <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+      <i class="fas fa-users"></i>
+     <span class="ml-4">Család</span></a>
+      <ul class="collapse list-unstyled" id="homeSubmenu">
+      <li>
+        <a href="#">Családtag1</a>
+      </li>
+      <li>
+        <a href="#">Családtag2</a>
+    </li>
+    <ul>
+      <li>
+          <a href="#" data-toggle="modal" data-target="#familyAdd">Családtag hozzáadása</a>
+      </li>
+      <li>
+          <a href="#" data-toggle="modal" data-target="#familyDelete">Családtag törlése</a>
+      </li>                
+    </ul>
+  </ul>
+    </li>
+   
+    <li>
+    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+      <i class="fas fa-clipboard-list"></i>
+     <span class="ml-4">Kategóriák</span></a>
+    </a>
+    <ul class="collapse list-unstyled" id="pageSubmenu">
+      <li>
+          <a href="#" id="getCategories1"></a>
+      </li>
+    <ul>
+      <li>
+          <a href="#" data-toggle="modal" data-target="#categoryAdd">Kategória hozzáadása</a>
+      </li>
+      <li>
+          <a href="#" data-toggle="modal" data-target="#categoryDelete">Kategória törlése</a>
+      </li>
+    </ul>
+    </ul>
+  </li>
+  
+  <li>
+    <a href="#page2Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+      <i class="fas fa-coins"></i>
+      <span class="ml-4">Tranzakciók</span></a>
+    </a>
+    <ul class="collapse list-unstyled" id="page2Submenu">
+      <li>
+          <a href="#">2019.December</a>
+      </li>
+      <li>
+        <a href="#">2020. Január</a>
+     </li>
+    </ul>
+
+    <li>
+      <a href="#page3Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+        <i class="fas fa-piggy-bank"></i>
+        <span class="ml-4">Megtakarítások</span></a>
       </a>
-      <ul class="collapse list-unstyled" id="page2Submenu">
+      <ul class="collapse list-unstyled" id="page3Submenu">
         <li>
-            <a href="#">2019.December</a>
+            <a href="#">Hónap 1</a>
         </li>
         <li>
-          <a href="#">2020. Január</a>
+          <a href="#">Hónap 2</a>
        </li>
       </ul>
 
       <li>
-        <a href="#page3Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-          <i class="fas fa-piggy-bank"></i>
-          <span class="ml-4">Megtakarítások</span></a>
+        <a href="#page4Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="ml-4">Költségvetés</span></a>
         </a>
-        <ul class="collapse list-unstyled" id="page3Submenu">
+        <ul class="collapse list-unstyled" id="page4Submenu">
           <li>
               <a href="#">Hónap 1</a>
           </li>
@@ -144,50 +195,74 @@
          </li>
         </ul>
 
-        <li>
-          <a href="#page4Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="ml-4">Költségvetés</span></a>
-          </a>
-          <ul class="collapse list-unstyled" id="page4Submenu">
-            <li>
-                <a href="#">Hónap 1</a>
-            </li>
-            <li>
-              <a href="#">Hónap 2</a>
-           </li>
-          </ul>
-
-      </li>
-  </ul>
+    </li>
+</ul>
 </div>
 </nav>
 
+
+<!--Body-->
+
 <body style="background-color:rgb(185, 199, 211)">
-    <div id="content" class="p-4 p-md-5 pt-5">
-        <div class="row align-items-start">
-        <!-- Family Card -->
-        <div class="col-12">
-          <div class="card border-left shadow h-100 py-2">
-            <div class="card-body">
-              <div class="row no-gutters align-items-center">
-                <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Családtagok</div>
-
-
-                </div>
-                <div class="col-auto">
-                </div>
+  <div id="content" class="p-5 p-md-5 pt-2">
+    <div class="col-xl-12 col-md-12">
+      <div class="card border-left shadow h-100 py-2" >
+        <div class="card-body ">
+            <div class="row">
+              <div class="col">
+                <div id="bar-chart"></div>
               </div>
             </div>
-          </div>
         </div>
-    
-    <script src="vendor/bootstrap/js/functions.js"></script> 
-    <script src="vendor/sidebar/js/jquery.min.js"></script>
-    <script src="vendor/sidebar/js/popper.js"></script>
-    <script src="vendor/sidebar/js/bootstrap.min.js"></script>
-    <script src="vendor/sidebar/js/main.js"></script>
+      </div>
+    </div>
+  </div>
 
+  <script src="vendor/bootstrap/js/functions.js"></script> 
+  <script src="vendor/sidebar/js/jquery.min.js"></script>
+  <script src="vendor/sidebar/js/popper.js"></script>
+  <script src="vendor/sidebar/js/bootstrap.min.js"></script>
+  <script src="vendor/sidebar/js/main.js"></script>  
+
+
+</body>
+</html>
+
+
+
+
+<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
+<script >$(document).ready(function() {
+  barChart();
+
+  $(window).resize(function() {
+    window.barChart.redraw();
+  });
+});
+
+function barChart() {
+  window.barChart = Morris.Bar({
+    element: 'bar-chart',
+    data: [
+      { y: '2006', a: 100, b: 90 },
+      { y: '2007', a: 75,  b: 65 },
+      { y: '2008', a: 50,  b: 40 },
+      { y: '2009', a: 75,  b: 65 },
+      { y: '2010', a: 50,  b: 40 },
+      { y: '2011', a: 75,  b: 65 },
+      { y: '2012', a: 100, b: 90 }
+    ],
+    xkey: 'y',
+    ykeys: ['a', 'b'],
+    labels: ['Series A', 'Series B'],
+    lineColors: ['#1e88e5','#ff3321'],
+    lineWidth: '3px',
+    resize: true,
+    redraw: true
+  });
+}
+
+
+</script>
 </body>
 </html>
