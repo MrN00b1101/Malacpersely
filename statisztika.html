@@ -228,7 +228,7 @@ svg { width: 100%; }</style>
           <div class="card-body ">
               <div class="row">
                 <div class="col">
-                  <div class="text-xs h6 ml-5">Éves kiadások és bevételek aránya</div>
+                  <div class="text-xs h6 ml-5">Éves kiadások és bevételek aránya (%)</div>
                 </div>
               </div>
               <div class="col-auto mt-10">
@@ -295,11 +295,8 @@ function donutChart() {
   window.donutChart = Morris.Donut({
   element: 'donut-chart',
   data: [
-    {label: "Download Sales", value: 50},
-    {label: "In-Store Sales", value: 25},
-    {label: "Mail-Order Sales", value: 5},
-    {label: "Uploaded Sales", value: 10},
-    {label: "Video Sales", value: 10}
+    {label: "Kiadások", value: 76},
+    {label: "Bevételek", value: 24},
   ],
   resize: true,
   redraw: true
